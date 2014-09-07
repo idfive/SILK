@@ -1,0 +1,14 @@
+//Colors
+//Bring in color names and values
+
+//Base Font Size
+$base-font-size: 16;
+
+//Media Queries
+$iphone: new-breakpoint(max-width 320px 12);
+$tiny: new-breakpoint(max-width 480px 12);
+$small: new-breakpoint(max-width 630px 12);
+$medium: new-breakpoint(max-width 823px 12);
+$medium-plus: new-breakpoint(max-width 923px 12);
+$large: new-breakpoint(min-width 1000px 12);
+$x-large: new-breakpoint(min-width 1300px 12);

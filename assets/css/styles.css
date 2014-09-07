@@ -323,3 +323,27 @@ td, th {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+
+body:before {
+  position: fixed;
+  display: block;
+  background: #ffc;
+  text-align: center;
+  content: "Default";
+  font-size: 12px;
+  z-index: 5000; }
+  @media screen and (max-width: 480px)  {
+    body:before {
+      content: "Tiny"; } }
+  @media screen and (max-width: 630px)  {
+    body:before {
+      content: "Small"; } }
+  @media screen and (max-width: 823px)  {
+    body:before {
+      content: "Medium"; } }
+  @media screen and (min-width: 1000px)  {
+    body:before {
+      content: "Large"; } }
+  @media screen and (min-width: 1300px)  {
+    body:before {
+      content: "X Large"; } }

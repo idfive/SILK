@@ -1,0 +1,39 @@
+//Comment out when pushing to Production
+body
+ {
+   &:before
+   {
+     position: fixed;
+     display: block;
+     background: #ffc;
+     text-align: center;
+     content: "Default";
+     font-size: 12px;
+     z-index: 5000;
+    
+     @include media($tiny)
+     {
+       content: "Tiny";
+     }
+    
+     @include media($small)
+     {
+       content: "Small";
+     }
+    
+     @include media($medium)
+     {
+       content: "Medium";
+     }
+    
+     @include media($large)
+     {
+       content: "Large";
+     }
+    
+     @include media($x-large)
+     {
+       content: "X Large";
+     }
+   }
+}
