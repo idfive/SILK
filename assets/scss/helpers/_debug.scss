@@ -13,7 +13,7 @@ body
     
      @include media($tiny)
      {
-       content: "Tiny";
+       content: "Tiny" ;
      }
     
      @include media($small)
@@ -24,6 +24,11 @@ body
      @include media($medium)
      {
        content: "Medium";
+     }
+     
+     @include media($medium-plus)
+     {
+       content: "Medium-Plus";
      }
     
      @include media($large)

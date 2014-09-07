@@ -332,15 +332,18 @@ body:before {
   content: "Default";
   font-size: 12px;
   z-index: 5000; }
-  @media screen and (max-width: 480px)  {
+  @media screen and (min-width: 480px)  {
     body:before {
       content: "Tiny"; } }
-  @media screen and (max-width: 630px)  {
+  @media screen and (min-width: 630px)  {
     body:before {
       content: "Small"; } }
-  @media screen and (max-width: 823px)  {
+  @media screen and (min-width: 823px)  {
     body:before {
       content: "Medium"; } }
+  @media screen and (min-width: 923px)  {
+    body:before {
+      content: "Medium-Plus"; } }
   @media screen and (min-width: 1000px)  {
     body:before {
       content: "Large"; } }
