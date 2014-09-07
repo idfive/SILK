@@ -4,6 +4,9 @@
 //Base Font Size
 $base-font-size: 16;
 
+//Change max width of the grid if needed
+//$max-width: 1120px;
+
 //Media Queries
 $iphone: new-breakpoint(max-width 320px 12);
 $tiny: new-breakpoint(min-width 480px 12);

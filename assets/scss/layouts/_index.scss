@@ -1,0 +1,21 @@
+//Body Styles
+body {
+	background-color: #e9e9e9;
+}
+
+.full {
+	@include outer-container;
+	padding-top: 50px;
+	
+	#video {
+		@include span-columns(6);
+		@include shift(3);
+	}
+	p {
+		@include span-columns(6);
+		@include shift(3);
+		font-size: 2.5em;
+		font-family: 'Sansita One', cursive;
+		text-align: center;
+	}
+}

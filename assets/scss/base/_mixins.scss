@@ -4,3 +4,14 @@
 	top: 50%;
 	@include transform(translateY(-50%));
 }
+
+//Calculate Rem font sizes
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}

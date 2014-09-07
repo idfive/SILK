@@ -15,6 +15,7 @@ var paths = {
 // Compile SCSS and add Bourbon & Neat
 gulp.task('styles', function() {
 	return gulp.src(paths.scss)
+		.pipe(plumber())
 		.pipe(sass({
 			includePaths: ['styles'].concat(neat)
 		}))
