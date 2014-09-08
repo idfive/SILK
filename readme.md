@@ -1,5 +1,4 @@
 # Solomon Scott Boilerplate
-***
 
 ## Libraries/Packages/Dependencies
 
