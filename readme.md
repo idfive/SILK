@@ -1,4 +1,4 @@
-# Solomon Scott Boilerplate
+# idfive Boilerplate
 
 ## Libraries/Packages/Dependencies
 
