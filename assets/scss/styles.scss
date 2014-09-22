@@ -1,13 +1,15 @@
 //Normalize.css
 @import "helpers/reset";
 
+//Config
+@import "base/config";
+
 //Import Bourbon and Neat 
 @import "bourbon";
 @import "neat";
 
-//Bring in Variables and Mixins
+//Mixins
 @import "base/mixins";
-@import "base/variables";
 
 //Typography
 @import "base/typography";

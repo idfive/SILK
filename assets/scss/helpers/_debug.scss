@@ -1,46 +1,26 @@
-//Comment out when pushing to Production
-/*
 body
- {
-   &:before
-   {
-     position: fixed;
-     display: block;
-     background: #ffc;
-     text-align: center;
-     content: "Default";
-     font-size: 12px;
-     z-index: 5000;
-    
-     @include media($tiny)
-     {
-       content: "Tiny" ;
-     }
-    
-     @include media($small)
-     {
-       content: "Small";
-     }
-    
-     @include media($medium)
-     {
-       content: "Medium";
-     }
-     
-     @include media($medium-plus)
-     {
-       content: "Medium-Plus";
-     }
-    
-     @include media($large)
-     {
-       content: "Large";
-     }
-    
-     @include media($x-large)
-     {
-       content: "X Large";
-     }
-   }
+{
+	&.id5-debug
+	{
+		&:before
+		{
+			position: fixed;
+			display: block;
+			background: #ffc;
+			text-align: center;
+			content: "Default";
+			font-size: 12px;
+			z-index: 9999;
+			top: 0;
+			left: 0;
+			
+			@for $i from 1 to length($breakpoints)
+			{	
+				@media #{(nth(nth($breakpoints, $i), 2))}
+				{
+					content: (nth( nth($breakpoints, $i), 1));
+				}
+			}
+		}	
+	}
 }
-*/

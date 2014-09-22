@@ -11,7 +11,23 @@
   @return $remSize * 1rem;
 }
 
+//Font sizes
 @mixin font-size($size) {
   font-size: $size;
   font-size: calculateRem($size);
+}
+
+//Media queries
+@mixin breakpoint($breakpoint)
+{
+	@for $i from 1 to length($breakpoints)
+	{	
+		@if $breakpoint == (nth( nth($breakpoints, $i), 1))
+		{
+			@media #{(nth(nth($breakpoints, $i), 2))}
+			{
+				@content;
+			}
+		}
+	}
 }
