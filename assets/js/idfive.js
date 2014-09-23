@@ -56,6 +56,8 @@ jQuery(function() {
 	
 	id5.bootstrap.init();
 	
+	var navHeight = 0;
+	
 	//Add parent class
 	$('nav').find('a').each(function() {
 	
@@ -93,6 +95,12 @@ jQuery(function() {
 		
 		//Move
 		$('.nav > ul').css('left', move + '%');
-	});
+	}).end().find('ul').each(function() {
+	
+		if ($(this).outerHeight() > navHeight)
+		{
+			navHeight = $(this).outerHeight();
+		}
+	}).end().css('min-height', navHeight);
 	
 });
