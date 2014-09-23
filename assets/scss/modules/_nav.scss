@@ -1,0 +1,76 @@
+.nav
+{
+	overflow-x: hidden;
+
+	> ul
+	{
+		position: relative;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		@include transition(left .15s ease-in-out);
+		
+		li, ul
+		{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		
+		> li
+		{
+			position: relative;
+		}
+		
+		li
+		{
+			border-bottom: 1px solid #eee;
+		}
+		
+		ul
+		{
+			position: absolute;
+			top: 0;
+			left: 100%;
+			width: 100%;
+		}
+		
+		a
+		{
+			display: block;
+			text-decoration: none;
+			padding: 10px;
+			color: #000;
+			
+			&.parent
+			{
+				&:after
+				{
+					content: " >";
+					float: right;
+				}
+			}
+			
+			&.back
+			{
+				background: #666;
+				color: #fff;
+				
+				&:before
+				{
+					content: "< ";
+				}
+				
+				&:hover
+				{
+					background: #666;
+				}
+			}
+			
+			&:hover
+			{
+				background: #f1f1f1;
+			}
+		}
+	}
+}
