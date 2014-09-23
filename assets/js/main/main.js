@@ -1,8 +1,3 @@
-jQuery(function() {
-	$('body').addClass('has-js');
-});
-
-
 var id5 = (function($, my)
 {
 	var my = {};

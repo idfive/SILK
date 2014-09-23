@@ -342,43 +342,35 @@ body.id5-debug:before {
     body.id5-debug:before {
       content: "large"; } }
 
-.nav {
-  overflow-x: hidden; }
-  .nav > ul {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    -webkit-transition: left 0.15s ease-in-out;
-    -moz-transition: left 0.15s ease-in-out;
-    transition: left 0.15s ease-in-out; }
-    .nav > ul li, .nav > ul ul {
-      padding: 0;
-      margin: 0;
-      list-style: none; }
-    .nav > ul > li {
-      position: relative; }
-    .nav > ul li {
-      border-bottom: 1px solid #eee; }
-    .nav > ul ul {
-      position: absolute;
-      top: 0;
-      left: 100%;
-      width: 100%; }
-    .nav > ul a {
-      display: block;
-      text-decoration: none;
-      padding: 10px;
-      color: #000; }
-      .nav > ul a.parent:after {
-        content: " >";
-        float: right; }
-      .nav > ul a.back {
-        background: #666;
-        color: #fff; }
-        .nav > ul a.back:before {
-          content: "< "; }
-        .nav > ul a.back:hover {
-          background: #666; }
-      .nav > ul a:hover {
-        background: #f1f1f1; }
+body {
+  background-color: #e9e9e9; }
+
+.full {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px; }
+  .full:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .full #video {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    margin-left: 25.58941%; }
+    .full #video:last-child {
+      margin-right: 0; }
+  .full p {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    margin-left: 25.58941%;
+    font-size: 2.5em;
+    font-family: 'Sansita One', cursive;
+    text-align: center;
+    color: #000; }
+    .full p:last-child {
+      margin-right: 0; }
