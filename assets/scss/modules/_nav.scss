@@ -1,75 +1,195 @@
-.nav
-{
-	overflow-x: hidden;
+$tnav-expanded: 'large';
 
-	> ul
+.id5tnav
+{
+	//Resets
+	ul, li
 	{
-		position: relative;
 		padding: 0;
 		margin: 0;
 		list-style: none;
-		@include transition(left .25s ease-in);
-		
-		li, ul
-		{
-			padding: 0;
-			margin: 0;
-			list-style: none;
-		}
-		
-		li
-		{
-			border-bottom: 1px solid #eee;
-		}
-		
-		ul
-		{
-			position: absolute;
-			top: 0;
-			left: 100%;
-			width: 100%;
-			
-			&.hidden
-			{
-				display: none;
-			}
-		}
-		
+	}
+	
+	//Non-js version
+	> ul
+	{
 		a
 		{
 			display: block;
 			text-decoration: none;
 			padding: 10px;
 			color: #000;
+			@include transition(background .15s ease-in-out);
 			
-			&.parent
+			&:hover
 			{
-				&:after
+				background: #f9f9f9;
+			}
+		}
+		
+		li
+		{
+			ul
+			{
+				padding-left: 20px;
+			}
+		}
+	}
+	
+	//JS version
+	.js &
+	{
+		overflow-x: hidden;
+		
+		> ul
+		{
+			position: relative;
+			left: 0;
+			@include transition(left .25s ease-in);
+			
+			ul
+			{
+				position: absolute;
+				top: 0;
+				left: 100%;
+				width: 100%;
+				
+				&.hidden
 				{
-					content: " >";
-					float: right;
+					display: none;
 				}
 			}
 			
-			&.back
+			li
 			{
-				background: #666;
+				border-bottom: 1px solid #eee;
+				
+				ul
+				{
+					padding: 0;
+				}
+			}
+			
+			.parent
+			{
+				&:after
+				{
+					position: relative;
+					display: inline-block;
+					float: right;
+					content: "";
+					border-top: 5px solid transparent;
+					border-bottom: 5px solid transparent;
+					border-left: 5px solid #000;
+					top: 3px;
+				}
+			}
+			
+			.back
+			{
 				color: #fff;
+				background: #000;
 				
 				&:before
 				{
-					content: "< ";
+					display: inline-block;
+					content: "";
+					margin-right: 10px;
+					border-top: 5px solid transparent;
+					border-bottom: 5px solid transparent;
+					border-right: 5px solid #fff;
 				}
 				
 				&:hover
 				{
-					background: #666;
+					background: #000;
 				}
 			}
+		}
+		
+		@include breakpoint($tnav-expanded)
+		{
+			overflow-x: inherit;
+			min-height: 0 !important; //Overrides inline style added by JS
+			border-bottom: 1px solid #eee;
+			@include clearfix;
 			
-			&:hover
+			> ul
 			{
-				background: #f1f1f1;
+				ul
+				{
+					display: none;
+					width: 200px;
+					left: 0;
+					top: auto;
+					background: #f9f9f9;
+					@include transition(opacity .25s ease-in);
+					
+					ul
+					{
+						left: 100%;
+						top: 0;
+					}
+				}
+				
+				li
+				{
+					position: relative;
+					float: left;
+					border: 0;
+					
+					li
+					{
+						float: none;
+						
+						a:hover,
+						&:hover
+						{
+							background: #f1f1f1;
+						}
+					}
+					
+					&:hover
+					{
+						background: #f9f9f9;
+					}
+				}
+				
+				> li
+				{
+					> .parent
+					{
+						&:after
+						{
+							position: relative;
+							display: inline-block;
+							float: right;
+							content: "";
+							border-top: 5px solid #000;
+							border-left: 5px solid transparent;
+							border-right: 5px solid transparent;
+							top: 7px;
+							left: 7px;
+							margin-right: 10px;
+						}
+					}
+				}
+				
+				li
+				{
+					&:hover
+					{
+						> ul
+						{
+							display: block;
+						}
+					}
+				}
+				
+				.back
+				{
+					display: none;
+				}
 			}
 		}
 	}

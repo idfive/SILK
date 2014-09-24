@@ -56,56 +56,6 @@ jQuery(function() {
 	
 	id5.bootstrap.init();
 	
-	var navHeight = 0;
-	
-	//Add parent class
-	$('nav').find('a').each(function() {
-	
-		//Get child element
-		var $child = $(this).next('ul');
-	
-		//If we have a child...
-		if($child.length)
-		{
-			//Add parent class
-			$(this).addClass('parent');
-			
-			//Create back link
-			$child.prepend($('<li><a href="#" class="back">'+$(this).text()+'</a></li>'));
-		}
-	
-	}).end().find('a.parent').click(function(e) {
-	
-		//Stop href from firing
-		e.preventDefault();
-		
-		//Calculate move value
-		var move = ($(this).parents('li').length * 100) * -1;
-		
-		//Get siblings so we can adjust z-index
-		$(this).parent().find('> ul').removeClass('hidden').end().siblings().find('> ul').addClass('hidden');
-		
-		//Move
-		$('.nav > ul').css('left', move + '%');
-		
-	}).end().find('a.back').click(function(e) {
-	
-		//Stop href from firing
-		e.preventDefault();
-		
-		//Calculate move value
-		var move = (($(this).parents('li').length -2) * 100) * -1;
-		
-		//Move
-		$('.nav > ul').css('left', move + '%');
-		
-	}).end().find('ul').each(function() {
-	
-		if ($(this).outerHeight() > navHeight)
-		{
-			navHeight = $(this).outerHeight();
-		}
-		
-	}).end().css('min-height', navHeight);
+	$('.id5tnav').id5TieredNav();
 	
 });
