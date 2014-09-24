@@ -406,37 +406,39 @@ body.id5debug:before {
         content: "";
         display: table;
         clear: both; }
-      .js .id5tnav > ul ul {
-        display: none;
-        width: 200px;
-        left: 0;
-        top: auto;
-        background: #f9f9f9; }
-        .js .id5tnav > ul ul ul {
-          left: 100%;
-          top: 0; }
-      .js .id5tnav > ul li {
-        position: relative;
-        float: left;
-        border: 0; }
-        .js .id5tnav > ul li li {
-          float: none; }
-          .js .id5tnav > ul li li a:hover, .js .id5tnav > ul li li:hover {
-            background: #f1f1f1; }
-        .js .id5tnav > ul li:hover {
+      .js .id5tnav > ul {
+        position: static; }
+        .js .id5tnav > ul ul {
+          display: none;
+          width: 200px;
+          left: 0;
+          top: auto;
           background: #f9f9f9; }
-      .js .id5tnav > ul > li > .parent:after {
-        position: relative;
-        display: inline-block;
-        float: right;
-        content: "";
-        border-top: 5px solid #000;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        top: 7px;
-        left: 7px;
-        margin-right: 10px; }
-      .js .id5tnav > ul li:hover > ul {
-        display: block; }
-      .js .id5tnav > ul .back {
-        display: none; } }
+          .js .id5tnav > ul ul ul {
+            left: 100%;
+            top: 0; }
+        .js .id5tnav > ul li {
+          position: relative;
+          float: left;
+          border: 0; }
+          .js .id5tnav > ul li li {
+            float: none; }
+            .js .id5tnav > ul li li a:hover, .js .id5tnav > ul li li:hover {
+              background: #f1f1f1; }
+          .js .id5tnav > ul li:hover {
+            background: #f9f9f9; }
+        .js .id5tnav > ul > li > .parent:after {
+          position: relative;
+          display: inline-block;
+          float: right;
+          content: "";
+          border-top: 5px solid #000;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          top: 7px;
+          left: 7px;
+          margin-right: 10px; }
+        .js .id5tnav > ul li:hover > ul {
+          display: block; }
+        .js .id5tnav > ul .back {
+          display: none; } }

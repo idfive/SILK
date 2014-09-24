@@ -115,6 +115,8 @@ $tnav-expanded: 'large';
 			
 			> ul
 			{
+				position: static;
+			
 				ul
 				{
 					display: none;
