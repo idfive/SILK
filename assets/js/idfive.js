@@ -42,9 +42,9 @@ id5.bootstrap = (function($)
 	
 	my.showDebug = function()
 	{
-		if(id5.helpers.getUrlParameter('id5-debug') === '1')
+		if(id5.helpers.getUrlParameter('id5debug') === '1')
 		{
-			$('body').addClass('id5-debug');	
+			$('body').addClass('id5debug');	
 		}
 	};
 	
