@@ -123,7 +123,6 @@ $tnav-expanded: 'large';
 					left: 0;
 					top: auto;
 					background: #f9f9f9;
-					@include transition(opacity .25s ease-in);
 					
 					ul
 					{

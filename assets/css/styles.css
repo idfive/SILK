@@ -412,10 +412,7 @@ body.id5debug:before {
         width: 200px;
         left: 0;
         top: auto;
-        background: #f9f9f9;
-        -webkit-transition: opacity 0.25s ease-in;
-        -moz-transition: opacity 0.25s ease-in;
-        transition: opacity 0.25s ease-in; }
+        background: #f9f9f9; }
         .js .id5tnav > ul ul ul {
           left: 100%;
           top: 0; }
