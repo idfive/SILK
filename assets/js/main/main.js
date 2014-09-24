@@ -68,6 +68,9 @@ jQuery(function() {
 			backgroundColor: "white"
 		}, options);
 		
+		//So we can calculate height of largest nav element
+		var navHeight = 0;
+		
 		function shift($el, length, offset)
 		{
 			//Calculate move value
@@ -77,10 +80,19 @@ jQuery(function() {
 			$el.find('> ul').css('left', move + '%');
 		}
 		
-		return this.each(function() {
+		function setHeight($el)
+		{
+			$el.find('ul').each(function() {
+			
+				if ($(this).outerHeight() > navHeight)
+				{
+					navHeight = $(this).outerHeight();
+				}
+				
+			}).end().css('min-height', navHeight);
+		}
 		
-			//So we can calculate hight of largest nav element
-			var navHeight = 0;
+		return this.each(function() {
 			
 			//Shortcut to nav element
 			var $nav = $(this);
@@ -122,15 +134,12 @@ jQuery(function() {
 				//Shift nav
 				shift($nav, $(this).parents('li').length, 2);
 				
-			//Set height of each element to the largest
-			}).end().find('ul').each(function() {
+			});
 			
-				if ($(this).outerHeight() > navHeight)
-				{
-					navHeight = $(this).outerHeight();
-				}
-				
-			}).end().css('min-height', navHeight);
+			//Set height of nav on resize
+			$(window).bind('resize', function() {
+				setHeight($nav);	
+			}).resize();
 	        
         });
 	
