@@ -87,8 +87,7 @@ $tnav-expanded: 'large';
 			
 			.back
 			{
-				color: #fff;
-				background: #000;
+				background: #f1f1f1;
 				
 				&:before
 				{
@@ -97,12 +96,12 @@ $tnav-expanded: 'large';
 					margin-right: 10px;
 					border-top: 5px solid transparent;
 					border-bottom: 5px solid transparent;
-					border-right: 5px solid #fff;
+					border-right: 5px solid #000;
 				}
 				
 				&:hover
 				{
-					background: #000;
+					background: #f1f1f1;
 				}
 			}
 		}

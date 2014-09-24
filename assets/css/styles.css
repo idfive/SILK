@@ -387,17 +387,16 @@ body.id5debug:before {
       border-left: 5px solid #000;
       top: 3px; }
     .js .id5tnav > ul .back {
-      color: #fff;
-      background: #000; }
+      background: #f1f1f1; }
       .js .id5tnav > ul .back:before {
         display: inline-block;
         content: "";
         margin-right: 10px;
         border-top: 5px solid transparent;
         border-bottom: 5px solid transparent;
-        border-right: 5px solid #fff; }
+        border-right: 5px solid #000; }
       .js .id5tnav > ul .back:hover {
-        background: #000; }
+        background: #f1f1f1; }
   @media screen and (min-width: 1000px) {
     .js .id5tnav {
       overflow-x: inherit;
