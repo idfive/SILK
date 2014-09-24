@@ -7,9 +7,9 @@ $border-box-sizing: false;
 
 //Break points
 $breakpoints: (
-	("tiny",	"screen and (max-width: 480px)"),
-	("small",	"screen and (max-width: 600px)"),
-	("medium",	"screen and (max-width: 800px)"),
-	("large",	"screen and (max-width: 1175px)"),
-	("x-large", "screen and (min-width: 1176px)")
+	("tiny",	"screen and (min-width: 480px)"),
+	("small",	"screen and (min-width: 600px)"),
+	("medium",	"screen and (min-width: 800px)"),
+	("large",	"screen and (min-width: 1000px)"),
+	("x-large", "screen and (min-width: 1200px)")
 );
