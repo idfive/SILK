@@ -356,8 +356,6 @@ body.id5-debug:before {
       padding: 0;
       margin: 0;
       list-style: none; }
-    .nav > ul > li {
-      position: relative; }
     .nav > ul li {
       border-bottom: 1px solid #eee; }
     .nav > ul ul {
@@ -365,6 +363,8 @@ body.id5-debug:before {
       top: 0;
       left: 100%;
       width: 100%; }
+      .nav > ul ul.hidden {
+        display: none; }
     .nav > ul a {
       display: block;
       text-decoration: none;

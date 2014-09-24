@@ -17,11 +17,6 @@
 			list-style: none;
 		}
 		
-		> li
-		{
-			position: relative;
-		}
-		
 		li
 		{
 			border-bottom: 1px solid #eee;
@@ -33,6 +28,11 @@
 			top: 0;
 			left: 100%;
 			width: 100%;
+			
+			&.hidden
+			{
+				display: none;
+			}
 		}
 		
 		a

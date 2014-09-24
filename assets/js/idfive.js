@@ -82,6 +82,9 @@ jQuery(function() {
 		//Calculate move value
 		var move = ($(this).parents('li').length * 100) * -1;
 		
+		//Get siblings so we can adjust z-index
+		$(this).parent().find('> ul').removeClass('hidden').end().siblings().find('> ul').addClass('hidden');
+		
 		//Move
 		$('.nav > ul').css('left', move + '%');
 		
@@ -95,12 +98,14 @@ jQuery(function() {
 		
 		//Move
 		$('.nav > ul').css('left', move + '%');
+		
 	}).end().find('ul').each(function() {
 	
 		if ($(this).outerHeight() > navHeight)
 		{
 			navHeight = $(this).outerHeight();
 		}
+		
 	}).end().css('min-height', navHeight);
 	
 });
