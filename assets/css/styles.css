@@ -319,7 +319,7 @@ table {
 td, th {
   padding: 0; }
 
-body.id5-debug:before {
+body.id5debug:before {
   position: fixed;
   display: block;
   background: #ffc;
@@ -329,56 +329,118 @@ body.id5-debug:before {
   z-index: 9999;
   top: 0;
   left: 0; }
-  @media screen and (max-width: 480px) {
-    body.id5-debug:before {
+  @media screen and (min-width: 480px) {
+    body.id5debug:before {
       content: "tiny"; } }
-  @media screen and (max-width: 600px) {
-    body.id5-debug:before {
+  @media screen and (min-width: 600px) {
+    body.id5debug:before {
       content: "small"; } }
-  @media screen and (max-width: 800px) {
-    body.id5-debug:before {
+  @media screen and (min-width: 800px) {
+    body.id5debug:before {
       content: "medium"; } }
-  @media screen and (max-width: 1175px) {
-    body.id5-debug:before {
+  @media screen and (min-width: 1000px) {
+    body.id5debug:before {
       content: "large"; } }
 
-.nav {
+.id5tnav ul, .id5tnav li {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+.id5tnav > ul a {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  color: #000;
+  -webkit-transition: background 0.15s ease-in-out;
+  -moz-transition: background 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out; }
+  .id5tnav > ul a:hover {
+    background: #f9f9f9; }
+.id5tnav > ul li ul {
+  padding-left: 20px; }
+.js .id5tnav {
   overflow-x: hidden; }
-  .nav > ul {
+  .js .id5tnav > ul {
     position: relative;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+    left: 0;
     -webkit-transition: left 0.25s ease-in;
     -moz-transition: left 0.25s ease-in;
     transition: left 0.25s ease-in; }
-    .nav > ul li, .nav > ul ul {
-      padding: 0;
-      margin: 0;
-      list-style: none; }
-    .nav > ul li {
-      border-bottom: 1px solid #eee; }
-    .nav > ul ul {
+    .js .id5tnav > ul ul {
       position: absolute;
       top: 0;
       left: 100%;
       width: 100%; }
-      .nav > ul ul.hidden {
+      .js .id5tnav > ul ul.hidden {
         display: none; }
-    .nav > ul a {
-      display: block;
-      text-decoration: none;
-      padding: 10px;
-      color: #000; }
-      .nav > ul a.parent:after {
-        content: " >";
-        float: right; }
-      .nav > ul a.back {
-        background: #666;
-        color: #fff; }
-        .nav > ul a.back:before {
-          content: "< "; }
-        .nav > ul a.back:hover {
-          background: #666; }
-      .nav > ul a:hover {
-        background: #f1f1f1; }
+    .js .id5tnav > ul li {
+      border-bottom: 1px solid #eee; }
+      .js .id5tnav > ul li ul {
+        padding: 0; }
+    .js .id5tnav > ul .parent:after {
+      position: relative;
+      display: inline-block;
+      float: right;
+      content: "";
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid #000;
+      top: 3px; }
+    .js .id5tnav > ul .back {
+      color: #fff;
+      background: #000; }
+      .js .id5tnav > ul .back:before {
+        display: inline-block;
+        content: "";
+        margin-right: 10px;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-right: 5px solid #fff; }
+      .js .id5tnav > ul .back:hover {
+        background: #000; }
+  @media screen and (min-width: 1000px) {
+    .js .id5tnav {
+      overflow-x: inherit;
+      min-height: 0 !important;
+      border-bottom: 1px solid #eee; }
+      .js .id5tnav:after {
+        content: "";
+        display: table;
+        clear: both; }
+      .js .id5tnav > ul ul {
+        display: none;
+        width: 200px;
+        left: 0;
+        top: auto;
+        background: #f9f9f9;
+        -webkit-transition: opacity 0.25s ease-in;
+        -moz-transition: opacity 0.25s ease-in;
+        transition: opacity 0.25s ease-in; }
+        .js .id5tnav > ul ul ul {
+          left: 100%;
+          top: 0; }
+      .js .id5tnav > ul li {
+        position: relative;
+        float: left;
+        border: 0; }
+        .js .id5tnav > ul li li {
+          float: none; }
+          .js .id5tnav > ul li li a:hover, .js .id5tnav > ul li li:hover {
+            background: #f1f1f1; }
+        .js .id5tnav > ul li:hover {
+          background: #f9f9f9; }
+      .js .id5tnav > ul > li > .parent:after {
+        position: relative;
+        display: inline-block;
+        float: right;
+        content: "";
+        border-top: 5px solid #000;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        top: 7px;
+        left: 7px;
+        margin-right: 10px; }
+      .js .id5tnav > ul li:hover > ul {
+        display: block; }
+      .js .id5tnav > ul .back {
+        display: none; } }
