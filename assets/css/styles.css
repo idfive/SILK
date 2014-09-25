@@ -377,7 +377,7 @@ body.id5debug:before {
       border-bottom: 1px solid #eee; }
       .js .id5tnav > ul li ul {
         padding: 0; }
-    .js .id5tnav > ul .parent:after {
+    .js .id5tnav > ul .parent > a:after {
       position: relative;
       display: inline-block;
       float: right;
@@ -416,7 +416,8 @@ body.id5debug:before {
           background: #f9f9f9; }
           .js .id5tnav > ul ul ul {
             left: 100%;
-            top: 0; }
+            top: 0;
+            z-index: 50; }
         .js .id5tnav > ul li {
           position: relative;
           float: left;
@@ -427,7 +428,7 @@ body.id5debug:before {
               background: #f1f1f1; }
           .js .id5tnav > ul li:hover {
             background: #f9f9f9; }
-        .js .id5tnav > ul > li > .parent:after {
+        .js .id5tnav > ul > li.parent > a:after {
           position: relative;
           display: inline-block;
           float: right;
@@ -439,6 +440,23 @@ body.id5debug:before {
           left: 7px;
           margin-right: 10px; }
         .js .id5tnav > ul li:hover > ul {
+          display: block; }
+        .js .id5tnav > ul li ul .parent:after {
+          position: absolute;
+          right: -170px;
+          margin-top: -50px;
+          display: none;
+          width: 200px;
+          height: 200px;
+          content: "";
+          background: transparent;
+          z-index: 20;
+          -webkit-transform: rotate(70deg);
+          -moz-transform: rotate(70deg);
+          -ms-transform: rotate(70deg);
+          -o-transform: rotate(70deg);
+          transform: rotate(70deg); }
+        .js .id5tnav > ul li ul .parent:hover:after {
           display: block; }
         .js .id5tnav > ul .back {
           display: none; } }

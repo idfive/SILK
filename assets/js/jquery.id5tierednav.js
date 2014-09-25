@@ -46,14 +46,14 @@
 				if($child.length)
 				{
 					//Add parent class
-					$(this).addClass('parent');
+					$(this).parent().addClass('parent');
 					
 					//Create back link
 					$child.prepend($('<li><a href="#" class="back">'+$(this).text()+'</a></li>'));
 				}
 			
 			//Attach behaviour for clicking parent element
-			}).end().find('a.parent').click(function(e) {
+			}).end().find('.parent > a').click(function(e) {
 			
 				//Stop href from firing
 				e.preventDefault();

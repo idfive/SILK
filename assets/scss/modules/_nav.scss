@@ -72,17 +72,20 @@ $tnav-expanded: 'large' !default;
 			
 			.parent
 			{
-				&:after
+				> a
 				{
-					position: relative;
-					display: inline-block;
-					float: right;
-					content: "";
-					border-top: 5px solid transparent;
-					border-bottom: 5px solid transparent;
-					border-left: 5px solid #000;
-					top: 3px;
-				}
+					&:after
+					{
+						position: relative;
+						display: inline-block;
+						float: right;
+						content: "";
+						border-top: 5px solid transparent;
+						border-bottom: 5px solid transparent;
+						border-left: 5px solid #000;
+						top: 3px;
+					}
+				}				
 			}
 			
 			.back
@@ -129,6 +132,7 @@ $tnav-expanded: 'large' !default;
 					{
 						left: 100%;
 						top: 0;
+						z-index: 50;
 					}
 				}
 				
@@ -157,21 +161,24 @@ $tnav-expanded: 'large' !default;
 				
 				> li
 				{
-					> .parent
-					{
-						&:after
+					&.parent
+					{					
+						> a
 						{
-							position: relative;
-							display: inline-block;
-							float: right;
-							content: "";
-							border-top: 5px solid #000;
-							border-left: 5px solid transparent;
-							border-right: 5px solid transparent;
-							top: 7px;
-							left: 7px;
-							margin-right: 10px;
-						}
+							&:after
+							{
+								position: relative;
+								display: inline-block;
+								float: right;
+								content: "";
+								border-top: 5px solid #000;
+								border-left: 5px solid transparent;
+								border-right: 5px solid transparent;
+								top: 7px;
+								left: 7px;
+								margin-right: 10px;
+							}
+						}						
 					}
 				}
 				
@@ -182,6 +189,34 @@ $tnav-expanded: 'large' !default;
 						> ul
 						{
 							display: block;
+						}
+					}
+					
+					ul
+					{
+						.parent
+						{
+							&:after
+							{
+								position: absolute;
+								right: -170px;
+								margin-top: -50px;
+								display: none;
+								width: 200px;
+								height: 200px;
+								content: "";
+								background: transparent;
+								z-index: 20;
+								@include transform(rotate(70deg));
+							}
+							
+							&:hover
+							{
+								&:after
+								{
+									display: block;
+								}
+							}
 						}
 					}
 				}
