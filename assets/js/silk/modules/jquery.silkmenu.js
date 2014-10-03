@@ -34,26 +34,16 @@
 		function menuaimActivate(row)
 		{
 			$(row).addClass('hover');
-			window.console.log('activate');
 		}
 		
 		function menuaimDeactivate(row)
 		{
 			$(row).removeClass('hover');
-			window.console.log('deactivate');
-		}
-		
-		function menuaimEnter(row)
-		{
-		}
-		
-		function menuaimExit(row)
-		{
 		}
 		
 		function menuaimExitMenu(menu)
 		{
-			$(menu).find('li.hover').removeClass('hover');
+			return true;
 		}
 		
 		return this.each(function() {
@@ -111,8 +101,6 @@
 				$nav.addClass('menuaim').find('ul').menuAim({
 					activate: menuaimActivate,
 					deactivate: menuaimDeactivate,
-					enter: menuaimEnter,
-					exit: menuaimExit,
 					exitMenu: menuaimExitMenu
 				});
 			}

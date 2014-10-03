@@ -16,14 +16,20 @@
 	]  
   },
   "browser": {
-    "silkmenu": "./assets/js/silk/modules/jquery.silkmenu.js"
+    "silkmenu": "./assets/js/silk/modules/jquery.silkmenu.js",
+    "menuaim": "./assets/js/vendor/jquery.menuaim.js"
   },
   "browserify-shim": {
 	"silkmenu": {
 	  "depends": [
 	    "jquery:jQuery"
 	  ]
-	} 
+	},
+	"menuaim": {
+	  "depends": [
+	  	"jquery:jQuery"
+	  ]
+	}
   },
   "author": "idfive",
   "license": "BSD-2-Clause",
