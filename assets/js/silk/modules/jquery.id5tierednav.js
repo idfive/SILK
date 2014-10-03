@@ -1,64 +1,3 @@
-var id5 = (function($, my)
-{
-	var my = {};
-
-	return my;
-
-}(jQuery, id5 || {}));
-
-
-id5.helpers = (function($)
-{	
-	var my = {};
-	
-	my.getUrlParameter = function(param)
-	{
-		var params = window.location.search.substring(1);
-		var paramsArray = params.split('&');
-		
-		for(var i = 0; i < paramsArray.length; i++)
-		{
-			var paramsName = paramsArray[i].split('=');
-			
-			if(paramsName[0] == param)
-			{
-				return paramsName[1];
-			}
-		}	
-	};
-	
-	return my;
-	
-}(jQuery));
-
-id5.bootstrap = (function($)
-{	
-	var my = {};
-	
-	my.init = function()
-	{
-		my.showDebug();
-	};
-	
-	my.showDebug = function()
-	{
-		if(id5.helpers.getUrlParameter('id5debug') === '1')
-		{
-			$('body').addClass('id5debug');	
-		}
-	};
-	
-	return my;
-	
-}(jQuery));
-
-jQuery(function() {
-	
-	id5.bootstrap.init();
-	
-	$('.id5tnav').id5TieredNav();
-	
-});
 (function($) {
 
 	$.fn.id5TieredNav = function(options) {
@@ -90,6 +29,31 @@ jQuery(function() {
 				}
 				
 			}).end().css('min-height', navHeight);
+		}
+		
+		function menuaimActivate(row)
+		{
+			$(row).addClass('hover');
+			window.console.log('activate');
+		}
+		
+		function menuaimDeactivate(row)
+		{
+			$(row).removeClass('hover');
+			window.console.log('deactivate');
+		}
+		
+		function menuaimEnter(row)
+		{
+		}
+		
+		function menuaimExit(row)
+		{
+		}
+		
+		function menuaimExitMenu(menu)
+		{
+			$(menu).find('li.hover').removeClass('hover');
 		}
 		
 		return this.each(function() {
@@ -140,6 +104,18 @@ jQuery(function() {
 			$(window).bind('resize', function() {
 				setHeight($nav);	
 			}).resize();
+			
+			//If menuAim is available
+			if(jQuery().menuAim)
+			{
+				$nav.addClass('menuaim').find('ul').menuAim({
+					activate: menuaimActivate,
+					deactivate: menuaimDeactivate,
+					enter: menuaimEnter,
+					exit: menuaimExit,
+					exitMenu: menuaimExitMenu
+				});
+			}
 	        
         });
 	

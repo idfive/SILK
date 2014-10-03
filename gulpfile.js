@@ -1,48 +1,74 @@
-var gulp = require('gulp'),
-	plumber = require('gulp-plumber'),
-	sass = require('gulp-sass'),
-	neat = require('node-neat').includePaths,
-	jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
-    concat = require('gulp-concat');
-	
-var paths = {
-	scss: './assets/scss/**/*.scss',
-	js: './assets/js/*.js'
+//Require
+var gulp		= require('gulp'),
+	plumber		= require('gulp-plumber'),
+	sass		= require('gulp-ruby-sass'),
+	jshint		= require('gulp-jshint'),
+    uglify		= require('gulp-uglify'),
+    browserify	= require('gulp-browserify'),
+    handlebars	= require('browserify-handlebars');
+
+//Set paths	
+var paths =
+{
+	css:
+	{
+		src:	'assets/scss/**/*.scss',
+		dest:	'assets/css'
+	},
+	js:
+	{
+		src:	'assets/js/*.js',
+		dest:	'assets/js/build'
+	},
+	templates:
+	{
+		src:	'assets/js/templates/**/*'
+	}
 };
 
-// Compile SCSS and add Bourbon & Neat
-gulp.task('styles', function() {
-	return gulp.src(paths.scss)
+//Compile SASS
+gulp.task('compile-sass', function()
+{
+	return gulp
+		.src(paths.css.src)
 		.pipe(plumber())
 		.pipe(sass({
-			includePaths: ['styles'].concat(neat)
+			style: 'compressed',
+			precision: 8
 		}))
-		.pipe(gulp.dest('./assets/css'));
+		.pipe(gulp.dest(paths.css.dest));
 });
 
-// Lint Js
-gulp.task('lint', function() {
-    return gulp.src(paths.js)
+//Lint JS
+gulp.task('lint-js', function()
+{
+    return gulp
+    	.src(paths.js.src)
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
 
-// Concatenate & Minify JS
-gulp.task('scripts', function() {
-    return gulp.src(paths.js)
-        .pipe(concat('main.js'))
-        .pipe(gulp.dest('./assets/js/main'))
-        .pipe(rename('main.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('./assets/js/main'));
+//Compile JS
+gulp.task('compile-js', function()
+{
+	return gulp
+		.src(paths.js.src)
+		.pipe(plumber())
+		.pipe(browserify({
+			transform: [handlebars]
+		}))
+		.pipe(gulp.dest(paths.js.dest))
+		.pipe(uglify())
+		.pipe(gulp.dest(paths.js.dest));
 });
 
-gulp.task('watch', function() {
-    gulp.watch('assets/js/*.js', ['lint', 'scripts']);
-    gulp.watch('assets/scss/**/*.scss', ['styles']);
+//Create watch tasks
+gulp.task('watch', function()
+{
+    gulp.watch(paths.js.src, ['lint-js', 'compile-js']);
+    gulp.watch(paths.css.src, ['compile-sass']);
+    gulp.watch(paths.templates.src, ['compile-js']);
 });
 
 // Default Task
-gulp.task('default', ['styles', 'lint', 'scripts', 'watch']);
+gulp.task('default', ['compile-sass', 'lint-js', 'compile-js', 'watch']);
