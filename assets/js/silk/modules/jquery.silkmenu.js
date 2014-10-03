@@ -1,6 +1,6 @@
 (function($) {
 
-	$.fn.id5TieredNav = function(options) {
+	$.fn.silkmenu = function(options) {
 	
 		var settings = $.extend({
 			color: "#556b2f",
@@ -106,7 +106,7 @@
 			}).resize();
 			
 			//If menuAim is available
-			if(jQuery().menuAim)
+			if($.fn.menuAim)
 			{
 				$nav.addClass('menuaim').find('ul').menuAim({
 					activate: menuaimActivate,
