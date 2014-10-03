@@ -127,7 +127,6 @@ $tnav-expanded: 'large' !default;
 					width: 200px;
 					left: 0;
 					top: auto;
-					background: #f9f9f9;
 					
 					ul
 					{
@@ -146,6 +145,7 @@ $tnav-expanded: 'large' !default;
 					li
 					{
 						float: none;
+						background: #f9f9f9;
 						
 						a:hover,
 						&:hover

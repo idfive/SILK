@@ -33,11 +33,24 @@
 		
 		function menuaimActivate(row)
 		{
-			$(row).addClass('hover');
+			$row = $(row);
+		
+			$row.addClass('hover');
+			
+			if($row.hasClass('parent'))
+			{
+				var $child = $row.find('> ul:first');
+				var $parent = $row.parent('ul');
+				
+				if($parent.parents('ul').length && $child.height() > $parent.height())
+				{
+					$parent.css('height',$child.height());
+				}
+			}
 		}
 		
 		function menuaimDeactivate(row)
-		{
+		{	
 			$(row).removeClass('hover');
 		}
 		
