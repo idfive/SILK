@@ -76,18 +76,21 @@
 					//Add parent class
 					$(this).parent().addClass('parent');
 					
+					//Create next link
+					$(this).append('<span class="next" />');
+					
 					//Create back link
 					$child.prepend($('<li><a href="#" class="back">'+$(this).text()+'</a></li>'));
 				}
 			
 			//Attach behaviour for clicking parent element
-			}).end().find('.parent > a').click(function(e) {
+			}).end().find('.parent > a > .next').click(function(e) {
 			
 				//Stop href from firing
 				e.preventDefault();
 				
 				//Get siblings so we can adjust z-index
-				$(this).parent().find('> ul').removeClass('hidden').end().siblings().find('> ul').addClass('hidden');
+				$(this).parent().parent().find('> ul').removeClass('hidden').end().siblings().find('> ul').addClass('hidden');
 				
 				//Shift nav
 				shift($nav, $(this).parents('li').length, 0);

@@ -74,16 +74,40 @@ $tnav-expanded: 'large' !default;
 			{
 				> a
 				{
-					&:after
+					position: relative;
+					
+					.next
 					{
-						position: relative;
-						display: inline-block;
-						float: right;
-						content: "";
-						border-top: 5px solid transparent;
-						border-bottom: 5px solid transparent;
-						border-left: 5px solid #000;
-						top: 3px;
+						position: absolute;
+						right: 0;
+						top: 0;
+						height: 100%;
+						background: #f9f9f9;
+						width: 40px;
+						border-left: 1px solid #eee;
+						
+						&:after
+						{
+							position: absolute;
+							content: "";
+							border-top: 5px solid transparent;
+							border-bottom: 5px solid transparent;
+							border-left: 5px solid #000;
+							top: 50%;
+							margin-top: -5px;
+							left: 50%;
+							margin-left: -3px;
+						}
+						
+						&:hover
+						{
+							background: #000;
+							
+							&:after
+							{
+								border-left-color: #fff;
+							}
+						}
 					}
 				}				
 			}
@@ -179,7 +203,12 @@ $tnav-expanded: 'large' !default;
 								left: 7px;
 								margin-right: 10px;
 							}
-						}						
+						}
+						
+						.next
+						{
+							display: none;
+						}					
 					}
 				}
 				
