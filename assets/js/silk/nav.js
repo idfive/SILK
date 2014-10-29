@@ -3,8 +3,7 @@
 	$.fn.silknav = function(options) {
 	
 		var settings = $.extend({
-			color: "#556b2f",
-			backgroundColor: "white"
+			parentEl: 'a'
 		}, options);
 		
 		//So we can calculate height of largest nav element
@@ -65,7 +64,7 @@
 			var $nav = $(this);
 			
 			//Add parent class to sub menus
-			$nav.find('a').each(function() {
+			$nav.find(settings.parentEl).each(function() {
 			
 				//Get child element
 				var $child = $(this).next('ul');
@@ -84,7 +83,7 @@
 				}
 			
 			//Attach behaviour for clicking parent element
-			}).end().find('.parent > a > .next').click(function(e) {
+			}).end().find('.parent > ' + settings.parentEl + ' > .next').click(function(e) {
 			
 				//Stop href from firing
 				e.preventDefault();
