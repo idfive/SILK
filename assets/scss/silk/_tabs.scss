@@ -1,0 +1,81 @@
+$silk-tabs-accordion: 'small' !default;
+
+.silk-tabs
+{	
+	> .silk-tabs--nav
+	{
+		display: none;
+	
+		ul
+		{
+			border-bottom: 1px solid #eee;
+			margin: 0;
+			@include clearfix;
+		}
+		
+		li
+		{
+			float: left;
+			list-style: none;
+		}
+		
+		a
+		{
+			border: 1px solid transparent;
+			border-bottom-color: #eee;
+			display: block;
+			margin-bottom: -1px;
+			padding: .75em;
+			text-decoration: none;
+			color: #000;
+			
+			&.is-active
+			{
+				border-color: #eee;
+				border-bottom-color: #fff;
+			}
+		}
+	}
+	
+	.js &
+	{
+		.silk-tabs--header
+		{
+			h1, h2, h3, h4, h5, h6
+			{
+				margin: 0;
+			}
+		
+			a
+			{
+				color: #000;
+				display: block;
+				text-decoration: none;	
+			}
+		}
+		
+		@include breakpoint($silk-tabs-accordion)
+		{
+			.silk-tabs
+			{
+				border: 0;
+			}
+			
+			.silk-tabs--header
+			{
+				display: none;
+			}
+			
+			.silk-tabs--content
+			{
+				padding: 1px 0;
+				border-top: 0;
+			}
+			
+			.silk-tabs--nav
+			{
+				display: block;
+			}
+		}
+	}
+}
