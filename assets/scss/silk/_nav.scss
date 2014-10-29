@@ -73,7 +73,7 @@ $silk-nav-expanded: 'large' !default;
 			
 			.parent
 			{
-				> a
+				> *:first-child
 				{
 					position: relative;
 					
@@ -165,7 +165,7 @@ $silk-nav-expanded: 'large' !default;
 					{
 						&.parent
 						{					
-							> a
+							> *:first-child
 							{
 								&:after
 								{
@@ -228,7 +228,7 @@ $silk-nav-expanded: 'large' !default;
 					
 					&.parent
 					{					
-						> a
+						> *:first-child
 						{
 							&:after
 							{
@@ -254,7 +254,7 @@ $silk-nav-expanded: 'large' !default;
 				{
 					&.parent
 					{					
-						> a
+						> *:first-child
 						{
 							&:after
 							{
