@@ -30,7 +30,8 @@ $silk-tabs-accordion: 'small' !default;
 			text-decoration: none;
 			color: #000;
 			
-			&.is-active
+			&.is-active,
+			&.is-active-tabs
 			{
 				border-color: #eee;
 				border-bottom-color: #fff;
@@ -42,7 +43,6 @@ $silk-tabs-accordion: 'small' !default;
 	{
 		.silk-tabs--header
 		{
-			padding: 10px;
 			border: 1px solid #eee;
 			border-bottom: 0;
 		
@@ -55,9 +55,30 @@ $silk-tabs-accordion: 'small' !default;
 		
 			a
 			{
+				position: relative;
 				color: #000;
 				display: block;
-				text-decoration: none;	
+				text-decoration: none;
+				padding: 10px;
+				
+				&:after
+				{
+					position: absolute;
+					top: 50%;
+					right: 10px;
+					margin-top: -3px;
+					content: "";
+					@include triangle(10px, #000, down);
+				}
+				
+				&.is-active
+				{
+					&:after
+					{
+						border: 0;
+						@include triangle(10px, #000, up);
+					}
+				}
 			}
 		}
 		
@@ -65,6 +86,11 @@ $silk-tabs-accordion: 'small' !default;
 		{
 			padding: 1px 10px;
 			border-top: 1px solid #eee;
+			
+			&.is-hidden-accordion
+			{
+				display: none;
+			}
 		}
 		
 		@include breakpoint($silk-tabs-accordion)
@@ -82,9 +108,14 @@ $silk-tabs-accordion: 'small' !default;
 			.silk-tabs--content
 			{
 				border-top: 0;
+				
+				&.is-hidden-accordion
+				{
+					display: inherit;
+				}
 			}
 			
-			.silk-tabs--nav
+			> .silk-tabs--nav
 			{
 				display: block;
 			}

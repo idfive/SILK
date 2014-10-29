@@ -27,14 +27,28 @@
 				//Hash contains id
 				var href = e.currentTarget.hash;
 				
-				//Hide all tab sections Add active class
-				$context
-					.find('.is-active').removeClass('is-active').end()
-					.find('a[href="'+href+'"]').addClass('is-active').end()
-					.find('.'+settings.contentClass).addClass('is-hidden').end();
-				
-				//Show clicked tab section
-				$(href).find('.'+settings.contentClass).removeClass('is-hidden');
+				//Show and hide tabs
+				if($(this).hasClass('is-active')) //Hides currently open tab in accordion mode
+				{
+					//Hide all tab sections and add active class
+					$context
+						.find('*').removeClass('is-hidden-accordion is-active-tabs is-active').end()
+						.find('a[href="'+href+'"]').addClass('is-active-tabs').end();
+						
+					//Hide content section in accordion mode
+					$(href).find('.'+settings.contentClass).toggleClass('is-hidden-accordion');
+				}
+				else //Hide all tabs except one being clicked
+				{
+					//Hide all tab sections and add active class
+					$context
+						.find('*').removeClass('is-hidden-accordion is-active-tabs is-active').end()
+						.find('a[href="'+href+'"]').addClass('is-active').end()
+						.find('.'+settings.contentClass).addClass('is-hidden').end();
+					
+					//Show clicked tab section
+					$(href).find('.'+settings.contentClass).removeClass('is-hidden');
+				}
 			};
 		};
 		
