@@ -45,6 +45,7 @@ $silk-nav-expanded: 'large' !default;
 		{
 			position: relative;
 			left: 0;
+			border-top: 1px solid #eee;
 			@include transition(left .25s ease-in);
 			
 			ul
