@@ -34,3 +34,24 @@
 		}
 	}
 }
+
+@mixin is-hidden
+{
+	display: none;
+	outline: 1px solid #f0c;
+}
+
+.is-hidden
+{
+	@include is-hidden;
+}
+
+@mixin is-visible
+{
+	display: inherit;
+}
+
+.is-visible
+{
+	@include is-visible;
+}
