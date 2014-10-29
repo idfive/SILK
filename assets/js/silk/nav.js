@@ -1,6 +1,6 @@
 (function($) {
 
-	$.fn.silkmenu = function(options) {
+	$.fn.silknav = function(options) {
 	
 		var settings = $.extend({
 			color: "#556b2f",

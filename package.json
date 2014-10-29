@@ -16,11 +16,11 @@
 	]  
   },
   "browser": {
-    "silkmenu": "./assets/js/silk/modules/jquery.silkmenu.js",
+    "silknav": "./assets/js/silk/nav.js",
     "menuaim": "./assets/js/vendor/jquery.menuaim.js"
   },
   "browserify-shim": {
-	"silkmenu": {
+	"silknav": {
 	  "depends": [
 	    "jquery:jQuery"
 	  ]

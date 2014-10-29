@@ -1,6 +1,6 @@
-$tnav-expanded: 'large' !default;
+$silk-nav-expanded: 'large' !default;
 
-.silkmenu
+.silk-nav
 {
 	//Resets
 	ul, li
@@ -90,13 +90,11 @@ $tnav-expanded: 'large' !default;
 						{
 							position: absolute;
 							content: "";
-							border-top: 5px solid transparent;
-							border-bottom: 5px solid transparent;
-							border-left: 5px solid #000;
 							top: 50%;
-							margin-top: -5px;
 							left: 50%;
+							margin-top: -5px;
 							margin-left: -3px;
+							@include triangle(10px, #000, right);
 						}
 						
 						&:hover
@@ -121,9 +119,7 @@ $tnav-expanded: 'large' !default;
 					display: inline-block;
 					content: "";
 					margin-right: 10px;
-					border-top: 5px solid transparent;
-					border-bottom: 5px solid transparent;
-					border-right: 5px solid #000;
+					@include triangle(10px, #000, left);
 				}
 				
 				&:hover
@@ -133,7 +129,7 @@ $tnav-expanded: 'large' !default;
 			}
 		}
 		
-		@include breakpoint($tnav-expanded)
+		@include breakpoint($silk-nav-expanded)
 		{
 			overflow-x: inherit;
 			min-height: 0 !important; //Overrides inline style added by JS
@@ -173,9 +169,7 @@ $tnav-expanded: 'large' !default;
 								&:after
 								{
 									top: 4px;
-									border-top: 5px solid transparent;
-									border-bottom: 5px solid transparent;
-									border-left: 5px solid #000;
+									@include triangle(10px, #000, right);
 								}
 							}
 						}
@@ -241,12 +235,10 @@ $tnav-expanded: 'large' !default;
 								display: inline-block;
 								float: right;
 								content: "";
-								border-top: 5px solid transparent;
-								border-bottom: 5px solid transparent;
-								border-left: 5px solid #000;
 								top: 4px;
 								left: 7px;
 								margin-right: 10px;
+								@include triangle(10px, #000, right);
 							}
 						}
 						
@@ -266,9 +258,7 @@ $tnav-expanded: 'large' !default;
 							&:after
 							{
 								top: 7px;
-								border-top: 5px solid #000;
-								border-left: 5px solid transparent;
-								border-right: 5px solid transparent;
+								@include triangle(10px, #000, down);
 							}
 						}
 					}
