@@ -43,49 +43,20 @@ $silk-tabs-accordion: 'small' !default;
 	{
 		.silk-tabs--header
 		{
-			border: 1px solid #eee;
-			border-bottom: 0;
-		
 			h1, h2, h3, h4, h5, h6
 			{
-				margin: 0;
-				font-weight: 400;
-				font-size: 100%;
+				@extend .silk-reset-type;
 			}
 		
 			a
 			{
-				position: relative;
-				color: #000;
-				display: block;
-				text-decoration: none;
-				padding: 10px;
-				
-				&:after
-				{
-					position: absolute;
-					top: 50%;
-					right: 10px;
-					margin-top: -3px;
-					content: "";
-					@include triangle(10px, #000, down);
-				}
-				
-				&.is-active
-				{
-					&:after
-					{
-						border: 0;
-						@include triangle(10px, #000, up);
-					}
-				}
+				@extend .silk-toggle-content;
 			}
 		}
 		
 		.silk-tabs--content
 		{
 			padding: 1px 10px;
-			border-top: 1px solid #eee;
 			
 			&.is-hidden-accordion
 			{

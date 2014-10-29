@@ -1,0 +1,37 @@
+.silk-reset-type
+{
+	padding: 0;
+	margin: 0;
+	font-size: 100%;
+	font-weight: 400;
+}
+
+.silk-toggle-content
+{
+	position: relative;
+	display: block;
+	padding: 10px;
+	color: #000;
+	text-decoration: none;
+	background: #f9f9f9;
+	border-bottom: 1px solid #eee;
+	
+	&:after
+	{
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		margin-top: -3px;
+		content: "";
+		@include triangle(10px, #000, down);
+	}
+	
+	&.is-active
+	{
+		&:after
+		{
+			border: 0;
+			@include triangle(10px, #000, up);
+		}
+	}
+}

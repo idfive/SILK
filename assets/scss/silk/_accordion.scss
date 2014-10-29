@@ -1,0 +1,24 @@
+.silk-accordion
+{
+	.js &
+	{
+		.silk-accordion--header
+		{
+			h1, h2, h3, h4, h5, h6
+			{
+				@extend .silk-reset-type;
+			}
+		
+			a
+			{
+				@extend .silk-toggle-content;
+			}
+		}
+		
+		.silk-accordion--content
+		{
+			padding: 1px 10px;
+		}
+	}
+	
+}

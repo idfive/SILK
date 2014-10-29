@@ -18,8 +18,10 @@
 @import "helpers/debug";
 
 //Silk
+@import "silk/base";
 @import "silk/tabs";
 @import "silk/nav";
+@import "silk/accordion";
 
 //Layouts
 @import "layouts/navigation";
