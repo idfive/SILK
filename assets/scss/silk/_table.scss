@@ -1,0 +1,21 @@
+.silk-table
+{
+	width: 100%;
+	border-spacing: 0;
+	font-size: 100%;
+	
+	th,td
+	{
+		padding: 10px;
+		border-bottom: 1px solid #eee;
+	}
+	
+	thead
+	{
+		th
+		{
+			background: #f9f9f9;
+			text-align: left;
+		}
+	}
+}
