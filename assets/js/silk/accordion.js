@@ -8,7 +8,8 @@
 			contentClass: 'silk-accordion--content',
 			headerClass: 'silk-accordion--header',
 			navClass: 'silk-accordion--nav',
-			tabClass: 'silk-accordion--section'
+			tabClass: 'silk-accordion--section',
+			openOnLoad: ':first'
 		}, options);
 		
 		//Toggle accordion on click
@@ -62,9 +63,9 @@
 				
 			});
 			
-			$theEl.find('.'+settings.headerClass+' a').filter(':first').addClass('is-active');
-			$theEl.find('.'+settings.contentClass).addClass('is-hidden').filter(':first').removeClass('is-hidden');
-			
+			//Close accordions except ones specified in openSelector setting
+			$theEl.find('.'+settings.headerClass+' a').filter(settings.openOnLoad).addClass('is-active');
+			$theEl.find('.'+settings.contentClass).addClass('is-hidden').filter(settings.openOnLoad).removeClass('is-hidden');
 		});
 	};
 }(jQuery));
