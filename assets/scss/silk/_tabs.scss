@@ -10,13 +10,14 @@ $silk-tabs-accordion: 'small' !default;
 		{
 			border-bottom: 1px solid #eee;
 			margin: 0;
+			padding: 0;
+			list-style: none;
 			@include clearfix;
 		}
 		
 		li
 		{
 			float: left;
-			list-style: none;
 		}
 		
 		a
@@ -41,9 +42,15 @@ $silk-tabs-accordion: 'small' !default;
 	{
 		.silk-tabs--header
 		{
+			padding: 10px;
+			border: 1px solid #eee;
+			border-bottom: 0;
+		
 			h1, h2, h3, h4, h5, h6
 			{
 				margin: 0;
+				font-weight: 400;
+				font-size: 100%;
 			}
 		
 			a
@@ -52,6 +59,12 @@ $silk-tabs-accordion: 'small' !default;
 				display: block;
 				text-decoration: none;	
 			}
+		}
+		
+		.silk-tabs--content
+		{
+			padding: 1px 10px;
+			border-top: 1px solid #eee;
 		}
 		
 		@include breakpoint($silk-tabs-accordion)
@@ -68,7 +81,6 @@ $silk-tabs-accordion: 'small' !default;
 			
 			.silk-tabs--content
 			{
-				padding: 1px 0;
 				border-top: 0;
 			}
 			
