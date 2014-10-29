@@ -76,39 +76,39 @@ $silk-nav-expanded: 'large' !default;
 				> *:first-child
 				{
 					position: relative;
-					
-					.next
-					{
-						position: absolute;
-						right: 0;
-						top: 0;
-						height: 100%;
-						background: #f9f9f9;
-						width: 40px;
-						border-left: 1px solid #eee;
-						
-						&:after
-						{
-							position: absolute;
-							content: "";
-							top: 50%;
-							left: 50%;
-							margin-top: -5px;
-							margin-left: -3px;
-							@include triangle(10px, #000, right);
-						}
-						
-						&:hover
-						{
-							background: #000;
-							
-							&:after
-							{
-								border-left-color: #fff;
-							}
-						}
-					}
 				}				
+			}
+			
+			.next
+			{
+				position: absolute;
+				right: 0;
+				top: 0;
+				height: 100%;
+				background: #f9f9f9;
+				width: 40px;
+				border-left: 1px solid #eee;
+				
+				&:after
+				{
+					position: absolute;
+					content: "";
+					top: 50%;
+					left: 50%;
+					margin-top: -5px;
+					margin-left: -3px;
+					@include triangle(10px, #000, right);
+				}
+				
+				&:hover
+				{
+					background: #000;
+					
+					&:after
+					{
+						border-left-color: #fff;
+					}
+				}
 			}
 			
 			.back
