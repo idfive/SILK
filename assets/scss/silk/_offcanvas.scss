@@ -1,17 +1,41 @@
-.silk-offcanvas
+body
 {
-	position: fixed;
-	width: 30%;
-	height: 100%;
-	top: 0;
-	left: -30%;
-	z-index: 99999;
-	overflow-y: auto;
-	background: #f0c;
-	@include transition(left .25s ease-in-out);
+	@include transition(margin .25s ease-in-out);
 	
-	&.visible
+	.js &
 	{
-		left: 0;
-	}
+		&.silk-offcanvas-active
+		{
+		}
+		
+		.silk-offcanvas
+		{
+			position: fixed;
+			width: 30%;
+			height: 100%;
+			top: 0;
+			left: -30%;
+			z-index: 99999;
+			overflow-y: auto;
+			background: #fff;
+			@include transition(left .25s ease-in-out);
+			
+			&.visible
+			{
+				left: 0;
+			}
+			
+			&.right
+			{
+				left: auto;
+				right: -30%;
+				@include transition(right .25s ease-in-out);
+				
+				&.visible
+				{
+					right: 0;
+				}
+			}
+		}
+	}	
 }

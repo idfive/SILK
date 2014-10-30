@@ -5,37 +5,95 @@
 		//Default settings
 		var settings = $.extend({
 			toggleClass: 'silk-offcanvas--toggle',
-			linkText: 'Menu',
-			something: false
+			closeClass: 'silk-offcanvas--close',
+			toggleText: 'Menu',
+			toggleSelector: '',
+			overlay: false,
+			position: 'left'
 		}, options);
 		
 		//Toggle content on click
 		var toggleCanvas = function($context)
 		{
 			return function(e)
-			{
+			{	
+				//Prevent default behavior
 				e.preventDefault();
 				
-				var targetId = $(this).data('silk-offcanvas-ref');
+				//Get target element
+				var $targetEl = $('[data-silk-offcanvas-id='+$(this).attr('data-silk-offcanvas-ref')+']');
 				
-				$('[data-silk-offcanvas-id='+targetId+']').addClass('visible');
+				window.console.log($targetEl);
+				
+				//if we found the target element
+				if($targetEl.length)
+				{
+					//Toggle visible class
+					$targetEl.toggleClass('visible');
+					
+					//If not overlaying the hidden content
+					if(!settings.overlay)
+					{
+						if($('body').hasClass('silk-offcanvas-active'))
+						{
+							$('body').removeClass('silk-offcanvas-active')
+								.css('margin-'+settings.position, 0)
+								.css('width', 'auto');
+								
+							$('html').css('overflow-x', 'auto');
+						}
+						else
+						{
+							$('body').addClass('silk-offcanvas-active')
+								.css('margin-'+settings.position, $targetEl.outerWidth())
+								.css('width', $(window).width());
+								
+							$('html').css('overflow-x', 'hidden');
+						}
+					}
+				}
 			};
-		};
-		
-		//Handles scrolling to tabs from hash in URL
-		var scrollToTabs = function($navUl, $tabsEl)
-		{
-			
 		};
 		
 		//Let's do this...
 		return this.each(function(i) {
-		
-			var $el = $(this);
 			
-			$el.attr('data-silk-offcanvas-id', i).after('<a href="#" class="'+settings.toggleClass+'" data-silk-offcanvas-ref="'+i+'">'+settings.linkText+'</a>');
+			//Add id so we can find this element later
+			$(this).attr('data-silk-offcanvas-id', i);
 			
-			$('.'+settings.toggleClass).click(toggleCanvas());
+			//Create Toggle link or find link based on passed in selector
+			if(settings.toggleSelector == '')
+			{
+				//Create toggle element
+				var $toggleEl = $('<a href="#">'+settings.toggleText+'</a>');
+				
+				//Insert toggle element
+				$toggleEl.insertAfter($(this));
+			}
+			else
+			{
+				var $toggleEl = $(settings.toggleSelector);
+			}
+			
+			//If no toggle element, return
+			if(!$toggleEl.length)
+			{
+				return false;
+			}
+			
+			//Add class and data attribute
+			$toggleEl.addClass(settings.toggleClass).attr('data-silk-offcanvas-ref', i);	
+			
+			//Attach toggle click
+			$toggleEl.click(toggleCanvas());
+			
+			//If overlay, add close button
+			if(settings.overlay)
+			{
+				$(this).prepend('<a href="#" class="'+settings.closeClass+'">Close</a>').find('.'+settings.closeClass).click(function(e) {
+					$toggleEl.click();	
+				});
+			}
 			
 		});
 		
