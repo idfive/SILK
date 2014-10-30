@@ -1,0 +1,17 @@
+.silk-offcanvas
+{
+	position: fixed;
+	width: 30%;
+	height: 100%;
+	top: 0;
+	left: -30%;
+	z-index: 99999;
+	overflow-y: auto;
+	background: #f0c;
+	@include transition(left .25s ease-in-out);
+	
+	&.visible
+	{
+		left: 0;
+	}
+}

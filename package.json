@@ -16,12 +16,18 @@
 	]  
   },
   "browser": {
+	"silkoffcanvas": "./assets/js/silk/offcanvas.js",
 	"silkaccordion": "./assets/js/silk/accordion.js",
   	"silktabs": "./assets/js/silk/tabs.js",
     "silknav": "./assets/js/silk/nav.js",
     "menuaim": "./assets/js/vendor/jquery.menuaim.js"
   },
   "browserify-shim": {
+	"silkoffcanvas": {
+	  "depends": [
+	    "jquery:jQuery"
+	  ]
+	},
 	"silkaccordion": {
 	  "depends": [
 	    "jquery:jQuery"
