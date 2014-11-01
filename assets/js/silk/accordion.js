@@ -9,7 +9,7 @@
 			headerClass: 'silk-accordion--header',
 			navClass: 'silk-accordion--nav',
 			tabClass: 'silk-accordion--section',
-			openOnLoad: ':first'
+			openOnLoad: ''
 		}, options);
 		
 		//Toggle accordion on click
