@@ -3,7 +3,8 @@
 	$.fn.silknav = function(options) {
 	
 		var settings = $.extend({
-			parentEl: 'a'
+			parentEl: 'a',
+			heightOffset: 1
 		}, options);
 		
 		//So we can calculate height of largest nav element
@@ -24,7 +25,7 @@
 			
 				if ($(this).outerHeight() > navHeight)
 				{
-					navHeight = $(this).outerHeight();
+					navHeight = $(this).outerHeight() + settings.heightOffset;
 				}
 				
 			}).end().css('min-height', navHeight);
