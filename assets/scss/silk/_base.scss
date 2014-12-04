@@ -15,24 +15,26 @@
 	text-decoration: none;
 	background: #f9f9f9;
 	border-bottom: 1px solid #eee;
-	
+
 	&:after
 	{
+		display: inline-block;
 		position: absolute;
 		top: 50%;
 		left: 10px;
 		margin-top: -6px;
 		content: "";
 		@include triangle(10px, #000, right);
+		@include animation(rotate90- .25s ease-in-out);
+		@include animation-fill-mode(forwards);
 	}
-	
+
 	&.is-active
 	{
 		&:after
 		{
-			border: 0;
-			margin-top: -3px;
-			@include triangle(10px, #000, down);
+			@include animation(rotate90 .25s ease-in-out);
+			@include animation-fill-mode(forwards);
 		}
 	}
 }

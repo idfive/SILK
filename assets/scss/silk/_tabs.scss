@@ -1,11 +1,11 @@
 $silk-tabs-accordion: 'small' !default;
 
 .silk-tabs
-{	
+{
 	> .silk-tabs--nav
 	{
 		display: none;
-	
+
 		ul
 		{
 			border-bottom: 1px solid #eee;
@@ -14,12 +14,12 @@ $silk-tabs-accordion: 'small' !default;
 			list-style: none;
 			@include clearfix;
 		}
-		
+
 		li
 		{
 			float: left;
 		}
-		
+
 		a
 		{
 			border: 1px solid transparent;
@@ -29,7 +29,7 @@ $silk-tabs-accordion: 'small' !default;
 			padding: .75em;
 			text-decoration: none;
 			color: #000;
-			
+
 			&.is-active,
 			&.is-active-tabs
 			{
@@ -38,7 +38,7 @@ $silk-tabs-accordion: 'small' !default;
 			}
 		}
 	}
-	
+
 	.js &
 	{
 		.silk-tabs--header
@@ -47,45 +47,54 @@ $silk-tabs-accordion: 'small' !default;
 			{
 				@extend .silk-reset-type;
 			}
-		
+
 			a
 			{
 				@extend .silk-toggle-content;
 			}
 		}
-		
+
 		.silk-tabs--content
 		{
 			padding: 1px 10px;
-			
+			opacity: 1;
+			@include transition(opacity .25s ease-in-out);
+
+			&.is-hidden
+			{
+				opacity: 0;
+			}
+
 			&.is-hidden-accordion
 			{
 				display: none;
+				opacity: 0;
 			}
 		}
-		
+
 		@include breakpoint($silk-tabs-accordion)
 		{
 			.silk-tabs
 			{
 				border: 0;
 			}
-			
+
 			.silk-tabs--header
 			{
 				display: none;
 			}
-			
+
 			.silk-tabs--content
 			{
 				border-top: 0;
-				
+
 				&.is-hidden-accordion
 				{
 					display: inherit;
+					opacity: 1;
 				}
 			}
-			
+
 			> .silk-tabs--nav
 			{
 				display: block;

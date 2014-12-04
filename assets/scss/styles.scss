@@ -4,7 +4,7 @@
 //Config
 @import "base/config";
 
-//Import Bourbon and Neat 
+//Import Bourbon and Neat
 @import "bourbon";
 @import "neat";
 
@@ -19,6 +19,7 @@
 
 //Silk
 @import "silk/base";
+@import "silk/animations";
 @import "silk/tabs";
 @import "silk/nav";
 @import "silk/accordion";
