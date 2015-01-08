@@ -1,0 +1,21 @@
+$silk-desktop-enabled: 'large' !default;
+
+.hidden-desktop
+{
+  display: block !important;
+
+  @include breakpoint($silk-desktop-enabled)
+  {
+    display: none !important;
+  }
+}
+
+.visible-desktop
+{
+  display: none !important;
+
+  @include breakpoint($silk-desktop-enabled)
+  {
+    display: block !important;
+  }
+}
