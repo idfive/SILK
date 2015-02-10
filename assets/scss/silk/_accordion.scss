@@ -1,30 +1,27 @@
 .silk-accordion
 {
-	.js &
+	&__header
 	{
-		.silk-accordion--header
+		h1, h2, h3, h4, h5, h6
 		{
-			h1, h2, h3, h4, h5, h6
-			{
-				@extend .silk-reset-type;
-			}
-
-			a
-			{
-				@extend .silk-toggle-content;
-			}
+			@extend .silk-reset-type;
 		}
 
-		.silk-accordion--content
+		a
 		{
-			padding: 1px 10px;
-			opacity: 1;
-			@include transition(opacity .25s ease-in-out);
+			@extend .silk-toggle-content;
+		}
+	}
 
-			&.is-hidden
-			{
-				opacity: 0;
-			}
+	&__content
+	{
+		padding: 1px 10px;
+		opacity: 1;
+		@include transition(opacity .25s ease-in-out);
+
+		&.is-hidden
+		{
+			opacity: 0;
 		}
 	}
 }

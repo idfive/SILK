@@ -9,7 +9,7 @@ $silk-nav-expanded: 'large' !default;
 		margin: 0;
 		list-style: none;
 	}
-	
+
 	//Non-js version
 	> ul
 	{
@@ -20,13 +20,13 @@ $silk-nav-expanded: 'large' !default;
 			padding: 10px;
 			color: #000;
 			@include transition(background .15s ease-in-out);
-			
+
 			&:hover
 			{
 				background: #f9f9f9;
 			}
 		}
-		
+
 		li
 		{
 			ul
@@ -35,50 +35,50 @@ $silk-nav-expanded: 'large' !default;
 			}
 		}
 	}
-	
+
 	//JS version
 	.js &
 	{
 		overflow-x: hidden;
-		
+
 		> ul
 		{
 			position: relative;
 			left: 0;
 			border-top: 1px solid #eee;
 			@include transition(left .25s ease-in);
-			
+
 			ul
 			{
 				position: absolute;
 				top: 0;
 				left: 100%;
 				width: 100%;
-				
+
 				&.hidden
 				{
 					display: none;
 				}
 			}
-			
+
 			li
 			{
 				border-bottom: 1px solid #eee;
-				
+
 				ul
 				{
 					padding: 0;
 				}
 			}
-			
+
 			.parent
 			{
 				> *:first-child
 				{
 					position: relative;
-				}				
+				}
 			}
-			
+
 			.next
 			{
 				position: absolute;
@@ -88,7 +88,7 @@ $silk-nav-expanded: 'large' !default;
 				background: #f9f9f9;
 				width: 40px;
 				border-left: 1px solid #eee;
-				
+
 				&:after
 				{
 					position: absolute;
@@ -99,22 +99,22 @@ $silk-nav-expanded: 'large' !default;
 					margin-left: -3px;
 					@include triangle(10px, #000, right);
 				}
-				
+
 				&:hover
 				{
 					background: #000;
-					
+
 					&:after
 					{
 						border-left-color: #fff;
 					}
 				}
 			}
-			
+
 			.back
 			{
 				background: #f1f1f1;
-				
+
 				&:before
 				{
 					display: inline-block;
@@ -122,26 +122,26 @@ $silk-nav-expanded: 'large' !default;
 					margin-right: 10px;
 					@include triangle(10px, #000, left);
 				}
-				
+
 				&:hover
 				{
 					background: #f1f1f1;
 				}
 			}
 		}
-		
+
 		@include breakpoint($silk-nav-expanded)
 		{
 			overflow-x: inherit;
 			min-height: 0 !important; //Overrides inline style added by JS
 			border-bottom: 1px solid #eee;
 			@include clearfix;
-			
+
 			&.vertical
 			{
 				border-bottom: 0;
 				width: 200px;
-				
+
 				> ul
 				{
 					ul
@@ -149,22 +149,22 @@ $silk-nav-expanded: 'large' !default;
 						left: 100%;
 						top: 0;
 					}
-					
+
 					li
 					{
 						float: none;
 						border-bottom: 1px solid #eee;
-						
+
 						li
 						{
 							border: 0;
 						}
 					}
-					
+
 					> li
 					{
 						&.parent
-						{					
+						{
 							> *:first-child
 							{
 								&:after
@@ -177,19 +177,19 @@ $silk-nav-expanded: 'large' !default;
 					}
 				}
 			}
-			
+
 			> ul
 			{
 				position: static;
 				@include clearfix;
-				
+
 				ul
 				{
 					display: none;
 					width: 200px;
 					left: 0;
 					top: auto;
-					
+
 					ul
 					{
 						left: 100%;
@@ -197,37 +197,37 @@ $silk-nav-expanded: 'large' !default;
 						z-index: 50;
 					}
 				}
-				
+
 				li
 				{
 					position: relative;
 					float: left;
 					border: 0;
-					
+
 					li
 					{
 						float: none;
 						background: #f9f9f9;
-						
+
 						a:hover,
 						&:hover
 						{
 							background: #f1f1f1;
 						}
 					}
-					
+
 					&:hover
 					{
 						background: #f9f9f9;
-						
+
 						> ul
 						{
 							display: block;
 						}
 					}
-					
+
 					&.parent
-					{					
+					{
 						> *:first-child
 						{
 							&:after
@@ -242,18 +242,18 @@ $silk-nav-expanded: 'large' !default;
 								@include triangle(10px, #000, right);
 							}
 						}
-						
+
 						.next
 						{
 							display: none;
-						}					
+						}
 					}
 				}
-				
+
 				> li
 				{
 					&.parent
-					{					
+					{
 						> *:first-child
 						{
 							&:after
@@ -264,13 +264,13 @@ $silk-nav-expanded: 'large' !default;
 						}
 					}
 				}
-				
+
 				.back
 				{
 					display: none;
 				}
 			}
-			
+
 			&.menuaim
 			{
 				li
@@ -286,7 +286,7 @@ $silk-nav-expanded: 'large' !default;
 									display: none;
 								}
 							}
-							
+
 							&.hover
 							{
 								> ul

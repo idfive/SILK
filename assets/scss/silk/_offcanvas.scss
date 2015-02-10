@@ -1,47 +1,35 @@
+$silk-offcanvas-visible: 'large' !default;
+
 body
 {
-	@include transition(
-		left .25s ease-in-out,
-		right .25s ease-in-out,
-		top .25s ease-in-out,
-		bottom .25s ease-in-out
-	);
-	
 	.js &
-	{	
+	{
 		.silk-offcanvas
 		{
 			position: fixed;
-			z-index: 99999;
-			background: #f9f9f9;
-			width: 30%;
+			left: -100%;
+			width: 100%;
 			height: 100%;
 			top: 0;
-			left: -30%;
+			z-index: 99999;
 			overflow-y: auto;
-			
-			@include transition(
-				left .25s ease-in-out,
-				right .25s ease-in-out,
-				top .25s ease-in-out,
-				bottom .25s ease-in-out
-			);
-			
+			background: #fff;
+			@include transition(left .25s ease-in-out);
+
+			@include breakpoint($silk-offcanvas-visible)
+			{
+				display: inherit;
+				position: inherit;
+				height: auto;
+				width: auto;
+				z-index: auto;
+				overflow-y: inherit;
+			}
+
 			&.visible
 			{
 				left: 0;
 			}
-			
-			&[data-silk-offcanvas-position=right]
-			{
-				left: auto;
-				right: -30%;
-				
-				&.visible
-				{
-					right: 0;
-				}
-			}
 		}
-	}	
+	}
 }

@@ -21,21 +21,26 @@
 		//Let's do this...
 		return this.each(function(i) {
 
-			//Get id of
+			//Get id of element
 			var id = $(this).attr('id');
 
-			//Find toggle
-			var $toggle = $('a[href="#'+id+'"]');
+			//Get toggle open button
+			var $toggleOpen = $('a[href="#'+id+'"]');
 
-			if($toggle.length)
+			//Add toggle close button
+			$(this).prepend('<a href="#'+id+'" class="hidden-desktop">&times;</a>');
+
+			//If we have an toggle open element
+			if($toggleOpen.length)
 			{
-				$toggle.click(function(e) {
+				//Toggle open/close
+				$('a[href="#'+id+'"]').click(function(e) {
 
 					e.preventDefault();
 
-					$('body').toggleClass('show-canvas');
+					$('#'+id).toggleClass('visible');
 
-				})
+				});
 			}
 
 		});
