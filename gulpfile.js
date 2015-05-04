@@ -1,11 +1,6 @@
 //Require
-var gulp		= require('gulp'),
-	plumber		= require('gulp-plumber'),
-	sass		= require('gulp-ruby-sass'),
-	jshint		= require('gulp-jshint'),
-    uglify		= require('gulp-uglify'),
-    browserify	= require('gulp-browserify'),
-    handlebars	= require('browserify-handlebars');
+var gulp = require('gulp');
+var plugins = require('gulp-load-plugins')();
 
 //Set paths	
 var paths =
@@ -14,6 +9,13 @@ var paths =
 	{
 		src:	'assets/scss/**/*.scss',
 		dest:	'assets/css'
+	},
+	icons:
+	{
+		src: 	'assets/icons/*.svg',
+		targetPath: '../scss/base/_icons.scss',
+      	fontPath: '../fonts/',
+		dest: 	'assets/fonts/'
 	},
 	js:
 	{
@@ -26,13 +28,34 @@ var paths =
 	}
 };
 
+//Icon Font Name
+var fontName = 'idfive'; //Change to project name
+
+//Create Icon font
+gulp.task('iconfont', function()
+{
+  gulp.src(paths.icons.src)
+    .pipe(plugins.iconfontCss({
+      fontName: fontName,
+      targetPath: paths.icons.targetPath,
+      fontPath: paths.icons.fontPath
+    }))
+    .pipe(plugins.iconfont({
+      fontName: fontName,
+      normalize: true,
+      fontHeight: 1001,
+      appendCodepoints: true 
+     }))
+    .pipe(gulp.dest(paths.icons.dest));
+});
+
 //Compile SASS
 gulp.task('compile-sass', function()
 {
 	return gulp
 		.src(paths.css.src)
-		.pipe(plumber())
-		.pipe(sass({
+		.pipe(plugins.plumber())
+		.pipe(plugins.rubySass({
 			style: 'compressed',
 			precision: 8
 		}))
@@ -44,8 +67,21 @@ gulp.task('lint-js', function()
 {
     return gulp
     	.src(paths.js.src)
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'));
+        .pipe(plugins.jshint())
+        .pipe(plugins.jshint.reporter('default'));
+});
+
+//Compile Handlebars
+gulp.task('templates', function() 
+{
+    gulp.src(paths.templates.src)
+        .pipe(plugins.handlebars())
+        .pipe(plugins.defineModule('plain', {
+            require: { Handlebars: 'handlebars'},
+            wrapper: 'var Handlebars = require(\'handlebars\');\n module.exports[\'<%= name %>\'] = <%= handlebars %>'
+        }))
+        .pipe(plugins.concat('templates.js'))
+        .pipe(gulp.dest(paths.js.dest));
 });
 
 //Compile JS
@@ -53,12 +89,9 @@ gulp.task('compile-js', function()
 {
 	return gulp
 		.src(paths.js.src)
-		.pipe(plumber())
-		.pipe(browserify({
-			transform: [handlebars]
-		}))
+		.pipe(plugins.plumber())
 		.pipe(gulp.dest(paths.js.dest))
-		.pipe(uglify())
+		.pipe(plugins.uglify())
 		.pipe(gulp.dest(paths.js.dest));
 });
 
@@ -67,8 +100,8 @@ gulp.task('watch', function()
 {
     gulp.watch(paths.js.src, ['lint-js', 'compile-js']);
     gulp.watch(paths.css.src, ['compile-sass']);
-    gulp.watch(paths.templates.src, ['compile-js']);
+    gulp.watch(paths.templates.src, ['templates']);
 });
 
 // Default Task
-gulp.task('default', ['compile-sass', 'lint-js', 'compile-js', 'watch']);
+gulp.task('default', ['iconfont', 'compile-sass', 'lint-js', 'templates', 'compile-js', 'watch']);
