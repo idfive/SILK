@@ -21,6 +21,8 @@ It's that simple...
 ##Using Font Icons
 
 To use any font icons, put an svg of the icon in the Icons folder and change the font name in the gulpfile.js. Run gulp to generate the font. In you html, use the class "icon" and the class name of the icon. To see the class names, go /assets/scss/base/_icons.scss. 
+```html
+<div class="icon icon-facebook"></div>
 
 ### Using Refills
 
