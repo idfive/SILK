@@ -2,7 +2,7 @@
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 
-//Set paths	
+//Set paths
 var paths =
 {
 	css:
@@ -44,7 +44,7 @@ gulp.task('iconfont', function()
       fontName: fontName,
       normalize: true,
       fontHeight: 1001,
-      appendCodepoints: true 
+      appendCodepoints: true
      }))
     .pipe(gulp.dest(paths.icons.dest));
 });
@@ -72,7 +72,7 @@ gulp.task('lint-js', function()
 });
 
 //Compile Handlebars
-gulp.task('templates', function() 
+gulp.task('templates', function()
 {
     gulp.src(paths.templates.src)
         .pipe(plugins.handlebars())
@@ -90,6 +90,7 @@ gulp.task('compile-js', function()
 	return gulp
 		.src(paths.js.src)
 		.pipe(plugins.plumber())
+		.pipe(plugins.browserify())
 		.pipe(gulp.dest(paths.js.dest))
 		.pipe(plugins.uglify())
 		.pipe(gulp.dest(paths.js.dest));
