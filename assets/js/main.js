@@ -7,6 +7,7 @@ var silkoffcanvas	= require('silkoffcanvas');
 var silkaccordion	= require('silkaccordion');
 var silktabs = require('silktabs');
 var silknav = require('silknav');
+var silknav = require('silkvideo');
 var silktable = require('silktable');
 var menuaim = require('menuaim');
 
