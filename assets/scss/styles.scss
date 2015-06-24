@@ -1,3 +1,4 @@
+@media screen {
 //Normalize.css
 @import "helpers/reset";
 
@@ -12,27 +13,21 @@
 @import "base/mixins";
 
 //Typography & Icons
-@import "base/icons";
-@import "base/typography";
+@import "base/*";
 
 //Debug for testing
 @import "helpers/debug";
 
 //Silk
-@import "silk/helpers";
-@import "silk/base";
-@import "silk/animations";
-@import "silk/tabs";
-@import "silk/nav";
-@import "silk/accordion";
-@import "silk/table";
-@import "silk/offcanvas";
+@import "silk/*";
 
 //Layouts
-@import "layouts/navigation";
-@import "layouts/footer";
-@import "layouts/index";
+@import "layouts/*";
 
 //Modules
-@import "modules/video";
-@import "modules/buttons";
+@import "modules/*";
+}
+
+@media print {
+@import "print/*";
+}

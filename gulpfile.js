@@ -52,14 +52,18 @@ gulp.task('iconfont', function()
 //Compile SASS
 gulp.task('compile-sass', function()
 {
-	return gulp
+  return gulp
 		.src(paths.css.src)
-		.pipe(plugins.plumber())
+		// add globbing
+    .pipe(globbing({
+        // Configure it to use SCSS files
+        extensions: ['.scss']
+    }))
 		.pipe(plugins.rubySass({
 			style: 'compressed',
 			precision: 8
 		}))
-		.pipe(gulp.dest(paths.css.dest));
+    .pipe(gulp.dest(paths.css.dest));
 });
 
 //Lint JS
