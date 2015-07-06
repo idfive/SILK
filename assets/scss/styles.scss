@@ -3,36 +3,36 @@
 
 // Begin screen styles
 @media screen {
-//Normalize.css
-@import "helpers/reset";
+  //Normalize.css
+  @import "helpers/reset";
 
-//Config
-@import "base/config";
+  //Config
+  @import "base/config";
 
-//Import Bourbon and Neat
-@import "bourbon";
-@import "neat";
+  //Import Bourbon and Neat
+  @import "bourbon";
+  @import "neat";
 
-//Mixins
-@import "base/mixins";
+  //Mixins
+  @import "base/mixins";
 
-//Typography
-@import "base/typography";
+  //Typography
+  @import "base/typography";
 
-//Debug for testing
-@import "helpers/debug";
+  //Debug for testing
+  @import "helpers/debug";
 
-//Silk
-@import "silk/*";
+  //Silk
+  @import "silk/*";
 
-//Layouts
-@import "layouts/*";
+  //Layouts
+  @import "layouts/*";
 
-//Modules
-@import "modules/*";
+  //Modules
+  @import "modules/*";
 }
 
 // Begin print styles
 @media print {
-@import "print/*";
+  @import "print/*";
 }
