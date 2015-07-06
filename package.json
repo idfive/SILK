@@ -22,6 +22,7 @@
     "silktabs": "./assets/js/silk/tabs.js",
     "silknav": "./assets/js/silk/nav.js",
     "silkvideo": "./assets/js/silk/video.js",
+    "silkoffcanvasSlide": "./assets/js/silk/offCanvasSlide.js",
     "menuaim": "./assets/js/vendor/jquery.menuaim.js"
   },
   "browserify-shim": {
@@ -51,6 +52,11 @@
       ]
     },
     "silkvideo": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "silkoffcanvasSlide": {
       "depends": [
         "jquery:jQuery"
       ]

@@ -9,6 +9,7 @@ var silktabs = require('silktabs');
 var silknav = require('silknav');
 var silknav = require('silkvideo');
 var silktable = require('silktable');
+var silkoffcanvas	= require('silkoffcanvasSlide');
 var menuaim = require('menuaim');
 
 //Initialize bootstrap
