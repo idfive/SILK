@@ -51,3 +51,5 @@ var html = template({title: "Handlebars", body: "Compiled with Gulp and Browseri
 - puts menus, navs, or anything off canvas, slides canvas when toggled.
 - set up for use on desktop and mobile.
 - see two vars in config.scss that contrl desktop, and mobile widths of the slideout.
+-see off-canvas.html
+- TODO: integrate/cleanup off-canvas.html to have more than just that, or start structuring a file folder for these examples.
