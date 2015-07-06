@@ -1,3 +1,7 @@
+//Icons, need to be outside of screen call to work on IE
+@import "base/icons";
+
+// Begin screen styles
 @media screen {
 //Normalize.css
 @import "helpers/reset";
@@ -12,8 +16,8 @@
 //Mixins
 @import "base/mixins";
 
-//Typography & Icons
-@import "base/*";
+//Typography
+@import "base/typography";
 
 //Debug for testing
 @import "helpers/debug";
@@ -28,6 +32,7 @@
 @import "modules/*";
 }
 
+// Begin print styles
 @media print {
 @import "print/*";
 }
