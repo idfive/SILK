@@ -4,6 +4,10 @@
 	border-spacing: 0;
 	font-size: 100%;
 	margin-bottom: 1em;
+	// Fix weird block display issue related to desktop hide/show
+	&.visible-desktop {
+		display: table !important;
+	}
 
 	th,td
 	{
