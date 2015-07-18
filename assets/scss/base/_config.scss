@@ -1,8 +1,15 @@
-//Base Font Size
+// ========================================
+// Base Font Properties
+// ========================================
+
 $base-font-size: 16;
 $base-font-color: #000;
 
-//Break points
+
+// ========================================
+// Breakpoints
+// ========================================
+
 $breakpoints: (
 	("tiny",	"screen and (min-width: 480px)"),
 	("small",	"screen and (min-width: 600px)"),
@@ -11,6 +18,10 @@ $breakpoints: (
 	("x-large", "screen and (min-width: 1200px)")
 );
 
-// Off canvas slider
+
+// ========================================
+// Off Canvas Slider
+// ========================================
+
 $offCanvas: 100%;
 $offCanvasDesktop: 350px;
