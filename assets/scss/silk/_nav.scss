@@ -1,303 +1,301 @@
+// ========================================
+// Silk Nav
+// ========================================
+
 $silk-nav-expanded: 'large' !default;
 
-.silk-nav
-{
-	//Resets
-	ul, li
-	{
-		padding: 0;
-		margin: 0;
-		list-style: none;
-	}
+.silk-nav {
 
-	//Non-js version
-	> ul
-	{
-		a
-		{
-			display: block;
-			text-decoration: none;
-			padding: 10px;
-			color: #000;
-			@include transition(background .15s ease-in-out);
+  // Resets
+  ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
 
-			&:hover
-			{
-				background: #f9f9f9;
-			}
-		}
+  // Non-js version
+  > ul {
 
-		li
-		{
-			ul
-			{
-				padding-left: 20px;
-			}
-		}
-	}
+    a {
+      display: block;
+      text-decoration: none;
+      padding: 10px;
+      color: #000;
+      @include transition(background .15s ease-in-out);
 
-	//JS version
-	.js &
-	{
-		overflow-x: hidden;
+      &:hover {
+        background: #f9f9f9;
+      }
 
-		> ul
-		{
-			position: relative;
-			left: 0;
-			border-top: 1px solid #eee;
-			@include transition(left .25s ease-in);
+    }
 
-			ul
-			{
-				position: absolute;
-				top: 0;
-				left: 100%;
-				width: 100%;
+    li {
 
-				&.hidden
-				{
-					display: none;
-				}
-			}
+      ul {
+        padding-left: 20px;
+      }
 
-			li
-			{
-				border-bottom: 1px solid #eee;
+    }
 
-				ul
-				{
-					padding: 0;
-				}
-			}
+  }
 
-			.parent
-			{
-				> *:first-child
-				{
-					position: relative;
-				}
-			}
+  // JS version
+  .js & {
+    overflow-x: hidden;
 
-			.next
-			{
-				position: absolute;
-				right: 0;
-				top: 0;
-				height: 100%;
-				background: #f9f9f9;
-				width: 40px;
-				border-left: 1px solid #eee;
+    > ul {
+      position: relative;
+      left: 0;
+      border-top: 1px solid #eee;
+      @include transition(left .25s ease-in);
 
-				&:after
-				{
-					position: absolute;
-					content: "";
-					top: 50%;
-					left: 50%;
-					margin-top: -5px;
-					margin-left: -3px;
-					@include triangle(10px, #000, right);
-				}
+      ul {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
 
-				&:hover
-				{
-					background: #000;
+        &.hidden {
+          display: none;
+        }
 
-					&:after
-					{
-						border-left-color: #fff;
-					}
-				}
-			}
+      }
 
-			.back
-			{
-				background: #f1f1f1;
+      li {
+        border-bottom: 1px solid #eee;
 
-				&:before
-				{
-					display: inline-block;
-					content: "";
-					margin-right: 10px;
-					@include triangle(10px, #000, left);
-				}
+        ul {
+          padding: 0;
+        }
 
-				&:hover
-				{
-					background: #f1f1f1;
-				}
-			}
-		}
+      }
 
-		@include breakpoint($silk-nav-expanded)
-		{
-			overflow-x: inherit;
-			min-height: 0 !important; //Overrides inline style added by JS
-			border-bottom: 1px solid #eee;
-			@include clearfix;
+      .parent {
 
-			&.vertical
-			{
-				border-bottom: 0;
-				width: 200px;
+        > *:first-child {
+          position: relative;
+        }
 
-				> ul
-				{
-					ul
-					{
-						left: 100%;
-						top: 0;
-					}
+      }
 
-					li
-					{
-						float: none;
-						border-bottom: 1px solid #eee;
+      .next {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        background: #f9f9f9;
+        width: 40px;
+        border-left: 1px solid #eee;
 
-						li
-						{
-							border: 0;
-						}
-					}
+        &:after {
+          position: absolute;
+          content: "";
+          top: 50%;
+          left: 50%;
+          margin-top: -5px;
+          margin-left: -3px;
+          @include triangle(10px, #000, right);
+        }
 
-					> li
-					{
-						&.parent
-						{
-							> *:first-child
-							{
-								&:after
-								{
-									top: 4px;
-									@include triangle(10px, #000, right);
-								}
-							}
-						}
-					}
-				}
-			}
+        &:hover {
+          background: #000;
 
-			> ul
-			{
-				position: static;
-				@include clearfix;
+          &:after {
+            border-left-color: #fff;
+          }
 
-				ul
-				{
-					display: none;
-					width: 200px;
-					left: 0;
-					top: auto;
+        }
 
-					ul
-					{
-						left: 100%;
-						top: 0;
-						z-index: 50;
-					}
-				}
+      }
 
-				li
-				{
-					position: relative;
-					float: left;
-					border: 0;
+      .back {
+        background: #f1f1f1;
 
-					li
-					{
-						float: none;
-						background: #f9f9f9;
+        &:before {
+          display: inline-block;
+          content: "";
+          margin-right: 10px;
+          @include triangle(10px, #000, left);
+        }
 
-						a:hover,
-						&:hover
-						{
-							background: #f1f1f1;
-						}
-					}
+        &:hover {
+          background: #f1f1f1;
+        }
 
-					&:hover
-					{
-						background: #f9f9f9;
+      }
 
-						> ul
-						{
-							display: block;
-						}
-					}
+    }
 
-					&.parent
-					{
-						> *:first-child
-						{
-							&:after
-							{
-								position: relative;
-								display: inline-block;
-								float: right;
-								content: "";
-								top: 4px;
-								left: 7px;
-								margin-right: 10px;
-								@include triangle(10px, #000, right);
-							}
-						}
+    @include breakpoint($silk-nav-expanded) {
+      overflow-x: inherit;
+      min-height: 0 !important; //Overrides inline style added by JS
+      border-bottom: 1px solid #eee;
+      @include clearfix;
 
-						.next
-						{
-							display: none;
-						}
-					}
-				}
+      &.vertical {
+        border-bottom: 0;
+        width: 200px;
 
-				> li
-				{
-					&.parent
-					{
-						> *:first-child
-						{
-							&:after
-							{
-								top: 7px;
-								@include triangle(10px, #000, down);
-							}
-						}
-					}
-				}
+        > ul {
+          ul {
+            left: 100%;
+            top: 0;
+          }
 
-				.back
-				{
-					display: none;
-				}
-			}
+          li {
+            float: none;
+            border-bottom: 1px solid #eee;
 
-			&.menuaim
-			{
-				li
-				{
-					ul
-					{
-						li
-						{
-							&:hover
-							{
-								> ul
-								{
-									display: none;
-								}
-							}
+            li {
+              border: 0;
+            }
+          }
 
-							&.hover
-							{
-								> ul
-								{
-									display: block;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+          > li {
+
+            &.parent {
+
+              > *:first-child {
+
+                &:after {
+                  top: 4px;
+                  @include triangle(10px, #000, right);
+                }
+
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+      > ul {
+        @include clearfix;
+        position: static;
+
+        ul {
+          top: auto;
+          left: 0;
+          display: none;
+          width: 200px;
+
+          ul {
+            left: 100%;
+            top: 0;
+            z-index: 50;
+          }
+
+        }
+
+        li {
+          position: relative;
+          float: left;
+          border: 0;
+
+          li {
+            float: none;
+            background: #f9f9f9;
+
+            a:hover,
+            &:hover {
+              background: #f1f1f1;
+            }
+
+          }
+
+          &:hover {
+            background: #f9f9f9;
+
+            > ul {
+              display: block;
+            }
+
+          }
+
+          &.parent {
+
+            > *:first-child {
+
+              &:after {
+                position: relative;
+                display: inline-block;
+                float: right;
+                content: "";
+                top: 4px;
+                left: 7px;
+                margin-right: 10px;
+                @include triangle(10px, #000, right);
+              }
+
+            }
+
+            .next {
+              display: none;
+            }
+
+          }
+
+        }
+
+        > li {
+
+          &.parent {
+
+            > *:first-child {
+
+              &:after {
+                top: 7px;
+                @include triangle(10px, #000, down);
+              }
+
+            }
+
+          }
+
+        }
+
+        .back {
+          display: none;
+        }
+
+      }
+
+      &.menuaim {
+
+        li {
+
+          ul {
+
+            li {
+
+              &:hover {
+
+                > ul {
+                  display: none;
+                }
+
+              }
+
+              &.hover {
+                > ul {
+                  display: block;
+                }
+
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
 }

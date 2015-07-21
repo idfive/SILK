@@ -1,8 +1,13 @@
-//Icons, need to be outside of screen call to work on IE
+// ========================================
+// Styles Manifest
+// ========================================
+
+// Icons, need to be outside of screen call to work on IE
 @import "base/icons";
 
 // Begin screen styles
 @media screen {
+
   //Normalize.css
   @import "helpers/reset";
 
@@ -30,6 +35,7 @@
 
   //Modules
   @import "modules/*";
+
 }
 
 // Begin print styles

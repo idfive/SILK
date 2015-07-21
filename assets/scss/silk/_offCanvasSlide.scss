@@ -1,51 +1,58 @@
+// ========================================
+// Silk Off Canvas Slide
+// ========================================
+
 // This controlls off canvas section. see nav.scss for specifics to off canvas nav
 // width and position controlled by $offCanvas, and $offCanvasDesktop in config.
 
 #site-wrapper {
-position: relative;
-overflow: hidden;
-width: 100%;
-min-height: 100vh;
-
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
 }
 
 #site-canvas {
   width: 100%;
   height: 100%;
   position: relative;
-
 }
 
 #site-offCanvas {
-    background-color: #ccc;
-    height: 100vh;
-    width: $offCanvas;
-      @include breakpoint('medium'){
-        width: $offCanvasDesktop;
-      }
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    right: -$offCanvas;
-      @include breakpoint('medium'){
-        right: -$offCanvasDesktop;
-      }
-    overflow: scroll;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  overflow: scroll;
+  height: 100vh;
+  width: $offCanvas;
+  right: -$offCanvas;
+  background-color: #ccc;
+
+  @include breakpoint('medium') {
+    right: -$offCanvasDesktop;
+    width: $offCanvasDesktop;
+  }
 
 }
 
-#site-header, #site-offCanvas, #site-canvas {
+#site-header,
+#site-offCanvas,
+#site-canvas {
   -webkit-transform: translateX(0);
   transform: translateX(0);
   -webkit-transition: .3s ease all;
   transition: .3s ease all;
 }
 
-#site-wrapper.show-nav #site-canvas, #site-header.show-nav, #site-offCanvas.show-nav {
+#site-wrapper.show-nav #site-canvas,
+#site-header.show-nav,
+#site-offCanvas.show-nav {
   -webkit-transform: translateX(-$offCanvas);
   transform: translateX(-$offCanvas);
-    @include breakpoint('medium'){
-      -webkit-transform: translateX(-$offCanvasDesktop);
-      transform: translateX(-$offCanvasDesktop);
-    }
+
+  @include breakpoint('medium') {
+    -webkit-transform: translateX(-$offCanvasDesktop);
+    transform: translateX(-$offCanvasDesktop);
+  }
+
 }

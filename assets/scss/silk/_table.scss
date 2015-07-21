@@ -1,38 +1,38 @@
-.silk-table
-{
+// ========================================
+// Silk Tables
+// ========================================
+
+.silk-table {
 	width: 100%;
 	border-spacing: 0;
 	font-size: 100%;
 	margin-bottom: 1em;
 
-	th,td
-	{
+	th,
+	td {
 		padding: 10px;
 		border-bottom: 1px solid #eee;
 	}
 
-	thead
-	{
-		th
-		{
+	thead {
+
+		th {
 			background: #f9f9f9;
 			text-align: left;
 		}
+
 	}
 
-	&-collapsed
-	{
+	&-collapsed {
 		margin-bottom: 1em;
 
-		ul, li
-		{
+		ul, li {
 			margin: 0;
 			padding: 0;
 			list-style: none;
 		}
 
-		h3
-		{
+		h3 {
 			margin: 0;
 			padding: 10px;
 			font-size: 100%;
@@ -40,9 +40,10 @@
 			border-bottom: 1px solid #eee;
 		}
 
-		div
-		{
+		div {
 			padding: 10px;
 		}
+
 	}
+
 }

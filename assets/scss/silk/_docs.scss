@@ -1,66 +1,62 @@
-.silk-docs
-{
-	h1
-	{
+// ========================================
+// Silk Docs
+// ========================================
+
+.silk-docs {
+
+	h1 {
 		@include font-size(40px);
-		
-		&+p
-		{
+
+		& + p {
 			@include font-size(24px);
 		}
+
 	}
-	
-	h2
-	{
+
+	h2 {
 		@include font-size(24px);
 	}
-	
-	h3
-	{
+
+	h3 {
 		@include font-size(20px);
 	}
-	
-	h4
-	{
+
+	h4 {
 		@include font-size(18px);
 	}
-	
-	h5
-	{
+
+	h5 {
 		@include font-size(16px);
 	}
-	
-	h6
-	{
+
+	h6 {
 		@include font-size(16px);
 	}
-	
-	h1, h2, h3, h4, h5, h6
-	{
+
+	h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;
-		margin-top: 2em;	
-	
-		&.indexed
-		{
-			span
-			{
+		margin-top: 2em;
+
+		&.indexed {
+
+			span {
 				padding-right: 5px;
 			}
+
 		}
+
 	}
-	
-	p, ol, ul, dl
-	{
+
+	p, ol, ul, dl {
 		margin: 1em 0;
 	}
-	
-	dt
-	{
+
+	dt {
 		font-weight: 700;
 	}
-	
-	dd
-	{
+
+	dd {
 		margin: 0 0 1em 1em;
 	}
+
 }

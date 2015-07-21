@@ -1,40 +1,42 @@
-.silk-reset-type
-{
-	padding: 0;
-	margin: 0;
-	font-size: 100%;
-	font-weight: 400;
+// ========================================
+// Silk Utilities
+// ========================================
+
+.silk-reset-type {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  font-weight: 400;
 }
 
-.silk-toggle-content
-{
-	position: relative;
-	display: block;
-	padding: 10px 10px 10px 30px;
-	color: #000;
-	text-decoration: none;
-	background: #f9f9f9;
-	border-bottom: 1px solid #eee;
+.silk-toggle-content {
+  position: relative;
+  display: block;
+  border-bottom: 1px solid #eee;
+  padding: 10px 10px 10px 30px;
+  text-decoration: none;
+  color: #000;
+  background: #f9f9f9;
 
-	&:after
-	{
-		display: inline-block;
-		position: absolute;
-		top: 50%;
-		left: 12px;
-		margin-top: -6px;
-		content: "";
-		@include triangle(10px, #000, right);
-		@include animation(rotate90- .25s ease-in-out);
-		@include animation-fill-mode(forwards);
-	}
+  &:after {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    margin-top: -6px;
+    content: "";
+    @include triangle(10px, #000, right);
+    @include animation(rotate90- .25s ease-in-out);
+    @include animation-fill-mode(forwards);
+  }
 
-	&.is-active
-	{
-		&:after
-		{
-			@include animation(rotate90 .25s ease-in-out);
-			@include animation-fill-mode(forwards);
-		}
-	}
+  &.is-active {
+
+    &:after {
+      @include animation(rotate90 .25s ease-in-out);
+      @include animation-fill-mode(forwards);
+    }
+
+  }
+
 }

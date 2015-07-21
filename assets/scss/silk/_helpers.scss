@@ -1,21 +1,23 @@
+// ========================================
+// Silk Helpers
+// ========================================
+
 $silk-desktop-enabled: 'large' !default;
 
-.hidden-desktop
-{
+.hidden-desktop {
   display: block !important;
 
-  @include breakpoint($silk-desktop-enabled)
-  {
+  @include breakpoint($silk-desktop-enabled) {
     display: none !important;
   }
+
 }
 
-.visible-desktop
-{
+.visible-desktop {
   display: none !important;
 
-  @include breakpoint($silk-desktop-enabled)
-  {
+  @include breakpoint($silk-desktop-enabled) {
     display: block !important;
   }
+
 }

@@ -1,11 +1,14 @@
+// ========================================
+// Silk Off Canvas
+// ========================================
+
 $silk-offcanvas-visible: 'large' !default;
 
-body
-{
-	.js &
-	{
-		.silk-offcanvas
-		{
+body {
+
+	.js & {
+
+		.silk-offcanvas {
 			position: fixed;
 			left: -100%;
 			width: 100%;
@@ -16,8 +19,7 @@ body
 			background: #fff;
 			@include transition(left .25s ease-in-out);
 
-			@include breakpoint($silk-offcanvas-visible)
-			{
+			@include breakpoint($silk-offcanvas-visible) {
 				display: inherit;
 				position: inherit;
 				height: auto;
@@ -26,10 +28,12 @@ body
 				overflow-y: inherit;
 			}
 
-			&.visible
-			{
+			&.visible {
 				left: 0;
 			}
+
 		}
+
 	}
+
 }
