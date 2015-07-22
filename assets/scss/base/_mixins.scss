@@ -44,8 +44,9 @@
 // ========================================
 
 @mixin is-hidden {
-  visibility: hidden;
   position: absolute;
+  color: transparent;
+  visibility: hidden;
 }
 
 .is-hidden {
@@ -53,10 +54,36 @@
 }
 
 @mixin is-visible {
-  visibility: inherit;
   position: inherit;
+  color: inherit;
+  visibility: inherit;
 }
 
 .is-visible {
   @include is-visible;
+}
+
+
+// ========================================
+// List Reset
+// ========================================
+
+@mixin list-reset {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-reset {
+  @include list-reset;
+}
+
+.indirect-list-reset {
+
+  ol,
+  ul {
+    @include list-reset;
+  }
+
 }

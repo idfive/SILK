@@ -1,1 +1,36 @@
-//Button Styles
+// ========================================
+// Buttons
+// ========================================
+
+@mixin button($color) {
+  background: $color;
+  transition:
+    background .3s,
+    box-shadow .3s,
+    color .3s;
+
+  &:hover {
+    background: darken($color, 5%);
+  }
+
+}
+
+
+// Default Button
+// ----------------------------------------
+
+[class^='button'] {
+  @include button(#eee);
+}
+
+// Additional Button
+// ----------------------------------------
+
+.button--gray {
+  @include button(#ddd);
+}
+
+
+// ========================================
+// Unique Buttons
+// ========================================
