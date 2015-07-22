@@ -19,7 +19,7 @@ var paths = {
   icons: {
     src:  'assets/icons/*.svg',
     targetPath: '../scss/base/_icons.scss',
-      fontPath: '../fonts/',
+    fontPath: '../fonts/',
     dest:   'assets/fonts/'
   },
   js: {
