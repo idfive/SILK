@@ -1,0 +1,92 @@
+// ========================================
+// Column Configurations
+// ========================================
+
+// Configure the space around each column
+$column-between: 1%;
+
+// Configure when columns float around
+// column-1-of-2, column-1-of-3, column-1-of-4
+$columns: small, large, huge;
+
+
+// ========================================
+// Column Container / Column Behavior
+// ========================================
+
+@mixin container-stretch($column-between) {
+  margin-right: $column-between * -1;
+  margin-left: $column-between * -1;
+}
+
+@mixin column-breath($column-between) {
+  margin-right: $column-between;
+  margin-left: $column-between;
+}
+
+@for $i from 2 through 4 {
+
+  .container-of-#{$i} {
+
+    @include breakpoint(nth($columns, $i - 1)) {
+      @include container-stretch;
+    }
+
+  }
+
+    .column-1-of-#{i} {
+
+      @include breakpoint(nth($columns, $i - 1)) {
+        @include column-breath;
+      }
+
+    }
+
+}
+
+
+// ========================================
+// Columns of 2
+// ========================================
+
+.container-of-2 {
+
+  @include breakpoint($column-2) {
+   @include container-stretch;
+  }
+
+}
+
+.column-1-of-2 {
+
+  @include breakpoint($column-2) {
+   @include column-breath;
+  }
+
+}
+
+
+// ========================================
+// Columns of 3
+// ========================================
+
+.container-of-3 {
+
+  @include breakpoint($column-3) {
+   @include container-stretch;
+  }
+
+}
+
+.column-1-of-2 {
+
+  @include breakpoint($column-2) {
+   @include column-breath;
+  }
+
+}
+
+
+// ========================================
+// Columns of 4
+// ========================================

@@ -78,7 +78,7 @@ gulp.task('compile-sass', function() {
     }))
     // https://www.npmjs.com/package/gulp-ruby-sass
     .pipe(plugins.rubySass({
-      style: 'compressed',
+      style: 'expanded',
       precision: 4
     }))
     .pipe(gulp.dest(paths.scss.dest));
