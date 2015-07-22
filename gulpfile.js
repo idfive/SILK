@@ -2,8 +2,11 @@
 // Required plugins
 // ========================================
 
+// Plugin declarations
 var gulp = require('gulp');
+// https://www.npmjs.com/package/gulp-css-globbing
 var globbing = require('gulp-css-globbing');
+// https://www.npmjs.com/package/gulp-load-plugins
 var plugins = require('gulp-load-plugins')();
 
 
@@ -11,8 +14,10 @@ var plugins = require('gulp-load-plugins')();
 // Set Paths
 // ========================================
 
+// Variable declarations
+// http://www.mikestreety.co.uk/blog/an-advanced-gulpjs-file
 var paths = {
-  css: {
+  scss: {
     src:  'assets/scss/**/*.scss',
     dest: 'assets/css'
   },
@@ -36,20 +41,22 @@ var paths = {
 // Icon Font
 // ========================================
 
-// Change to project name
+// Sets the font name of your icon set
 var fontName = 'idfive';
 
-// Create Icon font
-// All svgs from assets/icons will be merged into this font
+// Creates an iconfont based on .svg(s) from assets/icons/
 gulp.task('iconfont', function() {
   gulp.src(paths.icons.src)
+    // https://www.npmjs.com/package/gulp-iconfont-css
     .pipe(plugins.iconfontCss({
       fontName: fontName,
       targetPath: paths.icons.targetPath,
       fontPath: paths.icons.fontPath
     }))
+    // https://www.npmjs.com/package/gulp-iconfont
     .pipe(plugins.iconfont({
       fontName: fontName,
+      // Adjusts output
       normalize: true,
       fontHeight: 1001,
       appendCodepoints: true
@@ -62,16 +69,19 @@ gulp.task('iconfont', function() {
 // Compile Sass
 // ========================================
 
+// Compile scss files within assets/scss/
 gulp.task('compile-sass', function() {
-  return gulp.src(paths.css.src)
+  return gulp.src(paths.scss.src)
+    // https://www.npmjs.com/package/gulp-css-globbing
     .pipe(globbing({
       extensions: ['.scss']
     }))
+    // https://www.npmjs.com/package/gulp-ruby-sass
     .pipe(plugins.rubySass({
       style: 'compressed',
-      precision: 8
+      precision: 4
     }))
-    .pipe(gulp.dest(paths.css.dest));
+    .pipe(gulp.dest(paths.scss.dest));
 });
 
 
@@ -79,8 +89,10 @@ gulp.task('compile-sass', function() {
 // Lint Js
 // ========================================
 
+// Finds and reports errors within assets/js/
 gulp.task('lint-js', function() {
-  return gulp .src(paths.js.src)
+  return gulp.src(paths.js.src)
+    // https://www.npmjs.com/package/gulp-jshint
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter('default'));
 });
@@ -90,12 +102,13 @@ gulp.task('lint-js', function() {
 // Compile js
 // ========================================
 
+// Compiles js from assets/js/, aggregated silk js modules, concatenates js
 gulp.task('compile-js', function() {
-  return gulp
-    .src(paths.js.src)
+  return gulp.src(paths.js.src)
     .pipe(plugins.plumber())
     .pipe(plugins.browserify())
     .pipe(gulp.dest(paths.js.dest))
+    // https://www.npmjs.com/package/gulp-uglify
     .pipe(plugins.uglify())
     .pipe(gulp.dest(paths.js.dest));
 });
@@ -105,7 +118,9 @@ gulp.task('compile-js', function() {
 // Compile Handlebars
 // ========================================
 
-gulp.task('templates', function() {
+// Compile Handlebars templates from assets/js/templates
+// Custom compilation: node >> handlebars <input> -f <output>
+gulp.task('compile-templates', function() {
   gulp.src(paths.templates.src)
     .pipe(plugins.handlebars())
     .pipe(plugins.defineModule('plain', {
@@ -121,10 +136,12 @@ gulp.task('templates', function() {
 // Create Watch Task
 // ========================================
 
+// Defines all the tasks which run when 'gulp watch' is executed
+// This task is executed by default when 'gulp' is executed
 gulp.task('watch', function() {
+  gulp.watch(paths.scss.src, ['compile-sass']);
   gulp.watch(paths.js.src, ['lint-js', 'compile-js']);
-  gulp.watch(paths.css.src, ['compile-sass']);
-  gulp.watch(paths.templates.src, ['templates']);
+  gulp.watch(paths.templates.src, ['compile-templates']);
 });
 
 
@@ -132,4 +149,5 @@ gulp.task('watch', function() {
 // Default 'gulp' task
 // ========================================
 
-gulp.task('default', ['iconfont', 'compile-sass', 'lint-js', 'templates', 'compile-js', 'watch']);
+// Defines all the tasks which run when 'gulp' is executed
+gulp.task('default', ['iconfont', 'compile-sass', 'lint-js', 'compile-js', 'compile-templates', 'watch']);
