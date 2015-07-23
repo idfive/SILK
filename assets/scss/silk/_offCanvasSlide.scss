@@ -8,24 +8,24 @@
 #site-wrapper {
   position: relative;
   overflow: hidden;
-  width: 100%;
   min-height: 100vh;
+  width: 100%;
 }
 
 #site-canvas {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
 }
 
 #site-offCanvas {
   position: fixed;
   top: 0;
+  right: -$offCanvas;
   z-index: 100;
   overflow: scroll;
   height: 100vh;
   width: $offCanvas;
-  right: -$offCanvas;
   background-color: #ccc;
 
   @include breakpoint('medium') {

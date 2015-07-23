@@ -1,40 +1,46 @@
+// ========================================
+// Video
+// ========================================
 
 .m-video {
   position: relative;
-  height: 300px;
+  height: em(300);
+
   @include breakpoint('large') {
-    height: 570px;
+    height: em(570);
   }
 
-    #video-container {
+  #video-container {
     position: absolute;
-  	top:0%;
-  	left:0%;
-  	height:100%;
-  	width:100%;
-  	overflow: hidden;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 
     .l-wrapper {
       position: absolute;
-      padding-top: 40px;
-      padding-bottom: 40px;
-        @include breakpoint('large') {
-          padding-top: 100px;
-          padding-bottom: 100px;
-        }
-      margin-left: auto;
-      margin-right: auto;
       left: 0;
       right: 0;
-      z-index:100;
+      z-index: 100;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: em(40);
+      padding-bottom: em(40);
+
+      @include breakpoint('large') {
+        padding-top: em(100);
+        padding-bottom: em(100);
+      }
+
     }
 
       video {
-      	position:absolute;
-      	z-index:0;
-
+        position:absolute;
+        z-index:0;
         // also see video.js for breakpoint play/pause for video.
         visibility: hidden;
+
         @include breakpoint('large') {
           visibility: visible;
         }
@@ -42,6 +48,9 @@
         &.fillWidth {
           width: 100%;
         }
+
     }
+
   }
+
 }

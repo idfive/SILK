@@ -8,6 +8,9 @@
   @include transform(translateY(-50%));
 }
 
+.vertical-align {
+  @include vertical-align;
+}
 
 // ========================================
 // Calculate Rem Sizes
