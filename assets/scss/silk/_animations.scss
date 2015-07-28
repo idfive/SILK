@@ -1,23 +1,27 @@
-@include keyframes(rotate90)
-{
-  from
-  {
+// ========================================
+// Rotation
+// ========================================
+
+@include keyframes(rotate90) {
+
+  from {
     @include transform(rotate(0));
   }
-  to
-  {
+
+  to {
     @include transform(rotate(90deg));
   }
+
 }
 
-@include keyframes(rotate90-)
-{
-  from
-  {
+@include keyframes(rotate90-) {
+
+  from {
     @include transform(rotate(90deg));
   }
-  to
-  {
+
+  to {
     @include transform(rotate(0));
   }
+
 }

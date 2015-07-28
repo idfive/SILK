@@ -1,0 +1,29 @@
+// ========================================
+// Calculate em
+// ========================================
+
+@function em($target, $context: $base-font-size) {
+  $strip-target: su($target);
+  $strip-context: su($context);
+  @return ($strip-target / $strip-context) * 1em;
+}
+
+
+// ========================================
+// Calculate rem
+// ========================================
+
+@function rem($target, $context: 16) {
+  $strip-target: su($target);
+  $strip-context: su($context);
+  @return ($strip-target / $strip-context) * 1rem;
+}
+
+
+// ========================================
+// Strip units
+// ========================================
+
+@function su($num) {
+  @return $num / ($num * 0 + 1);
+}

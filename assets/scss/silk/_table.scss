@@ -1,48 +1,49 @@
-.silk-table
-{
-	width: 100%;
-	border-spacing: 0;
-	font-size: 100%;
-	margin-bottom: 1em;
+// ========================================
+// Silk Tables
+// ========================================
 
-	th,td
-	{
-		padding: 10px;
-		border-bottom: 1px solid #eee;
-	}
+.silk-table {
+  width: 100%;
+  border-spacing: 0;
+  margin-bottom: 1em;
+  font-size: 100%;
 
-	thead
-	{
-		th
-		{
-			background: #f9f9f9;
-			text-align: left;
-		}
-	}
+  th,
+  td {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+  }
 
-	&-collapsed
-	{
-		margin-bottom: 1em;
+  thead {
 
-		ul, li
-		{
-			margin: 0;
-			padding: 0;
-			list-style: none;
-		}
+    th {
+      text-align: left;
+      background: #f9f9f9;
+    }
 
-		h3
-		{
-			margin: 0;
-			padding: 10px;
-			font-size: 100%;
-			background: #f9f9f9;
-			border-bottom: 1px solid #eee;
-		}
+  }
 
-		div
-		{
-			padding: 10px;
-		}
-	}
+  &-collapsed {
+    margin-bottom: 1em;
+
+    ul, li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    h3 {
+      margin: 0;
+      padding: rem(10);
+      font-size: 100%;
+      background: #f9f9f9;
+      border-bottom: 1px solid #eee;
+    }
+
+    div {
+      padding: em(10);
+    }
+
+  }
+
 }

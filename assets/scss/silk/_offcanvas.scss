@@ -1,35 +1,35 @@
+// ========================================
+// Silk Off Canvas
+// ========================================
+
 $silk-offcanvas-visible: 'large' !default;
 
-body
-{
-	.js &
-	{
-		.silk-offcanvas
-		{
-			position: fixed;
-			left: -100%;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			z-index: 99999;
-			overflow-y: auto;
-			background: #fff;
-			@include transition(left .25s ease-in-out);
+.js & {
 
-			@include breakpoint($silk-offcanvas-visible)
-			{
-				display: inherit;
-				position: inherit;
-				height: auto;
-				width: auto;
-				z-index: auto;
-				overflow-y: inherit;
-			}
+  .silk-offcanvas {
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    left: -100%;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    @include transition(left .25s ease-in-out);
 
-			&.visible
-			{
-				left: 0;
-			}
-		}
-	}
+    @include breakpoint($silk-offcanvas-visible) {
+      position: inherit;
+      z-index: auto;
+      display: inherit;
+      overflow-y: inherit;
+      height: auto;
+      width: auto;
+    }
+
+    &.visible {
+      left: 0;
+    }
+
+  }
+
 }
