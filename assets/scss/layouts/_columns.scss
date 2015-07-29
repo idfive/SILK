@@ -14,12 +14,12 @@ $columns: small, large, huge;
 // Column Container / Column Behavior
 // ========================================
 
-@mixin container-stretch($column-between) {
+@mixin container-stretch($column-between:0) {
   margin-right: $column-between * -1;
   margin-left: $column-between * -1;
 }
 
-@mixin column-breath($column-between) {
+@mixin column-breath($column-between:0) {
   margin-right: $column-between;
   margin-left: $column-between;
 }
@@ -51,7 +51,7 @@ $columns: small, large, huge;
 
 .container-of-2 {
 
-  @include breakpoint($column-2) {
+  @include breakpoint($columns(2)) {
    @include container-stretch;
   }
 
@@ -59,7 +59,7 @@ $columns: small, large, huge;
 
 .column-1-of-2 {
 
-  @include breakpoint($column-2) {
+  @include breakpoint($column(2)) {
    @include column-breath;
   }
 
@@ -72,7 +72,7 @@ $columns: small, large, huge;
 
 .container-of-3 {
 
-  @include breakpoint($column-3) {
+  @include breakpoint($columns(3)) {
    @include container-stretch;
   }
 
@@ -80,7 +80,7 @@ $columns: small, large, huge;
 
 .column-1-of-2 {
 
-  @include breakpoint($column-2) {
+  @include breakpoint($columns(2)) {
    @include column-breath;
   }
 
