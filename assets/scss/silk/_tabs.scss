@@ -11,7 +11,6 @@ $silk-tabs-accordion: 'small' !default;
 
     ul {
       @include clearfix;
-      border-bottom: 1px solid #eee;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -23,20 +22,6 @@ $silk-tabs-accordion: 'small' !default;
 
         a {
           display: block;
-          border: 1px solid transparent;
-          border-bottom-color: #eee;
-          padding: em(10);
-          text-decoration: none;
-          color: #000;
-
-          &:hover {}
-
-          &.is-active,
-          &.is-active-tabs {
-            border-color: #eee;
-            border-bottom-color: #fff;
-          }
-
         }
 
   }
@@ -54,7 +39,6 @@ $silk-tabs-accordion: 'small' !default;
   }
 
   &__content {
-    padding: 0 em(10);
     opacity: 1;
     @include transition(opacity .3s);
 
@@ -71,16 +55,11 @@ $silk-tabs-accordion: 'small' !default;
 
   @include breakpoint($silk-tabs-accordion) {
 
-    .silk-tabs {
-      border: 0;
-    }
-
     .silk-tabs__header {
       display: none;
     }
 
     .silk-tabs__content {
-      border-top: 0;
 
       &.is-hidden-accordion {
         display: inherit;
