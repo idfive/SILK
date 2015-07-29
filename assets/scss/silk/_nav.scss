@@ -18,23 +18,6 @@ $silk-nav-expanded: 'large' !default;
 
     a {
       display: block;
-      text-decoration: none;
-      padding: 10px;
-      color: #000;
-      @include transition(background .15s ease-in-out);
-
-      &:hover {
-        background: #f9f9f9;
-      }
-
-    }
-
-    li {
-
-      ul {
-        padding-left: 20px;
-      }
-
     }
 
   }
@@ -46,7 +29,6 @@ $silk-nav-expanded: 'large' !default;
     > ul {
       position: relative;
       left: 0;
-      border-top: 1px solid #eee;
       @include transition(left .25s ease-in);
 
       ul {
@@ -57,15 +39,6 @@ $silk-nav-expanded: 'large' !default;
 
         &.hidden {
           display: none;
-        }
-
-      }
-
-      li {
-        border-bottom: 1px solid #eee;
-
-        ul {
-          padding: 0;
         }
 
       }
@@ -83,9 +56,7 @@ $silk-nav-expanded: 'large' !default;
         right: 0;
         top: 0;
         height: 100%;
-        background: #f9f9f9;
         width: 40px;
-        border-left: 1px solid #eee;
 
         &:after {
           position: absolute;
@@ -96,30 +67,14 @@ $silk-nav-expanded: 'large' !default;
           margin-left: -3px;
           @include triangle(10px, #000, right);
         }
-
-        &:hover {
-          background: #000;
-
-          &:after {
-            border-left-color: #fff;
-          }
-
-        }
-
+        
       }
 
       .back {
-        background: #f1f1f1;
 
         &:before {
           display: inline-block;
           content: "";
-          margin-right: 10px;
-          @include triangle(10px, #000, left);
-        }
-
-        &:hover {
-          background: #f1f1f1;
         }
 
       }
@@ -129,7 +84,6 @@ $silk-nav-expanded: 'large' !default;
     @include breakpoint($silk-nav-expanded) {
       overflow-x: inherit;
       min-height: 0 !important; //Overrides inline style added by JS
-      border-bottom: 1px solid #eee;
       @include clearfix;
 
       &.vertical {
@@ -144,28 +98,10 @@ $silk-nav-expanded: 'large' !default;
 
           li {
             float: none;
-            border-bottom: 1px solid #eee;
 
             li {
               border: 0;
             }
-          }
-
-          > li {
-
-            &.parent {
-
-              > *:first-child {
-
-                &:after {
-                  top: 4px;
-                  @include triangle(10px, #000, right);
-                }
-
-              }
-
-            }
-
           }
 
         }
@@ -197,17 +133,9 @@ $silk-nav-expanded: 'large' !default;
 
           li {
             float: none;
-            background: #f9f9f9;
-
-            a:hover,
-            &:hover {
-              background: #f1f1f1;
-            }
-
           }
 
           &:hover {
-            background: #f9f9f9;
 
             > ul {
               display: block;
@@ -234,23 +162,6 @@ $silk-nav-expanded: 'large' !default;
 
             .next {
               display: none;
-            }
-
-          }
-
-        }
-
-        > li {
-
-          &.parent {
-
-            > *:first-child {
-
-              &:after {
-                top: 7px;
-                @include triangle(10px, #000, down);
-              }
-
             }
 
           }
