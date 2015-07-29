@@ -4,26 +4,21 @@
 
 .silk-accordion {
 
+  // Accordion item container
   &__header {
 
+    // Accordion item header
     h1, h2, h3, h4, h5, h6 {
-      @extend %silk-reset-type;
     }
 
+    // Accordion item link
     a {
-      @extend %silk-toggle-content;
     }
 
   }
 
+  // Accordion item content container
   &__content {
-    opacity: 1;
-    @include transition(opacity .3s);
-
-    &.is-hidden {
-      opacity: 0;
-    }
-
   }
 
 }
