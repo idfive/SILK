@@ -8,17 +8,10 @@
   margin-bottom: 1em;
   font-size: 100%;
 
-  th,
-  td {
-    border-bottom: 1px solid #eee;
-    padding: 10px;
-  }
-
   thead {
 
     th {
       text-align: left;
-      background: #f9f9f9;
     }
 
   }
@@ -33,15 +26,8 @@
     }
 
     h3 {
-      margin: 0;
-      padding: rem(10);
-      font-size: 100%;
-      background: #f9f9f9;
-      border-bottom: 1px solid #eee;
-    }
-
-    div {
-      padding: em(10);
+      @extend %silk-reset-type;
+      font-weight: 700;
     }
 
   }

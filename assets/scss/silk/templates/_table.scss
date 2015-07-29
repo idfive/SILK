@@ -1,0 +1,30 @@
+// ========================================
+// Silk Tables
+// ========================================
+
+.silk-table {
+  
+  // Regular table cells
+  th,
+  td {
+    
+  }
+
+  // Table head section
+  thead {
+
+    th {
+    }
+
+  }
+
+  // Collapsed table
+  &-collapsed {
+    
+    // List item
+    ul, li {
+    }
+
+  }
+
+}
