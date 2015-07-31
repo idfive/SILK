@@ -33,12 +33,36 @@
 
 @mixin breakpoint($breakpoint) {
   @for $i from 1 to length($breakpoints) {
-    @if $breakpoint == (nth( nth($breakpoints, $i), 1)) {
-      @media #{(nth(nth($breakpoints, $i), 2))} {
+    @if $breakpoint == (nth(nth($breakpoints, $i), 1)) {
+      @media (min-width: nth(nth($breakpoints, $i), 2)) {
         @content;
       }
     }
   }
+}
+
+
+// ========================================
+// Column Mixin
+// ========================================
+
+@mixin column($spread...) {
+  $argument-length: length($spread);
+  $argument-split: $argument-length / 2;
+
+  @for $i from 1 through $argument-split {
+
+    @media (min-width: nth($spread, ($argument-split + $i))) {
+      width: percentage(1 / nth($spread, $i));
+
+      @if $i == 1 {
+        float: left;
+      }
+
+    }
+
+  }
+
 }
 
 

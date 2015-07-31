@@ -17,8 +17,7 @@
 
   &:before {
     display: inline-block;
-    content: '';
-    @include triangle(em(10), #000, right);
+    content: '>';
     transition: transform .3s;
   }
 
