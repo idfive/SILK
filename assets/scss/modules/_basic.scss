@@ -6,8 +6,9 @@
   padding: em(20);
 }
 
-.callout--gray {
-  background: #eee;
+.callout--green {
+  background: $m2;
+  color: #fff;
 }
 
 
@@ -19,11 +20,11 @@
   padding: em(20);
 
   &--large {
-    padding: em(30) em(20);
+    padding: em(60) em(20);
   }
 
   &--huge {
-    padding: em(60) em(20);
+    padding: em(100) em(20);
   }
 
 }
@@ -44,4 +45,138 @@
     margin-bottom: em(20);
   }
 
+}
+
+
+// ========================================
+// Flat
+// ========================================
+
+.flat {
+  margin: 0;
+}
+
+
+// ========================================
+// Shoes
+// ========================================
+
+.shoe {
+
+  &--orange {
+    border-bottom: em(8) solid $m4;
+  }
+
+}
+
+
+// ========================================
+// Shown Classes
+// ========================================
+
+.shown {
+
+  &--medium {
+    display: none;
+
+    @include breakpoint('medium') {
+      display: block;
+    }
+
+  }
+
+  &--large {
+    display: none;
+
+    @include breakpoint('large') {
+      display: block;
+    }
+
+  }
+
+  &--titan {
+    display: none;
+
+    @include breakpoint('titan') {
+      display: block;
+    }
+
+  }
+
+  &--world {
+    display: none;
+
+    @include breakpoint('world') {
+      display: block;
+    }
+
+  }
+
+  &--universe {
+    display: none;
+
+    @include breakpoint('universe') {
+      display: block;
+    }
+
+  }
+
+}
+
+
+// ========================================
+// Hidden Classes
+// ========================================
+
+.hidden {
+
+  &--medium {
+
+    @include breakpoint('medium') {
+      display: none;
+    }
+
+  }
+
+  &--large {
+
+    @include breakpoint('large') {
+      display: none;
+    }
+
+  }
+
+  &--world {
+
+    @include breakpoint('world') {
+      display: none;
+    }
+
+  }
+
+  &--universe {
+
+    @include breakpoint('universe') {
+      display: none;
+    }
+
+  }
+
+}
+
+
+// ========================================
+// Background Classes
+// ========================================
+
+.bg--white {
+  background: #fff;
+}
+
+.bg--gray {
+  background: #f3f3f3;
+}
+
+.bg--green {
+  background: $m2;
 }

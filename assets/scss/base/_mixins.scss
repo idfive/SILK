@@ -1,18 +1,4 @@
 // ========================================
-// Vertical Alignment
-// ========================================
-
-@mixin vertical-align {
-  position: relative;
-  top: 50%;
-  @include transform(translateY(-50%));
-}
-
-.vertical-align {
-  @include vertical-align;
-}
-
-// ========================================
 // Calculate Rem Sizes
 // ========================================
 
@@ -89,4 +75,23 @@
     @include list-reset;
   }
 
+}
+
+
+// ========================================
+// Clearfix
+// ========================================
+
+@mixin clearfix {
+
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+}
+
+.clearfix {
+  @include clearfix;
 }

@@ -29,7 +29,7 @@ $silk-nav-expanded: 'large' !default;
     > ul {
       position: relative;
       left: 0;
-      @include transition(left .25s ease-in);
+      transition: left .3s;
 
       ul {
         position: absolute;
@@ -65,9 +65,8 @@ $silk-nav-expanded: 'large' !default;
           left: 50%;
           margin-top: -5px;
           margin-left: -3px;
-          @include triangle(10px, #000, right);
         }
-        
+
       }
 
       .back {
@@ -155,7 +154,6 @@ $silk-nav-expanded: 'large' !default;
                 top: 4px;
                 left: 7px;
                 margin-right: 10px;
-                @include triangle(10px, #000, right);
               }
 
             }

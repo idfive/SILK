@@ -15,7 +15,7 @@ $silk-offcanvas-visible: 'large' !default;
     width: 100%;
     height: 100%;
     background: #fff;
-    @include transition(left .25s ease-in-out);
+    transition: left .3s;
 
     @include breakpoint($silk-offcanvas-visible) {
       position: inherit;

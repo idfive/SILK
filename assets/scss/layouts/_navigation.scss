@@ -3,20 +3,555 @@
 // ========================================
 
 [class^='nav'] {
-  @include list-reset;
+
+  ul {
+    @include list-reset;
+  }
+
 }
 
 
 // ========================================
-// Unique Navigation
+// Main Navigation
 // ========================================
 
-.nav__example {
+.nav__main {
+
+  @include breakpoint('world') {
+    float: right;
+    width: 50%;
+    width: calc(100% - #{em(340)} - #{em(176)});
+    padding-right: em(10);
+    text-align: right;
+  }
+
+  ul {}
+
+    li {
+      border-bottom: 1px solid rgba(#000, .15);
+
+      @include breakpoint('world') {
+        display: inline-block;
+        vertical-align: top;
+        border-bottom: 0;
+        width: auto;
+      }
+
+    }
+
+      a {
+        display: block;
+        padding: em(17, 16) em(27, 16);
+        font-size: em(16);
+        text-decoration: none;
+
+        @include breakpoint('world') {
+          padding: em(47, 14) em(5, 14);
+          font-size: em(14);
+          transition:
+            background .3s,
+            color .3s;
+        }
+
+        @include breakpoint('universe') {
+          padding-top: em(45, 16);
+          padding-bottom: em(45, 16);
+          font-size: em(16);
+        }
+
+        @include breakpoint('penguindrum') {
+          padding-right: em(15, 16);
+          padding-left: em(15, 16);
+        }
+
+        &:hover {
+
+          @include breakpoint('world') {
+            background: $m6;
+            color: #fff;
+          }
+
+        }
+
+      }
+
+    ul ul {
+
+      @include breakpoint('world') {
+        display: none;
+      }
+
+    }
+
+}
+
+
+// ========================================
+// Inquire Navigation
+// ========================================
+
+.nav__inquire {
+
+  @include breakpoint('world') {
+    float: right;
+    max-width: em(340);
+    width: 100%;
+    margin-right: em(-20);
+  }
+
+  ul {
+    @include clearfix;
+  }
+
+    li {
+      float: left;
+      width: 33.33%;
+
+      &:nth-child(1) {
+
+        a {
+          background: $m4;
+
+          &:before {
+            transform-origin: center bottom;
+          }
+
+          &:hover {
+            background: darken($m4, 5%);
+
+            &:before {
+              animation: 1s love;
+            }
+
+          }
+
+        }
+
+      }
+
+      &:nth-child(2) {
+
+        a {
+          background: $m5;
+
+          &:hover {
+            background: darken($m5, 5%);
+
+            &:before {
+              animation: 1.5s contact;
+            }
+
+          }
+
+        }
+
+      }
+
+      &:nth-child(3) {
+
+        a {
+          background: $m1;
+
+          &:hover {
+            background: darken($m1, 5%);
+
+            &:before {
+              animation: 1s search;
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+      a {
+        @include h6;
+        display: block;
+        padding: em(14, 14) 0;
+        text-align: center;
+        text-decoration: none;
+        transition:
+          background .3s,
+          box-shadow .3s;
+
+        @include breakpoint('world') {
+          padding: em(25, 14) 0;
+        }
+
+        &:before {
+          display: block;
+          font-size: 220%;
+        }
+
+        &:hover {
+          box-shadow: inset 0 em(10) 0 0 rgba(#000, .05);
+        }
+
+      }
+
+}
+
+@keyframes love {
+
+  25% {
+    transform: rotate(-15deg);
+  }
+
+  75% {
+    transform: rotate(15deg);
+  }
+
+}
+
+@keyframes contact {
+
+  25% {
+    transform:
+      translate(0, em(-5))
+      rotate(0deg);
+  }
+
+  40% {
+    opacity: 1;
+    transform:
+      translate(em(-5), em(-5))
+      rotate(-25deg);
+  }
+
+  60% {
+    opacity: 0;
+    transform:
+      translate(em(10), em(-10))
+      rotate(-25deg);
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+}
+
+@keyframes search {
+
+  50% {
+    transform: scale(.75);
+  }
+
+}
+
+
+// ========================================
+// Collapse Navigation
+// ========================================
+
+.nav__collapse {
+  color: #fff;
+
+  h3 {
+    position: relative;
+    margin: 0;
+    padding: em(20, $h3-size);
+    text-transform: uppercase;
+    cursor: pointer;
+    color: inherit;
+
+    @include breakpoint('huge') {
+      float: left;
+      background: $m2;
+    }
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      right: em(20, $base-font-size * 1.65);
+      font-size: 165%;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      transition: transform .3s;
+
+      @include breakpoint('huge') {
+        display: none;
+      }
+
+    }
+
+    @at-root .nav-is-active h3:before {
+      -webkit-transform:
+        translate(0, -50%)
+        scaleY(-1);
+      transform:
+        translate(0, -50%)
+        scaleY(-1);
+    }
+
+  }
+
+  nav {
+    overflow: hidden;
+    max-height: 0;
+    transition:
+      max-height 1s,
+      padding .3s;
+
+
+    @include breakpoint('huge') {
+      float: left;
+      max-height: initial;
+      padding-bottom: 0;
+    }
+
+    @at-root .nav-is-active nav {
+      max-height: em(300);
+      padding-bottom: em(15);
+    }
+
+  }
+
+    li {
+      position: relative;
+      opacity: 0;
+
+      @include breakpoint('huge') {
+        float: left;
+        opacity: 1;
+      }
+
+      @for $i from 1 through 5 {
+
+        &:nth-child(#{$i}) {
+          transition: opacity .3s .1s * $i;
+        }
+
+      }
+
+      @at-root .nav-is-active li {
+        opacity: 1;
+      }
+
+      &:after {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        height: em(20);
+        width: 1px;
+        content: '';
+        background: #fff;
+        transform: translate(0, -50%);
+      }
+
+    }
+
+      a {
+        display: block;
+        padding: em(10) em(20);
+        text-decoration: none;
+        color: inherit;
+
+        @include breakpoint('huge') {
+          padding: em(24, 14) em(14, 14);
+          font-size: em(14);
+        }
+
+        @include breakpoint('world') {
+          padding: em(20, 20) em(20, 20) em(19, 20);
+          font-size: em(20);
+        }
+
+        @include breakpoint('universe') {
+          padding-right: em(32, 20);
+          padding-left: em(32, 20);
+        }
+
+      }
+
+}
+
+
+// ========================================
+// Site Map Navigation
+// ========================================
+
+nav.nav__map {
+
+  @include breakpoint('large') {
+    width: 50% - 1%;
+    border-left: 1px solid #fff;
+    margin-bottom: em(60);
+    padding-bottom: em(40);
+    padding-right: em(20);
+    padding-left: em(20 + 1);
+  }
+
+  @include breakpoint('super') {
+    width: 33.33% - 1%;
+  }
+
+  @include breakpoint('universe') {
+    display: inline-block;
+    vertical-align: top;
+    width: 100% / 5 - 1%;
+  }
+
+  &:nth-of-type(1) {
+    border: 0;
+    padding-left: 0;
+  }
+
+  &:nth-of-type(3) {
+
+    @media (min-width: 700px) and (max-width: 999px) {
+      border: 0;
+      padding-left: 0;
+    }
+
+  }
+
+  &:nth-of-type(4) {
+
+    @media (min-width: 1000px) and (max-width: 1299px) {
+      border: 0;
+      padding-left: 0;
+    }
+
+  }
+
+  &:nth-of-type(5) {
+
+    @media (min-width: 700px) and (max-width: 999px) {
+      border: 0;
+      padding-left: 0;
+    }
+
+  }
 
   ul {}
 
     li {}
 
-      a {}
+      a {
+        position: relative;
+        display: block;
+        padding: em(2, 14) 0;
+        font-size: em(14);
+        transition: box-shadow .3s;
+
+        &:before {
+          position: absolute;
+          top: 50%;
+          right: 100%;
+          height: em(8);
+          width: em(8);
+          margin-right: em(10);
+          content: '';
+          background: #fff;
+          border-radius: 100%;
+          transform: scale(0);
+          transition: transform .3s;
+        }
+
+        &:hover {
+
+          &:before {
+            transform: scale(1);
+          }
+
+        }
+
+      }
+
+}
+
+
+// ========================================
+// Social Navigation
+// ========================================
+
+.nav__social {
+  margin-bottom: em(30);
+  font-size: 75%;
+
+  @include breakpoint('universe') {
+    font-size: 100%;
+  }
+
+  ul {}
+
+    li {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 em(5);
+
+      @include breakpoint('universe') {
+        margin: 0 em(18) 0 0;
+      }
+
+      @for $i from 1 through 4 {
+
+        &:nth-child(#{$i}) a:hover:after {
+          animation: burst-#{$i} 1s forwards;
+        }
+
+      }
+
+    }
+
+      a {
+        display: block;
+        overflow: hidden;
+        height: em(36);
+        width: em(36);
+        background: #fff;
+        border-radius: 100%;
+        color: transparent;
+
+        &:before {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          font-family: 'idfive';
+          font-weight: normal;
+          text-align: center;
+          color: $m6;
+          transform: translate(0, -50%);
+        }
+
+        &:after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          content: '';
+          border-radius: 100%;
+        }
+
+      }
+
+}
+
+
+@for $i from 1 through 6 {
+
+  @keyframes burst-#{$i} {
+
+    85% {
+      opacity: 1;
+    }
+
+    100% {
+      box-shadow:
+        random(5) * 1em random(10) * -.5em 0 random(5) * -.5em #fff,
+        random(5) * -1em random(10) * -.5em 0 random(5) * -.5em #fff,
+        random(5) * 1em random(10) * -.5em 0 random(5) * -.5em #fff,
+        random(5) * -1em random(10) * -.5em 0 random(5) * -.5em #fff;
+      opacity: 0;
+    }
+
+  }
 
 }

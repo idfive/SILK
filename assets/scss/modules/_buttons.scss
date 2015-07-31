@@ -3,7 +3,15 @@
 // ========================================
 
 @mixin button($color) {
+  display: inline-block;
+  padding: em(16, 25) em(26, 25);
+  font-size: em(25);
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
   background: $color;
+  border-radius: em(5, 25);
+  color: $m3;
   transition:
     background .3s,
     box-shadow .3s,
@@ -20,7 +28,7 @@
 // ----------------------------------------
 
 [class^='button'] {
-  @include button(#eee);
+  @include button($m1);
 }
 
 // Additional Button
@@ -36,7 +44,24 @@
 // ========================================
 
 .site__logo {
-  background: url('');
+  float: left;
+  display: block;
+  overflow: hidden;
+  max-width: em(125);
+  width: 100%;
+  margin: em(14) 0;
+  padding: em(13) 0;
+  white-space: nowrap;
+  background: url('../images/logo.png') no-repeat 0 0;
+  background-size: contain;
+  color: transparent;
+
+  @include breakpoint('tiny') {
+    max-width: em(176);
+    margin: em(18) 0;
+    padding: em(24) 0;
+  }
+
 }
 
 

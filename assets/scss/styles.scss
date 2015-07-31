@@ -11,12 +11,11 @@
   //Normalize.css
   @import "helpers/reset";
 
-  // Import Bourbon and Neat
-  @import "bourbon";
-  @import "neat";
-
   // Config
   @import "base/config";
+
+  // Config
+  @import "base/functions";
 
   // Mixins
   @import "base/mixins";
@@ -27,14 +26,14 @@
   // Debug for testing
   @import "helpers/debug";
 
-  // Layouts
+  // Modules
   @import "layouts/*";
+
+  // Layouts
+  @import "modules/*";
 
   // Silk
   @import "silk/*";
-
-  // Modules
-  @import "modules/*";
 
 }
 

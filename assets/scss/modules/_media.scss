@@ -1,0 +1,30 @@
+// ========================================
+// Figure
+// ========================================
+
+figure {
+  margin: 0;
+
+  @at-root .bubble {
+    overflow: hidden;
+    height: em(210);
+    width: em(210);
+    border: em(3) solid $m6;
+    margin: 0 auto;
+    border-radius: 100%;
+    transition: border-color .3s;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: 25% 50%;
+    }
+
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+}

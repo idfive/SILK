@@ -13,6 +13,8 @@
 @mixin h1 {
   @extend %heading;
   font-size: em($h1-size);
+  line-height: 1.2;
+  color: $m3;
 }
 
 h1,
@@ -27,6 +29,9 @@ h1,
 @mixin h2 {
   @extend %heading;
   font-size: em($h2-size);
+  font-weight: bold;
+  line-height: su(em(48, $h2-size));
+  color: $m3;
 }
 
 h2,
@@ -41,6 +46,9 @@ h2,
 @mixin h3 {
   @extend %heading;
   font-size: em($h3-size);
+  font-weight: bold;
+  line-height: su(em(27, $h3-size));
+  color: $m3;
 }
 
 h3,
@@ -83,9 +91,54 @@ h5,
 @mixin h6 {
   @extend %heading;
   font-size: em($h6-size);
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 h6,
 .h6 {
   @include h6;
+}
+
+
+// ========================================
+// Text Alignment Classes
+// ========================================
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+
+// ========================================
+// Text Property Utilities
+// ========================================
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+
+// ========================================
+// Text Color Utilities
+// ========================================
+
+.inherit-color {
+  color: inherit;
+}
+
+.m1 {
+  color: $m1;
+}
+
+.m2 {
+  color: $m2;
+}
+
+.m3 {
+  color: $m3;
 }

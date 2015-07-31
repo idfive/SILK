@@ -2,17 +2,31 @@
 // Base Font Properties
 // ========================================
 
-$base-font-family: 'Roboto';
-$base-font-size: 16;
-$base-font-color: #000;
-$base-line-height: 22;
+$base-font-family: 'Open Sans', arial;
+$base-font-size: 20;
+$base-font-color: #5d5d5d;
+$base-line-height: 30;
 
-$h1-size: 40;
+$h1-size: 60;
 $h2-size: 35;
-$h3-size: 30;
-$h4-size: 25;
-$h5-size: 20;
-$h6-size: 16;
+$h3-size: 20;
+$h4-size: 18;
+$h5-size: 16;
+$h6-size: 14;
+
+
+// ========================================
+// Colors
+// ========================================
+
+$m1: #ecdb93;
+$m12: #f0dc52;
+$m2: #6f9c88;
+$m3: #312e71;
+
+$m4: #fc9048;
+$m5: #9dd7bc;
+$m6: #665183;
 
 
 // ========================================
@@ -26,6 +40,11 @@ $breakpoints: (
   ("large", "screen and (min-width: 700px)"),
   ("x-large", "screen and (min-width: 800px)"),
   ("huge", "screen and (min-width: 900px)"),
+  ("super", "screen and (min-width: 1000px)"),
+  ("titan", "screen and (min-width: 1100px)"),
+  ("world", "screen and (min-width: 1200px)"),
+  ("universe", "screen and (min-width: 1300px)"),
+  ("penguindrum", "screen and (min-width: 1400px)"),
   ("titan", "screen and (min-width: 1000px)")
 );
 
