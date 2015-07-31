@@ -14,6 +14,15 @@
     font-size: 12px;
     text-align: center;
     background: #ffc;
+
+    @for $i from 1 to length($breakpoints) + 1 {
+
+      @media #{(nth(nth($breakpoints, $i), 2))} {
+        content: (nth( nth($breakpoints, $i), 1));
+      }
+
+    }
+
   }
 
 }

@@ -1210,6 +1210,11 @@
     display: none;
   }
 }
+@media screen and (min-width: 1500px) {
+  .hidden--no {
+    display: none;
+  }
+}
 
 @media screen {
   [class^='shown'] {
@@ -1268,6 +1273,11 @@
 }
 @media screen and (min-width: 1400px) {
   .shown--universe {
+    display: block;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .shown--no {
     display: block;
   }
 }

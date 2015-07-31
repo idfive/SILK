@@ -32,7 +32,7 @@
 // ========================================
 
 @mixin breakpoint($breakpoint) {
-  @for $i from 1 to length($breakpoints) {
+  @for $i from 1 to length($breakpoints) + 1 {
     @if $breakpoint == (nth(nth($breakpoints, $i), 1)) {
       @media (min-width: nth(nth($breakpoints, $i), 2)) {
         @content;
