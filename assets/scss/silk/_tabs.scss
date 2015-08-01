@@ -2,22 +2,22 @@
 // Silk Tabs
 // ========================================
 
-$silk-tabs-accordion: 'small' !default;
-
 .silk-tabs {
 
   > .silk-tabs__nav {
     display: none;
 
+    @include breakpoint($silk-tabs-accordion) {
+      display: block;
+    }
+
     ul {
-      @include clearfix;
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      @include list-reset;
     }
 
       li {
-        float: left;
+        display: inline-block;
+        vertical-align: top;
       }
 
         a {
@@ -27,6 +27,10 @@ $silk-tabs-accordion: 'small' !default;
   }
 
   &__header {
+
+    @include breakpoint($silk-tabs-accordion) {
+      display: none;
+    }
 
     h1, h2, h3, h4, h5, h6 {
       @extend %silk-reset-type;
@@ -49,27 +53,12 @@ $silk-tabs-accordion: 'small' !default;
     &.is-hidden-accordion {
       display: none;
       opacity: 0;
-    }
 
-  }
-
-  @include breakpoint($silk-tabs-accordion) {
-
-    .silk-tabs__header {
-      display: none;
-    }
-
-    .silk-tabs__content {
-
-      &.is-hidden-accordion {
+      @include breakpoint($silk-tabs-accordion) {
         display: inherit;
         opacity: 1;
       }
 
-    }
-
-    > .silk-tabs__nav {
-      display: block;
     }
 
   }

@@ -34,7 +34,7 @@
           // Hide all tab sections and add active class
           $context
             .find('*').removeClass('is-hidden-accordion is-active-tabs is-active').end()
-            .find('a[href="' + href + '"]').addClass('is-active-tabs').end();
+            .find('[href="' + href + '"]').addClass('is-active-tabs').end();
 
           // Hide content section in accordion mode
           $(href).find('.' + settings.contentClass).toggleClass('is-hidden-accordion');

@@ -1,0 +1,19 @@
+// ========================================
+// Media
+// ========================================
+
+// Figure
+// ----------------------------------------
+
+figure {
+  margin: 0;
+
+  // display: block removes the small space underneath of a photo
+  img {
+    display: block;
+    width: 100%;
+  }
+
+}
+
+  figcaption {}

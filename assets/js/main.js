@@ -1,8 +1,8 @@
-//Require libraries
+// Require libraries
 var $ = require('jquery');
 var bootstrap	= require('./silk/bootstrap');
 
-//Require Modules
+// Require Modules
 var silkoffcanvas	= require('silkoffcanvas');
 var silkaccordion	= require('silkaccordion');
 var silktabs = require('silktabs');
@@ -12,10 +12,10 @@ var silktable = require('silktable');
 var silkoffcanvas	= require('silkoffcanvasSlide');
 var menuaim = require('menuaim');
 
-//Initialize bootstrap
+// Initialize bootstrap
 bootstrap.init();
 
-//Initialize Silk Nav
+// Initialize Silk Nav
 $('.silk-nav').silknav();
 $('.silk-tabs').silktabs();
 $('.silk-accordion').silkaccordion();

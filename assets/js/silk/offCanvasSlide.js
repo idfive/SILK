@@ -4,7 +4,7 @@
 
 (function($) {
 
-  $('.offCanvasTrigger').on('click', function(){
+  $('.offCanvasTrigger').on('click', function() {
 
     if ($('#site-offCanvas').hasClass('show-nav')) {
       // Do things on Nav Close

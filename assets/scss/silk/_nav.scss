@@ -2,8 +2,6 @@
 // Silk Nav
 // ========================================
 
-$silk-nav-expanded: 'large' !default;
-
 .silk-nav {
 
   // Resets
@@ -67,7 +65,7 @@ $silk-nav-expanded: 'large' !default;
           margin-left: -3px;
           @include triangle(10px, #000, right);
         }
-        
+
       }
 
       .back {

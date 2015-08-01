@@ -21,7 +21,7 @@
 #site-offCanvas {
   position: fixed;
   top: 0;
-  right: -$offCanvas;
+  right: $offCanvas * -1;
   z-index: 100;
   overflow: scroll;
   height: 100vh;
@@ -29,7 +29,7 @@
   background-color: #ccc;
 
   @include breakpoint('medium') {
-    right: -$offCanvasDesktop;
+    right: $offCanvasDesktop * -1;
     width: $offCanvasDesktop;
   }
 
@@ -47,12 +47,12 @@
 #site-wrapper.show-nav #site-canvas,
 #site-header.show-nav,
 #site-offCanvas.show-nav {
-  -webkit-transform: translateX(-$offCanvas);
-  transform: translateX(-$offCanvas);
+  -webkit-transform: translateX($offCanvas * -1);
+  transform: translateX($offCanvas * -1);
 
   @include breakpoint('medium') {
-    -webkit-transform: translateX(-$offCanvasDesktop);
-    transform: translateX(-$offCanvasDesktop);
+    -webkit-transform: translateX($offCanvasDesktop * -1);
+    transform: translateX($offCanvasDesktop * -1);
   }
 
 }

@@ -5,27 +5,20 @@
 // Icons, need to be outside of screen call to work on IE
 @import "base/icons";
 
-// Begin screen styles
 @media screen {
 
-  //Normalize.css
+  // Helpers
   @import "helpers/reset";
+  @import "helpers/debug";
 
-  // Import Bourbon and Neat
+  // Bourbon/neat
   @import "bourbon";
   @import "neat";
 
-  // Config
+  // Base
   @import "base/config";
-
-  // Mixins
   @import "base/mixins";
-
-  // Typography
   @import "base/typography";
-
-  // Debug for testing
-  @import "helpers/debug";
 
   // Layouts
   @import "layouts/*";
@@ -38,7 +31,8 @@
 
 }
 
-// Begin print styles
 @media print {
+
   @import "print/*";
+
 }

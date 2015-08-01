@@ -2,12 +2,12 @@
 // Video
 // ========================================
 
-.m-video {
+.video {
   position: relative;
   height: em(300);
 
   @include breakpoint('large') {
-    height: em(570);
+    height: em(580);
   }
 
   #video-container {
@@ -18,7 +18,7 @@
     width: 100%;
     overflow: hidden;
 
-    .l-wrapper {
+    .compartment {
       position: absolute;
       left: 0;
       right: 0;
@@ -36,8 +36,8 @@
     }
 
       video {
-        position:absolute;
-        z-index:0;
+        position: absolute;
+        z-index: 0;
         // also see video.js for breakpoint play/pause for video.
         visibility: hidden;
 
@@ -49,7 +49,7 @@
           width: 100%;
         }
 
-    }
+      }
 
   }
 
