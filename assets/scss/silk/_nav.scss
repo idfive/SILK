@@ -5,24 +5,19 @@
 .silk-nav {
 
   // Resets
-  ul, li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-
-  // Non-js version
-  > ul {
-
-    a {
-      display: block;
-    }
-
+  ul {
+    @include list-reset;
   }
 
   // JS version
   .js & {
     overflow-x: hidden;
+
+    @include breakpoint($silk-nav-expanded) {
+      overflow-x: inherit;
+      min-height: 0 !important; // Overrides inline style added by JS
+      @include clearfix;
+    }
 
     > ul {
       position: relative;
@@ -41,6 +36,8 @@
 
       }
 
+    }
+
       .parent {
 
         > *:first-child {
@@ -49,57 +46,44 @@
 
       }
 
-      .next {
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-        width: 40px;
-
-        &:after {
+        .next {
           position: absolute;
-          content: "";
-          top: 50%;
-          left: 50%;
-          margin-top: -5px;
-          margin-left: -3px;
-          @include triangle(10px, #000, right);
+          right: 0;
+          top: 0;
+          height: 100%;
+          width: em(50);
+
+          &:after {
+            position: absolute;
+            content: '>';
+            top: 50%;
+            left: 50%;
+            @include transform(translate(-50%, -50%));
+          }
+
         }
 
-      }
+        .back {
 
-      .back {
+          &:before {
+            display: inline-block;
+            content: '<';
+          }
 
-        &:before {
-          display: inline-block;
-          content: "";
         }
-
-      }
-
-    }
 
     @include breakpoint($silk-nav-expanded) {
-      overflow-x: inherit;
-      min-height: 0 !important; //Overrides inline style added by JS
-      @include clearfix;
 
       &.vertical {
         border-bottom: 0;
-        width: 200px;
+        max-width: em(200);
+        width: 100%;
 
         > ul {
+
           ul {
-            left: 100%;
             top: 0;
-          }
-
-          li {
-            float: none;
-
-            li {
-              border: 0;
-            }
+            left: 100%;
           }
 
         }
@@ -128,10 +112,6 @@
           position: relative;
           float: left;
           border: 0;
-
-          li {
-            float: none;
-          }
 
           &:hover {
 
@@ -164,6 +144,10 @@
 
           }
 
+          li {
+            float: none;
+          }
+
         }
 
         .back {
@@ -189,6 +173,7 @@
               }
 
               &.hover {
+
                 > ul {
                   display: block;
                 }

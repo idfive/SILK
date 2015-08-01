@@ -4,6 +4,7 @@
 
 %heading {
   font-weight: normal;
+  color: null;
 }
 
 
@@ -13,6 +14,7 @@
 @mixin h1 {
   @extend %heading;
   font-size: em($h1-size);
+  line-height: su(em($h1-size, $h1-size));
 }
 
 h1,
@@ -27,6 +29,7 @@ h1,
 @mixin h2 {
   @extend %heading;
   font-size: em($h2-size);
+  line-height: su(em($h2-size, $h2-size));
 }
 
 h2,
@@ -41,6 +44,7 @@ h2,
 @mixin h3 {
   @extend %heading;
   font-size: em($h3-size);
+  line-height: su(em($h3-size, $h3-size));
 }
 
 h3,
@@ -55,6 +59,7 @@ h3,
 @mixin h4 {
   @extend %heading;
   font-size: em($h4-size);
+  line-height: su(em($h4-size, $h4-size));
 }
 
 h4,
@@ -69,6 +74,7 @@ h4,
 @mixin h5 {
   @extend %heading;
   font-size: em($h5-size);
+  line-height: su(em($h5-size, $h5-size));
 }
 
 h5,
@@ -83,6 +89,7 @@ h5,
 @mixin h6 {
   @extend %heading;
   font-size: em($h6-size);
+  line-height: su(em($h6-size, $h6-size));
 }
 
 h6,

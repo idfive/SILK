@@ -519,36 +519,43 @@
   .h5, h6,
   .h6 {
     font-weight: normal;
+    color: null;
   }
 
   h1,
   .h1 {
     font-size: 2.5em;
+    line-height: su(1em);
   }
 
   h2,
   .h2 {
     font-size: 2.1875em;
+    line-height: su(1em);
   }
 
   h3,
   .h3 {
     font-size: 1.875em;
+    line-height: su(1em);
   }
 
   h4,
   .h4 {
     font-size: 1.5625em;
+    line-height: su(1em);
   }
 
   h5,
   .h5 {
     font-size: 1.25em;
+    line-height: su(1em);
   }
 
   h6,
   .h6 {
     font-size: 1em;
+    line-height: su(1em);
   }
 
   .id5debug:before {
@@ -792,17 +799,28 @@
 }
 
 @media screen {
-  .silk-nav ul, .silk-nav li {
-    padding: 0;
-    margin: 0;
+  .silk-nav ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
     list-style: none;
-  }
-  .silk-nav > ul a {
-    display: block;
   }
   .js .silk-nav {
     overflow-x: hidden;
   }
+}
+@media screen and (min-width: 800px) {
+  .js .silk-nav {
+    overflow-x: inherit;
+    min-height: 0 !important;
+  }
+  .js .silk-nav:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@media screen {
   .js .silk-nav > ul {
     position: relative;
     left: 0;
@@ -819,57 +837,41 @@
   .js .silk-nav > ul ul.hidden {
     display: none;
   }
-  .js .silk-nav > ul .parent > *:first-child {
+  .js .silk-nav .parent > *:first-child {
     position: relative;
   }
-  .js .silk-nav > ul .next {
+  .js .silk-nav .next {
     position: absolute;
     right: 0;
     top: 0;
     height: 100%;
-    width: 40px;
+    width: 3.125em;
   }
-  .js .silk-nav > ul .next:after {
+  .js .silk-nav .next:after {
     position: absolute;
-    content: "";
+    content: '>';
     top: 50%;
     left: 50%;
-    margin-top: -5px;
-    margin-left: -3px;
-    height: 0;
-    width: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 5px solid #000;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
-  .js .silk-nav > ul .back:before {
+  .js .silk-nav .back:before {
     display: inline-block;
-    content: "";
+    content: '<';
   }
 }
 @media screen and (min-width: 800px) {
-  .js .silk-nav {
-    overflow-x: inherit;
-    min-height: 0 !important;
-  }
-  .js .silk-nav:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
   .js .silk-nav.vertical {
     border-bottom: 0;
-    width: 200px;
+    max-width: 12.5em;
+    width: 100%;
   }
   .js .silk-nav.vertical > ul ul {
-    left: 100%;
     top: 0;
-  }
-  .js .silk-nav.vertical > ul li {
-    float: none;
-  }
-  .js .silk-nav.vertical > ul li li {
-    border: 0;
+    left: 100%;
   }
   .js .silk-nav > ul {
     position: static;
@@ -895,9 +897,6 @@
     float: left;
     border: 0;
   }
-  .js .silk-nav > ul li li {
-    float: none;
-  }
   .js .silk-nav > ul li:hover > ul {
     display: block;
   }
@@ -917,6 +916,9 @@
   }
   .js .silk-nav > ul li.parent .next {
     display: none;
+  }
+  .js .silk-nav > ul li li {
+    float: none;
   }
   .js .silk-nav > ul .back {
     display: none;
@@ -1030,8 +1032,9 @@
     margin-bottom: 1em;
   }
   .silk-table-collapsed ul, .silk-table-collapsed li {
-    margin: 0;
-    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
     list-style: none;
   }
   .silk-table-collapsed h3 {

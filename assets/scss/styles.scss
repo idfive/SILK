@@ -7,9 +7,8 @@
 
 @media screen {
 
-  // Helpers
+  // Browser reset
   @import "helpers/reset";
-  @import "helpers/debug";
 
   // Bourbon/neat
   @import "bourbon";
@@ -19,6 +18,9 @@
   @import "base/config";
   @import "base/mixins";
   @import "base/typography";
+
+  // Breakpoint debug
+  @import "helpers/debug";
 
   // Layouts
   @import "layouts/*";
