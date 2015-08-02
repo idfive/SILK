@@ -34,6 +34,18 @@ $h6-size: 16;
 
 
 // ========================================
+// Column Configurations
+// ========================================
+
+// Configure the space around each column
+$column-between: 1%;
+
+// Configure when columns float around
+// column-1-of-2, column-1-of-3, column-1-of-4
+$columns: '', 'large', 'huge', 'titan';
+
+
+// ========================================
 // Silk
 // ========================================
 

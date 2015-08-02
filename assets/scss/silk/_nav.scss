@@ -3,6 +3,7 @@
 // ========================================
 
 .silk-nav {
+  @include clearfix;
 
   // Resets
   ul {
@@ -16,7 +17,6 @@
     @include breakpoint($silk-nav-expanded) {
       overflow-x: inherit;
       min-height: 0 !important; // Overrides inline style added by JS
-      @include clearfix;
     }
 
     > ul {
@@ -46,36 +46,48 @@
 
       }
 
-        .next {
-          position: absolute;
-          right: 0;
-          top: 0;
-          height: 100%;
-          width: em(50);
+        a {
+          display: block;
+          padding: em(10);
+        }
 
-          &:after {
+          .next {
             position: absolute;
-            content: '>';
-            top: 50%;
-            left: 50%;
-            @include transform(translate(-50%, -50%));
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: em(50);
+
+            @include breakpoint($silk-nav-expanded) {
+              display: none;
+            }
+
+            &:after {
+              position: absolute;
+              content: '>';
+              top: 50%;
+              left: 50%;
+              @include transform(translate(-50%, -50%));
+            }
+
           }
 
-        }
+          .back {
 
-        .back {
+            @include breakpoint($silk-nav-expanded) {
+              display: none;
+            }
 
-          &:before {
-            display: inline-block;
-            content: '<';
+            &:before {
+              display: inline-block;
+              content: '<';
+            }
+
           }
-
-        }
 
     @include breakpoint($silk-nav-expanded) {
 
       &.vertical {
-        border-bottom: 0;
         max-width: em(200);
         width: 100%;
 
@@ -91,19 +103,18 @@
       }
 
       > ul {
-        @include clearfix;
         position: static;
 
         ul {
-          top: auto;
+          top: 100%;
           left: 0;
           display: none;
           width: 200px;
 
           ul {
-            left: 100%;
             top: 0;
-            z-index: 50;
+            left: 100%;
+            z-index: 200;
           }
 
         }
@@ -121,37 +132,6 @@
 
           }
 
-          &.parent {
-
-            > *:first-child {
-
-              &:after {
-                position: relative;
-                display: inline-block;
-                float: right;
-                content: "";
-                top: 4px;
-                left: 7px;
-                margin-right: 10px;
-                @include triangle(10px, #000, right);
-              }
-
-            }
-
-            .next {
-              display: none;
-            }
-
-          }
-
-          li {
-            float: none;
-          }
-
-        }
-
-        .back {
-          display: none;
         }
 
       }
