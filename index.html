@@ -23,7 +23,7 @@
       <div class="drawer__utilities clearfix">
         <button class="drawer__trigger drawer__trigger--mini"></button>
       </div>
-      <nav class="nav__inquire">
+      <nav class="nav-inquire">
         <ul>
           <li>
             <a href="" class="icon icon-heart">Give</a>
@@ -36,7 +36,7 @@
           </li>
         </ul>
       </nav>
-      <nav class="nav__main">
+      <nav class="nav-main">
         <ul>
           <li class="contains-tray">
             <a href="">Who We Are</a>
@@ -93,7 +93,7 @@
     <header class="site__header">
       <a href="" class="site__logo">Kennedy Krieger Institute</a>
       <button class="drawer__trigger hidden--world"></button>
-      <nav class="nav__inquire shown--world">
+      <nav class="nav-inquire shown--world">
         <ul>
           <li>
             <a href="" class="icon icon-heart">Give</a>
@@ -106,7 +106,7 @@
           </li>
         </ul>
       </nav>
-      <nav class="nav__main shown--world">
+      <nav class="nav-main shown--world">
         <ul>
           <li>
             <a href="">Who We Are</a>
@@ -160,8 +160,9 @@
       </nav>
     </header>
 
-    <div class="slideshow">
-      <div class="slideshow__slides">
+    <div class="slideshow--main">
+      <div class="slideshow__controls--main"></div>
+      <div class="slideshow__slides--main">
         <div class="hero">
           <div class="compartment">
             <div class="hero__inner">
@@ -169,6 +170,7 @@
               <strong>Key to Unlocking</strong> a<br />
               Child's potential</h1>
               <a href="" class="button">Read Ben's Story</a>
+              <div class="slideshow__pagination--main"></div>
             </div>
             <img src="assets/images/hero-sample-1.jpg" alt=""/>
           </div>
@@ -179,6 +181,7 @@
               <h1>Your Lorem is the<br />
               <strong>Ipsum to Dolor</strong></h1>
               <a href="" class="button">Read Charlie's Story</a>
+              <div class="slideshow__pagination--main"></div>
             </div>
             <img src="assets/images/hero-sample-2.jpg" alt=""/>
           </div>
@@ -187,7 +190,7 @@
     </div>
 
     <main>
-      <section class="nav__collapse clearfix">
+      <section class="nav-collapse clearfix">
         <div class="compartment">
           <h3 class="icon icon-chevron-down">Information For:</h3>
           <nav>
@@ -245,9 +248,11 @@
         </div>
       </section>
       <section class="events bg--gray">
-        <div class="compartment">
+        <div class="compartment slideshow--events">
           <h2 class="center">Upcoming Events</h2>
-          <div class="container-of-3">
+          <div class="slideshow__controls--events"></div>
+          <div class="slideshow__pagination--events"></div>
+          <div class="container-of-3 slideshow__slides--events">
             <article class="column-1-of-3">
               <figure class="shoe--orange">
                 <img src="assets/images/dolphin.jpg" alt=""/>
@@ -295,9 +300,10 @@
         </aside>
       </section>
       <section class="bubbles--happy center bg--white">
-        <div class="compartment">
+        <div class="compartment slideshow--happy">
           <h2>Your Help Benefits...</h2>
-          <div class="container-of-4">
+          <div class="slideshow__controls--happy"></div>
+          <div class="container-of-4 slideshow__slides--happy">
             <article class="column-1-of-4">
               <a href="">
                 <figure class="bubble">
@@ -335,13 +341,14 @@
               </a>
             </article>
           </div>
+          <div class="slideshow__pagination--happy"></div>
         </div>
       </section>
     </main>
 
     <footer class="site__footer">
       <div class="compartment">
-        <nav class="nav__map shown--universe">
+        <nav class="nav-map shown--universe">
           <h4 class="flat">Who We Are</h4>
           <ul>
             <li>
@@ -358,7 +365,7 @@
             </li>
           </ul>
         </nav>
-        <nav class="nav__map shown--universe">
+        <nav class="nav-map shown--universe">
           <h4 class="flat">Ways to Give</h4>
           <ul>
             <li>
@@ -378,7 +385,7 @@
             </li>
           </ul>
         </nav>
-        <nav class="nav__map shown--universe">
+        <nav class="nav-map shown--universe">
           <h4 class="flat">Making a Difference</h4>
           <ul>
             <li>
@@ -395,7 +402,7 @@
             </li>
           </ul>
         </nav>
-        <nav class="nav__map shown--universe">
+        <nav class="nav-map shown--universe">
           <h4 class="flat">Events</h4>
           <ul>
             <li>
@@ -412,7 +419,7 @@
             </li>
           </ul>
         </nav>
-        <nav class="nav__map shown--universe">
+        <nav class="nav-map shown--universe">
           <h4 class="flat">News</h4>
           <ul>
             <li>
@@ -434,7 +441,7 @@
         </nav>
         <h6 class="flat hidden--universe">Kennedy Krieger Institute</h6>
         <p class="site__info hidden--universe">707 N. Broadway, Baltimore, MD 21205<br />443.923.7300 <span class="m1">|</span> <a href="mailto:helpkids@kennedykrieger.or">helpkids@kennedykrieger.or</a><br />® 2014 Kennedy Krieger Institute<br /> <a href="">Main Site</a> <span class="m1">|</span> <a href="">Privacy Policy</a> </p>
-        <nav class="nav__social">
+        <nav class="nav-social">
           <ul>
             <li>
               <a href="" class="icon-youtube">Youtube</a>

@@ -22,9 +22,68 @@ figure {
 
   }
 
+  @at-root .shoe--orange {
+    margin-bottom: em(-43);
+  }
+
   img {
     display: block;
     width: 100%;
+  }
+
+}
+
+
+// ========================================
+// Slideshow
+// ========================================
+
+[class*='slideshow__slides'] {
+  position: relative;
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s;
+
+    &.active {
+      position: relative;
+      pointer-events: auto;
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }
+
+}
+
+[class^='slideshow__pagination'] {
+  text-align: center;
+
+  span {
+    display: inline-block;
+    vertical-align: top;
+    height: em(12);
+    width: em(12);
+    margin: 0 em(4);
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid $m6;
+    border-radius: 100%;
+    transition: background .3s;
+
+    &:hover {
+      background: rgba($m6, .5);
+    }
+
+    &.active {
+      background: $m6;
+    }
+
   }
 
 }

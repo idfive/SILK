@@ -9,18 +9,40 @@
   background-size: cover;
   color: #fff;
 
+  @at-root .slideshow__slides--main & {
+    width: 100%;
+  }
+
   &__inner {
-    border-left: em(5) solid $m5;
     margin: em(200) 0;
-    padding-left: em(5 + 10);
 
     @media (max-width: 799px) {
       font-size: 50%;
     }
 
+    [class*='slideshow__pagination'] {
+      margin-top: rem(20);
+      text-align: left;
+
+      span {
+        height: rem(12);
+        width: rem(12);
+        border: 0;
+        margin: 0 rem(12) 0 0;
+
+        &.active {
+          background: $m1;
+        }
+
+      }
+
+    }
+
   }
 
   h1 {
+    border-left: rem(5) solid $m5;
+    padding-left: rem(5 + 10);
     color: inherit;
   }
 
@@ -38,12 +60,27 @@
 .bubbles--invitation {
   padding: em(60) em(20);
 
-  @include breakpoint('large') {
-    padding-top: em(120);
-    padding-bottom: em(120);
+  @include breakpoint('medium') {
+    padding-right: em(140);
+    padding-left: em(140);
+  }
+
+  @include breakpoint('x-large') {
+    padding: em(50) em(20) em(60);
   }
 
   li {
+    border-bottom: 1px solid $m1;
+    margin-bottom: em(30);
+    padding-bottom: em(30);
+
+    @include breakpoint('x-large') {
+      border-right: 1px solid $m1;
+      border-bottom: 0;
+      margin: 0;
+      padding: em(70) em(20) em(30);
+      width: 33.33%;
+    }
 
     &:nth-child(1) {
       color: $m6;
@@ -54,6 +91,8 @@
     }
 
     &:nth-child(3) {
+      border-right: 0;
+      border-bottom: 0;
       color: $m4;
     }
 
@@ -109,10 +148,14 @@
         text-transform: uppercase;
         color: inherit;
 
-        @media (max-width: 999px) {
+        @media (max-width: 1299px) {
           font-size: em(18);
         }
 
+      }
+
+      p {
+        margin-bottom: 0;
       }
 
 }
@@ -140,6 +183,39 @@
 
 .events {
   padding: em(60) em(20);
+
+  @include breakpoint('small') {
+    padding-right: em(80);
+    padding-left: em(80);
+  }
+
+  @include breakpoint('x-large') {
+    padding-right: em(20);
+    padding-left: em(20);
+  }
+
+  [class*='slideshow__pagination'] {
+
+    @include breakpoint('x-large') {
+      display: none;
+    }
+
+  }
+
+  [class*='slideshow__slides'] {
+
+    > * {
+
+      @include breakpoint('x-large') {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+      }
+
+    }
+
+  }
+
 }
 
 
@@ -148,29 +224,62 @@
 // ========================================
 
 .story {
+  position: relative;
   overflow: hidden;
   clear: both;
 
-  .column-1-of-2 {
-    margin: 0;
+  figure {
 
-    @include breakpoint('small') {
+    @include breakpoint('large') {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
       width: 50%;
     }
 
   }
 
+    img {
+
+      @include breakpoint('large') {
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 0;
+      }
+
+    }
+
   aside {
-    padding: em(30) em(20);
+    padding: em(30) em(20) em(60);
 
     @include breakpoint('large') {
-      padding: em(60) em(40);
+      padding: em(123 / 2) em(40) em(185 / 2);
+      padding-left: calc(50% + #{em(80 / 2)});
+    }
+
+    @include breakpoint('huge') {
+      padding: em(123) em(40) em(185);
+      padding-left: calc(50% + #{em(80)});
     }
 
   }
 
     h2 {
+      margin: 0;
+      text-transform: uppercase;
       color: inherit;
+    }
+
+    p {
+      max-width: rem(485);
+      margin-bottom: em(64);
+
+      @include breakpoint('large') {
+        font-size: em(28);
+        line-height: em(40, 28);
+      }
+
     }
 
 }
@@ -183,6 +292,16 @@
 .bubbles--happy {
   position: relative;
   padding: em(60) em(20);
+
+  @include breakpoint('small') {
+    padding-right: em(120);
+    padding-left: em(120);
+  }
+
+  @include breakpoint('huge') {
+    padding-right: em(20);
+    padding-left: em(20);
+  }
 
   &:before {
     position: absolute;
@@ -198,49 +317,71 @@
     transform: translate(-50%, 0);
   }
 
-  h2 {
-    position: relative;
-    margin-bottom: em(50);
-  }
+  [class*='slideshow__slides'] {
 
-  article {
+    > * {
 
-    @for $i from 1 through 4 {
-
-      &:nth-of-type(#{$i}) a:hover:before {
-        animation: 1s love-up-#{$i} forwards;
+      @include breakpoint('huge') {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
       }
 
     }
 
   }
 
-    a {
+    h2 {
       position: relative;
-      display: block;
-      text-decoration: none;
-      color: inherit;
+      margin-bottom: em(50);
+    }
 
-      &:before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        content: '\E006';
-        font-family: 'idfive';
-        color: #fff;
-        opacity: 0;
-      }
+    article {
 
-      &:hover {
+      @for $i from 1 through 4 {
 
-        figure {
-          border-color: #fff;
+        &:nth-of-type(#{$i}) a:hover:before {
+          animation: 1s love-up-#{$i} forwards;
         }
 
       }
 
     }
+
+      a {
+        position: relative;
+        display: block;
+        text-decoration: none;
+        color: inherit;
+
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          content: '\E006';
+          font-family: 'idfive';
+          color: #fff;
+          opacity: 0;
+        }
+
+        &:hover {
+
+          figure {
+            border-color: #fff;
+          }
+
+        }
+
+      }
+
+  [class*='slideshow__pagination'] {
+
+    @include breakpoint('huge') {
+      display: none;
+    }
+
+  }
 
 }
 

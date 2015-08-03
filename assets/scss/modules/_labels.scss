@@ -9,4 +9,9 @@ time {
   text-transform: uppercase;
   background: $m4;
   color: #fff;
+
+  @include breakpoint('tiny') {
+    margin-left: em(20);
+  }
+
 }

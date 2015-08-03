@@ -15,7 +15,7 @@
 // Main Navigation
 // ========================================
 
-.nav__main {
+.nav-main {
 
   @include breakpoint('world') {
     float: right;
@@ -90,7 +90,7 @@
 // Inquire Navigation
 // ========================================
 
-.nav__inquire {
+.nav-inquire {
 
   @include breakpoint('world') {
     float: right;
@@ -247,7 +247,7 @@
 // Collapse Navigation
 // ========================================
 
-.nav__collapse {
+.nav-collapse {
   color: #fff;
 
   h3 {
@@ -353,6 +353,9 @@
         @include breakpoint('huge') {
           padding: em(24, 14) em(14, 14);
           font-size: em(14);
+          transition:
+            background .3s,
+            box-shadow .3s;
         }
 
         @include breakpoint('world') {
@@ -365,6 +368,14 @@
           padding-left: em(32, 20);
         }
 
+        &:hover {
+
+          @include breakpoint('huge') {
+            box-shadow: inset 0 rem(-8) 0 0 darken($m6, 10%);
+          }
+
+        }
+
       }
 
 }
@@ -374,7 +385,7 @@
 // Site Map Navigation
 // ========================================
 
-nav.nav__map {
+nav.nav-map {
 
   @include breakpoint('large') {
     width: 50% - 1%;
@@ -469,7 +480,7 @@ nav.nav__map {
 // Social Navigation
 // ========================================
 
-.nav__social {
+.nav-social {
   margin-bottom: em(30);
   font-size: 75%;
 

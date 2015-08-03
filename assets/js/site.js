@@ -85,10 +85,22 @@ var site = (function($) {
   kki.slideshow = function() {
 
     babySonicSlide(
-      'slideshow',
-      '.slideshow__controls',
-      '.slideshow__pager',
-      '.slideshow__slides > *');
+      'slideshow--main',
+      '.slideshow__controls--main',
+      '.slideshow__pagination--main',
+      '.slideshow__slides--main > *');
+
+    babySonicSlide(
+      'slideshow--events',
+      '.slideshow__controls--events',
+      '.slideshow__pagination--events',
+      '.slideshow__slides--events > *');
+
+    babySonicSlide(
+      'slideshow--happy',
+      '.slideshow__controls--happy',
+      '.slideshow__pagination--happy',
+      '.slideshow__slides--happy > *');
 
     function babySonicSlide(list, listController, listPagination, listElement) {
 
