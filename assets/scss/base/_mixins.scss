@@ -1,33 +1,4 @@
 // ========================================
-// Vertical Alignment
-// ========================================
-
-@mixin vertical-align {
-  position: relative;
-  top: 50%;
-  @include transform(translateY(-50%));
-}
-
-.vertical-align {
-  @include vertical-align;
-}
-
-// ========================================
-// Calculate Rem Sizes
-// ========================================
-
-@function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return $remSize * 1rem;
-}
-
-@mixin font-size($size) {
-  font-size: $size;
-  font-size: calculateRem($size);
-}
-
-
-// ========================================
 // Media Queries
 // ========================================
 
@@ -117,4 +88,24 @@
     @include list-reset;
   }
 
+}
+
+
+// ==============================
+// Collage Mixin
+// ==============================
+
+// $column-span: how many columns does the item span across?
+// $row-span: how many rows does the item span across?
+// $column-placement: starting from 0, which column does your item's left edge fall into?
+// $row-placement: starting from 0, which row does your item's top edge fall into?
+// $column-max: how many columns are in the collage?
+// $row-max: how many rows are in the collage? By default it will equal the amount of columns in the collage.
+@mixin collage($column-span, $row-span, $column-placement, $row-placement, $column-max, $row-max: $column-max) {
+  $row-placement: $row-placement - 1;
+  $column-placement: $column-placement - 1;
+  top: percentage($row-placement / $row-max);
+  left: percentage($column-placement / $column-max);
+  height: percentage($row-span / $row-max);
+  width: percentage($column-span / $column-max);
 }

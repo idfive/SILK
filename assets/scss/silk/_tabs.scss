@@ -11,18 +11,16 @@
       display: block;
     }
 
-    ul {
-      @include list-reset;
+    li {
+      display: inline-block;
+      vertical-align: top;
     }
 
-      li {
-        display: inline-block;
-        vertical-align: top;
+      a {
+        @include h4;
+        display: block;
+        text-decoration: none;
       }
-
-        a {
-          display: block;
-        }
 
   }
 
@@ -30,10 +28,6 @@
 
     @include breakpoint($silk-tabs-accordion) {
       display: none;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      @extend %silk-reset-type;
     }
 
     a {
@@ -44,7 +38,7 @@
 
   &__content {
     opacity: 1;
-    @include transition(opacity .3s);
+    transition: opacity .3s;
 
     &.is-hidden {
       opacity: 0;
@@ -52,11 +46,9 @@
 
     &.is-hidden-accordion {
       display: none;
-      opacity: 0;
 
       @include breakpoint($silk-tabs-accordion) {
         display: inherit;
-        opacity: 1;
       }
 
     }

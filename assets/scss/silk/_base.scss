@@ -5,14 +5,13 @@
 %silk-reset-type {
   margin: 0;
   padding: 0;
-  font-size: 100%;
+  font-size: 1em;
   font-weight: 400;
 }
 
 %silk-toggle-content {
   position: relative;
   display: block;
-  padding: em(10);
   text-decoration: none;
 
   &:before {
@@ -24,9 +23,22 @@
   &.is-active {
 
     &:before {
-      transform: rotate(90deg);
+      @include transform(rotate(90deg));
     }
 
+  }
+
+}
+
+
+// ========================================
+// Silk Resets
+// ========================================
+
+[class^='silk'] {
+
+  ul {
+    @include list-reset;
   }
 
 }

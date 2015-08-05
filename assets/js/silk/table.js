@@ -8,7 +8,7 @@
 
     // Default settings
     var settings = $.extend({
-      collapsedClass: 'silk-table-collapsed',
+      collapsedClass: 'silk-table--collapsed',
       hideClass: 'hidden-desktop',
       showClass: 'visible-desktop'
     }, options);
@@ -18,8 +18,8 @@
 
       // Vars
       var table = {},
-      $table = $(this),
-      $repsonsive_table = $('<div class="' + settings.hideClass + '" />');
+          $table = $(this),
+          $repsonsive_table = $('<div class="' + settings.hideClass + '" />');
 
       // For table header structure
       table.headers = [];
@@ -63,12 +63,12 @@
         // Loop through each row and create corresponding dt~dd
         for(var i = header_offset; i < table.headers.length; i++) {
           if($children.eq(i).text() != '') {
-              $li = $('<li />');
-              $li.append($('<h3>'+table.headers[i]+'</h3>'));
-              $li.append($('<div>'+$children.eq(i).text()+'</div>'));
-              $ul.append($li);
-            }
+            $li = $('<li />');
+            $li.append($('<h3>'+table.headers[i]+'</h3>'));
+            $li.append($('<div>'+$children.eq(i).text()+'</div>'));
+            $ul.append($li);
           }
+        }
 
         // Append dl to row
         $row.append($ul);

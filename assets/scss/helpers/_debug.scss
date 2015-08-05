@@ -10,10 +10,9 @@
     left: 0;
     z-index: 8000;
     display: block;
+    padding: 1em;
     content: "Default";
-    font-size: 12px;
-    text-align: center;
-    background: #ffc;
+    background: rgba(#eff, .85);
 
     @for $i from 1 to length($breakpoints) + 1 {
 

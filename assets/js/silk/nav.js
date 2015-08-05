@@ -11,25 +11,12 @@
       heightOffset: 1
     }, options);
 
-    // So we can calculate height of largest nav element
-    var navHeight = 0;
-
     function shift($el, length, offset) {
       // Calculate move value
       var move = ((length - offset) * 100) * -1;
 
       // Move
       $el.find('> ul').css('left', move + '%');
-    }
-
-    function setHeight($el) {
-      $el.find('ul').each(function() {
-
-        if ($(this).outerHeight() > navHeight) {
-          navHeight = $(this).outerHeight() + settings.heightOffset;
-        }
-
-      }).end().css('min-height', navHeight);
     }
 
     function menuaimActivate(row) {
@@ -40,10 +27,6 @@
       if($row.hasClass('parent')) {
         var $child = $row.find('> ul:first');
         var $parent = $row.parent('ul');
-
-        if($parent.parents('ul').length && $child.height() > $parent.height()) {
-          $parent.css('height',$child.height());
-        }
       }
     }
 
@@ -100,11 +83,6 @@
         shift($nav, $(this).parents('li').length, 2);
 
       });
-
-      // Set height of nav on resize
-      $(window).bind('resize', function() {
-        setHeight($nav);
-      }).resize();
 
       // If menuAim is available
       if($.fn.menuAim) {

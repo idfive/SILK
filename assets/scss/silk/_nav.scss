@@ -4,25 +4,32 @@
 
 .silk-nav {
   @include clearfix;
+  overflow: hidden;
 
-  // Resets
-  ul {
-    @include list-reset;
+  @include breakpoint($silk-drawer-disappears) {
+    overflow: inherit;
   }
 
-  // JS version
-  .js & {
-    overflow-x: hidden;
+  > ul {
+    position: relative;
+    left: 0;
+    transition: left .3s;
 
-    @include breakpoint($silk-nav-expanded) {
-      overflow-x: inherit;
-      min-height: 0 !important; // Overrides inline style added by JS
+    > li {
+
+      &:hover {
+
+        > ul {
+
+          @include breakpoint($silk-drawer-disappears) {
+            display: block;
+          }
+
+        }
+
+      }
+
     }
-
-    > ul {
-      position: relative;
-      left: 0;
-      @include transition(left .25s ease-in);
 
       ul {
         position: absolute;
@@ -30,146 +37,80 @@
         left: 100%;
         width: 100%;
 
+        @include breakpoint($silk-drawer-disappears) {
+          top: 100%;
+          left: 0;
+          display: none;
+          width: 200%;
+        }
+
         &.hidden {
           display: none;
         }
 
-      }
-
-    }
-
-      .parent {
-
-        > *:first-child {
-          position: relative;
-        }
-
-      }
-
-        a {
-          display: block;
-          padding: em(10);
-        }
-
-          .next {
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 100%;
-            width: em(50);
-
-            @include breakpoint($silk-nav-expanded) {
-              display: none;
-            }
-
-            &:after {
-              position: absolute;
-              content: '>';
-              top: 50%;
-              left: 50%;
-              @include transform(translate(-50%, -50%));
-            }
-
-          }
-
-          .back {
-
-            @include breakpoint($silk-nav-expanded) {
-              display: none;
-            }
-
-            &:before {
-              display: inline-block;
-              content: '<';
-            }
-
-          }
-
-    @include breakpoint($silk-nav-expanded) {
-
-      &.vertical {
-        max-width: em(200);
-        width: 100%;
-
-        > ul {
-
-          ul {
-            top: 0;
-            left: 100%;
-          }
-
-        }
-
-      }
-
-      > ul {
-        position: static;
-
-        ul {
-          top: 100%;
-          left: 0;
-          display: none;
-          width: 200px;
-
-          ul {
-            top: 0;
-            left: 100%;
-            z-index: 200;
-          }
-
-        }
-
-        li {
-          position: relative;
-          float: left;
-          border: 0;
-
-          &:hover {
-
-            > ul {
-              display: block;
-            }
-
-          }
-
-        }
-
-      }
-
-      &.menuaim {
-
         li {
 
-          ul {
-
-            li {
-
-              &:hover {
-
-                > ul {
-                  display: none;
-                }
-
-              }
-
-              &.hover {
-
-                > ul {
-                  display: block;
-                }
-
-              }
-
-            }
-
+          @include breakpoint($silk-drawer-disappears) {
+            display: block;
           }
 
         }
 
       }
-
-    }
 
   }
+
+    li {
+
+      @include breakpoint($silk-drawer-disappears) {
+        position: relative;
+        display: inline-block;
+      }
+
+    }
+
+      a {
+        position: relative;
+        display: block;
+        padding: .5em;
+        text-decoration: none;
+      }
+
+    .next {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: em(50);
+      text-align: center;
+
+      @include breakpoint($silk-drawer-disappears) {
+        display: none;
+      }
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        content: '>';
+        @include transform(translate(0, -50%));
+      }
+
+    }
+
+    .back {
+
+      @include breakpoint($silk-drawer-disappears) {
+        display: none;
+      }
+
+      &:before {
+        display: inline-block;
+        margin-right: em(10);
+        content: '<';
+      }
+
+    }
 
 }

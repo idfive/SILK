@@ -2,7 +2,7 @@
 // Video
 // ========================================
 
-.video {
+.silk-video {
   position: relative;
   height: em(300);
 
@@ -10,13 +10,14 @@
     height: em(580);
   }
 
-  #video-container {
+  .silk-video__inner {
     position: absolute;
     top: 0%;
     left: 0%;
     height: 100%;
     width: 100%;
     overflow: hidden;
+  }
 
     .compartment {
       position: absolute;
@@ -35,10 +36,10 @@
 
     }
 
+      // also see video.js for breakpoint play/pause for video.
       video {
         position: absolute;
         z-index: 0;
-        // also see video.js for breakpoint play/pause for video.
         visibility: hidden;
 
         @include breakpoint('large') {
@@ -50,7 +51,5 @@
         }
 
       }
-
-  }
 
 }

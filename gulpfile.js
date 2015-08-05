@@ -8,6 +8,7 @@ var gulp = require('gulp');
 var globbing = require('gulp-css-globbing');
 // https://www.npmjs.com/package/gulp-load-plugins
 var plugins = require('gulp-load-plugins')();
+var livereload = require('gulp-livereload');
 
 
 // ========================================
@@ -81,7 +82,8 @@ gulp.task('compile-sass', function() {
       style: 'expanded',
       precision: 4
     }))
-    .pipe(gulp.dest(paths.scss.dest));
+    .pipe(gulp.dest(paths.scss.dest))
+    .pipe(livereload());
 });
 
 
@@ -139,6 +141,7 @@ gulp.task('compile-templates', function() {
 // Defines all the tasks which run when 'gulp watch' is executed
 // This task is executed by default when 'gulp' is executed
 gulp.task('watch', function() {
+  livereload.listen();
   gulp.watch(paths.scss.src, ['compile-sass']);
   gulp.watch(paths.js.src, ['lint-js', 'compile-js']);
   gulp.watch(paths.templates.src, ['compile-templates']);

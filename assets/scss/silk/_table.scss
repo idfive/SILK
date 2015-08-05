@@ -1,27 +1,17 @@
 // ========================================
-// Silk Tables
+// Silk Table
 // ========================================
 
 .silk-table {
   width: 100%;
   border-spacing: 0;
   margin-bottom: 1em;
-  font-size: 100%;
 
-  thead {
-
-    th {
-      text-align: left;
-    }
-
+  th {
+    text-align: left;
   }
 
-  &-collapsed {
-    margin-bottom: 1em;
-
-    ul, li {
-      @include list-reset;
-    }
+  &--collapsed {
 
     h3 {
       @extend %silk-reset-type;

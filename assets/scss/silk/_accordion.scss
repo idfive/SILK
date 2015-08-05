@@ -6,10 +6,6 @@
 
   &__header {
 
-    h1, h2, h3, h4, h5, h6 {
-      @extend %silk-reset-type;
-    }
-
     a {
       @extend %silk-toggle-content;
     }
@@ -18,7 +14,7 @@
 
   &__content {
     opacity: 1;
-    @include transition(opacity .3s);
+    transition: opacity .3s;
 
     &.is-hidden {
       opacity: 0;

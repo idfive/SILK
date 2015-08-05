@@ -18,8 +18,6 @@
   </head>
   <body>
 
-    <div class="drawer"></div>
-
     <header class="site__header">
       <div class="compartment"></div>
     </header>
@@ -27,9 +25,9 @@
     <main>
 
       <h2>Nav</h2>
+      <button class="drawer__trigger"></button>
 
-      <a href="#nav" class="hidden-desktop">Menu</a>
-      <nav id="nav" class="silk-nav silk-offcanvas">
+      <nav id="nav" class="silk-nav silk-offcanvas drawer">
         <ul>
           <li>
             <a href="">Sports</a>
@@ -113,7 +111,7 @@
       <div class="silk-tabs">
         <section>
           <header>
-            <h2>Tab 1</h2>
+            <h4>Tab 1</h4>
           </header>
           <div>
             <p>Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -121,7 +119,7 @@
         </section>
         <section>
           <header>
-            <h2>Tab 2</h2>
+            <h4>Tab 2</h4>
           </header>
           <div>
             <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis euismod semper.</p>
@@ -129,7 +127,7 @@
         </section>
         <section>
           <header>
-            <h2>Tab 3</h2>
+            <h4>Tab 3</h4>
           </header>
           <div>
             <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam quis risus eget urna mollis ornare vel eu leo. Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod.</p>
@@ -142,7 +140,7 @@
       <div class="silk-accordion">
         <section>
           <header>
-            <h2>Accordion 1</h2>
+            <h4>Accordion 1</h4>
           </header>
           <div>
             <p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
@@ -150,7 +148,7 @@
         </section>
         <section>
           <header>
-            <h2>Accordion 2</h2>
+            <h4>Accordion 2</h4>
           </header>
           <div>
             <p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
@@ -189,8 +187,8 @@
 
     </main>
 
-    <section class="video">
-      <div id="video-container">
+    <section class="silk-video">
+      <div class="silk-video__inner">
         <div class="compartment">
           <h2>Video Background</h2>
           <p>This section is set to have a video background at breakpoint 'large'. Add a background image of your choice to show something for smaller sizes. Check modules/_video.scss for a few hardcoded sizes, that you will want to change.</p>
