@@ -1,37 +1,78 @@
 // ========================================
-// Column Container / Column Behavior
+// Grid Behavior
 // ========================================
 
-@mixin container-stretch($column-between: $column-between) {
+.grid {
+  @include clearfix;
   margin-right: $column-between * -1;
   margin-left: $column-between * -1;
-}
 
-@mixin column-breath($column-between: $column-between) {
-  margin-right: $column-between;
-  margin-left: $column-between;
-}
+  &--styled {
 
-@for $i from 1 through 4 {
-
-  .container-of-#{$i} {
-
-    @include breakpoint(nth($columns, $i)) {
-      @include container-stretch;
-      @include clearfix;
+    > * > * {
+      margin-bottom: $column-between * 2;
+      padding: em(10);
+      background: #eee;
     }
 
   }
 
-    .column-1-of-#{$i} {
+}
 
-      @include breakpoint(nth($columns, $i)) {
-        @include column-breath;
+
+// ========================================
+// Column Behavior
+// ========================================
+
+[class^='column'] {
+  margin-right: $column-between;
+  margin-left: $column-between;
+}
+
+@for $i from 1 through 6 {
+
+  .column-#{$i} {
+
+    @if $i / 2 == 2 or $i / 3 == 2 {
+
+      @include breakpoint(nth($columns, 2)) {
         float: left;
-        width: 100% / $i;
+        width: 100% / 2 - $column-between * 2;
       }
 
     }
+
+    @if $i / 3 == 2 {
+
+      @include breakpoint(nth($columns, 3)) {
+        float: left;
+        width: 100% / 3 - $column-between * 2;
+      }
+
+    }
+
+    @include breakpoint(nth($columns, $i)) {
+      float: left;
+      width: 100% / $i - $column-between * 2;
+    }
+
+  }
+
+}
+
+// ========================================
+// Sectioned Column Behavior
+// ========================================
+
+@for $m from 1 through 6 {
+
+  @for $x from 1 through 6 {
+
+    .column-#{$m}-#{$x} {
+      width: 10%;
+    }
+
+  }
 
 }
 
@@ -40,7 +81,7 @@
 // Columns 2 of 3
 // ========================================
 
-.column-2-of-3 {
+.column-2-3 {
 
   @include breakpoint(nth($columns, 3)) {
     width: 100% / 3 * 2;
@@ -53,7 +94,7 @@
 // Columns 3 of 4
 // ========================================
 
-.column-3-of-4 {
+.column-3-4 {
 
   @include breakpoint(nth($columns, 4)) {
     width: 100% / 4 * 3;

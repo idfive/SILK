@@ -2,23 +2,4 @@
 // Header
 // ========================================
 
-.site__header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 200;
-  width: 100%;
-  border-top: em(8) solid $m6;
-  padding: 0 em(20);
-  background: #fff;
-
-  + * {
-    margin-top: em(90);
-
-    @include breakpoint('tiny') {
-      margin-top: em(120);
-    }
-
-  }
-
-}
+.site__header {}

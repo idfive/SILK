@@ -2,30 +2,4 @@
 // Footer
 // ========================================
 
-.site__footer {
-  padding: em(50) em(20);
-  text-align: center;
-  background: $m6;
-  color: #fff;
-
-  @include breakpoint('universe') {
-    padding-top: em(50);
-    text-align: left;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-}
-
-  .site__info {
-    margin-top: 0;
-    font-size: em(14);
-
-    @include breakpoint('universe') {
-      font-size: em(16);
-    }
-
-  }
+.site__footer {}
