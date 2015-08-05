@@ -1,0 +1,17 @@
+// ========================================
+// Time Label
+// ========================================
+
+time {
+  @include h3;
+  display: inline-block;
+  padding: em(8, $h3-size) em(12, $h3-size);
+  text-transform: uppercase;
+  background: $m4;
+  color: #fff;
+
+  @include breakpoint('tiny') {
+    margin-left: em(20);
+  }
+
+}
