@@ -24,19 +24,20 @@
 // Column Behavior
 // ========================================
 
-[class^='column'] {
+[class^='col'] {
+  float: left;
+  width: 100%;
   margin-right: $column-between;
   margin-left: $column-between;
 }
 
 @for $i from 1 through 6 {
 
-  .column-#{$i} {
+  .col-#{$i} {
 
     @if $i / 2 == 2 or $i / 3 == 2 {
 
       @include breakpoint(nth($columns, 2)) {
-        float: left;
         width: 100% / 2 - $column-between * 2;
       }
 
@@ -45,14 +46,12 @@
     @if $i / 3 == 2 {
 
       @include breakpoint(nth($columns, 3)) {
-        float: left;
         width: 100% / 3 - $column-between * 2;
       }
 
     }
 
     @include breakpoint(nth($columns, $i)) {
-      float: left;
       width: 100% / $i - $column-between * 2;
     }
 
@@ -60,44 +59,23 @@
 
 }
 
+
 // ========================================
-// Sectioned Column Behavior
+// Cotton
 // ========================================
 
-@for $m from 1 through 6 {
+@for $m from 1 to length($breakpoints) + 1 {
 
-  @for $x from 1 through 6 {
+  @for $x from 2 through 12 {
 
-    .column-#{$m}-#{$x} {
-      width: 10%;
+    .col-#{$x}-#{nth(nth($breakpoints, $m), 1)} {
+
+      @include breakpoint(nth(nth($breakpoints, $m), 1)) {
+        width: 100% / $x - $column-between * 2;
+      }
+
     }
 
-  }
-
-}
-
-
-// ========================================
-// Columns 2 of 3
-// ========================================
-
-.column-2-3 {
-
-  @include breakpoint(nth($columns, 3)) {
-    width: 100% / 3 * 2;
-  }
-
-}
-
-
-// ========================================
-// Columns 3 of 4
-// ========================================
-
-.column-3-4 {
-
-  @include breakpoint(nth($columns, 4)) {
-    width: 100% / 4 * 3;
   }
 
 }
