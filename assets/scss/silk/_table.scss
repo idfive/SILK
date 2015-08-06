@@ -13,6 +13,10 @@
 
   &--collapsed {
 
+    @include breakpoint($silk-table-expanded) {
+      display: none;
+    }
+
     h3 {
       @extend %silk-reset-type;
       font-weight: 700;

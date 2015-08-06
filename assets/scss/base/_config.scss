@@ -41,8 +41,19 @@ $h6-size: 16;
 $column-between: 1%;
 
 // Configure when columns float around
-// column-1-of-2, column-1-of-3, column-1-of-4
-$columns: '', 'big', 'titan', 'nation', 'world', 'galaxy' ;
+//   column-2,
+//   column-3,
+//   column-4,
+//   column-5,
+//   column-6
+
+$columns:
+  'big',
+  'titan',
+  'nation',
+  'world',
+  'galaxy',
+  'universe';
 
 
 // ========================================
@@ -63,10 +74,10 @@ $silk-desktop-enabled: 'large' !default;
 $silk-drawer-disappears: 'large' !default;
 
 
-// Off Canvas Slider
+// Table
 // ----------------------------------------
 
-$silk-offcanvas-visible: 'large' !default;
+$silk-table-expanded: 'large' !default;
 
 
 // Tabs
