@@ -70,13 +70,15 @@
 // ========================================
 
 @for $m from 1 to length($breakpoints) + 1 {
+  
+  @include breakpoint(nth(nth($breakpoints, $m), 1)) {
 
-  @for $x from 2 through 12 {
+    @for $x from 2 through 12 {
 
-    .col-#{$x}-#{nth(nth($breakpoints, $m), 1)} {
+      .col-#{$x}-#{nth(nth($breakpoints, $m), 1)} {
 
-      @include breakpoint(nth(nth($breakpoints, $m), 1)) {
         width: 100% / $x - $column-between * 2;
+      
       }
 
     }

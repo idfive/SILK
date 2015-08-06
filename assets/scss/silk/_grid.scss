@@ -1,0 +1,38 @@
+.row {
+  @include outer-container;
+}
+
+@for $i from 1 to length($breakpoints) + 1 {
+  
+  @include breakpoint(nth(nth($breakpoints, $i), 1)) {
+    
+    //Column
+    @for $x from 2 to $grid-columns {
+   
+      .column-#{nth(nth($breakpoints, $i), 1)}-#{$x} {
+        @include span-columns($x);
+        background: #f1f1f1;
+      }
+    
+    }
+  
+    //Push
+    @for $x from 0 to $grid-columns {
+  
+      .column-#{nth(nth($breakpoints, $i), 1)}-push-#{$x} {
+        @include shift($x);
+      }
+      
+    }
+  
+    //Pull
+    @for $x from 1 to $grid-columns {
+  
+      .column-#{nth(nth($breakpoints, $i), 1)}-pull-#{$x} {
+        @include shift($x * -1);
+      }
+      
+    }
+    
+  }
+}
