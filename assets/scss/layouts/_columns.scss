@@ -1,5 +1,9 @@
 // ========================================
-// Grid Behavior
+// Cotton Grid
+// ========================================
+
+// ========================================
+// Shared Grid Behavior
 // ========================================
 
 .grid {
@@ -8,6 +12,7 @@
   margin-left: $column-between * -1;
 
   &--styled {
+    padding: $column-between * 2;
 
     > * > * {
       margin-bottom: $column-between * 2;
@@ -21,23 +26,23 @@
 
 
 // ========================================
-// Column Behavior
+// Generic Column Behavior
 // ========================================
 
 [class^='col'] {
   float: left;
-  width: 100%;
+  width: 100% - $column-between * 2;
   margin-right: $column-between;
   margin-left: $column-between;
 }
 
-@for $i from 1 through 6 {
+@for $i from 2 through 6 {
 
   .col-#{$i} {
 
     @if $i / 2 == 2 or $i / 3 == 2 {
 
-      @include breakpoint(nth($columns, 2)) {
+      @include breakpoint(nth($columns, 1)) {
         width: 100% / 2 - $column-between * 2;
       }
 
@@ -45,13 +50,13 @@
 
     @if $i / 3 == 2 {
 
-      @include breakpoint(nth($columns, 3)) {
+      @include breakpoint(nth($columns, 2)) {
         width: 100% / 3 - $column-between * 2;
       }
 
     }
 
-    @include breakpoint(nth($columns, $i)) {
+    @include breakpoint(nth($columns, $i - 1)) {
       width: 100% / $i - $column-between * 2;
     }
 
@@ -61,7 +66,7 @@
 
 
 // ========================================
-// Cotton
+// Grid Class Hooks
 // ========================================
 
 @for $m from 1 to length($breakpoints) + 1 {

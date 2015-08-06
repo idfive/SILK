@@ -625,6 +625,9 @@
     content: "";
     display: table;
   }
+  .grid--styled {
+    padding: 2%;
+  }
   .grid--styled > * > * {
     margin-bottom: 2%;
     padding: 0.625em;
@@ -633,7 +636,7 @@
 
   [class^='col'] {
     float: left;
-    width: 100%;
+    width: 98%;
     margin-right: 1%;
     margin-left: 1%;
   }
@@ -1748,6 +1751,13 @@
   .silk-table th {
     text-align: left;
   }
+}
+@media screen and (min-width: 800px) {
+  .silk-table--collapsed {
+    display: none;
+  }
+}
+@media screen {
   .silk-table--collapsed h3 {
     font-weight: 700;
   }
