@@ -45,7 +45,7 @@
       }
 
       // Loop through each body row
-      $rowEls.each(function(i) {
+      $rowEls.each(function() {
 
         var $row = $('<div class="' + settings.collapsedClass + '" />'),
         $ul = $('<ul />'),
@@ -62,7 +62,7 @@
 
         // Loop through each row and create corresponding dt~dd
         for(var i = header_offset; i < table.headers.length; i++) {
-          if($children.eq(i).text() != '') {
+          if($children.eq(i).text() !== '') {
             $li = $('<li />');
             $li.append($('<h3>'+table.headers[i]+'</h3>'));
             $li.append($('<div>'+$children.eq(i).text()+'</div>'));

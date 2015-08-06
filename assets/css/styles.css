@@ -646,7 +646,7 @@
 @media screen and (min-width: 1000px) {
   .column-3 {
     float: left;
-    width: 31.3333%;
+    width: 31.33333333%;
   }
 }
 
@@ -679,13 +679,13 @@
 @media screen and (min-width: 1000px) {
   .column-6 {
     float: left;
-    width: 31.3333%;
+    width: 31.33333333%;
   }
 }
 @media screen and (min-width: 1300px) {
   .column-6 {
     float: left;
-    width: 14.6667%;
+    width: 14.66666667%;
   }
 }
 
@@ -836,7 +836,7 @@
 }
 @media screen and (min-width: 1000px) {
   .column-2-3 {
-    width: 66.6667%;
+    width: 66.66666667%;
   }
 }
 
@@ -1086,7 +1086,7 @@
     top: 50%;
     left: 50%;
     height: 0.125em;
-    width: 33.3333%;
+    width: 33.33333333%;
     content: '';
     background: rgba(0, 0, 0, 0.25);
     -webkit-transform: translate(-50%, -50%);

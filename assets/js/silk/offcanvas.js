@@ -1,13 +1,8 @@
-var site = (function($) {
+silk.offcanvas = (function() {
 
-  var silksite = {};
+  var self = {};
 
-  silksite.domReady = function() {
-    silksite.drawer();
-    silksite.justdoit();
-  };
-
-  silksite.drawer = function() {
+  self.init = function() {
 
     $('body').attr('data-drawer-state','invisible');
 
@@ -39,16 +34,8 @@ var site = (function($) {
 
   };
 
-  silksite.justdoit = function() {
+  return self;
 
-  };
+})();
 
-  return silksite;
-
-})(jQuery);
-
-(function($){
-
-  site.domReady();
-
-})(jQuery);
+silk.offcanvas.init();

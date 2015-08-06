@@ -4,8 +4,6 @@
 
 // Plugin declarations
 var gulp = require('gulp');
-// https://www.npmjs.com/package/gulp-css-globbing
-var globbing = require('gulp-css-globbing');
 // https://www.npmjs.com/package/gulp-load-plugins
 var plugins = require('gulp-load-plugins')();
 
@@ -19,7 +17,7 @@ var plugins = require('gulp-load-plugins')();
 var paths = {
   scss: {
     src:  'assets/scss/**/*.scss',
-    dest: 'assets/css'
+    dest: 'assets/css',
   },
   icons: {
     src:  'assets/icons/*.svg',
@@ -28,7 +26,8 @@ var paths = {
     dest:   'assets/fonts/'
   },
   js: {
-    src:  'assets/js/*.js',
+    compile: ['assets/js/*.js'],
+    src:  ['assets/js/*.js','assets/js/silk/*.js'],
     dest: 'assets/js/build'
   },
   templates: {
@@ -73,14 +72,14 @@ gulp.task('iconfont', function() {
 gulp.task('compile-sass', function() {
   return gulp.src(paths.scss.src)
     // https://www.npmjs.com/package/gulp-css-globbing
-    .pipe(globbing({
+    .pipe(plugins.cssGlobbing({
       extensions: ['.scss']
     }))
     // https://www.npmjs.com/package/gulp-ruby-sass
     .pipe(plugins.rubySass({
       "sourcemap=none": true,
       style: 'expanded',
-      precision: 4
+      precision: 8
     }))
     .on('error', function (err) {
       console.error('Error!', err.message);
@@ -113,12 +112,14 @@ gulp.task('lint-js', function() {
 
 // Compiles js from assets/js/, aggregated silk js modules, concatenates js
 gulp.task('compile-js', function() {
-  return gulp.src(paths.js.src)
+  return gulp.src(paths.js.compile)
+  	.pipe(plugins.include())
     .pipe(plugins.plumber())
-    .pipe(plugins.browserify())
     .pipe(gulp.dest(paths.js.dest))
     // https://www.npmjs.com/package/gulp-uglify
-    .pipe(plugins.uglify())
+    .pipe(plugins.uglify({
+      mangle: false
+    }))
     .pipe(gulp.dest(paths.js.dest));
 });
 

@@ -1,20 +1,30 @@
-// Require libraries
-var $ = require('jquery');
-var bootstrap	= require('./silk/bootstrap');
+// Vendor
+//= include vendor/jquery-2.1.4.min.js
+//= include vendor/jquery.menuaim.js
 
-// Require Modules
-var silkaccordion	= require('silkaccordion');
-var silktabs = require('silktabs');
-var silknav = require('silknav');
-var silknav = require('silkvideo');
-var silktable = require('silktable');
-var menuaim = require('menuaim');
+// SILK Core
+//= include silk/silk.js
+//= include silk/helpers.js
+//= include silk/bootstrap.js
 
-// Initialize bootstrap
-bootstrap.init();
+// SILK Modules
+//= include silk/accordion.js
+//= include silk/tabs.js
+//= include silk/video.js
+//= include silk/table.js
+//= include silk/nav.js
+//= include silk/offcanvas.js
 
-// Initialize Silk Nav
-$('.silk-nav').silknav();
-$('.silk-tabs').silktabs();
-$('.silk-accordion').silkaccordion();
-$('.silk-table').silktable();
+// Bootstrap
+(function($) {
+  
+  //Run SILK bootstrap
+  
+  //Insitialize SILK modules
+  $('.silk-nav').silknav();
+  $('.silk-tabs').silktabs();
+  $('.silk-accordion').silkaccordion();
+  $('.silk-table').silktable();
+  
+  
+}(jQuery));
