@@ -113,7 +113,7 @@ gulp.task('lint-js', function() {
 // Compiles js from assets/js/, aggregated silk js modules, concatenates js
 gulp.task('compile-js', function() {
   return gulp.src(paths.js.compile)
-  	.pipe(plugins.include())
+    .pipe(plugins.include())
     .pipe(plugins.plumber())
     .pipe(gulp.dest(paths.js.dest))
     // https://www.npmjs.com/package/gulp-uglify

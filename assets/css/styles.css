@@ -510,37 +510,37 @@
   h1,
   .h1 {
     font-size: 2.5em;
-    line-height: su(1em);
+    line-height: 1.05;
   }
 
   h2,
   .h2 {
-    font-size: 2.1875em;
-    line-height: su(1em);
+    font-size: 2.125em;
+    line-height: 1.05882353;
   }
 
   h3,
   .h3 {
     font-size: 1.875em;
-    line-height: su(1em);
+    line-height: 1.06666667;
   }
 
   h4,
   .h4 {
-    font-size: 1.5625em;
-    line-height: su(1em);
+    font-size: 1.5em;
+    line-height: 1.08333333;
   }
 
   h5,
   .h5 {
     font-size: 1.25em;
-    line-height: su(1em);
+    line-height: 1.1;
   }
 
   h6,
   .h6 {
     font-size: 1em;
-    line-height: su(1em);
+    line-height: 1.125;
   }
 
   .id5debug:before {
@@ -1242,7 +1242,7 @@
   body {
     overflow-x: hidden;
     font-size: 1em;
-    line-height: su(1.75em);
+    line-height: 1.75;
   }
 
   .compartment,
@@ -3853,8 +3853,8 @@
     vertical-align: top;
   }
   .silk-tabs > .silk-tabs__nav a {
-    font-size: 1.5625em;
-    line-height: su(1em);
+    font-size: 1.5em;
+    line-height: 1.08333333;
     display: block;
     text-decoration: none;
   }
