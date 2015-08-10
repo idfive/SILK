@@ -37,6 +37,9 @@ $h6-line: 18;
 // Column Configurations
 // ========================================
 
+// Max width of the site
+$boundary: 1400;
+
 // Configure the space around each column
 $column-between: 1%;
 
@@ -102,7 +105,8 @@ $breakpoints: (
   ("world", 1200px),
   ("galaxy", 1300px),
   ("universe", 1400px),
-  ("penguindrum", 1500px)
+  ("aldnoah", 1500px),
+  ("penguindrum", 1600px)
 );
 
 

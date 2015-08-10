@@ -17,6 +17,12 @@
 
 .pillow {
   padding: em(20);
+
+  // For page__content
+  &--main {
+    padding: em(100) em(20);
+  }
+
 }
 
 

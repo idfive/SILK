@@ -4,6 +4,12 @@
 
 [class^='nav'] {
   @include list-reset;
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
 }
 
 
@@ -17,6 +23,10 @@
 
     li {}
 
-      a {}
+      a {
+
+        &:hover {}
+
+      }
 
 }

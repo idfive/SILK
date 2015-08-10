@@ -99,8 +99,30 @@ h6,
 
 
 // ========================================
-// Titles
+// Blockquote / Cite
 // ========================================
+
+blockquote {
+
+  &:before {
+    margin-right: em(5);
+    content: '\201C';
+  }
+
+  &:after {
+    content: '\201D';
+  }
+
+}
+
+cite {
+  font-style: normal;
+
+  &:before {
+    content: '';
+  }
+
+}
 
 
 // ========================================

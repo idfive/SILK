@@ -496,6 +496,13 @@
     list-style: none;
   }
 
+  .indirect-menu-reset menu {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
   h1,
   .h1, h2,
   .h2, h3,
@@ -541,6 +548,21 @@
   .h6 {
     font-size: 1em;
     line-height: 1.125;
+  }
+
+  blockquote:before {
+    margin-right: 0.3125em;
+    content: '\201C';
+  }
+  blockquote:after {
+    content: '\201D';
+  }
+
+  cite {
+    font-style: normal;
+  }
+  cite:before {
+    content: '';
   }
 
   .id5debug:before {
@@ -610,6 +632,11 @@
   }
 }
 @media screen and (min-width: 1500px) {
+  .id5debug:before {
+    content: "aldnoah";
+  }
+}
+@media screen and (min-width: 1600px) {
   .id5debug:before {
     content: "penguindrum";
   }
@@ -1182,6 +1209,51 @@
   }
 }
 @media screen and (min-width: 1500px) {
+  .col-2-aldnoah {
+    width: 48%;
+  }
+
+  .col-3-aldnoah {
+    width: 31.33333333%;
+  }
+
+  .col-4-aldnoah {
+    width: 23%;
+  }
+
+  .col-5-aldnoah {
+    width: 18%;
+  }
+
+  .col-6-aldnoah {
+    width: 14.66666667%;
+  }
+
+  .col-7-aldnoah {
+    width: 12.28571429%;
+  }
+
+  .col-8-aldnoah {
+    width: 10.5%;
+  }
+
+  .col-9-aldnoah {
+    width: 9.11111111%;
+  }
+
+  .col-10-aldnoah {
+    width: 8%;
+  }
+
+  .col-11-aldnoah {
+    width: 7.09090909%;
+  }
+
+  .col-12-aldnoah {
+    width: 6.33333333%;
+  }
+}
+@media screen and (min-width: 1600px) {
   .col-2-penguindrum {
     width: 48%;
   }
@@ -1245,13 +1317,11 @@
     line-height: 1.75;
   }
 
-  .compartment,
-  .l-wrapper {
+  .compartment {
     margin: 0 auto;
     max-width: 87.5em;
   }
-  .compartment::after,
-  .l-wrapper::after {
+  .compartment::after {
     clear: both;
     content: "";
     display: table;
@@ -1263,6 +1333,10 @@
     padding-left: 0;
     list-style: none;
   }
+  [class^='nav'] a {
+    display: block;
+    text-decoration: none;
+  }
 
   .silk-accordion__content {
     opacity: 1;
@@ -1272,17 +1346,10 @@
     opacity: 0;
   }
 
-  .silk-table--collapsed h3 {
-    margin: 0;
-    padding: 0;
-    font-size: 1em;
-    font-weight: 400;
-  }
-
   .silk-accordion__header a, .silk-tabs__header a {
     position: relative;
-    display: block;
     text-decoration: none;
+    color: inherit;
   }
   .silk-accordion__header a:before, .silk-tabs__header a:before {
     display: inline-block;
@@ -3437,6 +3504,199 @@
   }
 }
 @media screen and (min-width: 1500px) {
+  .aldnoah-2 {
+    float: left;
+    display: block;
+    margin-right: 2.3576516%;
+    width: 14.701957%;
+  }
+  .aldnoah-2:last-child {
+    margin-right: 0;
+  }
+
+  .aldnoah-3 {
+    float: left;
+    display: block;
+    margin-right: 2.3576516%;
+    width: 23.2317613%;
+  }
+  .aldnoah-3:last-child {
+    margin-right: 0;
+  }
+
+  .aldnoah-4 {
+    float: left;
+    display: block;
+    margin-right: 2.3576516%;
+    width: 31.7615656%;
+  }
+  .aldnoah-4:last-child {
+    margin-right: 0;
+  }
+
+  .aldnoah-5 {
+    float: left;
+    display: block;
+    margin-right: 2.3576516%;
+    width: 40.2913699%;
+  }
+  .aldnoah-5:last-child {
+    margin-right: 0;
+  }
+
+  .aldnoah-6 {
+    float: left;
+    display: block;
+    margin-right: 2.3576516%;
+    width: 48.8211742%;
+  }
+  .aldnoah-6:last-child {
+    margin-right: 0;
+  }
+
+  .aldnoah-7 {
+    float: left;
+    display: block;
+    margin-right: 2.3576516%;
+    width: 57.3509785%;
+  }
+  .aldnoah-7:last-child {
+    margin-right: 0;
+  }
+
+  .aldnoah-8 {
+    float: left;
+    display: block;
+    margin-right: 2.3576516%;
+    width: 65.8807828%;
+  }
+  .aldnoah-8:last-child {
+    margin-right: 0;
+  }
+
+  .aldnoah-9 {
+    float: left;
+    display: block;
+    margin-right: 2.3576516%;
+    width: 74.4105871%;
+  }
+  .aldnoah-9:last-child {
+    margin-right: 0;
+  }
+
+  .aldnoah-10 {
+    float: left;
+    display: block;
+    margin-right: 2.3576516%;
+    width: 82.9403914%;
+  }
+  .aldnoah-10:last-child {
+    margin-right: 0;
+  }
+
+  .aldnoah-11 {
+    float: left;
+    display: block;
+    margin-right: 2.3576516%;
+    width: 91.4701957%;
+  }
+  .aldnoah-11:last-child {
+    margin-right: 0;
+  }
+
+  .aldnoah-push-0 {
+    margin-left: 0%;
+  }
+
+  .aldnoah-push-1 {
+    margin-left: 8.5298043%;
+  }
+
+  .aldnoah-push-2 {
+    margin-left: 17.0596086%;
+  }
+
+  .aldnoah-push-3 {
+    margin-left: 25.5894129%;
+  }
+
+  .aldnoah-push-4 {
+    margin-left: 34.1192172%;
+  }
+
+  .aldnoah-push-5 {
+    margin-left: 42.6490215%;
+  }
+
+  .aldnoah-push-6 {
+    margin-left: 51.1788258%;
+  }
+
+  .aldnoah-push-7 {
+    margin-left: 59.7086301%;
+  }
+
+  .aldnoah-push-8 {
+    margin-left: 68.2384344%;
+  }
+
+  .aldnoah-push-9 {
+    margin-left: 76.7682387%;
+  }
+
+  .aldnoah-push-10 {
+    margin-left: 85.298043%;
+  }
+
+  .aldnoah-push-11 {
+    margin-left: 93.8278473%;
+  }
+
+  .aldnoah-pull-1 {
+    margin-left: -8.5298043%;
+  }
+
+  .aldnoah-pull-2 {
+    margin-left: -17.0596086%;
+  }
+
+  .aldnoah-pull-3 {
+    margin-left: -25.5894129%;
+  }
+
+  .aldnoah-pull-4 {
+    margin-left: -34.1192172%;
+  }
+
+  .aldnoah-pull-5 {
+    margin-left: -42.6490215%;
+  }
+
+  .aldnoah-pull-6 {
+    margin-left: -51.1788258%;
+  }
+
+  .aldnoah-pull-7 {
+    margin-left: -59.7086301%;
+  }
+
+  .aldnoah-pull-8 {
+    margin-left: -68.2384344%;
+  }
+
+  .aldnoah-pull-9 {
+    margin-left: -76.7682387%;
+  }
+
+  .aldnoah-pull-10 {
+    margin-left: -85.298043%;
+  }
+
+  .aldnoah-pull-11 {
+    margin-left: -93.8278473%;
+  }
+}
+@media screen and (min-width: 1600px) {
   .penguindrum-2 {
     float: left;
     display: block;
@@ -3825,6 +4085,7 @@
     margin-bottom: 1em;
   }
   .silk-table th {
+    font-weight: normal;
     text-align: left;
   }
 }
@@ -3947,6 +4208,9 @@
   .pillow {
     padding: 1.25em;
   }
+  .pillow--main {
+    padding: 6.25em 1.25em;
+  }
 
   .push {
     margin: 1.25em 0;
@@ -4014,6 +4278,11 @@
   }
 }
 @media screen and (min-width: 1500px) {
+  .hidden--aldnoah {
+    display: none;
+  }
+}
+@media screen and (min-width: 1600px) {
   .hidden--penguindrum {
     display: none;
   }
@@ -4080,6 +4349,11 @@
   }
 }
 @media screen and (min-width: 1500px) {
+  .shown--aldnoah {
+    display: block;
+  }
+}
+@media screen and (min-width: 1600px) {
   .shown--penguindrum {
     display: block;
   }
@@ -4087,7 +4361,9 @@
 
 @media screen {
   [class^='button'] {
+    display: inline-block;
     border: 0;
+    margin: 0;
     padding: 0;
     cursor: pointer;
     background: #f5f5f5;
@@ -4098,7 +4374,9 @@
   }
 
   .button--gray {
+    display: inline-block;
     border: 0;
+    margin: 0;
     padding: 0;
     cursor: pointer;
     background: #eee;
@@ -4125,6 +4403,11 @@
   figure img {
     display: block;
     width: 100%;
+  }
+
+  .hero {
+    background-position: 50% 50%;
+    background-size: cover;
   }
 }
 @media print {

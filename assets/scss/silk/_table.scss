@@ -7,8 +7,20 @@
   border-spacing: 0;
   margin-bottom: 1em;
 
+  thead {}
+
+  tbody {}
+
   th {
+    font-weight: normal;
     text-align: left;
+  }
+
+  td {
+
+    // Every td in every odd row
+    @at-root .silk-table tr:nth-of-type(odd) td {}
+
   }
 
   &--collapsed {
@@ -18,7 +30,6 @@
     }
 
     h3 {
-      @extend %silk-reset-type;
       font-weight: 700;
     }
 

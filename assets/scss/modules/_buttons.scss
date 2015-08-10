@@ -3,7 +3,9 @@
 // ========================================
 
 @mixin button($color) {
+  display: inline-block;
   border: 0;
+  margin: 0;
   padding: 0;
   cursor: pointer;
   background: $color;
