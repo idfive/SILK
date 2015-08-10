@@ -1317,11 +1317,13 @@
     line-height: 1.75;
   }
 
-  .compartment {
+  .compartment,
+  .row {
     margin: 0 auto;
-    max-width: 87.5em;
+    max-width: 68.75em;
   }
-  .compartment::after {
+  .compartment::after,
+  .row::after {
     clear: both;
     content: "";
     display: table;
@@ -1367,17 +1369,6 @@
     margin-bottom: 0;
     padding-left: 0;
     list-style: none;
-  }
-
-  .row {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .row::after {
-    clear: both;
-    content: "";
-    display: table;
   }
 }
 @media screen and (min-width: 400px) {
@@ -4394,6 +4385,9 @@
     white-space: nowrap;
     background: url("../images/logo.png") no-repeat 0 0;
     background-size: contain;
+    color: transparent;
+  }
+  .site__logo:hover {
     color: transparent;
   }
 

@@ -15,10 +15,11 @@
 // Pillow
 // ========================================
 
+// For generic full-width sections
 .pillow {
   padding: em(20);
 
-  // For page__content
+  // For large sections / page__content
   &--main {
     padding: em(100) em(20);
   }

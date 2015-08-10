@@ -2,10 +2,6 @@
 // Silk Grid
 // ========================================
 
-.row {
-  @include outer-container;
-}
-
 @for $i from 1 to length($breakpoints) + 1 {
 
   @include breakpoint(nth(nth($breakpoints, $i), 1)) {

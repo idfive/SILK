@@ -25,7 +25,8 @@ html {
 // Compartment
 // ========================================
 
-.compartment {
+.compartment,
+.row {
   @include clearfix;
   margin: 0 auto;
   max-width: em($boundary);
