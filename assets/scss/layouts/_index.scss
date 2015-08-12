@@ -29,5 +29,6 @@ html {
 .row {
   @include clearfix;
   margin: 0 auto;
-  max-width: em($boundary);
+  max-width: $boundary * 1px;
+  max-width: rem($boundary);
 }

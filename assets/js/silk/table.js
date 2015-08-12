@@ -9,8 +9,8 @@
     // Default settings
     var settings = $.extend({
       collapsedClass: 'silk-table--collapsed',
-      hideClass: 'hidden-desktop',
-      showClass: 'visible-desktop'
+      hideClass: 'hidden--large',
+      showClass: 'shown--large'
     }, options);
 
     // Do stuff

@@ -45,6 +45,9 @@ $h6-line: 18;
 // Max width of the site
 $boundary: 1100;
 
+// Number of columns within the grid
+$column-base: 12;
+
 // Configure the space around each column
 $column-between: 1%;
 
@@ -55,13 +58,13 @@ $column-between: 1%;
 //   column-5,
 //   column-6
 
-$columns:
-  'big',
-  'titan',
-  'nation',
-  'world',
-  'galaxy',
-  'universe';
+// $silk-columns:
+//   'big',
+//   'titan',
+//   'nation',
+//   'world',
+//   'galaxy',
+//   'universe';
 
 
 // ========================================

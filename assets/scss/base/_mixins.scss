@@ -25,6 +25,8 @@
 // Column Mixin
 // ========================================
 
+// Ex: @include column(2, 4, 6, 20em, 40em, 60em);
+
 @mixin column($spread...) {
   $argument-length: length($spread);
   $argument-split: $argument-length / 2;
@@ -67,6 +69,21 @@
 
 .is-visible {
   @include is-visible;
+}
+
+
+// ========================================
+// Clearfix
+// ========================================
+
+@mixin clearfix {
+
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
 }
 
 

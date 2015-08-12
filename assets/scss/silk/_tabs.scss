@@ -2,9 +2,9 @@
 // Silk Tabs
 // ========================================
 
-.silk-tabs {
+.silk-tabs {}
 
-  > .silk-tabs__nav {
+  .silk-tabs__nav {
     display: none;
 
     @include breakpoint($silk-tabs-accordion) {
@@ -24,7 +24,7 @@
 
   }
 
-  &__header {
+  .silk-tabs__header {
 
     @include breakpoint($silk-tabs-accordion) {
       display: none;
@@ -36,7 +36,7 @@
 
   }
 
-  &__content {
+  .silk-tabs__content {
     opacity: 1;
     transition: opacity .3s;
 
@@ -54,5 +54,3 @@
     }
 
   }
-
-}
