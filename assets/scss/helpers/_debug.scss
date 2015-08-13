@@ -37,8 +37,8 @@ $grid-check: null;
 
   $grid-check: append($grid-check, rgba(#f0c, .25) (100% / $column-base * $i), comma);
   $grid-check: append($grid-check, rgba(#f0c, 0) (100% / $column-base * $i), comma);
-  $grid-check: append($grid-check, rgba(#f0c, 0) (100% / $column-base * $i + 1%), comma);
-  $grid-check: append($grid-check, rgba(#f0c, .25) (100% / $column-base * $i + 1%), comma);
+  $grid-check: append($grid-check, rgba(#f0c, 0) (100% / $column-base * $i + ($column-between)), comma);
+  $grid-check: append($grid-check, rgba(#f0c, .25) (100% / $column-base * $i + ($column-between)), comma);
 
 }
 
