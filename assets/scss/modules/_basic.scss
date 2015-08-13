@@ -2,9 +2,16 @@
 // Callout
 // ========================================
 
+// Plain Callout
+// ----------------------------------------
+
 [class^='callout'] {
   padding: em(20);
 }
+
+
+// Additional Callouts
+// ----------------------------------------
 
 .callout--gray {
   background: #eee;
@@ -40,54 +47,6 @@
 
   &--bottom {
     margin-bottom: em(20);
-  }
-
-}
-
-
-// ========================================
-// Hidden Clasess
-// ========================================
-
-.hidden {
-
-  @at-root [class^='hidden'] {}
-
-  @for $i from 1 through length($breakpoints) {
-
-    &--#{nth(nth($breakpoints, $i), 1)} {
-
-      @include breakpoint(nth(nth($breakpoints, $i), 1)) {
-        display: none;
-      }
-
-    }
-
-  }
-
-}
-
-
-// ========================================
-// Shown Clasess
-// ========================================
-
-.shown {
-
-  @at-root [class*='shown'] {
-    display: none;
-  }
-
-  @for $i from 1 through length($breakpoints) {
-
-    &--#{nth(nth($breakpoints, $i), 1)} {
-
-      @include breakpoint(nth(nth($breakpoints, $i), 1)) {
-        display: block;
-      }
-
-    }
-
   }
 
 }

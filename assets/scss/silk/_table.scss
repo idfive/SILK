@@ -8,7 +8,7 @@
   margin-bottom: 1em;
 
   th {
-    @include h3;
+    @include h4;
     text-align: left;
   }
 
@@ -25,11 +25,16 @@
       display: none;
     }
 
-    // The first header of every column
-    @at-root .silk-table--collapsed li:first-child h4 {}
 
-    // Odd "rows" within every column
-    @at-root .silk-table--collapsed li:nth-of-type(odd) div {}
+    li {
+
+      // The first header of every column
+      &:first-child h4 {}
+
+      // Odd "rows" within every column
+      &:nth-of-type(odd) div {}
+
+    }
 
   }
 

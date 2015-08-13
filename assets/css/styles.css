@@ -648,7 +648,7 @@
   html {
     overflow-x: hidden;
     font-family: "Roboto";
-    color: #000;
+    color: #333;
   }
 
   body {
@@ -713,7 +713,8 @@
   }
 
   .grid {
-    margin: 0 -1%;
+    margin-right: -1%;
+    margin-left: -1%;
   }
   .grid:after {
     clear: both;
@@ -2623,7 +2624,7 @@
     height: 0.125em;
     width: 33.33333333%;
     content: '';
-    background: rgba(0, 0, 0, 0.25);
+    background: #f0c;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     transition: background .4s, box-shadow .4s, margin .4s, -webkit-transform .4s;
@@ -2633,7 +2634,7 @@
     margin-top: -0.25em;
   }
   .drawer__trigger:after {
-    box-shadow: 0 0.25em 0 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0.25em 0 0 #f0c;
   }
   [data-drawer-state="visible"] .drawer__trigger:before {
     margin-top: 0;
@@ -2652,8 +2653,8 @@
     margin-bottom: 1em;
   }
   .silk-table th {
-    font-size: 1.875em;
-    line-height: 1.06666667;
+    font-size: 1.5em;
+    line-height: 1.08333333;
     text-align: left;
   }
 }
@@ -2715,7 +2716,7 @@
     height: 18.75em;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
   .silk-video {
     height: 36.25em;
   }
@@ -2740,7 +2741,7 @@
     padding-bottom: 2.5em;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
   .silk-video .compartment {
     padding-top: 6.25em;
     padding-bottom: 6.25em;
@@ -2753,7 +2754,7 @@
     visibility: hidden;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
   .silk-video video {
     visibility: visible;
   }
@@ -2787,156 +2788,14 @@
   .push--bottom {
     margin-bottom: 1.25em;
   }
-}
-@media screen and (min-width: 400px) {
-  .hidden--tiny {
-    display: none;
-  }
-}
-@media screen and (min-width: 500px) {
-  .hidden--small {
-    display: none;
-  }
-}
-@media screen and (min-width: 600px) {
-  .hidden--medium {
-    display: none;
-  }
-}
-@media screen and (min-width: 700px) {
-  .hidden--big {
-    display: none;
-  }
-}
-@media screen and (min-width: 800px) {
-  .hidden--large {
-    display: none;
-  }
-}
-@media screen and (min-width: 900px) {
-  .hidden--huge {
-    display: none;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .hidden--titan {
-    display: none;
-  }
-}
-@media screen and (min-width: 1100px) {
-  .hidden--nation {
-    display: none;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .hidden--world {
-    display: none;
-  }
-}
-@media screen and (min-width: 1300px) {
-  .hidden--galaxy {
-    display: none;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .hidden--universe {
-    display: none;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .hidden--aldnoah {
-    display: none;
-  }
-}
-@media screen and (min-width: 1600px) {
-  .hidden--penguindrum {
-    display: none;
-  }
-}
 
-@media screen {
-  [class*='shown'] {
-    display: none;
-  }
-}
-@media screen and (min-width: 400px) {
-  .shown--tiny {
-    display: block;
-  }
-}
-@media screen and (min-width: 500px) {
-  .shown--small {
-    display: block;
-  }
-}
-@media screen and (min-width: 600px) {
-  .shown--medium {
-    display: block;
-  }
-}
-@media screen and (min-width: 700px) {
-  .shown--big {
-    display: block;
-  }
-}
-@media screen and (min-width: 800px) {
-  .shown--large {
-    display: block;
-  }
-}
-@media screen and (min-width: 900px) {
-  .shown--huge {
-    display: block;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .shown--titan {
-    display: block;
-  }
-}
-@media screen and (min-width: 1100px) {
-  .shown--nation {
-    display: block;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .shown--world {
-    display: block;
-  }
-}
-@media screen and (min-width: 1300px) {
-  .shown--galaxy {
-    display: block;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .shown--universe {
-    display: block;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .shown--aldnoah {
-    display: block;
-  }
-}
-@media screen and (min-width: 1600px) {
-  .shown--penguindrum {
-    display: block;
-  }
-}
-
-@media screen {
   [class^='button'] {
     display: inline-block;
     border: 0;
     margin: 0;
     padding: 0;
     cursor: pointer;
-    background: #f5f5f5;
     transition: background .3s, box-shadow .3s, color .3s;
-  }
-  [class^='button']:hover {
-    background: #e8e8e8;
   }
 
   .button--gray {
@@ -2945,11 +2804,7 @@
     margin: 0;
     padding: 0;
     cursor: pointer;
-    background: #eee;
     transition: background .3s, box-shadow .3s, color .3s;
-  }
-  .button--gray:hover {
-    background: #e1e1e1;
   }
 
   .site__logo {

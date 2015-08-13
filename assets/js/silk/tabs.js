@@ -10,8 +10,8 @@
     var settings = $.extend({
       prefix: 'silk-tabs',
       wrapperClass: 'silk-tabs__wrapper',
-      contentClass: 'silk-tabs__content',
       headerClass: 'silk-tabs__header',
+      contentClass: 'silk-tabs__content',
       navClass: 'silk-tabs__nav',
       tabClass: 'silk-tabs__tab',
       desktopStartWidth: 1000

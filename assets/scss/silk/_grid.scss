@@ -4,13 +4,16 @@
 
 .grid {
   @include clearfix;
-  margin: 0 $column-between * -1;
+  margin-right: $column-between * -1;
+  margin-left: $column-between * -1;
 }
 
 
 // ========================================
 // Silk Columns
 // ========================================
+
+// http://codepen.io/mimoduo/pen/vOMxLE
 
 [class^='col'] {
   float: left;
@@ -55,17 +58,6 @@
 
 
 // ========================================
-// Shared Grid Behavior
-// ========================================
-
-// .grid {
-//   @include clearfix;
-//   margin-right: $column-between * -1;
-//   margin-left: $column-between * -1;
-// }
-
-
-// ========================================
 // Generic Column Behavior
 // ========================================
 
@@ -98,29 +90,6 @@
 
 //     @include breakpoint(nth($silk-columns, $i - 1)) {
 //       width: 100% / $i - $column-between * 2;
-//     }
-
-//   }
-
-// }
-
-
-// ========================================
-// Grid Class Hooks
-// ========================================
-
-// @for $m from 1 to length($breakpoints) + 1 {
-
-//   @include breakpoint(nth(nth($breakpoints, $m), 1)) {
-
-//     @for $x from 2 through 12 {
-
-//       .col-#{$x}-#{nth(nth($breakpoints, $m), 1)} {
-
-//         width: 100% / $x - $column-between * 2;
-
-//       }
-
 //     }
 
 //   }

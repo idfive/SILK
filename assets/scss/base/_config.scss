@@ -4,7 +4,7 @@
 
 $base-font-family: 'Roboto';
 $base-font-size: 16;
-$base-font-color: #000;
+$base-font-color: #333;
 $base-line-height: 22;
 
 
@@ -36,6 +36,12 @@ $h6-line: 18;
 // ========================================
 // Color Configurations
 // ========================================
+
+$m1: #f0c;
+$m2: #f0f;
+
+$s1: #333;
+$s2: #eee;
 
 
 // ========================================
@@ -71,30 +77,28 @@ $column-between: 1%;
 // Silk
 // ========================================
 
-// Helpers
-// hidden-desktop
-// visible-desktop
-// ----------------------------------------
-
-$silk-desktop-enabled: 'large' !default;
-
-
-// Nav
+// Silk Nav
 // ----------------------------------------
 
 $silk-drawer-disappears: 'large' !default;
 
 
-// Table
+// Silk Table
 // ----------------------------------------
 
 $silk-table-expanded: 'large' !default;
 
 
-// Tabs
+// Silk Tabs
 // ----------------------------------------
 
 $silk-tabs-accordion: 'small' !default;
+
+
+// Silk Video
+// ----------------------------------------
+
+$silk-video-playing: 'titan' !default;
 
 
 // ========================================
@@ -116,6 +120,3 @@ $breakpoints: (
   ("aldnoah", 1500px),
   ("penguindrum", 1600px)
 );
-
-
-

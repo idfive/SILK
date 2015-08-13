@@ -79,6 +79,7 @@
   $stripe-height: 2;
   $stripe-width: 60;
   $stripe-space: 2;
+  $stripe-color: #f0c;
 
   &:before,
   &:after {
@@ -88,7 +89,7 @@
     height: em($stripe-height);
     width: percentage(($stripe-width - 40) / $stripe-width);
     content: '';
-    background: rgba(#000, .25);
+    background: $stripe-color;
     transform: translate(-50%, -50%);
     transition:
       background .4s,
@@ -102,7 +103,7 @@
   }
 
   &:after {
-    box-shadow: 0 em($stripe-height + $stripe-space) 0 0 rgba(#000, .25);
+    box-shadow: 0 em($stripe-height + $stripe-space) 0 0 $stripe-color;
   }
 
 
