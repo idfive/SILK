@@ -644,6 +644,7 @@
     top: 0;
     left: 50%;
     z-index: 400;
+    display: none;
     height: 100%;
     max-width: 68.75em;
     width: 100%;
@@ -652,15 +653,22 @@
     -webkit-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
   }
+  .debug-grid:before {
+    display: block;
+  }
 
   .handle {
     position: fixed;
     top: 0;
     left: 0;
+    display: none;
     z-index: 400;
     height: 100%;
     width: 100%;
     cursor: move;
+  }
+  .debug-handle {
+    display: block;
   }
   .handle:before, .handle:after {
     position: absolute;

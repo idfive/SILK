@@ -9,22 +9,22 @@
 
 // SILK Modules
 //= include silk/accordion.js
+//= include silk/offcanvas.js
+//= include silk/nav.js
+//= include silk/table.js
 //= include silk/tabs.js
 //= include silk/video.js
-//= include silk/table.js
-//= include silk/nav.js
-//= include silk/offcanvas.js
 
 // Bootstrap
 (function($) {
-  
+
   //Run SILK bootstrap
-  
+
   //Insitialize SILK modules
   $('.silk-nav').silknav();
   $('.silk-tabs').silktabs();
   $('.silk-accordion').silkaccordion();
   $('.silk-table').silktable();
-  
-  
+
+
 }(jQuery));

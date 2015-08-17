@@ -49,6 +49,7 @@ body {
     top: 0;
     left: 50%;
     z-index: 400;
+    display: none;
     height: 100%;
     max-width: em($boundary);
     width: 100%;
@@ -58,6 +59,11 @@ body {
         to right,
           $grid-check);
     transform: translate(-50%, 0);
+
+    @at-root .debug-grid:before {
+      display: block;
+    }
+
   }
 
 }
@@ -71,10 +77,15 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  display: none;
   z-index: 400;
   height: 100%;
   width: 100%;
   cursor: move;
+
+  @at-root .debug-handle {
+    display: block;
+  }
 
   &:before,
   &:after {
