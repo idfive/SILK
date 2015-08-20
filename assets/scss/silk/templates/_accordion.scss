@@ -2,23 +2,14 @@
 // Silk Accordion
 // ========================================
 
-.silk-accordion {
+.silk-accordion {}
 
-  // Accordion item container
-  &__header {
+  // Accordion item header container
+  .silk-accordion__header {
 
-    // Accordion item header
-    h1, h2, h3, h4, h5, h6 {
-    }
-
-    // Accordion item link
-    a {
-    }
+    a {}
 
   }
 
   // Accordion item content container
-  &__content {
-  }
-
-}
+  .silk-accordion__content {}

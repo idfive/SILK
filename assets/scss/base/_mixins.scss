@@ -132,6 +132,7 @@
 // $row-placement: starting from 0, which row does your item's top edge fall into?
 // $column-max: how many columns are in the collage?
 // $row-max: how many rows are in the collage? By default it will equal the amount of columns in the collage.
+
 @mixin collage($column-span, $row-span, $column-placement, $row-placement, $column-max, $row-max: $column-max) {
   $row-placement: $row-placement - 1;
   $column-placement: $column-placement - 1;

@@ -2,6 +2,12 @@
 // Styles Manifest
 // ========================================
 
+// Config
+@import "base/config";
+
+// Functions
+@import "base/functions";
+
 // Icons, need to be outside of screen call to work on IE
 @import "base/icons";
 
@@ -9,13 +15,7 @@
 @media screen {
 
   //Normalize.css
-  @import "helpers/reset";
-
-  // Config
-  @import "base/config";
-
-  // Functions
-  @import "base/functions";
+  @import "helpers/*";
 
   // Mixins
   @import "base/mixins";
@@ -23,17 +23,14 @@
   // Typography
   @import "base/typography";
 
-  // Debug for testing
-  @import "helpers/debug";
-
   // Layouts
   @import "layouts/*";
 
-  // Silk
-  @import "silk/*";
-
   // Modules
   @import "modules/*";
+
+  // Silk
+  @import "silk/*";
 
 }
 

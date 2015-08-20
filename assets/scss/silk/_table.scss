@@ -7,11 +7,13 @@
   border-spacing: 0;
   margin-bottom: 1em;
 
+  // Header table cells
   th {
     @include h4;
     text-align: left;
   }
 
+  // Regular table cells
   td {
 
     // Every td in every odd row
@@ -19,12 +21,12 @@
 
   }
 
+  // Collapsed table
   @at-root .silk-table--collapsed {
 
     @include breakpoint($silk-table-expanded) {
       display: none;
     }
-
 
     li {
 

@@ -4,6 +4,7 @@
 
 .silk-accordion {}
 
+  // Accordion item header container
   .silk-accordion__header {
 
     a {
@@ -12,6 +13,7 @@
 
   }
 
+  // Accordion item content container
   .silk-accordion__content {
     opacity: 1;
     transition: opacity .3s;
