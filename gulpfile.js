@@ -84,6 +84,7 @@ gulp.task('compile-sass', function() {
     .on('error', function (err) {
       console.error('Error!', err.message);
     })
+    // https://www.npmjs.com/package/gulp-autoprefixer
     .pipe(plugins.autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
@@ -113,7 +114,9 @@ gulp.task('lint-js', function() {
 // Compiles js from assets/js/, aggregated silk js modules, concatenates js
 gulp.task('compile-js', function() {
   return gulp.src(paths.js.compile)
+    // https://www.npmjs.com/package/gulp-include
     .pipe(plugins.include())
+    // https://www.npmjs.com/package/gulp-plumber
     .pipe(plugins.plumber())
     .pipe(gulp.dest(paths.js.dest))
     // https://www.npmjs.com/package/gulp-uglify
