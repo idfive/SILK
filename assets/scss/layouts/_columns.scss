@@ -1,7 +1,25 @@
 // ========================================
-// Unique Columns
+// Compartment Column
+// ========================================
+
+.compartment,
+.row {
+  @include clearfix;
+  margin: 0 auto;
+  max-width: $boundary * 1px;
+  max-width: rem($boundary);
+}
+
+
+// ========================================
+// Generic Columns
 // ========================================
 
 main {}
 
 aside {}
+
+
+// ========================================
+// Unique Columns
+// ========================================

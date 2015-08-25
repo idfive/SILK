@@ -6,6 +6,7 @@
 // ----------------------------------------
 
 [class^='callout'] {
+  margin-bottom: em(20);
   padding: em(20);
 }
 
@@ -13,9 +14,7 @@
 // Additional Callouts
 // ----------------------------------------
 
-.callout--gray {
-  background: #eee;
-}
+.callout--color {}
 
 
 // ========================================
