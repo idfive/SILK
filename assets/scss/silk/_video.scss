@@ -6,7 +6,7 @@
   position: relative;
   height: em(300);
 
-  @include breakpoint($silk-video-playing) {
+  @include media($silk-video-playing) {
     height: em(580);
   }
 
@@ -29,7 +29,7 @@
       padding-top: em(40);
       padding-bottom: em(40);
 
-      @include breakpoint($silk-video-playing) {
+      @include media($silk-video-playing) {
         padding-top: em(100);
         padding-bottom: em(100);
       }
@@ -42,7 +42,7 @@
         z-index: 0;
         visibility: hidden;
 
-        @include breakpoint($silk-video-playing) {
+        @include media($silk-video-playing) {
           visibility: visible;
         }
 

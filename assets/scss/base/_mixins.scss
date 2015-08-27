@@ -2,9 +2,9 @@
 // Media Queries
 // ========================================
 
-// Ex: @include breakpoint('titan') {}
+// Ex: @include media('titan') {}
 
-@mixin breakpoint($breakpoint) {
+@mixin media($breakpoint) {
 
   @for $i from 1 to length($breakpoints) + 1 {
 

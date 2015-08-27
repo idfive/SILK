@@ -16,7 +16,7 @@
 
     &--#{nth(nth($breakpoints, $i), 1)} {
 
-      @include breakpoint(nth(nth($breakpoints, $i), 1)) {
+      @include media(nth(nth($breakpoints, $i), 1)) {
         display: none;
       }
 
@@ -43,7 +43,7 @@
 
     &--#{nth(nth($breakpoints, $i), 1)} {
 
-      @include breakpoint(nth(nth($breakpoints, $i), 1)) {
+      @include media(nth(nth($breakpoints, $i), 1)) {
         display: block;
       }
 

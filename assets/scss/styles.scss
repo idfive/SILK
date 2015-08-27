@@ -14,11 +14,11 @@
 // Begin screen styles
 @media screen {
 
-  //Normalize.css
-  @import "helpers/*";
-
   // Mixins
   @import "base/mixins";
+
+  // Normalize.css
+  @import "helpers/*";
 
   // Typography
   @import "base/typography";

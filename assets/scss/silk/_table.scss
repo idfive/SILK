@@ -24,7 +24,7 @@
   // Collapsed table
   @at-root .silk-table--collapsed {
 
-    @include breakpoint($silk-table-expanded) {
+    @include media($silk-table-expanded) {
       display: none;
     }
 

@@ -23,7 +23,7 @@
 
 @for $i from 1 to length($breakpoints) + 1 {
 
-  @include breakpoint(nth(nth($breakpoints, $i), 1)) {
+  @include media(nth(nth($breakpoints, $i), 1)) {
 
     // Column
     @for $x from 1 to $column-base {
@@ -74,7 +74,7 @@
 
 //     @if $i / 2 == 2 or $i / 3 == 2 {
 
-//       @include breakpoint(nth($silk-columns, 1)) {
+//       @include media(nth($silk-columns, 1)) {
 //         width: 100% / 2 - $column-between * 2;
 //       }
 
@@ -82,13 +82,13 @@
 
 //     @if $i / 3 == 2 {
 
-//       @include breakpoint(nth($silk-columns, 2)) {
+//       @include media(nth($silk-columns, 2)) {
 //         width: 100% / 3 - $column-between * 2;
 //       }
 
 //     }
 
-//     @include breakpoint(nth($silk-columns, $i - 1)) {
+//     @include media(nth($silk-columns, $i - 1)) {
 //       width: 100% / $i - $column-between * 2;
 //     }
 

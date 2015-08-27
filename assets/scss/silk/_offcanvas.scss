@@ -46,8 +46,7 @@
     visibility .4s,
     transform .4s;
 
-  @include breakpoint($silk-drawer-disappears) {
-    @include active-drawer;
+  @include media($silk-drawer-disappears) {
     position: inherit;
     top: auto;
   }
@@ -72,24 +71,19 @@
   border: 0;
   background: none;
 
-  @include breakpoint($silk-drawer-disappears) {
+  @include media($silk-drawer-disappears) {
     display: none;
   }
-
-  $stripe-height: 2;
-  $stripe-width: 60;
-  $stripe-space: 2;
-  $stripe-color: #f0c;
 
   &:before,
   &:after {
     position: absolute;
     top: 50%;
     left: 50%;
-    height: em($stripe-height);
-    width: percentage(($stripe-width - 40) / $stripe-width);
+    height: em($silk-stripe-height);
+    width: percentage(($silk-stripe-width - 40) / $silk-stripe-width);
     content: '';
-    background: $stripe-color;
+    background: $silk-stripe-color;
     transform: translate(-50%, -50%);
     transition:
       background .4s,
@@ -99,11 +93,11 @@
   }
 
   &:before {
-    margin-top: em(($stripe-height + $stripe-space) * -1);
+    margin-top: em(($silk-stripe-height + $silk-stripe-space) * -1);
   }
 
   &:after {
-    box-shadow: 0 em($stripe-height + $stripe-space) 0 0 $stripe-color;
+    box-shadow: 0 em($silk-stripe-height + $silk-stripe-space) 0 0 $silk-stripe-color;
   }
 
 

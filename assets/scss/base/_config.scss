@@ -63,30 +63,27 @@ $column-base: 12;
 // Configure the space around each column
 $column-between: 1%;
 
-// Configure when columns float around
-//   column-2,
-//   column-3,
-//   column-4,
-//   column-5,
-//   column-6
+// Do you need to utilize the push feature of this grid system?
+$column-push-desired: true;
 
-// $silk-columns:
-//   'big',
-//   'titan',
-//   'nation',
-//   'world',
-//   'galaxy',
-//   'universe';
+// Do you need to utilize the pull feature of this grid system?
+$column-pull-desired: false;
 
 
 // ========================================
-// Silk
+// Silk Configuration
 // ========================================
 
 // Silk Nav
 // ----------------------------------------
 
 $silk-drawer-disappears: 'large' !default;
+
+// Off canvas drawer trigger appearance
+$silk-stripe-height: 2;
+$silk-stripe-width: 60;
+$silk-stripe-space: 2;
+$silk-stripe-color: #f0c;
 
 
 // Silk Table
@@ -98,7 +95,7 @@ $silk-table-expanded: 'large' !default;
 // Silk Tabs
 // ----------------------------------------
 
-$silk-tabs-accordion: 'small' !default;
+$silk-tabs-to-accordion: 'small' !default;
 
 
 // Silk Video

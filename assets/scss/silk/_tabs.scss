@@ -7,7 +7,7 @@
   .silk-tabs__nav {
     display: none;
 
-    @include breakpoint($silk-tabs-accordion) {
+    @include media($silk-tabs-to-accordion) {
       display: block;
     }
 
@@ -26,7 +26,7 @@
 
   .silk-tabs__header {
 
-    @include breakpoint($silk-tabs-accordion) {
+    @include media($silk-tabs-to-accordion) {
       display: none;
     }
 
@@ -47,7 +47,7 @@
     &.is-hidden-accordion {
       display: none;
 
-      @include breakpoint($silk-tabs-accordion) {
+      @include media($silk-tabs-to-accordion) {
         display: inherit;
       }
 
