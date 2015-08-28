@@ -1,0 +1,209 @@
+// ========================================
+// SILK Tour
+// ========================================
+
+// ========================================
+// Assets
+// ========================================
+
+// css
+// ========================================
+
+Contains compiled version of assets/scss/styles.scss
+
+
+// fonts
+// ========================================
+
+Contains converted icon set from assets/icons/*
+
+
+// html
+// ========================================
+
+accordion.html
+* accordion template, the little things that expand when you click on them
+
+blockquote.html
+* blockquote template, quotes of non-famous people, includes citation
+
+nav.html
+* navigation template, used to house the main navigation and sub lists
+
+table.html
+* table template, contains example table with thead and tbody
+
+tabs.html
+* tabs template, the little things you click on and it shows content
+
+video.html
+* video template, contains a whole <video> element for your viewing pleasure
+
+
+// icons
+// ========================================
+
+Contains a default set of svgs
+Is converted to an icon set and placed into assets/fonts
+
+
+// images
+// ========================================
+
+Empty folder to be used if icons cannot be used as font icons
+
+
+// js
+// ========================================
+
+
+// build
+// ----------------------------------------
+
+main.js
+  compiled version of assets/js/main.js
+
+templates.js
+  compiled version of assets/js/templates/*
+
+
+// silk
+// ----------------------------------------
+
+accordion.js
+  contains js for the little open close thingies
+
+bootstrap.js
+  contains js for initializing something
+
+helpers.js
+  contains js for debug tools
+
+nav.js
+  contains js for navigating through multi-level navigation
+
+offcanvas.js
+  contains js for off canvas trigger interaction
+
+silk.js
+  contains js for silk!
+
+table.js
+  contains js for collapsing/expanding tables
+
+tabs.js
+  contains js for the little things you click on
+
+video.js
+
+
+// templates
+// ----------------------------------------
+
+sample.handlebars
+
+
+// vendor
+// ----------------------------------------
+
+main.js
+  Gathers all individual js files and bootstraps them
+
+
+// scss
+// ========================================
+
+
+// base
+// ----------------------------------------
+
+_config.scss
+_functioncs.scss
+_icons.scss
+_mixins.scss
+_typography.scss
+
+
+// helpers
+// ----------------------------------------
+
+_debug.scss
+_reset.sccss
+_utilities.scss
+
+
+// layouts
+// ----------------------------------------
+
+_columns.scss
+_footer.scss
+_header.scss
+_index.scss
+_navigation.scss
+
+
+// modules
+// ----------------------------------------
+
+_basic.scss
+_buttons.scss
+_forms.scss
+_media.scss
+_unique.scss
+
+
+// print
+// ----------------------------------------
+
+_print.scss
+
+
+// silk
+// ----------------------------------------
+
+_accordion.scss
+_base.scss
+_grid.scss
+_nav.scss
+_offcanvas.scss
+_table.scss
+_tabs.scss
+_video.scss
+
+
+// ========================================
+// gulpfile.js
+// ========================================
+
+// Required plugins
+
+// Set Paths
+
+// Icon Font
+
+// Compile Sass
+
+// Lint Js
+
+// Compile js
+
+// Compile Handlebars
+
+// Create Watch Task
+
+// Default 'gulp' task
+
+
+// ========================================
+// index.html
+// ========================================
+
+
+// ========================================
+// kitchen-sink.html
+// ========================================
+
+
+// ========================================
+// package.json
+// ========================================
