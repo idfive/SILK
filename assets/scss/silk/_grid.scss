@@ -32,22 +32,42 @@
         width: 100% / $column-base * $x - $column-between * 2;
       }
 
+      .col-#{nth(nth($breakpoints, $i), 1)}-#{$x} {
+        width: 100% / $column-base * $x;
+      }
+
     }
 
     // Push
-    @for $x from 1 to $column-base {
+    @if $column-push-desired {
 
-      .col-#{nth(nth($breakpoints, $i), 1)}-push-#{$x} {
-        margin-left: 100% / $column-base * $x + $column-between;
+      @for $x from 1 to $column-base {
+
+        .col-#{nth(nth($breakpoints, $i), 1)}-push-#{$x} {
+          margin-left: 100% / $column-base * $x + $column-between;
+        }
+
+        .col-#{nth(nth($breakpoints, $i), 1)}-push-#{$x} {
+          margin-left: 100% / $column-base * $x;
+        }
+
       }
 
     }
 
     // Pull
-    @for $x from 1 to $column-base {
+    @if $column-pull-desired {
 
-      .col-#{nth(nth($breakpoints, $i), 1)}-pull-#{$x} {
-        margin-left: 100% / $column-base * $x * -1 + $column-between;
+      @for $x from 1 to $column-base {
+
+        .col-#{nth(nth($breakpoints, $i), 1)}-pull-#{$x} {
+          margin-left: 100% / $column-base * $x * -1 + $column-between;
+        }
+
+        .col-#{nth(nth($breakpoints, $i), 1)}-pull-#{$x} {
+          margin-left: 100% / $column-base * $x * -1;
+        }
+
       }
 
     }
