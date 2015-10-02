@@ -98,6 +98,19 @@ h6,
 }
 
 
+// 7:Mini Copy
+// ----------------------------------------
+
+@mixin mini {
+  font-size: em($mini-size);
+  line-height: su(em($mini-line, $mini-size));
+}
+
+.mini {
+  @include mini;
+}
+
+
 // ========================================
 // Anchors
 // ========================================
@@ -129,6 +142,7 @@ blockquote {
 }
 
 cite {
+  @include h6;
   font-style: normal;
 
   &:before {

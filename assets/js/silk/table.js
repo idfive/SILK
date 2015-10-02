@@ -10,7 +10,7 @@
     var settings = $.extend({
       collapsedClass: 'silk-table--collapsed',
       hideClass: 'hidden--large',
-      showClass: 'shown--large'
+      showClass: ''
     }, options);
 
     // Do stuff

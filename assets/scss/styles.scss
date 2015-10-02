@@ -5,19 +5,13 @@
 // Config
 @import "base/config";
 
-// Functions
-@import "base/functions";
-
 // Icons, need to be outside of screen call to work on IE
 @import "base/icons";
 
 // Begin screen styles
 @media screen {
 
-  // Mixins
-  @import "base/mixins";
-
-  // Normalize.css
+  // Tools
   @import "helpers/*";
 
   // Typography

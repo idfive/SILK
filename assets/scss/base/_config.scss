@@ -1,14 +1,25 @@
 // ========================================
-// Base Font Properties
+// Base Font Families
 // ========================================
 
-$base-font-family: 'Roboto';
-$base-font-size: 16;
-$base-font-color: #333;
-$base-line-height: 22;
+$sans-serif: 'Roboto';
+$serif: serif;
 
 
-// Define base heading styles
+// ========================================
+// Content Font Properties
+// ========================================
+
+$content-family: $sans-serif;
+$content-size: 16;
+$content-color: #333;
+$content-line: 22;
+
+
+// ========================================
+// Base Heading Styles
+// ========================================
+
 // heading-line-height
 // heading-font-size
 // These are used within base/typography
@@ -37,6 +48,10 @@ $h5-line: 22;
 // h6 size / line
 $h6-size: 16;
 $h6-line: 18;
+
+// mini size / line
+$mini-size: 14;
+$mini-line: 16;
 
 
 // ========================================
@@ -95,7 +110,7 @@ $silk-table-expanded: 'large' !default;
 // Silk Tabs
 // ----------------------------------------
 
-$silk-tabs-to-accordion: 'small' !default;
+$silk-tabs-to-accordion: 'medium' !default;
 
 
 // Silk Video

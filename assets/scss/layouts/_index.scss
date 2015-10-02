@@ -9,11 +9,11 @@
 }
 
 html {
-  font-family: $base-font-family;
-  color: $base-font-color;
+  font-family: $content-family;
+  color: $content-color;
 }
 
   body {
-    font-size: em($base-font-size, 16);
-    line-height: su(em(28, $base-font-size));
+    font-size: em($content-size, 16);
+    line-height: su(em($content-line, $content-size));
   }

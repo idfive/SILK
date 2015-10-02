@@ -5,7 +5,7 @@
 // Ex: padding: em(20);
 // Ex: padding: em(10, 28) em(20, 28);
 
-@function em($target, $context: $base-font-size) {
+@function em($target, $context: $content-size) {
   $strip-target: su($target);
   $strip-context: su($context);
   @return ($strip-target / $strip-context) * 1em;

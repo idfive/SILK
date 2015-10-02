@@ -3,9 +3,14 @@
 // ========================================
 
 .silk-table {
+  display: none;
   width: 100%;
   border-spacing: 0;
   margin-bottom: 1em;
+
+  @include media($silk-table-expanded) {
+    display: block;
+  }
 
   // Header table cells
   th {

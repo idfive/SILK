@@ -32,7 +32,7 @@
 
 // For generic full-width sections
 .pillow {
-  padding: em(20);
+  padding: em(40) em(20);
 
   // For large sections / page__content
   &--main {
@@ -47,14 +47,14 @@
 // ========================================
 
 .push {
-  margin: em(20) 0;
+  margin: em(30) 0;
 
   &--top {
-    margin-top: em(20);
+    margin-top: em(30);
   }
 
   &--bottom {
-    margin-bottom: em(20);
+    margin-bottom: em(30);
   }
 
 }
