@@ -7,7 +7,7 @@
   // JS version
   .js & {
 
-    // Main menu 
+    // Main menu
     > ul {
 
       // Child menu
@@ -22,7 +22,7 @@
       .parent {
 
         // First child of parent element
-        > *:first-child { 
+        > *:first-child {
         }
 
       }
@@ -56,14 +56,14 @@
     }
 
     // Styles for when nav becomes expanded
-    @include breakpoint($silk-nav-expanded) {
+    @include media($silk-nav-expanded) {
 
       // Items stack vertically rather than horizontal
       &.vertical {
-        
+
         // Main menu
         > ul {
-          
+
           // Child menu
           ul {
           }
@@ -78,7 +78,7 @@
 
       // Main menu
       > ul {
-        
+
         // Child menu
         ul {
         }

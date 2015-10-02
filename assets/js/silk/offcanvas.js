@@ -8,7 +8,7 @@ silk.offcanvas = (function() {
 
     $('.drawer__trigger').click(function() {
 
-      if ($('body[data-drawer-state=invisible]').length === 1) {
+      if ($('[data-drawer-state=invisible]').length === 1) {
 
         $('body').attr('data-drawer-state','visible');
 

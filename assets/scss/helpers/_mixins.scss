@@ -1,0 +1,143 @@
+// ========================================
+// Media Queries
+// ========================================
+
+// Ex: @include media('titan') {}
+
+@mixin media($breakpoint) {
+
+  @for $i from 1 to length($breakpoints) + 1 {
+
+    @if $breakpoint == (nth(nth($breakpoints, $i), 1)) {
+
+      @media (min-width: nth(nth($breakpoints, $i), 2)) {
+        @content;
+      }
+
+    }
+
+  }
+
+}
+
+
+// ========================================
+// Visually Hidden
+// ========================================
+
+@mixin is-hidden {
+  position: absolute;
+  color: transparent;
+  visibility: hidden;
+}
+
+.is-hidden {
+  @include is-hidden;
+}
+
+@mixin is-visible {
+  position: inherit;
+  color: inherit;
+  visibility: inherit;
+}
+
+.is-visible {
+  @include is-visible;
+}
+
+
+// ========================================
+// Clearfix
+// ========================================
+
+@mixin clearfix {
+
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+}
+
+
+// ========================================
+// List Reset
+// ========================================
+
+// Resets browser defaults of a list
+
+@mixin list-reset {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-reset {
+  @include list-reset;
+}
+
+.indirect-list-reset {
+
+  ol,
+  ul {
+    @include list-reset;
+  }
+
+}
+
+.indirect-menu-reset {
+
+  menu {
+    @include list-reset;
+  }
+
+}
+
+
+// ========================================
+// Column Mixin
+// ========================================
+
+// Ex: @include column(2, 4, 6, 20em, 40em, 60em);
+
+@mixin column($spread...) {
+  $argument-length: length($spread);
+  $argument-split: $argument-length / 2;
+
+  @for $i from 1 through $argument-split {
+
+    @media (min-width: nth($spread, ($argument-split + $i))) {
+      width: percentage(1 / nth($spread, $i));
+
+      @if $i == 1 {
+        float: left;
+      }
+
+    }
+
+  }
+
+}
+
+
+// ==============================
+// Collage Mixin
+// ==============================
+
+// $column-span: how many columns does the item span across?
+// $row-span: how many rows does the item span across?
+// $column-placement: starting from 0, which column does your item's left edge fall into?
+// $row-placement: starting from 0, which row does your item's top edge fall into?
+// $column-max: how many columns are in the collage?
+// $row-max: how many rows are in the collage? By default it will equal the amount of columns in the collage.
+
+@mixin collage($column-span, $row-span, $column-placement, $row-placement, $column-max, $row-max: $column-max) {
+  $row-placement: $row-placement - 1;
+  $column-placement: $column-placement - 1;
+  top: percentage($row-placement / $row-max);
+  left: percentage($column-placement / $column-max);
+  height: percentage($row-span / $row-max);
+  width: percentage($column-span / $column-max);
+}

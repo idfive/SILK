@@ -1,0 +1,129 @@
+// ========================================
+// Silk Off Canvas
+// ========================================
+
+@mixin drawer($direction, $transform-intensity: 20%) {
+  position: absolute;
+  min-height: 100%;
+  width: 100%;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+
+  @if $direction == 'ltr' {
+    transform: translate3d($transform-intensity * -1, 0, 0);
+    transform: translate($transform-intensity * -1, 0);
+  } @else if $direction == 'rtl' {
+    // Look for horizontal scrollbars!
+    transform: translate3d($transform-intensity, 0, 0);
+    transform: translate($transform-intensity, 0);
+  } @else if $direction == 'ttb' {
+    transform: translate3d(0, $transform-intensity * -1, 0);
+    transform: translate(0, $transform-intensity * -1);
+  } @else {
+    transform: translate3d(0, $transform-intensity, 0);
+    transform: translate(0, $transform-intensity);
+  }
+
+}
+
+@mixin active-drawer {
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+  transform: translate(0, 0);
+}
+
+.drawer {
+  @include drawer(ltr);
+  top: em(60);
+  z-index: 200;
+  max-width: em(500);
+  background: #fff;
+  transition:
+    opacity .4s,
+    visibility .4s,
+    transform .4s;
+
+  @include media($silk-drawer-disappears) {
+    position: inherit;
+    top: auto;
+    max-width: 100%;
+    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  // Active Canvas State
+  // ========================
+  [data-drawer-state="visible"] & {
+    @include active-drawer;
+  }
+
+}
+
+
+// ========================
+// Trigger
+// ========================
+
+.drawer__trigger {
+  position: relative;
+  height: em(60);
+  width: em(60);
+  border: 0;
+  background: none;
+
+  @include media($silk-drawer-disappears) {
+    display: none;
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: em($silk-stripe-height);
+    width: percentage(($silk-stripe-width - 40) / $silk-stripe-width);
+    content: '';
+    background: $silk-stripe-color;
+    transform: translate(-50%, -50%);
+    transition:
+      background .4s,
+      box-shadow .4s,
+      margin .4s,
+      transform .4s;
+  }
+
+  &:before {
+    margin-top: em(($silk-stripe-height + $silk-stripe-space) * -1);
+  }
+
+  &:after {
+    box-shadow: 0 em($silk-stripe-height + $silk-stripe-space) 0 0 $silk-stripe-color;
+  }
+
+
+  // Active Trigger State
+  // ========================
+  [data-drawer-state="visible"] & {
+
+    &:before {
+      margin-top: 0;
+      transform:
+        translate(-50%, -50%)
+        rotate(-45deg);
+    }
+
+    &:after {
+      box-shadow: 0 0 0 0 transparent;
+      transform:
+        translate(-50%, -50%)
+        rotate(45deg);
+    }
+
+  }
+
+}

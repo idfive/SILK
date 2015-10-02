@@ -2,17 +2,19 @@
 // Silk Accordion
 // ========================================
 
-.silk-accordion {
+.silk-accordion {}
 
-  &__header {
+  // Accordion item header container
+  .silk-accordion__header {
 
     a {
-      @extend %silk-toggle-content;
+      @extend %silk-toggle;
     }
 
   }
 
-  &__content {
+  // Accordion item content container
+  .silk-accordion__content {
     opacity: 1;
     transition: opacity .3s;
 
@@ -21,5 +23,3 @@
     }
 
   }
-
-}

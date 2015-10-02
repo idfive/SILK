@@ -1,0 +1,36 @@
+// ========================================
+// Calculate em
+// ========================================
+
+// Ex: padding: em(20);
+// Ex: padding: em(10, 28) em(20, 28);
+
+@function em($target, $context: $content-size) {
+  $strip-target: su($target);
+  $strip-context: su($context);
+  @return ($strip-target / $strip-context) * 1em;
+}
+
+
+// ========================================
+// Calculate rem
+// ========================================
+
+// Ex: padding: rem(20);
+
+@function rem($target, $context: 16) {
+  $strip-target: su($target);
+  $strip-context: su($context);
+  @return ($strip-target / $strip-context) * 1rem;
+}
+
+
+// ========================================
+// Strip units
+// ========================================
+
+// Ex: line-height: su(em(20, 20));
+
+@function su($num) {
+  @return $num / ($num * 0 + 1);
+}

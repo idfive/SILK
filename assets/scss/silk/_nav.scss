@@ -6,7 +6,7 @@
   @include clearfix;
   overflow: hidden;
 
-  @include breakpoint($silk-drawer-disappears) {
+  @include media($silk-drawer-disappears) {
     overflow: inherit;
   }
 
@@ -21,7 +21,7 @@
 
         > ul {
 
-          @include breakpoint($silk-drawer-disappears) {
+          @include media($silk-drawer-disappears) {
             display: block;
           }
 
@@ -37,7 +37,7 @@
         left: 100%;
         width: 100%;
 
-        @include breakpoint($silk-drawer-disappears) {
+        @include media($silk-drawer-disappears) {
           top: 100%;
           left: 0;
           display: none;
@@ -50,7 +50,7 @@
 
         li {
 
-          @include breakpoint($silk-drawer-disappears) {
+          @include media($silk-drawer-disappears) {
             display: block;
           }
 
@@ -62,7 +62,7 @@
 
     li {
 
-      @include breakpoint($silk-drawer-disappears) {
+      @include media($silk-drawer-disappears) {
         position: relative;
         display: inline-block;
       }
@@ -84,7 +84,7 @@
       width: em(50);
       text-align: center;
 
-      @include breakpoint($silk-drawer-disappears) {
+      @include media($silk-drawer-disappears) {
         display: none;
       }
 
@@ -94,14 +94,14 @@
         left: 0;
         width: 100%;
         content: '>';
-        @include transform(translate(0, -50%));
+        transform: translate(0, -50%);
       }
 
     }
 
     .back {
 
-      @include breakpoint($silk-drawer-disappears) {
+      @include media($silk-drawer-disappears) {
         display: none;
       }
 

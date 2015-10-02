@@ -1,0 +1,54 @@
+// ========================================
+// Utilities
+// ========================================
+
+// ========================================
+// Hidden Clasess
+// ========================================
+
+// Ex: .hidden--nation will hide an element at the nation breakpoint
+
+.hidden {
+
+  @at-root [class^='hidden'] {}
+
+  @for $i from 1 through length($breakpoints) {
+
+    &--#{nth(nth($breakpoints, $i), 1)} {
+
+      @include media(nth(nth($breakpoints, $i), 1)) {
+        display: none;
+      }
+
+    }
+
+  }
+
+}
+
+
+// ========================================
+// Shown Clasess
+// ========================================
+
+// Ex: .shown--universe will show an element at the universe breakpoint
+
+.shown {
+
+  @at-root [class*='shown'] {
+    display: none;
+  }
+
+  @for $i from 1 through length($breakpoints) {
+
+    &--#{nth(nth($breakpoints, $i), 1)} {
+
+      @include media(nth(nth($breakpoints, $i), 1)) {
+        display: block;
+      }
+
+    }
+
+  }
+
+}

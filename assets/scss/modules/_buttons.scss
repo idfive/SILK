@@ -2,35 +2,33 @@
 // Buttons
 // ========================================
 
-@mixin button($color) {
+[class*='button'] {
+  display: inline-block;
   border: 0;
+  margin: 0 em(10) em(10) 0;
   padding: 0;
   cursor: pointer;
-  background: $color;
+  outline: 0;
   transition:
-    background .3s,
-    box-shadow .3s,
-    color .3s;
+    background .2s,
+    box-shadow .2s,
+    color .2s,
+    transform .2s;
 
-  &:hover {
-    background: darken($color, 5%);
+  &:active {
+    transform: scale(.95);
   }
 
 }
 
 
-// Default Button
+// Additional Buttons
 // ----------------------------------------
 
-[class^='button'] {
-  @include button(#f5f5f5);
-}
+.button--color {
 
-// Additional Button
-// ----------------------------------------
+  &:hover {}
 
-.button--gray {
-  @include button(#eee);
 }
 
 
@@ -38,6 +36,14 @@
 // Site Logo/Link
 // ========================================
 
+// If the site logo is text based
+
+.site__link {
+  display: block;
+  text-decoration: none;
+}
+
+// If the site logo is image based
 // Set the max-width to the logo's size
 // overflow: hidden and white-space: nowrap prevent line breaks
 
@@ -47,12 +53,12 @@
   max-width: em(200);
   width: 100%;
   white-space: nowrap;
-  background: url('../images/logo.png') no-repeat 0 0;
+  background: url('../images/logo.svg') no-repeat 0 0;
   background-size: contain;
   color: transparent;
+
+  &:hover {
+    color: transparent;
+  }
+
 }
-
-
-// ========================================
-// Unique Buttons/Trigger
-// ========================================

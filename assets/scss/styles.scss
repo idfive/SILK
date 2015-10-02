@@ -2,46 +2,35 @@
 // Styles Manifest
 // ========================================
 
+// Config
+@import "base/config";
+
 // Icons, need to be outside of screen call to work on IE
 @import "base/icons";
 
 // Begin screen styles
 @media screen {
 
-  //Normalize.css
-  @import "helpers/reset";
-
-  // Import Bourbon and Neat
-  @import "bourbon/bourbon";
-  @import "neat/neat";
-
-  // Config
-  @import "base/config";
-
-  // Functions
-  @import "base/functions";
-
-  // Mixins
-  @import "base/mixins";
+  // Tools
+  @import "helpers/*";
 
   // Typography
   @import "base/typography";
 
-  // Debug for testing
-  @import "helpers/debug";
-
   // Layouts
   @import "layouts/*";
 
-  // Silk
-  @import "silk/*";
-
   // Modules
   @import "modules/*";
+
+  // Silk
+  @import "silk/*";
 
 }
 
 // Begin print styles
 @media print {
+
   @import "print/*";
+
 }
