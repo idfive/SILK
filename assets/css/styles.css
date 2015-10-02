@@ -990,6 +990,92 @@
     list-style: none;
   }
 
+  .drawer {
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translate3d(-20%, 0, 0);
+    transform: translate3d(-20%, 0, 0);
+    -webkit-transform: translate(-20%, 0);
+    transform: translate(-20%, 0);
+    top: 3.75em;
+    z-index: 200;
+    max-width: 31.25em;
+    background: #fff;
+    transition: opacity .4s, visibility .4s, -webkit-transform .4s;
+    transition: opacity .4s, visibility .4s, transform .4s;
+  }
+}
+@media screen and (min-width: 800px) {
+  .drawer {
+    position: inherit;
+    top: auto;
+    max-width: 100%;
+    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@media screen {
+  [data-drawer-state="visible"] .drawer {
+    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  .drawer__trigger {
+    position: relative;
+    height: 3.75em;
+    width: 3.75em;
+    border: 0;
+    background: none;
+  }
+}
+@media screen and (min-width: 800px) {
+  .drawer__trigger {
+    display: none;
+  }
+}
+@media screen {
+  .drawer__trigger:before, .drawer__trigger:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 0.125em;
+    width: 33.33333333%;
+    content: '';
+    background: #f0c;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    transition: background .4s, box-shadow .4s, margin .4s, -webkit-transform .4s;
+    transition: background .4s, box-shadow .4s, margin .4s, transform .4s;
+  }
+  .drawer__trigger:before {
+    margin-top: -0.25em;
+  }
+  .drawer__trigger:after {
+    box-shadow: 0 0.25em 0 0 #f0c;
+  }
+  [data-drawer-state="visible"] .drawer__trigger:before {
+    margin-top: 0;
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  [data-drawer-state="visible"] .drawer__trigger:after {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
   .grid {
     margin-right: -1%;
     margin-left: -1%;
@@ -4552,86 +4638,6 @@
     display: inline-block;
     margin-right: 0.625em;
     content: '<';
-  }
-
-  .drawer {
-    position: absolute;
-    min-height: 100%;
-    width: 100%;
-    pointer-events: none;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transform: translate3d(-20%, 0, 0);
-    transform: translate3d(-20%, 0, 0);
-    -webkit-transform: translate(-20%, 0);
-    transform: translate(-20%, 0);
-    top: 3.75em;
-    z-index: 200;
-    max-width: 31.25em;
-    background: #fff;
-    transition: opacity .4s, visibility .4s, -webkit-transform .4s;
-    transition: opacity .4s, visibility .4s, transform .4s;
-  }
-}
-@media screen and (min-width: 800px) {
-  .drawer {
-    position: inherit;
-    top: auto;
-  }
-}
-@media screen {
-  [data-drawer-state="visible"] .drawer {
-    pointer-events: auto;
-    opacity: 1;
-    visibility: visible;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-
-  .drawer__trigger {
-    position: relative;
-    height: 3.75em;
-    width: 3.75em;
-    border: 0;
-    background: none;
-  }
-}
-@media screen and (min-width: 800px) {
-  .drawer__trigger {
-    display: none;
-  }
-}
-@media screen {
-  .drawer__trigger:before, .drawer__trigger:after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 0.125em;
-    width: 33.33333333%;
-    content: '';
-    background: #f0c;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    transition: background .4s, box-shadow .4s, margin .4s, -webkit-transform .4s;
-    transition: background .4s, box-shadow .4s, margin .4s, transform .4s;
-  }
-  .drawer__trigger:before {
-    margin-top: -0.25em;
-  }
-  .drawer__trigger:after {
-    box-shadow: 0 0.25em 0 0 #f0c;
-  }
-  [data-drawer-state="visible"] .drawer__trigger:before {
-    margin-top: 0;
-    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-  [data-drawer-state="visible"] .drawer__trigger:after {
-    box-shadow: 0 0 0 0 transparent;
-    -webkit-transform: translate(-50%, -50%) rotate(45deg);
-    transform: translate(-50%, -50%) rotate(45deg);
   }
 
   .silk-table {

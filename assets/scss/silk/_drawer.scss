@@ -49,6 +49,11 @@
   @include media($silk-drawer-disappears) {
     position: inherit;
     top: auto;
+    max-width: 100%;
+    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
   }
 
   // Active Canvas State
