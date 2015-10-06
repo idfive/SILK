@@ -32,10 +32,6 @@
         width: 100% / $column-base * $x - $column-between * 2;
       }
 
-      .col-#{nth(nth($breakpoints, $i), 1)}-#{$x} {
-        width: 100% / $column-base * $x;
-      }
-
     }
 
     // Push
@@ -45,10 +41,6 @@
 
         .col-#{nth(nth($breakpoints, $i), 1)}-push-#{$x} {
           margin-left: 100% / $column-base * $x + $column-between;
-        }
-
-        .col-#{nth(nth($breakpoints, $i), 1)}-push-#{$x} {
-          margin-left: 100% / $column-base * $x;
         }
 
       }
@@ -62,10 +54,6 @@
 
         .col-#{nth(nth($breakpoints, $i), 1)}-pull-#{$x} {
           margin-left: 100% / $column-base * $x * -1 + $column-between;
-        }
-
-        .col-#{nth(nth($breakpoints, $i), 1)}-pull-#{$x} {
-          margin-left: 100% / $column-base * $x * -1;
         }
 
       }
