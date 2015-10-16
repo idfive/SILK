@@ -128,24 +128,6 @@ gulp.task('compile-js', function() {
 
 
 // ========================================
-// Compile Handlebars
-// ========================================
-
-// Compile Handlebars templates from assets/js/templates
-// Custom compilation: node >> handlebars <input> -f <output>
-gulp.task('compile-templates', function() {
-  gulp.src(paths.templates.src)
-    .pipe(plugins.handlebars())
-    .pipe(plugins.defineModule('plain', {
-      require: { Handlebars: 'handlebars'},
-      wrapper: 'var Handlebars = require(\'handlebars\');\n module.exports[\'<%= name %>\'] = <%= handlebars %>'
-    }))
-    .pipe(plugins.concat('templates.js'))
-    .pipe(gulp.dest(paths.js.dest));
-});
-
-
-// ========================================
 // Create Watch Task
 // ========================================
 
@@ -155,7 +137,6 @@ gulp.task('watch', function() {
   plugins.livereload.listen();
   gulp.watch(paths.scss.src, ['compile-sass']);
   gulp.watch(paths.js.src, ['lint-js', 'compile-js']);
-  gulp.watch(paths.templates.src, ['compile-templates']);
 });
 
 
@@ -164,4 +145,4 @@ gulp.task('watch', function() {
 // ========================================
 
 // Defines all the tasks which run when 'gulp' is executed
-gulp.task('default', ['iconfont', 'compile-sass', 'lint-js', 'compile-js', 'compile-templates', 'watch']);
+gulp.task('default', ['iconfont', 'compile-sass', 'lint-js', 'compile-js', 'watch']);
