@@ -27,34 +27,74 @@
 
 
 // ========================================
-// Pillow
+// Gravity
 // ========================================
 
-// For generic full-width sections
-.pillow {
-  padding: em(40) em(20);
+// http://jxnblk.com/gravitons/
 
-  // For large sections / page__content
-  &--main {
-    padding: em(100) em(20);
+$particles: (
+  'margin': 'm',
+  'padding': 'p'
+);
+
+$directions: (
+  'top': 't',
+  'right': 'r',
+  'bottom': 'b',
+  'left': 'l',
+  'line': 'x',
+  'pole': 'y'
+);
+
+$space: 10;
+$extent: 3;
+
+@for $p from 1 to length($particles) + 1 {
+
+  @for $e from 1 through $extent {
+
+    .#{nth(nth($particles, $p), 2)}#{$e} {
+      #{nth(nth($particles, $p), 1)}: em($space * $e);
+    }
+
   }
 
-}
+  @for $d from 1 to length($directions) - 1 {
 
+    @for $e from 1 through $extent {
 
-// ========================================
-// Push
-// ========================================
+      .#{nth(nth($particles, $p), 2)}#{nth(nth($directions, $d), 2)}#{$e} {
+        #{nth(nth($particles, $p), 1)}-#{nth(nth($directions, $d), 1)}: em($space * $e);
+      }
 
-.push {
-  margin: em(30) 0;
+    }
 
-  &--top {
-    margin-top: em(30);
   }
 
-  &--bottom {
-    margin-bottom: em(30);
+  @for $d from length($directions) - 1 to length($directions) + 1 {
+
+    @for $e from 1 through $extent {
+
+      @if (nth(nth($directions, $d), 1)) == 'line' {
+
+        .#{nth(nth($particles, $p), 2)}#{nth(nth($directions, $d), 2)}#{$e} {
+          #{nth(nth($particles, $p), 1)}-right: em($space * $e);
+          #{nth(nth($particles, $p), 1)}-left: em($space * $e);
+        }
+
+      }
+
+      @else {
+
+        .#{nth(nth($particles, $p), 2)}#{nth(nth($directions, $d), 2)}#{$e} {
+          #{nth(nth($particles, $p), 1)}-top: em($space * $e);
+          #{nth(nth($particles, $p), 1)}-bottom: em($space * $e);
+        }
+
+      }
+
+    }
+
   }
 
 }
