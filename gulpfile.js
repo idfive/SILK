@@ -86,7 +86,7 @@ gulp.task('compile-sass', function() {
     })
     // https://www.npmjs.com/package/gulp-autoprefixer
     .pipe(plugins.autoprefixer({
-      browsers: ['last 2 versions'],
+      browsers: ['last 8 versions'],
       cascade: false
     }))
     .pipe(gulp.dest(paths.scss.dest))
