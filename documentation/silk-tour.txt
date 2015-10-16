@@ -187,8 +187,6 @@ _video.scss
 
 // Compile js
 
-// Compile Handlebars
-
 // Create Watch Task
 
 // Default 'gulp' task
