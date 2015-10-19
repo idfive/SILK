@@ -167,43 +167,6 @@
     display: block;
   }
 
-  .handle {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: none;
-    z-index: 400;
-    height: 100%;
-    width: 100%;
-    cursor: move;
-  }
-  .debug-handle {
-    display: block;
-  }
-  .handle:before, .handle:after {
-    position: absolute;
-    content: '';
-    background: #f0c;
-  }
-  .handle:before {
-    top: 50%;
-    left: 0;
-    height: em(8);
-    width: 100%;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-  }
-  .handle:after {
-    top: 0;
-    left: 50%;
-    height: 100%;
-    width: em(8);
-    -webkit-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-  }
-
   .is-hidden {
     position: absolute;
     color: transparent;
@@ -217,21 +180,6 @@
   }
 
   .list-reset {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;
-    list-style: none;
-  }
-
-  .indirect-list-reset ol,
-  .indirect-list-reset ul {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;
-    list-style: none;
-  }
-
-  .indirect-menu-reset menu {
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 0;
@@ -1185,7 +1133,7 @@
     transition: opacity .4s, visibility .4s, transform .4s;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .drawer {
     position: inherit;
     top: auto;
@@ -1218,7 +1166,7 @@
     background: none;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .drawer__trigger {
     display: none;
   }
@@ -1231,7 +1179,7 @@
     height: 0.125em;
     width: 33.33333333%;
     content: '';
-    background: #f0c;
+    background: #000;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -1242,8 +1190,8 @@
     margin-top: -0.25em;
   }
   .drawer__trigger:after {
-    -webkit-box-shadow: 0 0.25em 0 0 #f0c;
-    box-shadow: 0 0.25em 0 0 #f0c;
+    -webkit-box-shadow: 0 0.25em 0 0 #000;
+    box-shadow: 0 0.25em 0 0 #000;
   }
   [data-drawer-state="visible"] .drawer__trigger:before {
     margin-top: 0;
@@ -3014,7 +2962,7 @@
     display: table;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .silk-nav {
     overflow: inherit;
   }
@@ -3027,7 +2975,7 @@
     transition: left .3s;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .silk-nav > ul > li:hover > ul {
     display: block;
   }
@@ -3040,7 +2988,7 @@
     width: 100%;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .silk-nav > ul ul {
     top: 100%;
     left: 0;
@@ -3053,12 +3001,12 @@
     display: none;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .silk-nav > ul ul li {
     display: block;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .silk-nav li {
     position: relative;
     display: inline-block;
@@ -3080,7 +3028,7 @@
     text-align: center;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .silk-nav .next {
     display: none;
   }
@@ -3097,7 +3045,7 @@
     transform: translate(0, -50%);
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .silk-nav .back {
     display: none;
   }
@@ -3116,7 +3064,7 @@
     margin-bottom: 1em;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .silk-table {
     display: block;
   }
@@ -3128,7 +3076,7 @@
     text-align: left;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .silk-table--collapsed {
     display: none;
   }
@@ -3139,7 +3087,7 @@
     display: none;
   }
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 900px) {
   .silk-tabs__nav {
     display: block;
   }
@@ -3157,7 +3105,7 @@
     color: inherit;
   }
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 900px) {
   .silk-tabs__header {
     display: none;
   }
@@ -3176,7 +3124,7 @@
     display: none;
   }
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 900px) {
   .silk-tabs__content.is-hidden-accordion {
     display: inherit;
   }

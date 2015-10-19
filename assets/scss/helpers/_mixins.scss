@@ -78,23 +78,6 @@
   @include list-reset;
 }
 
-.indirect-list-reset {
-
-  ol,
-  ul {
-    @include list-reset;
-  }
-
-}
-
-.indirect-menu-reset {
-
-  menu {
-    @include list-reset;
-  }
-
-}
-
 
 // ========================================
 // Column Mixin
