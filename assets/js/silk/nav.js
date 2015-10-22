@@ -10,7 +10,6 @@
         active = 'silk-menu--active',
         $history = [];
 
-
     $('.silk-nav li').each(function() {
 
       $(this).attr('data-item-id', itemId);
@@ -26,13 +25,17 @@
 
     $('.trigger--reverse').click(function() {
 
-      $('[data-item-id='+ $history.pop() +']').removeClass(active);
+      var currentTree = $history.pop();
+
+      $('[data-item-id='+ currentTree +']').parent().removeClass(active);
+      $('[data-item-id='+ currentTree +']').removeClass(active);
 
     });
 
     $('.trigger--advance').click(function() {
 
       $(this).parent().parent().find('.' + active).removeClass(active);
+      $(this).parent().parent().addClass(active);
       $(this).parent().addClass(active);
 
       $history.push($(this).parent().data('item-id'));
