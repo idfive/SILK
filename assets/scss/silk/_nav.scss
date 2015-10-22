@@ -31,6 +31,15 @@
 
     }
 
+      @at-root .trigger--advance {
+        opacity: 1;
+        transition: opacity .25s;
+      }
+
+      @at-root .silk-menu--active > .trigger--advance {
+        opacity: 0;
+      }
+
       ul {
         overflow: hidden;
         max-height: 0;

@@ -2683,6 +2683,14 @@
     max-height: 0;
     opacity: 0;
   }
+  .trigger--advance {
+    opacity: 1;
+    -webkit-transition: opacity .25s;
+    transition: opacity .25s;
+  }
+  .silk-menu--active > .trigger--advance {
+    opacity: 0;
+  }
   .silk-nav > ul ul {
     overflow: hidden;
     max-height: 0;
