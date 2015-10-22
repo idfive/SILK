@@ -10,7 +10,13 @@
 
       &:first-child {
         max-height: none;
-        opacity: 1;
+        opacity: 0;
+        transition: opacity .25s;
+
+        @at-root .silk-nav > .silk-menu--active li:first-child {
+          opacity: 1;
+        }
+
       }
 
     }

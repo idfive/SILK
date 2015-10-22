@@ -2669,6 +2669,11 @@
 @media screen {
   .silk-nav > ul > li:first-child {
     max-height: none;
+    opacity: 0;
+    -webkit-transition: opacity .25s;
+    transition: opacity .25s;
+  }
+  .silk-nav > .silk-menu--active li:first-child {
     opacity: 1;
   }
   .silk-nav > ul li {
