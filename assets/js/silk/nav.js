@@ -23,6 +23,12 @@
 
     });
 
+    $('.trigger--revert').click(function() {
+
+      $('.' + active).removeClass(active);
+
+    });
+
     $('.trigger--reverse').click(function() {
 
       var currentTree = $history.pop();

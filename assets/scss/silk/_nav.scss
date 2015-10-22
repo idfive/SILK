@@ -6,8 +6,29 @@
 
   > ul {
 
+    > li {
+
+      &:first-child {
+        max-height: none;
+        opacity: 1;
+      }
+
+    }
+
     li {
       position: relative;
+      max-height: em(100);
+      opacity: 1;
+      transition:
+        max-height .25s,
+        opacity .25s;
+
+      @at-root .silk-menu--active > li:not(.silk-menu--active) {
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+      }
+
     }
 
       ul {
@@ -19,7 +40,8 @@
           opacity .25s;
 
         @at-root .silk-nav .silk-menu--active > ul {
-          max-height: em(400);
+          display: block;
+          max-height: em(500);
           opacity: 1;
         }
 

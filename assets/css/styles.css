@@ -2667,8 +2667,21 @@
   }
 }
 @media screen {
+  .silk-nav > ul > li:first-child {
+    max-height: none;
+    opacity: 1;
+  }
   .silk-nav > ul li {
     position: relative;
+    max-height: 6.25em;
+    opacity: 1;
+    -webkit-transition: max-height .25s, opacity .25s;
+    transition: max-height .25s, opacity .25s;
+  }
+  .silk-menu--active > li:not(.silk-menu--active) {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
   }
   .silk-nav > ul ul {
     overflow: hidden;
@@ -2678,7 +2691,8 @@
     transition: max-height .25s, opacity .25s;
   }
   .silk-nav .silk-menu--active > ul {
-    max-height: 25em;
+    display: block;
+    max-height: 31.25em;
     opacity: 1;
   }
 
