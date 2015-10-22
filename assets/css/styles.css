@@ -840,6 +840,7 @@
     transform: translate(-20%, 0);
     top: 3.75em;
     z-index: 200;
+    overflow: hidden;
     max-width: 31.25em;
     background: #fff;
     -webkit-transition: opacity .4s, visibility .4s, -webkit-transform .4s;
@@ -2666,108 +2667,19 @@
   }
 }
 @media screen {
-  .silk-nav {
+  .silk-nav > ul li {
+    position: relative;
+  }
+  .silk-nav > ul ul {
     overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    -webkit-transition: max-height .25s, opacity .25s;
+    transition: max-height .25s, opacity .25s;
   }
-  .silk-nav:after {
-    clear: both;
-    content: '';
-    display: table;
-  }
-}
-@media screen and (min-width: 900px) {
-  .silk-nav {
-    overflow: inherit;
-  }
-}
-@media screen {
-  .silk-nav > ul {
-    position: relative;
-    left: 0;
-    -webkit-transition: left .3s;
-    transition: left .3s;
-  }
-}
-@media screen and (min-width: 900px) {
-  .silk-nav > ul > li:hover > ul {
-    display: block;
-  }
-}
-@media screen {
-  .silk-nav > ul ul {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    width: 100%;
-  }
-}
-@media screen and (min-width: 900px) {
-  .silk-nav > ul ul {
-    top: 100%;
-    left: 0;
-    display: none;
-    width: 200%;
-  }
-}
-@media screen {
-  .silk-nav > ul ul.hidden {
-    display: none;
-  }
-}
-@media screen and (min-width: 900px) {
-  .silk-nav > ul ul li {
-    display: block;
-  }
-}
-@media screen and (min-width: 900px) {
-  .silk-nav li {
-    position: relative;
-    display: inline-block;
-  }
-}
-@media screen {
-  .silk-nav a {
-    position: relative;
-    display: block;
-    padding: .5em;
-    text-decoration: none;
-  }
-  .silk-nav .next {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 3.125em;
-    text-align: center;
-  }
-}
-@media screen and (min-width: 900px) {
-  .silk-nav .next {
-    display: none;
-  }
-}
-@media screen {
-  .silk-nav .next:before {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    content: '>';
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-  }
-}
-@media screen and (min-width: 900px) {
-  .silk-nav .back {
-    display: none;
-  }
-}
-@media screen {
-  .silk-nav .back:before {
-    display: inline-block;
-    margin-right: 0.625em;
-    content: '<';
+  .silk-nav .silk-menu--active > ul {
+    max-height: 25em;
+    opacity: 1;
   }
 
   .colors {

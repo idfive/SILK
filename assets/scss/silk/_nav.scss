@@ -3,114 +3,28 @@
 // ========================================
 
 .silk-nav {
-  @include clearfix;
-  overflow: hidden;
-
-  @include media($silk-drawer-disappears) {
-    overflow: inherit;
-  }
 
   > ul {
-    position: relative;
-    left: 0;
-    transition: left .3s;
 
-    > li {
-
-      &:hover {
-
-        > ul {
-
-          @include media($silk-drawer-disappears) {
-            display: block;
-          }
-
-        }
-
-      }
-
+    li {
+      position: relative;
     }
 
       ul {
-        position: absolute;
-        top: 0;
-        left: 100%;
-        width: 100%;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition:
+          max-height .25s,
+          opacity .25s;
 
-        @include media($silk-drawer-disappears) {
-          top: 100%;
-          left: 0;
-          display: none;
-          width: 200%;
-        }
-
-        &.hidden {
-          display: none;
-        }
-
-        li {
-
-          @include media($silk-drawer-disappears) {
-            display: block;
-          }
-
+        @at-root .silk-nav .silk-menu--active > ul {
+          max-height: em(400);
+          opacity: 1;
         }
 
       }
 
   }
-
-    li {
-
-      @include media($silk-drawer-disappears) {
-        position: relative;
-        display: inline-block;
-      }
-
-    }
-
-      a {
-        position: relative;
-        display: block;
-        padding: .5em;
-        text-decoration: none;
-      }
-
-    .next {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: em(50);
-      text-align: center;
-
-      @include media($silk-drawer-disappears) {
-        display: none;
-      }
-
-      &:before {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        content: '>';
-        transform: translate(0, -50%);
-      }
-
-    }
-
-    .back {
-
-      @include media($silk-drawer-disappears) {
-        display: none;
-      }
-
-      &:before {
-        display: inline-block;
-        margin-right: em(10);
-        content: '<';
-      }
-
-    }
 
 }

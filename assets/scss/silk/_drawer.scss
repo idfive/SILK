@@ -39,6 +39,7 @@
   @include drawer(ltr);
   top: em(60);
   z-index: 200;
+  overflow: hidden;
   max-width: em(500);
   background: #fff;
   transition:
