@@ -2671,6 +2671,13 @@
     max-height: none;
     opacity: 1;
   }
+}
+@media screen and (min-width: 900px) {
+  .silk-nav > ul > li:first-child {
+    display: none;
+  }
+}
+@media screen {
   .trigger--revert {
     opacity: 0;
     -webkit-transition: opacity .25s;
