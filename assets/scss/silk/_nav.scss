@@ -10,10 +10,23 @@
 
       &:first-child {
         max-height: none;
-        opacity: 0;
-        transition: opacity .25s;
+        opacity: 1;
 
-        @at-root .silk-nav > .silk-menu--active li:first-child {
+        @at-root .trigger--revert {
+          opacity: 0;
+          transition: opacity .25s;
+        }
+
+        @at-root .silk-menu--active .trigger--revert {
+          opacity: 1;
+        }
+
+        @at-root .trigger--reverse {
+          opacity: 0;
+          transition: opacity .25s;
+        }
+
+        @at-root .silk-menu--active .trigger--reverse {
           opacity: 1;
         }
 
@@ -37,11 +50,11 @@
 
     }
 
-      a {
+      @at-root .silk-nav a {
         display: block;
       }
 
-      @at-root .silk-nav .silk-menu--active > a {
+      @at-root .silk-menu--active > a {
         display: none;
       }
 
@@ -51,6 +64,14 @@
 
       @at-root .trigger--advance {
         display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        @include media($silk-drawer-disappears) {
+          display: none;
+        }
+
       }
 
       @at-root .silk-menu--active > .trigger--advance {
@@ -76,3 +97,5 @@
   }
 
 }
+
+

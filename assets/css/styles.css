@@ -2669,11 +2669,22 @@
 @media screen {
   .silk-nav > ul > li:first-child {
     max-height: none;
+    opacity: 1;
+  }
+  .trigger--revert {
     opacity: 0;
     -webkit-transition: opacity .25s;
     transition: opacity .25s;
   }
-  .silk-nav > .silk-menu--active li:first-child {
+  .silk-menu--active .trigger--revert {
+    opacity: 1;
+  }
+  .trigger--reverse {
+    opacity: 0;
+    -webkit-transition: opacity .25s;
+    transition: opacity .25s;
+  }
+  .silk-menu--active .trigger--reverse {
     opacity: 1;
   }
   .silk-nav > ul li {
@@ -2688,10 +2699,10 @@
     max-height: 0;
     opacity: 0;
   }
-  .silk-nav > ul a {
+  .silk-nav a {
     display: block;
   }
-  .silk-nav .silk-menu--active > a {
+  .silk-menu--active > a {
     display: none;
   }
   .silk-menu--active > a.silk-menu--active {
@@ -2699,7 +2710,17 @@
   }
   .trigger--advance {
     display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
+}
+@media screen and (min-width: 900px) {
+  .trigger--advance {
+    display: none;
+  }
+}
+@media screen {
   .silk-menu--active > .trigger--advance {
     display: none;
   }
