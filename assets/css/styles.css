@@ -2706,6 +2706,14 @@
     max-height: 0;
     opacity: 0;
   }
+}
+@media screen and (min-width: 900px) {
+  .silk-menu--active > li:not(.silk-menu--active) {
+    max-height: none;
+    opacity: 1;
+  }
+}
+@media screen {
   .silk-nav a {
     display: block;
   }
@@ -2738,6 +2746,14 @@
     -webkit-transition: max-height .25s, opacity .25s;
     transition: max-height .25s, opacity .25s;
   }
+}
+@media screen and (min-width: 900px) {
+  .silk-nav > ul ul {
+    max-height: none;
+    opacity: 1;
+  }
+}
+@media screen {
   .silk-nav .silk-menu--active > ul {
     display: block;
     max-height: 31.25em;

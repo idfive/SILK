@@ -50,6 +50,12 @@
         overflow: hidden;
         max-height: 0;
         opacity: 0;
+
+        @include media($silk-drawer-disappears) {
+          max-height: none;
+          opacity: 1;
+        }
+
       }
 
     }
@@ -89,6 +95,11 @@
         transition:
           max-height .25s,
           opacity .25s;
+
+        @include media($silk-drawer-disappears) {
+          max-height: none;
+          opacity: 1;
+        }
 
         @at-root .silk-nav .silk-menu--active > ul {
           display: block;
