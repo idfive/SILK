@@ -34,6 +34,7 @@
       var currentTree = $history.pop();
 
       $('[data-item-id='+ currentTree +']').parent().removeClass(active);
+      $('[data-item-id='+ currentTree +']').parent().prev().prev().addClass(active);
       $('[data-item-id='+ currentTree +']').removeClass(active);
 
     });
@@ -41,8 +42,10 @@
     $('.trigger--advance').click(function() {
 
       $(this).parent().parent().find('.' + active).removeClass(active);
+      $(this).parent().parent().parent().find('a.' + active).removeClass(active);
       $(this).parent().parent().addClass(active);
       $(this).parent().addClass(active);
+      $(this).prev().addClass(active);
 
       $history.push($(this).parent().data('item-id'));
 

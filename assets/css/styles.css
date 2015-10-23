@@ -2678,7 +2678,7 @@
   }
   .silk-nav > ul li {
     position: relative;
-    max-height: 6.25em;
+    max-height: 31.25em;
     opacity: 1;
     -webkit-transition: max-height .25s, opacity .25s;
     transition: max-height .25s, opacity .25s;
@@ -2688,13 +2688,20 @@
     max-height: 0;
     opacity: 0;
   }
+  .silk-nav > ul a {
+    display: block;
+  }
+  .silk-nav .silk-menu--active > a {
+    display: none;
+  }
+  .silk-menu--active > a.silk-menu--active {
+    display: block;
+  }
   .trigger--advance {
-    opacity: 1;
-    -webkit-transition: opacity .25s;
-    transition: opacity .25s;
+    display: block;
   }
   .silk-menu--active > .trigger--advance {
-    opacity: 0;
+    display: none;
   }
   .silk-nav > ul ul {
     overflow: hidden;
