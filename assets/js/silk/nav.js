@@ -6,48 +6,61 @@
 
   $.fn.silknav = function(options) {
 
-    var itemId = 1,
+    // Setup nav class, active class, item id iterator, and nav history array
+    var nav = '.silk-nav',
         active = 'silk-menu--active',
+        itemId = 1,
         $history = [];
 
-    $('.silk-nav li').each(function() {
+    $('.silk-nav ul ul').each(function() {
 
-      $(this).attr('data-item-id', itemId);
+      // Add a data-item-id & trigger to each list
+      $(this)
+        .attr('data-item-id', itemId)
+        .before('<button class="trigger--advance"><i class="icon icon-chevron-right"></i></button>');
+
+      // Increment the item Id to identify the next list
       itemId++;
 
-      if($(this).find('> ul').length) {
-
-        $(this).find('> ul').before('<button class="trigger--advance"></button>');
-
-      }
+      // Add a label to the list
+      $(this).prev().prev().clone().prependTo($(this));
 
     });
 
     $('.trigger--revert').click(function() {
 
+      // Remove all active classes from silk-nav
       $('.' + active).removeClass(active);
 
     });
 
     $('.trigger--reverse').click(function() {
 
-      var currentTree = $history.pop();
+      // Copy the id of the array item that was removed
+      var listToReverse = $history.pop();
 
-      $('[data-item-id='+ currentTree +']').parent().removeClass(active);
-      $('[data-item-id='+ currentTree +']').parent().prev().prev().addClass(active);
-      $('[data-item-id='+ currentTree +']').removeClass(active);
+      // Use the copied id to remove the active class from the last active list
+      $('[data-item-id=' + listToReverse + ']').removeClass(active);
+
+      // If the array is empty, remove the active class from the entire nav
+      if($history.length < 1) {
+
+        $(nav).removeClass(active);
+
+      }
 
     });
 
     $('.trigger--advance').click(function() {
 
-      $(this).parent().parent().find('.' + active).removeClass(active);
-      $(this).parent().parent().parent().find('a.' + active).removeClass(active);
-      $(this).parent().parent().addClass(active);
-      $(this).parent().addClass(active);
-      $(this).prev().addClass(active);
+      // Add a class to the list after the trigger
+      $(this).next().addClass(active);
 
-      $history.push($(this).parent().data('item-id'));
+      // Add this list to the history array
+      $history.push($(this).next().data('item-id'));
+
+      // Add an active class to the nav
+      $(nav).addClass(active);
 
     });
 

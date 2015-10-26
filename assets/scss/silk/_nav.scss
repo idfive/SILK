@@ -4,113 +4,57 @@
 
 .silk-nav {
 
-  > ul {
+  ul {
 
-    > li {
-
-      &:first-child {
-        max-height: none;
-        opacity: 1;
-
-        @include media($silk-drawer-disappears) {
-          display: none;
-        }
-
-        @at-root .trigger--revert {
-          opacity: 0;
-          transition: opacity .25s;
-        }
-
-        @at-root .silk-menu--active .trigger--revert {
-          opacity: 1;
-        }
-
-        @at-root .trigger--reverse {
-          opacity: 0;
-          transition: opacity .25s;
-        }
-
-        @at-root .silk-menu--active .trigger--reverse {
-          opacity: 1;
-        }
-
-      }
-
-    }
-
-    li {
-      position: relative;
-      max-height: em(500);
-      opacity: 1;
+    ul {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      z-index: 200;
+      height: 100%;
+      width: 100%;
+      background: #fff;
+      opacity: 0;
+      transform: translate(0, 0);
       transition:
-        max-height .25s,
-        opacity .25s;
+        opacity .4s,
+        transform .4s;
 
-      @at-root .silk-menu--active > li:not(.silk-menu--active) {
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
+      @include media($silk-drawer-disappears) {
+        top: 100%;
+        left: 0;
+        display: none;
+        height: auto;
+        opacity: 1;
+      }
+
+      &.silk-menu--active {
+        opacity: 1;
+        transform: translate(-100%, 0);
 
         @include media($silk-drawer-disappears) {
-          max-height: none;
-          opacity: 1;
+          transform: none;
         }
 
       }
 
     }
-
-      @at-root .silk-nav a {
-        display: block;
-      }
-
-      @at-root .silk-menu--active > a {
-        display: none;
-      }
-
-      @at-root .silk-menu--active > a.silk-menu--active {
-        display: block;
-      }
-
-      @at-root .trigger--advance {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-
-        @include media($silk-drawer-disappears) {
-          display: none;
-        }
-
-      }
-
-      @at-root .silk-menu--active > .trigger--advance {
-        display: none;
-      }
-
-      ul {
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
-        transition:
-          max-height .25s,
-          opacity .25s;
-
-        @include media($silk-drawer-disappears) {
-          max-height: none;
-          opacity: 1;
-        }
-
-        @at-root .silk-nav .silk-menu--active > ul {
-          display: block;
-          max-height: em(500);
-          opacity: 1;
-        }
-
-      }
 
   }
 
 }
 
+  .trigger--revert,
+  .trigger--reverse {
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity .3s,
+      visibility .3s;
 
+    .silk-menu--active & {
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }
