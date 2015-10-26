@@ -48,19 +48,6 @@
         vertical-align: top;
       }
 
-      &:hover {
-
-        > ul {
-
-          @include media($silk-drawer-disappears) {
-            display: block;
-            opacity: 1;
-          }
-
-        }
-
-      }
-
       > a:not(.trigger--home) {
         @include tier-label;
       }

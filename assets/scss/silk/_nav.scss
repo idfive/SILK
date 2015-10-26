@@ -18,7 +18,7 @@
       transform: translate(0, 0);
       transition:
         opacity .4s,
-        transform .4s cubic-bezier(.175, .885, .24, 1.11);
+        transform .4s;
 
       @include media($silk-drawer-disappears) {
         top: 100%;
@@ -28,9 +28,20 @@
         opacity: 1;
       }
 
+      @at-root .silk-nav > ul > li:hover > ul {
+
+        @include media($silk-drawer-disappears) {
+          display: block;
+        }
+
+      }
+
       &.silk-menu--active {
         opacity: 1;
         transform: translate(-100%, 0);
+        transition:
+          opacity .4s,
+          transform .4s cubic-bezier(.175, .885, .24, 1.11);
 
         @include media($silk-drawer-disappears) {
           transform: none;
