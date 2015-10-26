@@ -18,7 +18,7 @@
       transform: translate(0, 0);
       transition:
         opacity .4s,
-        transform .4s;
+        transform .4s cubic-bezier(.175, .885, .24, 1.11);
 
       @include media($silk-drawer-disappears) {
         top: 100%;

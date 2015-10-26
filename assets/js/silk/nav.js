@@ -1,4 +1,4 @@
-// ========================================
+vc// ========================================
 // Navigation
 // ========================================
 
@@ -29,8 +29,11 @@
 
     $('.trigger--revert').click(function() {
 
-      // Remove all active classes from silk-nav
+      // Remove all active classes from the nav
       $('.' + active).removeClass(active);
+
+      // Empty the history array
+      $history = [];
 
     });
 
