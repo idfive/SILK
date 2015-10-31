@@ -19,6 +19,10 @@ var paths = {
     src:  'assets/haml/**/*.haml',
     dest: '',
   },
+  jade: {
+    src:  'assets/jade/pages/*.jade',
+    dest: '',
+  },
   scss: {
     src:  'assets/scss/**/*.scss',
     dest: 'assets/css',
@@ -47,7 +51,22 @@ var paths = {
 gulp.task('compile-haml', function () {
   gulp.src(paths.haml.src)
     .pipe(plugins.haml())
-    .pipe(gulp.dest(paths.haml.dest));
+    .pipe(gulp.dest(paths.haml.dest))
+    .pipe(plugins.livereload());
+});
+
+
+// ========================================
+// Jade
+// ========================================
+
+gulp.task('compile-jade', function() {
+  return gulp.src(paths.jade.src)
+    .pipe(plugins.jade({
+      pretty: true
+    }))
+    .pipe(gulp.dest(paths.jade.dest))
+    .pipe(plugins.livereload());
 });
 
 
@@ -151,6 +170,7 @@ gulp.task('compile-js', function() {
 gulp.task('watch', function() {
   plugins.livereload.listen();
   gulp.watch(paths.haml.src, ['compile-haml']);
+  gulp.watch('assets/jade/**/*.jade', ['compile-jade']);
   gulp.watch(paths.scss.src, ['compile-sass']);
   gulp.watch(paths.js.src, ['lint-js', 'compile-js']);
 });
@@ -161,4 +181,4 @@ gulp.task('watch', function() {
 // ========================================
 
 // Defines all the tasks which run when 'gulp' is executed
-gulp.task('default', ['compile-haml', 'iconfont', 'compile-sass', 'lint-js', 'compile-js', 'watch']);
+gulp.task('default', ['compile-haml', 'compile-jade', 'iconfont', 'compile-sass', 'lint-js', 'compile-js', 'watch']);

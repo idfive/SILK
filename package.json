@@ -22,6 +22,7 @@
     "gulp-iconfont": "^3.0.2",
     "gulp-iconfont-css": "0.0.9",
     "gulp-include": "^2.0.2",
+    "gulp-jade": "^1.1.0",
     "gulp-jshint": "^1.11.2",
     "gulp-livereload": "^3.8.0",
     "gulp-load-plugins": "^1.0.0-rc.1",
