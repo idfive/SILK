@@ -113,19 +113,6 @@ gulp.task('compile-sass', function() {
 
 
 // ========================================
-// Lint Js
-// ========================================
-
-// Finds and reports errors within assets/js/
-gulp.task('lint-js', function() {
-  return gulp.src(paths.js.src)
-    // https://www.npmjs.com/package/gulp-jshint
-    .pipe(plugins.jshint())
-    .pipe(plugins.jshint.reporter('default'));
-});
-
-
-// ========================================
 // Compile js
 // ========================================
 
@@ -155,7 +142,7 @@ gulp.task('watch', function() {
   plugins.livereload.listen();
   gulp.watch('assets/jade/**/*.jade', ['compile-jade']);
   gulp.watch(paths.scss.src, ['compile-sass']);
-  gulp.watch(paths.js.src, ['lint-js', 'compile-js']);
+  gulp.watch(paths.js.src, ['compile-js']);
 });
 
 
@@ -164,4 +151,4 @@ gulp.task('watch', function() {
 // ========================================
 
 // Defines all the tasks which run when 'gulp' is executed
-gulp.task('default', ['compile-jade', 'iconfont', 'compile-sass', 'lint-js', 'compile-js', 'watch']);
+gulp.task('default', ['compile-jade', 'iconfont', 'compile-sass', 'compile-js', 'watch']);
