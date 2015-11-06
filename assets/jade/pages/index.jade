@@ -1,7 +1,7 @@
-doctype html
-html
-  include ../regions/head.jade
-  body
-    include ../regions/header.jade
-    include ../blocks/content.jade
-    include ../regions/footer.jade
+extends ../layouts/main.jade
+
+block content
+  include ../blocks/content.jade
+  include ../blocks/silk-tabs.jade
+  include ../blocks/silk-accordion.jade
+  include ../blocks/silk-table.jade
