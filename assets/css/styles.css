@@ -2972,7 +2972,7 @@
   }
 }
 @media screen {
-  .silk-menu--active > a {
+  .nav-main ul > a {
     padding-top: 0.45454545em;
     padding-bottom: 0.45454545em;
     font-size: 1.375em;

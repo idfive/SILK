@@ -88,7 +88,7 @@
 
       }
 
-      @at-root .silk-menu--active > a {
+      @at-root .nav-main ul > a {
         @include tier-label;
       }
 

@@ -15,10 +15,6 @@ var plugins = require('gulp-load-plugins')();
 // Variable declarations
 // http://www.mikestreety.co.uk/blog/an-advanced-gulpjs-file
 var paths = {
-  haml: {
-    src:  'assets/haml/**/*.haml',
-    dest: '',
-  },
   jade: {
     src:  'assets/jade/pages/*.jade',
     dest: '',
@@ -42,18 +38,6 @@ var paths = {
     src:  'assets/js/templates/**/*'
   }
 };
-
-
-// ========================================
-// HAML
-// ========================================
-
-gulp.task('compile-haml', function () {
-  gulp.src(paths.haml.src)
-    .pipe(plugins.haml())
-    .pipe(gulp.dest(paths.haml.dest))
-    .pipe(plugins.livereload());
-});
 
 
 // ========================================
@@ -169,7 +153,6 @@ gulp.task('compile-js', function() {
 // This task is executed by default when 'gulp' is executed
 gulp.task('watch', function() {
   plugins.livereload.listen();
-  gulp.watch(paths.haml.src, ['compile-haml']);
   gulp.watch('assets/jade/**/*.jade', ['compile-jade']);
   gulp.watch(paths.scss.src, ['compile-sass']);
   gulp.watch(paths.js.src, ['lint-js', 'compile-js']);
@@ -181,4 +164,4 @@ gulp.task('watch', function() {
 // ========================================
 
 // Defines all the tasks which run when 'gulp' is executed
-gulp.task('default', ['compile-haml', 'compile-jade', 'iconfont', 'compile-sass', 'lint-js', 'compile-js', 'watch']);
+gulp.task('default', ['compile-jade', 'iconfont', 'compile-sass', 'lint-js', 'compile-js', 'watch']);

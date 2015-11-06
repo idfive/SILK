@@ -1,14 +1,7 @@
-h2 Nav
 button.drawer__trigger
 
 nav.silk-nav.nav-main.drawer
-  .silk-nav__controls
-    a.trigger--home(href='/')
-      i.icon.icon-home Home
-    button.trigger--revert
-      i.icon.icon-undo Main Menu
-    button.trigger--reverse
-      i.icon.icon-chevron-left
+  include ./silk-nav-controls.jade
   ul
     li
       a(href='/') Games
