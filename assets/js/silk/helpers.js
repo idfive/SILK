@@ -20,30 +20,6 @@ silk.helpers = (function() {
     }
   };
 
-  // Add a listener for debug purposes
-  window.addEventListener("keydown", debug, false);
-
-  function debug(e) {
-    // g
-    if (e.keyCode == 71) {
-      if (document.body.classList.contains('debug-grid')) {
-        document.body.classList.remove('debug-grid');
-      }
-      else {
-        document.body.classList.add('debug-grid');
-      }
-    }
-    // r
-    else if (e.keyCode == 82) {
-      if (document.body.classList.contains('debug-handle')) {
-        document.body.classList.remove('debug-handle');
-      }
-      else {
-        document.body.classList.add('debug-handle');
-      }
-    }
-  }
-
   return self;
 
 })();
