@@ -2239,8 +2239,9 @@
     height: 36.25em;
   }
 }
+
 @media screen {
-  .silk-video .silk-video__inner {
+  .silk-video__inner {
     position: absolute;
     top: 0%;
     left: 0%;
@@ -2248,7 +2249,7 @@
     width: 100%;
     overflow: hidden;
   }
-  .silk-video .compartment {
+  .silk-video__inner .compartment {
     position: absolute;
     left: 0;
     right: 0;
@@ -2260,25 +2261,25 @@
   }
 }
 @media screen and (min-width: 1000px) {
-  .silk-video .compartment {
+  .silk-video__inner .compartment {
     padding-top: 6.25em;
     padding-bottom: 6.25em;
   }
 }
 @media screen {
-  .silk-video video {
+  .silk-video__inner video {
     position: absolute;
     z-index: 0;
     visibility: hidden;
   }
 }
 @media screen and (min-width: 1000px) {
-  .silk-video video {
+  .silk-video__inner video {
     visibility: visible;
   }
 }
 @media screen {
-  .silk-video video.fillWidth {
+  .silk-video__inner video.fillWidth {
     width: 100%;
   }
 
