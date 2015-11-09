@@ -1,16 +1,4 @@
 // ========================================
-// Compartment Column
-// ========================================
-
-.compartment {
-  @include clearfix;
-  margin: 0 auto;
-  max-width: $boundary * 1px;
-  max-width: rem($boundary);
-}
-
-
-// ========================================
 // Generic Columns
 // ========================================
 

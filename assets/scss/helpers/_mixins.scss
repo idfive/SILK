@@ -22,6 +22,55 @@
 
 
 // ========================================
+// Clearfix
+// ========================================
+
+@mixin clearfix {
+
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+}
+
+
+// ========================================
+// Compartment
+// ========================================
+
+@mixin compartment($width) {
+  @include clearfix;
+  margin: 0 auto;
+  max-width: $width * 1px;
+  max-width: rem($width);
+}
+
+.compartment {
+  @include compartment($boundary);
+}
+
+
+// ========================================
+// List Reset
+// ========================================
+
+// Resets browser defaults of a list
+
+@mixin list-reset {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-reset {
+  @include list-reset;
+}
+
+
+// ========================================
 // Visually Hidden
 // ========================================
 
@@ -43,39 +92,6 @@
 
 .is-visible {
   @include is-visible;
-}
-
-
-// ========================================
-// Clearfix
-// ========================================
-
-@mixin clearfix {
-
-  &:after {
-    clear: both;
-    content: '';
-    display: table;
-  }
-
-}
-
-
-// ========================================
-// List Reset
-// ========================================
-
-// Resets browser defaults of a list
-
-@mixin list-reset {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-}
-
-.list-reset {
-  @include list-reset;
 }
 
 

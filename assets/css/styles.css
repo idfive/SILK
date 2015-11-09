@@ -138,6 +138,24 @@
 }
 
 @media screen {
+  .compartment {
+    margin: 0 auto;
+    max-width: 1180px;
+    max-width: 73.75rem;
+  }
+  .compartment:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+  .list-reset {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
   .is-hidden {
     position: absolute;
     color: transparent;
@@ -148,13 +166,6 @@
     position: inherit;
     color: inherit;
     visibility: inherit;
-  }
-
-  .list-reset {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;
-    list-style: none;
   }
 
   /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -2269,17 +2280,6 @@
 @media screen {
   .silk-video video.fillWidth {
     width: 100%;
-  }
-
-  .compartment {
-    margin: 0 auto;
-    max-width: 1100px;
-    max-width: 68.75rem;
-  }
-  .compartment:after {
-    clear: both;
-    content: '';
-    display: table;
   }
 
   *,
