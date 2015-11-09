@@ -2,13 +2,16 @@
 // Navigation
 // ========================================
 
-[class^='nav'] {
-  @include list-reset;
+nav {
 
-  a {
-    display: block;
-    text-decoration: none;
+  ul {
+    @include list-reset;
   }
+
+    a {
+      display: block;
+      text-decoration: none;
+    }
 
 }
 
