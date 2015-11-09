@@ -2636,6 +2636,7 @@
     margin: 0 0.625em 0.625em 0;
     padding: 0;
     cursor: pointer;
+    text-decoration: none;
     outline: 0;
     -webkit-transition: background .2s, -webkit-box-shadow .2s, color .2s, -webkit-transform .2s;
     transition: background .2s, box-shadow .2s, color .2s, transform .2s;
