@@ -79,32 +79,6 @@
 }
 
 
-// ========================================
-// Column Mixin
-// ========================================
-
-// Ex: @include column(2, 4, 6, 20em, 40em, 60em);
-
-@mixin column($spread...) {
-  $argument-length: length($spread);
-  $argument-split: $argument-length / 2;
-
-  @for $i from 1 through $argument-split {
-
-    @media (min-width: nth($spread, ($argument-split + $i))) {
-      width: percentage(1 / nth($spread, $i));
-
-      @if $i == 1 {
-        float: left;
-      }
-
-    }
-
-  }
-
-}
-
-
 // ==============================
 // Collage Mixin
 // ==============================
