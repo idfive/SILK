@@ -2638,8 +2638,8 @@
     cursor: pointer;
     text-decoration: none;
     outline: 0;
-    -webkit-transition: background .2s, -webkit-box-shadow .2s, color .2s, -webkit-transform .2s;
-    transition: background .2s, box-shadow .2s, color .2s, transform .2s;
+    -webkit-transition: background .25s, -webkit-box-shadow .25s, color .25s, -webkit-transform .2s;
+    transition: background .25s, box-shadow .25s, color .25s, transform .2s;
   }
   [class*='button']:active {
     -webkit-transform: scale(0.95);
