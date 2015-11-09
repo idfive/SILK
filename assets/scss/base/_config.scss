@@ -134,3 +134,12 @@ $breakpoints: (
   ("nation", 1100px),
   ("world", 1200px)
 );
+
+
+// ========================================
+// Utilities
+// ========================================
+
+// Determine if .hidden-breakpoint and .shown-breakpoint should be included
+
+$show-and-hide: true;
