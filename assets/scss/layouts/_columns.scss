@@ -2,8 +2,7 @@
 // Compartment Column
 // ========================================
 
-.compartment,
-.row {
+.compartment {
   @include clearfix;
   margin: 0 auto;
   max-width: $boundary * 1px;

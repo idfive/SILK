@@ -2271,14 +2271,12 @@
     width: 100%;
   }
 
-  .compartment,
-  .row {
+  .compartment {
     margin: 0 auto;
     max-width: 1100px;
     max-width: 68.75rem;
   }
-  .compartment:after,
-  .row:after {
+  .compartment:after {
     clear: both;
     content: '';
     display: table;
