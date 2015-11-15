@@ -29,6 +29,10 @@ var paths = {
     fontPath: '../fonts/',
     dest:   'assets/fonts/'
   },
+  sprite: {
+    src:  'assets/icons/*.svg',
+    dest: 'assets/images/'
+  },
   js: {
     compile: ['assets/js/*.js'],
     src:  ['assets/js/*.js','assets/js/silk/*.js'],
@@ -79,6 +83,31 @@ gulp.task('iconfont', function() {
       appendCodepoints: true
     }))
     .pipe(gulp.dest(paths.icons.dest));
+});
+
+
+// ========================================
+// SVG Sprite
+// ========================================
+
+gulp.task('svg-sprite', function() {
+  gulp.src(paths.icons.src)
+    .pipe(plugins.svgSprite({
+      "mode": {
+        "css": {
+          "dest": "./",
+          "layout": "diagonal",
+          "sprite": "sprite.svg",
+          "bust": false,
+          "render": {
+            "scss": {
+              "dest": "../scss/base/_sprite.scss"
+             }
+          }
+        }
+      }
+    }))
+    .pipe(gulp.dest(paths.sprite.dest));
 });
 
 

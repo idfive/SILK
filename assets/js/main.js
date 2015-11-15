@@ -13,14 +13,13 @@
 //= include silk/nav.js
 //= include silk/table.js
 //= include silk/tabs.js
-//= include silk/video.js
 
 // Bootstrap
 (function($) {
 
-  //Run SILK bootstrap
+  // Run SILK bootstrap
 
-  //Insitialize SILK modules
+  // Initialize SILK modules
   $('.silk-nav').silknav();
   $('.silk-tabs').silktabs();
   $('.silk-accordion').silkaccordion();
