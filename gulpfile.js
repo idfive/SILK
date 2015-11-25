@@ -98,12 +98,10 @@ gulp.task('svg-sprite', function() {
           "dest": "./",
           "layout": "diagonal",
           "sprite": "sprite.svg",
-          "bust": false,
-          "render": {
-            "scss": {
-              "dest": "../scss/base/_sprite.scss"
-             }
-          }
+          "bust": false
+        },
+        "view": {
+          "symbol": true
         }
       }
     }))
@@ -170,7 +168,7 @@ gulp.task('compile-js', function() {
 gulp.task('watch', function() {
   plugins.livereload.listen();
   gulp.watch('assets/jade/**/*.jade', ['compile-jade']);
-  gulp.watch(paths.scss.src, ['compile-sass']);
+  gulp.watch(paths.scss.src, ['compile-sass', 'compile-jade']);
   gulp.watch(paths.js.src, ['compile-js']);
 });
 

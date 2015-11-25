@@ -74,24 +74,30 @@
 // Visually Hidden
 // ========================================
 
-@mixin is-hidden {
+@mixin visible-for-screen-readers {
   position: absolute;
-  color: transparent;
-  visibility: hidden;
+  left: -10000px;
+  top: auto;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
 }
 
-.is-hidden {
-  @include is-hidden;
+.visible-for-screen-readers {
+  @include visible-for-screen-readers;
 }
 
-@mixin is-visible {
+@mixin visible-for-all {
   position: inherit;
-  color: inherit;
-  visibility: inherit;
+  left: static;
+  top: static;
+  overflow: visible;
+  width: auto;
+  height: auto;
 }
 
-.is-visible {
-  @include is-visible;
+.visible-for-all {
+  @include visible-for-all;
 }
 
 
