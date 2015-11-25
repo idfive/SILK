@@ -54,6 +54,7 @@ gulp.task('compile-jade', function() {
       pretty: true
     }))
     .pipe(gulp.dest(paths.jade.dest))
+    .pipe(plugins.accessibility())
     .pipe(plugins.livereload());
 });
 
