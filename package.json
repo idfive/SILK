@@ -28,7 +28,8 @@
     "gulp-plumber": "^1.0.1",
     "gulp-ruby-sass": "^0.7.0",
     "gulp-svg-sprite": "^1.2.13",
-    "gulp-uglify": "^1.2.0"
+    "gulp-uglify": "^1.2.0",
+    "gulp-w3cjs": "^1.2.0"
   },
   "dependencies": {
     "jquery": "~2.1.4"
