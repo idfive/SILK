@@ -2422,6 +2422,13 @@
     font-size: 1.375em;
     text-transform: uppercase;
   }
+}
+@media screen and (min-width: 900px) {
+  .nav-main ul > a {
+    display: none;
+  }
+}
+@media screen {
   .trigger--advance {
     border: 0;
     padding: 0;

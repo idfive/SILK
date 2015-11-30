@@ -93,6 +93,11 @@ nav {
 
       @at-root .nav-main ul > a {
         @include tier-label;
+
+        @include media($silk-drawer-disappears) {
+          display: none;
+        }
+
       }
 
       @at-root .trigger--advance {
