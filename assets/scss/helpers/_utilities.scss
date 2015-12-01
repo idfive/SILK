@@ -2,17 +2,10 @@
 // Utilities
 // ========================================
 
-// ========================================
-// Hidden Clasess
-// ========================================
-
-// Ex: .hidden--nation will hide an element at the nation breakpoint
-
 @if $show-and-hide {
 
+  // Ex: .hidden--nation will hide an element at the nation breakpoint
   .hidden {
-
-    @at-root [class^='hidden'] {}
 
     @for $i from 1 through length($breakpoints) {
 
@@ -28,17 +21,7 @@
 
   }
 
-}
-
-
-// ========================================
-// Shown Clasess
-// ========================================
-
-// Ex: .shown--universe will show an element at the universe breakpoint
-
-@if $show-and-hide {
-
+  // Ex: .shown--universe will show an element at the universe breakpoint
   .shown {
 
     @at-root [class*='shown'] {
