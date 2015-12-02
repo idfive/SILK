@@ -2,33 +2,22 @@
 // Styles Manifest
 // ========================================
 
-// Config
 @import "base/config";
 
 // Icons, need to be outside of screen call to work on IE
 @import "base/icons";
 
-// Begin screen styles
 @media screen {
 
-  // Tools
   @import "helpers/*";
-
-  // Typography
   @import "base/typography";
-
-  // Silk
   @import "silk/*";
-
-  // Layouts
   @import "layouts/*";
-
-  // Modules
+  @import "navigation/*";
   @import "modules/*";
 
 }
 
-// Begin print styles
 @media print {
 
   @import "print/*";

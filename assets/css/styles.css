@@ -2203,17 +2203,6 @@
     font-size: 1em;
     line-height: 1.375;
   }
-
-  nav ul {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;
-    list-style: none;
-  }
-  nav a {
-    display: block;
-    text-decoration: none;
-  }
 }
 @media screen and (min-width: 900px) {
   .nav-main {
@@ -2352,6 +2341,17 @@
     text-align: left;
   }
 
+  nav ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  nav a {
+    display: block;
+    text-decoration: none;
+  }
+
   [class^='callout'] {
     margin-bottom: 1.25em;
     padding: 1.25em;
@@ -2393,14 +2393,6 @@
     color: transparent;
   }
 
-  figure {
-    margin: 0;
-  }
-  figure img {
-    display: block;
-    width: 100%;
-  }
-
   .hero {
     background-position: 50% 50%;
     background-size: cover;
@@ -2412,6 +2404,14 @@
   }
   .hero img {
     display: none;
+  }
+
+  figure {
+    margin: 0;
+  }
+  figure img {
+    display: block;
+    width: 100%;
   }
 }
 @media print {
