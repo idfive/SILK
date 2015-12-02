@@ -646,12 +646,10 @@
   }
 
   .silk-accordion__content {
-    opacity: 1;
-    -webkit-transition: opacity .3s;
-    transition: opacity .3s;
+    display: block;
   }
   .silk-accordion__content.is-hidden {
-    opacity: 0;
+    display: none;
   }
 
   .silk-accordion__header a, .silk-tabs__header a {
@@ -2119,12 +2117,10 @@
 
 @media screen {
   .silk-tabs__content {
-    opacity: 1;
-    -webkit-transition: opacity .3s;
-    transition: opacity .3s;
+    display: block;
   }
   .silk-tabs__content.is-hidden {
-    opacity: 0;
+    display: none;
   }
   .silk-tabs__content.is-hidden-accordion {
     display: none;

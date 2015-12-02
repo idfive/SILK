@@ -15,11 +15,10 @@
 
   // Accordion item content container
   .silk-accordion__content {
-    opacity: 1;
-    transition: opacity .3s;
+    display: block;
 
     &.is-hidden {
-      opacity: 0;
+      display: none;
     }
 
   }
