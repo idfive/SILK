@@ -1,0 +1,20 @@
+{
+  "name": "SILK",
+  "description": "A light-weight, modular CSS framework from idfive",
+  "main": "index.html",
+  "authors": [
+    "idfive"
+  ],
+  "license": "BSD-2-Clause",
+  "keywords": [
+    "silk",
+    "idfive"
+  ],
+  "homepage": "https://github.com/idfive/SILK",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}
