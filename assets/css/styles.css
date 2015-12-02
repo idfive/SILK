@@ -2133,60 +2133,6 @@
 }
 
 @media screen {
-  .silk-video {
-    position: relative;
-    height: 18.75em;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .silk-video {
-    height: 36.25em;
-  }
-}
-
-@media screen {
-  .silk-video__inner {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-  }
-  .silk-video__inner .compartment {
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 2.5em;
-    padding-bottom: 2.5em;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .silk-video__inner .compartment {
-    padding-top: 6.25em;
-    padding-bottom: 6.25em;
-  }
-}
-@media screen {
-  .silk-video__inner video {
-    position: absolute;
-    z-index: 0;
-    visibility: hidden;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .silk-video__inner video {
-    visibility: visible;
-  }
-}
-@media screen {
-  .silk-video__inner video.fillWidth {
-    width: 100%;
-  }
-
   *,
   *:before,
   *:after {
