@@ -63,7 +63,7 @@ gulp.task('sass', function() {
 
   return gulp.src(paths.sass.src)
     .pipe(plugins.cssGlobbing({
-      extensions: ['.scss', '.sass']
+      extensions: ['.scss']
     }))
     .pipe(plugins.rubySass({
       "sourcemap=none": true,
