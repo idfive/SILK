@@ -5,7 +5,6 @@
 // SILK Core
 //= include silk/silk.js
 //= include silk/helpers.js
-//= include silk/bootstrap.js
 
 // SILK Modules
 //= include silk/accordion.js
