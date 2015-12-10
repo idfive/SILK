@@ -4,6 +4,7 @@
 
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
+var browserSync = require('browser-sync').create();
 
 
 // ========================================
@@ -50,7 +51,7 @@ gulp.task('jade', function() {
       pretty: true
     }))
     .pipe(gulp.dest(paths.jade.dest))
-    .pipe(plugins.livereload());
+    .pipe(browserSync.stream());
 
 });
 
@@ -78,7 +79,7 @@ gulp.task('sass', function() {
       cascade: false
     }))
     .pipe(gulp.dest(paths.sass.dest))
-    .pipe(plugins.livereload());
+    .pipe(browserSync.stream());
 
 });
 
@@ -149,7 +150,7 @@ gulp.task('sprite', function() {
       }
     }))
     .pipe(gulp.dest('assets/'))
-    .pipe(plugins.livereload());
+    .pipe(browserSync.stream());
 
 });
 
@@ -167,12 +168,27 @@ gulp.task('accessibility', function() {
 
 
 // ========================================
+// Initialize Browser Sync
+// ========================================
+
+gulp.task('browser-sync', function() {
+
+  browserSync.init({
+    logPrefix: 'idfive',
+    server: {
+      baseDir: './',
+    }
+  });
+
+});
+
+
+// ========================================
 // Create Watch Task
 // ========================================
 
 gulp.task('watch', function() {
 
-  plugins.livereload.listen();
   gulp.watch('assets/jade/**/*.jade', ['jade']);
   gulp.watch(paths.sass.src, ['sass', 'jade']);
   gulp.watch(paths.js.src, ['js']);
@@ -184,4 +200,4 @@ gulp.task('watch', function() {
 // Default 'gulp' task
 // ========================================
 
-gulp.task('default', ['jade', 'sass', 'js', 'sprite', 'watch']);
+gulp.task('default', ['jade', 'sass', 'js', 'sprite', 'watch', 'browser-sync']);
