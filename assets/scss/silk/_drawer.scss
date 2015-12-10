@@ -1,6 +1,6 @@
-// ========================================
+/* ========================================
 // Silk Off Canvas
-// ========================================
+// ===================================== */
 
 @mixin drawer($direction, $transform-intensity: 20%) {
   position: absolute;
@@ -14,7 +14,6 @@
     transform: translate3d($transform-intensity * -1, 0, 0);
     transform: translate($transform-intensity * -1, 0);
   } @else if $direction == 'rtl' {
-    // Look for horizontal scrollbars!
     transform: translate3d($transform-intensity, 0, 0);
     transform: translate($transform-intensity, 0);
   } @else if $direction == 'ttb' {
@@ -58,8 +57,8 @@
     transition: none;
   }
 
-  // Active Canvas State
-  // ========================
+  /* Active Canvas State
+  // ======================== */
   [data-drawer-state="visible"] & {
     @include active-drawer;
   }
@@ -67,9 +66,9 @@
 }
 
 
-// ========================
+/* ========================
 // Trigger
-// ========================
+// ===================== */
 
 .drawer__trigger {
   position: relative;
@@ -110,8 +109,8 @@
   }
 
 
-  // Active Trigger State
-  // ========================
+  /* Active Trigger State
+  // ======================== */
   [data-drawer-state="visible"] & {
 
     &:before {

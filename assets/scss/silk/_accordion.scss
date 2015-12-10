@@ -1,10 +1,10 @@
-// ========================================
+/* ========================================
 // Silk Accordion
-// ========================================
+// ===================================== */
 
 .silk-accordion {}
 
-  // Accordion item header container
+  /* Accordion item header container */
   .silk-accordion__header {
 
     a {
@@ -13,7 +13,7 @@
 
   }
 
-  // Accordion item content container
+  /* Accordion item content container */
   .silk-accordion__content {
     display: block;
 

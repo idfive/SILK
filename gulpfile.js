@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     jade = require('gulp-jade'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
+    postcss = require('gulp-postcss'),
     include = require('gulp-include'),
     uglify = require('gulp-uglify'),
     svgSprite = require('gulp-svg-sprite'),
@@ -73,10 +73,12 @@ gulp.task('sass', function() {
       outputStyle: 'expanded',
       precision: 4
     }).on('error', sass.logError))
-    .pipe(autoprefixer({
-      browsers: ['last 8 versions'],
-      cascade: false
-    }))
+    .pipe(postcss([
+      require('autoprefixer')({
+        browsers: ['last 8 versions'],
+        cascade: false
+      })
+    ]))
     .pipe(gulp.dest(paths.sass.dest))
     .pipe(browserSync.stream());
 

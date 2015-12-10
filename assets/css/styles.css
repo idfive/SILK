@@ -1,3 +1,56 @@
+/* ========================================
+// Styles Manifest
+// ===================================== */
+/* ========================================
+// Base Font Families
+// ===================================== */
+/* ========================================
+// Content Font Properties
+// ===================================== */
+/* ========================================
+// Base Heading Styles
+// ===================================== */
+/* heading-line-height
+// heading-font-size
+// These are used within base/typography
+// ------------------------------------- */
+/* h1 size / line */
+/* h2 size / line */
+/* h3 size / line */
+/* h4 size / line */
+/* h5 size / line */
+/* h6 size / line */
+/* mini size / line */
+/* ========================================
+// Color Configurations
+// ===================================== */
+/* ========================================
+// Column Configurations
+// ===================================== */
+/* Max width of the site */
+/* Number of columns within the grid */
+/* Configure the space around each column */
+/* Do you need to utilize the push feature of this grid system? */
+/* Do you need to utilize the pull feature of this grid system? */
+/* ========================================
+// Silk Configuration
+// ===================================== */
+/* Silk Nav
+// ------------------------------------- */
+/* Off canvas drawer trigger appearance */
+/* Silk Table
+// ------------------------------------- */
+/* Silk Tabs
+// ------------------------------------- */
+/* Silk Video
+// ------------------------------------- */
+/* ========================================
+// Breakpoints
+// ===================================== */
+/* ========================================
+// Utilities
+// ===================================== */
+/* Determine if .hidden-breakpoint and .shown-breakpoint should be included */
 @font-face {
   font-family: "idfive";
   src: url("../fonts/idfive.eot");
@@ -81,6 +134,28 @@
 }
 
 @media screen {
+  /* ========================================
+// Calculate em
+// ===================================== */
+  /* Ex: padding: em(20); */
+  /* Ex: padding: em(10, 28) em(20, 28); */
+  /* ========================================
+// Calculate rem
+// ===================================== */
+  /* Ex: padding: rem(20); */
+  /* ========================================
+// Strip units
+// ===================================== */
+  /* Ex: line-height: su(em(20, 20)); */
+  /* ========================================
+// Media Queries
+// ===================================== */
+  /* ========================================
+// Clearfix
+// ===================================== */
+  /* ========================================
+// Compartment
+// ===================================== */
   .compartment {
     margin: 0 auto;
     max-width: 1180px;
@@ -91,12 +166,19 @@
     content: '';
     display: table;
   }
+  /* ========================================
+// List Reset
+// ===================================== */
+  /* Resets browser defaults of a list */
   .list-reset {
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 0;
     list-style: none;
   }
+  /* ========================================
+// Visually Hidden
+// ===================================== */
   .visible-for-screen-readers {
     position: absolute;
     left: -10000px;
@@ -113,6 +195,15 @@
     width: auto;
     height: auto;
   }
+  /* ========================================
+// Collage Mixin
+// ===================================== */
+  /* $column-span: how many columns does the item span across? */
+  /* $row-span: how many rows does the item span across? */
+  /* $column-placement: starting from 0, which column does your item's left edge fall into? */
+  /* $row-placement: starting from 0, which row does your item's top edge fall into? */
+  /* $column-max: how many columns are in the collage? */
+  /* $row-max: how many rows are in the collage? By default it will equal the amount of columns in the collage. */
   /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
   /**
  * 1. Set default font family to sans-serif.
@@ -471,6 +562,12 @@
   th {
     padding: 0;
   }
+  /* ========================================
+// Utilities
+// ===================================== */
+  /* ========================================
+// Headings
+// ===================================== */
   h1,
   .h1, h2,
   .h2, h3,
@@ -481,40 +578,60 @@
     font-weight: normal;
     color: null;
   }
+  /* 1:Heading One
+// ------------------------------------- */
   h1,
   .h1 {
     font-size: 2.5em;
     line-height: 1.05;
   }
+  /* 2:Heading Two
+// ------------------------------------- */
   h2,
   .h2 {
     font-size: 2.125em;
     line-height: 1.0588;
   }
+  /* 3:Heading Three
+// ------------------------------------- */
   h3,
   .h3 {
     font-size: 1.875em;
     line-height: 1.0667;
   }
+  /* 4:Heading Four
+// ------------------------------------- */
   h4,
   .h4 {
     font-size: 1.5em;
     line-height: 1.0833;
   }
+  /* 5:Heading Five
+// ------------------------------------- */
   h5,
   .h5 {
     font-size: 1.25em;
     line-height: 1.1;
   }
+  /* 6:Heading Six
+// ------------------------------------- */
   h6,
   .h6 {
     font-size: 1em;
     line-height: 1.125;
   }
+  /* 7:Mini Copy
+// ------------------------------------- */
   .mini {
     font-size: 0.875em;
     line-height: 1.1429;
   }
+  /* ========================================
+// Anchors
+// ===================================== */
+  /* ========================================
+// Blockquote / Cite
+// ===================================== */
   blockquote:before {
     margin-right: 0.3125em;
     content: '\201C';
@@ -530,15 +647,29 @@
   cite:before {
     content: '';
   }
+  /* ========================================
+// Lists
+// ===================================== */
+  /* ========================================
+// Paragraphs
+// ===================================== */
   p {
     margin: 0 0 1.875em 0;
   }
+  /* ========================================
+// Silk Accordion
+// ===================================== */
+  /* Accordion item header container */
+  /* Accordion item content container */
   .silk-accordion__content {
     display: block;
   }
   .silk-accordion__content.is-hidden {
     display: none;
   }
+  /* ========================================
+// Silk Utilities
+// ===================================== */
   .silk-accordion__header a, .silk-tabs__header a {
     position: relative;
     text-decoration: none;
@@ -548,19 +679,27 @@
     display: inline-block;
     content: '>';
     -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
     transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
   }
   .silk-accordion__header a.is-active:before, .silk-tabs__header a.is-active:before {
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
   }
+  /* ========================================
+// Silk Resets
+// ===================================== */
   [class^='silk'] ul {
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 0;
     list-style: none;
   }
+  /* ========================================
+// Silk Off Canvas
+// ===================================== */
   .drawer {
     position: absolute;
     min-height: 100%;
@@ -579,11 +718,15 @@
     max-width: 31.25em;
     background: #fff;
     -webkit-transition: opacity .4s, visibility .4s, -webkit-transform .4s;
+    transition: opacity .4s, visibility .4s, -webkit-transform .4s;
     transition: opacity .4s, visibility .4s, transform .4s;
+    transition: opacity .4s, visibility .4s, transform .4s, -webkit-transform .4s;
+    /* Active Canvas State
+  // ======================== */
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .drawer {
     position: inherit;
     top: auto;
@@ -610,6 +753,9 @@
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
   }
+  /* ========================
+// Trigger
+// ===================== */
   .drawer__trigger {
     position: relative;
     height: 3.125em;
@@ -618,10 +764,12 @@
     padding: 0;
     background: none;
     outline: 0;
+    /* Active Trigger State
+  // ======================== */
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .drawer__trigger {
     display: none;
   }
@@ -639,8 +787,10 @@
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    -webkit-transition: background .4s, -webkit-box-shadow .4s, margin .4s, -webkit-transform .4s;
+    -webkit-transition: background .4s, margin .4s, -webkit-box-shadow .4s, -webkit-transform .4s;
+    transition: background .4s, margin .4s, -webkit-box-shadow .4s, -webkit-transform .4s;
     transition: background .4s, box-shadow .4s, margin .4s, transform .4s;
+    transition: background .4s, box-shadow .4s, margin .4s, transform .4s, -webkit-box-shadow .4s, -webkit-transform .4s;
   }
   .drawer__trigger:before {
     margin-top: -0.25em;
@@ -662,6 +812,9 @@
     -ms-transform: translate(-50%, -50%) rotate(45deg);
     transform: translate(-50%, -50%) rotate(45deg);
   }
+  /* ========================================
+// Silk Grid
+// ===================================== */
   .grid {
     margin-right: -1%;
     margin-left: -1%;
@@ -671,6 +824,10 @@
     content: '';
     display: table;
   }
+  /* ========================================
+// Silk Columns
+// ===================================== */
+  /* http://codepen.io/mimoduo/pen/vOMxLE */
   [class^='col'] {
     float: left;
     margin: 0 1% 2%;
@@ -678,7 +835,109 @@
   }
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 18.75em) {
+  .col-mini-1 {
+    width: 6.3333%;
+  }
+  .col-mini-2 {
+    width: 14.6667%;
+  }
+  .col-mini-3 {
+    width: 23%;
+  }
+  .col-mini-4 {
+    width: 31.3333%;
+  }
+  .col-mini-5 {
+    width: 39.6667%;
+  }
+  .col-mini-6 {
+    width: 48%;
+  }
+  .col-mini-7 {
+    width: 56.3333%;
+  }
+  .col-mini-8 {
+    width: 64.6667%;
+  }
+  .col-mini-9 {
+    width: 73%;
+  }
+  .col-mini-10 {
+    width: 81.3333%;
+  }
+  .col-mini-11 {
+    width: 89.6667%;
+  }
+  .col-mini-push-1 {
+    margin-left: 9.3333%;
+  }
+  .col-mini-push-2 {
+    margin-left: 17.6667%;
+  }
+  .col-mini-push-3 {
+    margin-left: 26%;
+  }
+  .col-mini-push-4 {
+    margin-left: 34.3333%;
+  }
+  .col-mini-push-5 {
+    margin-left: 42.6667%;
+  }
+  .col-mini-push-6 {
+    margin-left: 51%;
+  }
+  .col-mini-push-7 {
+    margin-left: 59.3333%;
+  }
+  .col-mini-push-8 {
+    margin-left: 67.6667%;
+  }
+  .col-mini-push-9 {
+    margin-left: 76%;
+  }
+  .col-mini-push-10 {
+    margin-left: 84.3333%;
+  }
+  .col-mini-push-11 {
+    margin-left: 92.6667%;
+  }
+  .col-mini-pull-1 {
+    margin-left: -7.3333%;
+  }
+  .col-mini-pull-2 {
+    margin-left: -15.6667%;
+  }
+  .col-mini-pull-3 {
+    margin-left: -24%;
+  }
+  .col-mini-pull-4 {
+    margin-left: -32.3333%;
+  }
+  .col-mini-pull-5 {
+    margin-left: -40.6667%;
+  }
+  .col-mini-pull-6 {
+    margin-left: -49%;
+  }
+  .col-mini-pull-7 {
+    margin-left: -57.3333%;
+  }
+  .col-mini-pull-8 {
+    margin-left: -65.6667%;
+  }
+  .col-mini-pull-9 {
+    margin-left: -74%;
+  }
+  .col-mini-pull-10 {
+    margin-left: -82.3333%;
+  }
+  .col-mini-pull-11 {
+    margin-left: -90.6667%;
+  }
+}
+
+@media screen and (min-width: 25em) {
   .col-tiny-1 {
     width: 6.3333%;
   }
@@ -780,7 +1039,7 @@
   }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 31.25em) {
   .col-small-1 {
     width: 6.3333%;
   }
@@ -882,7 +1141,7 @@
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 37.5em) {
   .col-medium-1 {
     width: 6.3333%;
   }
@@ -984,7 +1243,7 @@
   }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 43.75em) {
   .col-big-1 {
     width: 6.3333%;
   }
@@ -1086,7 +1345,7 @@
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
   .col-large-1 {
     width: 6.3333%;
   }
@@ -1188,7 +1447,7 @@
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .col-huge-1 {
     width: 6.3333%;
   }
@@ -1290,313 +1549,112 @@
   }
 }
 
-@media screen and (min-width: 1000px) {
-  .col-titan-1 {
+@media screen and (min-width: 62.5em) {
+  .col-aldnoah-1 {
     width: 6.3333%;
   }
-  .col-titan-2 {
+  .col-aldnoah-2 {
     width: 14.6667%;
   }
-  .col-titan-3 {
+  .col-aldnoah-3 {
     width: 23%;
   }
-  .col-titan-4 {
+  .col-aldnoah-4 {
     width: 31.3333%;
   }
-  .col-titan-5 {
+  .col-aldnoah-5 {
     width: 39.6667%;
   }
-  .col-titan-6 {
+  .col-aldnoah-6 {
     width: 48%;
   }
-  .col-titan-7 {
+  .col-aldnoah-7 {
     width: 56.3333%;
   }
-  .col-titan-8 {
+  .col-aldnoah-8 {
     width: 64.6667%;
   }
-  .col-titan-9 {
+  .col-aldnoah-9 {
     width: 73%;
   }
-  .col-titan-10 {
+  .col-aldnoah-10 {
     width: 81.3333%;
   }
-  .col-titan-11 {
+  .col-aldnoah-11 {
     width: 89.6667%;
   }
-  .col-titan-push-1 {
+  .col-aldnoah-push-1 {
     margin-left: 9.3333%;
   }
-  .col-titan-push-2 {
+  .col-aldnoah-push-2 {
     margin-left: 17.6667%;
   }
-  .col-titan-push-3 {
+  .col-aldnoah-push-3 {
     margin-left: 26%;
   }
-  .col-titan-push-4 {
+  .col-aldnoah-push-4 {
     margin-left: 34.3333%;
   }
-  .col-titan-push-5 {
+  .col-aldnoah-push-5 {
     margin-left: 42.6667%;
   }
-  .col-titan-push-6 {
+  .col-aldnoah-push-6 {
     margin-left: 51%;
   }
-  .col-titan-push-7 {
+  .col-aldnoah-push-7 {
     margin-left: 59.3333%;
   }
-  .col-titan-push-8 {
+  .col-aldnoah-push-8 {
     margin-left: 67.6667%;
   }
-  .col-titan-push-9 {
+  .col-aldnoah-push-9 {
     margin-left: 76%;
   }
-  .col-titan-push-10 {
+  .col-aldnoah-push-10 {
     margin-left: 84.3333%;
   }
-  .col-titan-push-11 {
+  .col-aldnoah-push-11 {
     margin-left: 92.6667%;
   }
-  .col-titan-pull-1 {
+  .col-aldnoah-pull-1 {
     margin-left: -7.3333%;
   }
-  .col-titan-pull-2 {
+  .col-aldnoah-pull-2 {
     margin-left: -15.6667%;
   }
-  .col-titan-pull-3 {
+  .col-aldnoah-pull-3 {
     margin-left: -24%;
   }
-  .col-titan-pull-4 {
+  .col-aldnoah-pull-4 {
     margin-left: -32.3333%;
   }
-  .col-titan-pull-5 {
+  .col-aldnoah-pull-5 {
     margin-left: -40.6667%;
   }
-  .col-titan-pull-6 {
+  .col-aldnoah-pull-6 {
     margin-left: -49%;
   }
-  .col-titan-pull-7 {
+  .col-aldnoah-pull-7 {
     margin-left: -57.3333%;
   }
-  .col-titan-pull-8 {
+  .col-aldnoah-pull-8 {
     margin-left: -65.6667%;
   }
-  .col-titan-pull-9 {
+  .col-aldnoah-pull-9 {
     margin-left: -74%;
   }
-  .col-titan-pull-10 {
+  .col-aldnoah-pull-10 {
     margin-left: -82.3333%;
   }
-  .col-titan-pull-11 {
-    margin-left: -90.6667%;
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  .col-nation-1 {
-    width: 6.3333%;
-  }
-  .col-nation-2 {
-    width: 14.6667%;
-  }
-  .col-nation-3 {
-    width: 23%;
-  }
-  .col-nation-4 {
-    width: 31.3333%;
-  }
-  .col-nation-5 {
-    width: 39.6667%;
-  }
-  .col-nation-6 {
-    width: 48%;
-  }
-  .col-nation-7 {
-    width: 56.3333%;
-  }
-  .col-nation-8 {
-    width: 64.6667%;
-  }
-  .col-nation-9 {
-    width: 73%;
-  }
-  .col-nation-10 {
-    width: 81.3333%;
-  }
-  .col-nation-11 {
-    width: 89.6667%;
-  }
-  .col-nation-push-1 {
-    margin-left: 9.3333%;
-  }
-  .col-nation-push-2 {
-    margin-left: 17.6667%;
-  }
-  .col-nation-push-3 {
-    margin-left: 26%;
-  }
-  .col-nation-push-4 {
-    margin-left: 34.3333%;
-  }
-  .col-nation-push-5 {
-    margin-left: 42.6667%;
-  }
-  .col-nation-push-6 {
-    margin-left: 51%;
-  }
-  .col-nation-push-7 {
-    margin-left: 59.3333%;
-  }
-  .col-nation-push-8 {
-    margin-left: 67.6667%;
-  }
-  .col-nation-push-9 {
-    margin-left: 76%;
-  }
-  .col-nation-push-10 {
-    margin-left: 84.3333%;
-  }
-  .col-nation-push-11 {
-    margin-left: 92.6667%;
-  }
-  .col-nation-pull-1 {
-    margin-left: -7.3333%;
-  }
-  .col-nation-pull-2 {
-    margin-left: -15.6667%;
-  }
-  .col-nation-pull-3 {
-    margin-left: -24%;
-  }
-  .col-nation-pull-4 {
-    margin-left: -32.3333%;
-  }
-  .col-nation-pull-5 {
-    margin-left: -40.6667%;
-  }
-  .col-nation-pull-6 {
-    margin-left: -49%;
-  }
-  .col-nation-pull-7 {
-    margin-left: -57.3333%;
-  }
-  .col-nation-pull-8 {
-    margin-left: -65.6667%;
-  }
-  .col-nation-pull-9 {
-    margin-left: -74%;
-  }
-  .col-nation-pull-10 {
-    margin-left: -82.3333%;
-  }
-  .col-nation-pull-11 {
-    margin-left: -90.6667%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .col-world-1 {
-    width: 6.3333%;
-  }
-  .col-world-2 {
-    width: 14.6667%;
-  }
-  .col-world-3 {
-    width: 23%;
-  }
-  .col-world-4 {
-    width: 31.3333%;
-  }
-  .col-world-5 {
-    width: 39.6667%;
-  }
-  .col-world-6 {
-    width: 48%;
-  }
-  .col-world-7 {
-    width: 56.3333%;
-  }
-  .col-world-8 {
-    width: 64.6667%;
-  }
-  .col-world-9 {
-    width: 73%;
-  }
-  .col-world-10 {
-    width: 81.3333%;
-  }
-  .col-world-11 {
-    width: 89.6667%;
-  }
-  .col-world-push-1 {
-    margin-left: 9.3333%;
-  }
-  .col-world-push-2 {
-    margin-left: 17.6667%;
-  }
-  .col-world-push-3 {
-    margin-left: 26%;
-  }
-  .col-world-push-4 {
-    margin-left: 34.3333%;
-  }
-  .col-world-push-5 {
-    margin-left: 42.6667%;
-  }
-  .col-world-push-6 {
-    margin-left: 51%;
-  }
-  .col-world-push-7 {
-    margin-left: 59.3333%;
-  }
-  .col-world-push-8 {
-    margin-left: 67.6667%;
-  }
-  .col-world-push-9 {
-    margin-left: 76%;
-  }
-  .col-world-push-10 {
-    margin-left: 84.3333%;
-  }
-  .col-world-push-11 {
-    margin-left: 92.6667%;
-  }
-  .col-world-pull-1 {
-    margin-left: -7.3333%;
-  }
-  .col-world-pull-2 {
-    margin-left: -15.6667%;
-  }
-  .col-world-pull-3 {
-    margin-left: -24%;
-  }
-  .col-world-pull-4 {
-    margin-left: -32.3333%;
-  }
-  .col-world-pull-5 {
-    margin-left: -40.6667%;
-  }
-  .col-world-pull-6 {
-    margin-left: -49%;
-  }
-  .col-world-pull-7 {
-    margin-left: -57.3333%;
-  }
-  .col-world-pull-8 {
-    margin-left: -65.6667%;
-  }
-  .col-world-pull-9 {
-    margin-left: -74%;
-  }
-  .col-world-pull-10 {
-    margin-left: -82.3333%;
-  }
-  .col-world-pull-11 {
+  .col-aldnoah-pull-11 {
     margin-left: -90.6667%;
   }
 }
 
 @media screen {
+  /* ========================================
+// Silk Nav
+// ===================================== */
   .silk-nav ul ul {
     position: absolute;
     top: 0;
@@ -1610,11 +1668,13 @@
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
     -webkit-transition: opacity .4s, -webkit-transform .4s;
+    transition: opacity .4s, -webkit-transform .4s;
     transition: opacity .4s, transform .4s;
+    transition: opacity .4s, transform .4s, -webkit-transform .4s;
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .silk-nav ul ul {
     top: 100%;
     left: 0;
@@ -1624,7 +1684,7 @@
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .silk-nav > ul > li:hover > ul {
     display: block;
   }
@@ -1637,11 +1697,13 @@
     -ms-transform: translate(-100%, 0);
     transform: translate(-100%, 0);
     -webkit-transition: opacity 0.4s, -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.24, 1.11);
+    transition: opacity 0.4s, -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.24, 1.11);
     transition: opacity 0.4s, transform 0.4s cubic-bezier(0.175, 0.885, 0.24, 1.11);
+    transition: opacity 0.4s, transform 0.4s cubic-bezier(0.175, 0.885, 0.24, 1.11), -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.24, 1.11);
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .silk-nav ul ul.silk-menu--active {
     -webkit-transform: none;
     -ms-transform: none;
@@ -1662,6 +1724,9 @@
     opacity: 1;
     visibility: visible;
   }
+  /* ========================================
+// Silk Style Tile
+// ===================================== */
   .colors {
     margin-top: 0;
     margin-bottom: 0;
@@ -1671,15 +1736,21 @@
   .colors li {
     display: block;
   }
+  /* ========================================
+// Silk Table
+// ===================================== */
   .silk-table {
     display: none;
     width: 100%;
     border-spacing: 0;
     margin-bottom: 1em;
+    /* Header table cells */
+    /* Regular table cells */
+    /* Collapsed table */
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .silk-table {
     display: block;
   }
@@ -1691,21 +1762,31 @@
     line-height: 1.0833;
     text-align: left;
   }
+  .silk-table td {
+    /* Every td in every odd row */
+  }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .silk-table--collapsed {
     display: none;
   }
 }
 
 @media screen {
+  .silk-table--collapsed li {
+    /* The first header of every column */
+    /* Odd "rows" within every column */
+  }
+  /* ========================================
+// Silk Tabs
+// ===================================== */
   .silk-tabs__nav {
     display: none;
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .silk-tabs__nav {
     display: block;
   }
@@ -1725,7 +1806,7 @@
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .silk-tabs__header {
     display: none;
   }
@@ -1743,13 +1824,16 @@
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .silk-tabs__content.is-hidden-accordion {
     display: inherit;
   }
 }
 
 @media screen {
+  /* ========================================
+// Root Layer
+// ===================================== */
   *,
   *:before,
   *:after {
@@ -1764,6 +1848,21 @@
     font-size: 1em;
     line-height: 1.375;
   }
+  /* ========================================
+// Generic Columns
+// ===================================== */
+  /* ========================================
+// Unique Columns
+// ===================================== */
+  /* ========================================
+// Site Header
+// ===================================== */
+  /* ========================================
+// Site Footer
+// ===================================== */
+  /* ========================================
+// Shared Navigation
+// ===================================== */
   nav ul {
     margin-top: 0;
     margin-bottom: 0;
@@ -1774,15 +1873,18 @@
     display: block;
     text-decoration: none;
   }
+  /* ========================================
+// Main Navigation
+// ===================================== */
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .nav-main {
     overflow: visible;
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .nav-main > ul > li {
     display: inline-block;
     vertical-align: top;
@@ -1801,13 +1903,13 @@
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .nav-main > ul > li > ul {
     top: 100%;
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .nav-main li {
     position: relative;
   }
@@ -1823,7 +1925,7 @@
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .nav-main a {
     padding: 0.875em 1.25rem;
     -webkit-box-shadow: none;
@@ -1840,7 +1942,7 @@
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .nav-main ul > a {
     display: none;
   }
@@ -1864,7 +1966,7 @@
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .trigger--advance {
     display: none;
   }
@@ -1882,7 +1984,7 @@
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
   .silk-nav__controls {
     display: none;
   }
@@ -1922,14 +2024,30 @@
     padding-left: 1.25em;
     text-align: left;
   }
+  /* ========================================
+// Unique Navigation
+// ===================================== */
+  /* ========================================
+// Callout
+// ===================================== */
+  /* Plain Callout
+// ------------------------------------- */
   [class^='callout'] {
     margin-bottom: 1.25em;
     padding: 1.25em;
   }
+  /* Additional Callouts
+// ------------------------------------- */
+  /* ========================================
+// Lead In
+// ===================================== */
   .lead-in {
     font-size: 1em;
     line-height: 1.125;
   }
+  /* ========================================
+// Buttons
+// ===================================== */
   [class*='button'] {
     display: inline-block;
     border: 0;
@@ -1938,13 +2056,24 @@
     cursor: pointer;
     text-decoration: none;
     outline: 0;
-    -webkit-transition: background .25s, -webkit-box-shadow .25s, color .25s, -webkit-transform .2s;
+    -webkit-transition: background .25s, color .25s, -webkit-box-shadow .25s, -webkit-transform .2s;
+    transition: background .25s, color .25s, -webkit-box-shadow .25s, -webkit-transform .2s;
     transition: background .25s, box-shadow .25s, color .25s, transform .2s;
+    transition: background .25s, box-shadow .25s, color .25s, transform .2s, -webkit-box-shadow .25s, -webkit-transform .2s;
   }
+  /* Additional Buttons
+// ------------------------------------- */
+  /* ========================================
+// Site Logo/Link
+// ===================================== */
+  /* If the site logo is text based */
   .site__link {
     display: block;
     text-decoration: none;
   }
+  /* If the site logo is image based */
+  /* Set the max-width to the logo's size */
+  /* overflow: hidden and white-space: nowrap prevent line breaks */
   .site__logo {
     display: block;
     overflow: hidden;
@@ -1958,6 +2087,21 @@
   .site__logo:hover {
     color: transparent;
   }
+  /* ========================================
+// Forms
+// ===================================== */
+  /* Container
+// ------------------------------------- */
+  /* Input
+// ------------------------------------- */
+  /* Select / Option
+// ------------------------------------- */
+  /* ========================================
+// Unique Form Elements
+// ===================================== */
+  /* ========================================
+// Hero
+// ===================================== */
   .hero {
     background-position: 50% 50%;
     background-size: cover;
@@ -1970,6 +2114,11 @@
   .hero img {
     display: none;
   }
+  /* ========================================
+// Media
+// ===================================== */
+  /* Figure
+// ------------------------------------- */
   figure {
     margin: 0;
   }
@@ -1977,12 +2126,28 @@
     display: block;
     width: 100%;
   }
+  /* Image
+// ------------------------------------- */
+  /* Iframe
+// ------------------------------------- */
+  /* Sprite
+// ------------------------------------- */
   .sprite {
     display: none;
   }
+  /* SVG
+// ------------------------------------- */
+  /* Video
+// ------------------------------------- */
+  /* ========================================
+// Unique
+// ===================================== */
 }
 
 @media print {
+  /* ========================================
+// Print
+// ===================================== */
   .site__header,
   .site__footer,
   .video {

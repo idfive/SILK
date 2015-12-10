@@ -1,29 +1,29 @@
-// ========================================
+/* ========================================
 // Silk Table
-// ========================================
+// ===================================== */
 
 .silk-table {
 
-  // Header table cells
+  /* Header table cells */
   th {}
 
-  // Regular table cells
+  /* Regular table cells */
   td {
 
-    // Every td in every odd row
+    /* Every td in every odd row */
     @at-root .silk-table tr:nth-of-type(odd) td {}
 
   }
 
-  // Collapsed table
+  /* Collapsed table */
   @at-root .silk-table--collapsed {
 
     li {
 
-      // The first header of every column
+      /* The first header of every column */
       &:first-child h4 {}
 
-      // Odd "rows" within every column
+      /* Odd "rows" within every column */
       &:nth-of-type(odd) div {}
 
     }

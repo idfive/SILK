@@ -1,6 +1,6 @@
-// ========================================
+/* ========================================
 // Silk Grid
-// ========================================
+// ===================================== */
 
 .grid {
   @include clearfix;
@@ -9,11 +9,11 @@
 }
 
 
-// ========================================
+/* ========================================
 // Silk Columns
-// ========================================
+// ===================================== */
 
-// http://codepen.io/mimoduo/pen/vOMxLE
+/* http://codepen.io/mimoduo/pen/vOMxLE */
 
 [class^='col'] {
   float: left;
@@ -25,7 +25,6 @@
 
   @include media(nth(nth($breakpoints, $i), 1)) {
 
-    // Column
     @for $x from 1 to $column-base {
 
       .col-#{nth(nth($breakpoints, $i), 1)}-#{$x} {
@@ -34,7 +33,6 @@
 
     }
 
-    // Push
     @if $column-push-desired {
 
       @for $x from 1 to $column-base {
@@ -47,7 +45,6 @@
 
     }
 
-    // Pull
     @if $column-pull-desired {
 
       @for $x from 1 to $column-base {
