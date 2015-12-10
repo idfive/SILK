@@ -63,7 +63,7 @@ gulp.task('jade', function() {
 
 
 // ========================================
-// Compile Sass
+// Compile Sass / Examine Output
 // ========================================
 
 gulp.task('sass', function() {
@@ -81,6 +81,20 @@ gulp.task('sass', function() {
     ]))
     .pipe(gulp.dest(paths.sass.dest))
     .pipe(browserSync.stream());
+
+});
+
+gulp.task('check-css', function() {
+
+  return gulp.src(paths.sass.dest + '/*.css')
+    .pipe(postcss([
+      require('doiuse')({
+        browsers: [
+          'ie >= 9',
+          'last 2 versions'
+        ]
+      })
+    ]));
 
 });
 
