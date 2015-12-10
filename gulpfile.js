@@ -139,10 +139,6 @@ gulp.task('sprite', function() {
         }
       },
       mode: {
-        view: {
-          bust: false,
-          dest: './'
-        },
         symbol: {
           bust: false,
           dest: './'
