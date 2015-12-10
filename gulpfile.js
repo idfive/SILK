@@ -2,9 +2,15 @@
 // Required plugins
 // ========================================
 
-var gulp = require('gulp');
-var plugins = require('gulp-load-plugins')();
-var browserSync = require('browser-sync').create();
+var gulp = require('gulp'),
+    browserSync = require('browser-sync').create(),
+    jade = require('gulp-jade'),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    include = require('gulp-include'),
+    uglify = require('gulp-uglify'),
+    svgSprite = require('gulp-svg-sprite'),
+    accessibility = require('gulp-accessibility');
 
 
 // ========================================
@@ -47,7 +53,7 @@ var paths = {
 gulp.task('jade', function() {
 
   return gulp.src(paths.jade.src)
-    .pipe(plugins.jade({
+    .pipe(jade({
       pretty: true
     }))
     .pipe(gulp.dest(paths.jade.dest))
@@ -63,18 +69,11 @@ gulp.task('jade', function() {
 gulp.task('sass', function() {
 
   return gulp.src(paths.sass.src)
-    .pipe(plugins.cssGlobbing({
-      extensions: ['.scss']
-    }))
-    .pipe(plugins.rubySass({
-      "sourcemap=none": true,
-      style: 'expanded',
-      precision: 8
-    }))
-    .on('error', function (err) {
-      console.error('Error!', err.message);
-    })
-    .pipe(plugins.autoprefixer({
+    .pipe(sass({
+      outputStyle: 'expanded',
+      precision: 4
+    }).on('error', sass.logError))
+    .pipe(autoprefixer({
       browsers: ['last 8 versions'],
       cascade: false
     }))
@@ -91,9 +90,9 @@ gulp.task('sass', function() {
 gulp.task('js', function() {
 
   return gulp.src(paths.js.compile)
-    .pipe(plugins.include())
+    .pipe(include())
     .pipe(gulp.dest(paths.js.dest))
-    .pipe(plugins.uglify({
+    .pipe(uglify({
       mangle: false
     }))
     .pipe(gulp.dest(paths.js.dest));
@@ -108,12 +107,12 @@ gulp.task('js', function() {
 gulp.task('iconfont', function() {
 
   return gulp.src(paths.icons.src)
-    .pipe(plugins.iconfontCss({
+    .pipe(iconfontCss({
       fontName: 'idfive',
       targetPath: paths.icons.targetPath,
       fontPath: paths.icons.fontPath
     }))
-    .pipe(plugins.iconfont({
+    .pipe(iconfont({
       fontName: 'idfive',
       normalize: true,
       fontHeight: 1001,
@@ -131,7 +130,7 @@ gulp.task('iconfont', function() {
 gulp.task('sprite', function() {
 
   return gulp.src(paths.icons.src)
-    .pipe(plugins.svgSprite({
+    .pipe(svgSprite({
       shape: {
         dimension: {
           maxWidth: 80,
@@ -158,7 +157,7 @@ gulp.task('sprite', function() {
 gulp.task('accessibility', function() {
 
   return gulp.src('*.html')
-    .pipe(plugins.accessibility());
+    .pipe(accessibility());
 
 });
 

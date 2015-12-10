@@ -3,23 +3,51 @@
 // ========================================
 
 @import "base/config";
-
-// Icons, need to be outside of screen call to work on IE
 @import "base/icons";
 
 @media screen {
 
-  @import "helpers/*";
+  @import
+    "helpers/functions",
+    "helpers/mixins",
+    "helpers/normalize",
+    "helpers/utilities";
+
   @import "base/typography";
-  @import "silk/*";
-  @import "layouts/*";
-  @import "navigation/*";
-  @import "modules/*";
+
+  @import
+    "silk/accordion",
+    "silk/base",
+    "silk/drawer",
+    "silk/grid",
+    "silk/nav",
+    "silk/style-tile",
+    "silk/table",
+    "silk/tabs";
+
+  @import
+    "layouts/index",
+    "layouts/columns",
+    "layouts/header",
+    "layouts/footer";
+
+  @import
+    "navigation/shared",
+    "navigation/main",
+    "navigation/unique";
+
+  @import
+    "modules/basic",
+    "modules/buttons",
+    "modules/forms",
+    "modules/hero",
+    "modules/media",
+    "modules/unique";
 
 }
 
 @media print {
 
-  @import "print/*";
+  @import "print/print";
 
 }
