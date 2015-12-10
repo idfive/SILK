@@ -15,6 +15,7 @@
   "devDependencies": {
     "autoprefixer": "^6.1.2",
     "browser-sync": "^2.10.0",
+    "doiuse": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-accessibility": "^1.2.1",
     "gulp-iconfont": "^3.0.2",

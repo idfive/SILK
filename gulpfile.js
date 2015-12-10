@@ -91,8 +91,9 @@ gulp.task('check-css', function() {
       require('doiuse')({
         browsers: [
           'ie >= 9',
-          'last 2 versions'
-        ]
+          'last 3 versions'
+        ],
+        ignore: ['css-transitions']
       })
     ]));
 
