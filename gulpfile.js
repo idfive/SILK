@@ -65,7 +65,7 @@ gulp.task('sass', function() {
   return gulp.src(paths.sass.src)
     .pipe(sass({
       outputStyle: 'expanded',
-      precision: 4
+      precision: 2
     }).on('error', sass.logError))
     .pipe(postcss([
       require('autoprefixer')({
