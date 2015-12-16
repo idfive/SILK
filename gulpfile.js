@@ -32,12 +32,6 @@ var paths = {
     src:  ['assets/js/*.js','assets/js/silk/*.js'],
     dest: 'assets/js/build'
   },
-  icons: {
-    src:  'assets/icons/*.svg',
-    targetPath: '../scss/base/_icons.scss',
-    fontPath: '../fonts/',
-    dest:   'assets/fonts/'
-  },
   sprite: {
     src:  'assets/icons/*.svg',
     dest: 'assets/images/'
@@ -113,29 +107,6 @@ gulp.task('js', function() {
       mangle: false
     }))
     .pipe(gulp.dest(paths.js.dest));
-
-});
-
-
-// ========================================
-// Icon Font
-// ========================================
-
-gulp.task('iconfont', function() {
-
-  return gulp.src(paths.icons.src)
-    .pipe(iconfontCss({
-      fontName: 'idfive',
-      targetPath: paths.icons.targetPath,
-      fontPath: paths.icons.fontPath
-    }))
-    .pipe(iconfont({
-      fontName: 'idfive',
-      normalize: true,
-      fontHeight: 1001,
-      appendCodepoints: true
-    }))
-    .pipe(gulp.dest(paths.icons.dest));
 
 });
 

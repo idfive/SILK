@@ -18,8 +18,6 @@
     "doiuse": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-accessibility": "^1.2.1",
-    "gulp-iconfont": "^3.0.2",
-    "gulp-iconfont-css": "0.0.9",
     "gulp-include": "^2.0.2",
     "gulp-jade": "^1.1.0",
     "gulp-postcss": "^6.0.1",
