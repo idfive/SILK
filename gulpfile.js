@@ -117,7 +117,7 @@ gulp.task('js', function() {
 
 gulp.task('sprite', function() {
 
-  return gulp.src(paths.icons.src)
+  return gulp.src(paths.sprite.src)
     .pipe(svgSprite({
       shape: {
         dimension: {
