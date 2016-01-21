@@ -1,113 +1,186 @@
-//Require
-var gulp = require('gulp');
-var globbing = require('gulp-css-globbing');
-var plugins = require('gulp-load-plugins')();
+// ========================================
+// Required plugins
+// ========================================
 
-//Set paths
-var paths =
-{
-	css:
-	{
-		src:	'assets/scss/**/*.scss',
-		dest:	'assets/css'
-	},
-	icons:
-	{
-		src: 	'assets/icons/*.svg',
-		targetPath: '../scss/base/_icons.scss',
-      	fontPath: '../fonts/',
-		dest: 	'assets/fonts/'
-	},
-	js:
-	{
-		src:	'assets/js/*.js',
-		dest:	'assets/js/build'
-	},
-	templates:
-	{
-		src:	'assets/js/templates/**/*'
-	}
+var gulp = require('gulp'),
+    browserSync = require('browser-sync').create(),
+    jade = require('gulp-jade'),
+    sass = require('gulp-sass'),
+    postcss = require('gulp-postcss'),
+    include = require('gulp-include'),
+    uglify = require('gulp-uglify'),
+    svgSprite = require('gulp-svg-sprite'),
+    accessibility = require('gulp-accessibility');
+
+
+// ========================================
+// Set Paths
+// ========================================
+
+var paths = {
+
+  jade: {
+    src:  'assets/jade/pages/*.jade',
+    dest: '',
+  },
+  sass: {
+    src:  'assets/scss/**/*.scss',
+    dest: 'assets/css',
+  },
+  js: {
+    compile: ['assets/js/*.js'],
+    src:  ['assets/js/*.js','assets/js/silk/*.js'],
+    dest: 'assets/js/build'
+  },
+  sprite: {
+    src:  'assets/icons/*.svg',
+    dest: 'assets/images/'
+  }
+
 };
 
-//Icon Font Name
-var fontName = 'idfive'; //Change to project name
 
-//Create Icon font
-gulp.task('iconfont', function()
-{
-  gulp.src(paths.icons.src)
-    .pipe(plugins.iconfontCss({
-      fontName: fontName,
-      targetPath: paths.icons.targetPath,
-      fontPath: paths.icons.fontPath
+// ========================================
+// Jade
+// ========================================
+
+gulp.task('jade', function() {
+
+  return gulp.src(paths.jade.src)
+    .pipe(jade({
+      pretty: true
     }))
-    .pipe(plugins.iconfont({
-      fontName: fontName,
-      normalize: true,
-      fontHeight: 1001,
-      appendCodepoints: true
-     }))
-    .pipe(gulp.dest(paths.icons.dest));
+    .pipe(gulp.dest(paths.jade.dest))
+    .pipe(browserSync.stream());
+
 });
 
-//Compile SASS
-gulp.task('compile-sass', function()
-{
-  return gulp
-		.src(paths.css.src)
-		// add globbing
-    .pipe(globbing({
-        // Configure it to use SCSS files
-        extensions: ['.scss']
+
+// ========================================
+// Compile Sass / Examine Output
+// ========================================
+
+gulp.task('sass', function() {
+
+  return gulp.src(paths.sass.src)
+    .pipe(sass({
+      outputStyle: 'compressed',
+      precision: 2
+    }).on('error', sass.logError))
+    .pipe(postcss([
+      require('autoprefixer')({
+        browsers: ['last 8 versions'],
+        cascade: false
+      })
+    ]))
+    .pipe(gulp.dest(paths.sass.dest))
+    .pipe(browserSync.stream());
+
+});
+
+gulp.task('check-css', function() {
+
+  return gulp.src(paths.sass.dest + '/*.css')
+    .pipe(postcss([
+      require('doiuse')({
+        browsers: [
+          'ie >= 9',
+          'last 3 versions'
+        ],
+        ignore: ['css-transitions']
+      })
+    ]));
+
+});
+
+
+// ========================================
+// Compile js
+// ========================================
+
+gulp.task('js', function() {
+
+  return gulp.src(paths.js.compile)
+    .pipe(include())
+    .pipe(gulp.dest(paths.js.dest))
+    .pipe(uglify({
+      mangle: false
     }))
-		.pipe(plugins.rubySass({
-			style: 'compressed',
-			precision: 8
-		}))
-    .pipe(gulp.dest(paths.css.dest));
+    .pipe(gulp.dest(paths.js.dest));
+
 });
 
-//Lint JS
-gulp.task('lint-js', function()
-{
-    return gulp
-    	.src(paths.js.src)
-        .pipe(plugins.jshint())
-        .pipe(plugins.jshint.reporter('default'));
+
+// ========================================
+// SVG Sprite
+// ========================================
+
+gulp.task('sprite', function() {
+
+  return gulp.src(paths.sprite.src)
+    .pipe(svgSprite({
+      shape: {
+        dimension: {
+          maxWidth: 80,
+          maxHeight: 80
+        }
+      },
+      mode: {
+        symbol: {
+          bust: false,
+          dest: './'
+        }
+      }
+    }))
+    .pipe(gulp.dest('assets/'))
+    .pipe(browserSync.stream());
+
 });
 
-//Compile Handlebars
-gulp.task('templates', function()
-{
-    gulp.src(paths.templates.src)
-        .pipe(plugins.handlebars())
-        .pipe(plugins.defineModule('plain', {
-            require: { Handlebars: 'handlebars'},
-            wrapper: 'var Handlebars = require(\'handlebars\');\n module.exports[\'<%= name %>\'] = <%= handlebars %>'
-        }))
-        .pipe(plugins.concat('templates.js'))
-        .pipe(gulp.dest(paths.js.dest));
+
+// ========================================
+// Accessibility Tasks
+// ========================================
+
+gulp.task('accessibility', function() {
+
+  return gulp.src('*.html')
+    .pipe(accessibility());
+
 });
 
-//Compile JS
-gulp.task('compile-js', function()
-{
-	return gulp
-		.src(paths.js.src)
-		.pipe(plugins.plumber())
-		.pipe(plugins.browserify())
-		.pipe(gulp.dest(paths.js.dest))
-		.pipe(plugins.uglify())
-		.pipe(gulp.dest(paths.js.dest));
+
+// ========================================
+// Initialize Browser Sync
+// ========================================
+
+gulp.task('browser-sync', function() {
+
+  browserSync.init({
+    logPrefix: 'idfive',
+    server: {
+      baseDir: './',
+    }
+  });
+
 });
 
-//Create watch tasks
-gulp.task('watch', function()
-{
-    gulp.watch(paths.js.src, ['lint-js', 'compile-js']);
-    gulp.watch(paths.css.src, ['compile-sass']);
-    gulp.watch(paths.templates.src, ['templates']);
+
+// ========================================
+// Create Watch Task
+// ========================================
+
+gulp.task('watch', function() {
+
+  gulp.watch('assets/jade/**/*.jade', ['jade']);
+  gulp.watch(paths.sass.src, ['sass', 'jade']);
+  gulp.watch(paths.js.src, ['js']);
+
 });
 
-// Default Task
-gulp.task('default', ['iconfont', 'compile-sass', 'lint-js', 'templates', 'compile-js', 'watch']);
+
+// ========================================
+// Default 'gulp' task
+// ========================================
+
+gulp.task('default', ['jade', 'sass', 'js', 'sprite', 'watch', 'browser-sync']);

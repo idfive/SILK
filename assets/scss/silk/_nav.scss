@@ -1,303 +1,71 @@
-$silk-nav-expanded: 'large' !default;
+/* ========================================
+// Silk Nav
+// ===================================== */
 
-.silk-nav
-{
-	//Resets
-	ul, li
-	{
-		padding: 0;
-		margin: 0;
-		list-style: none;
-	}
+.silk-nav {
 
-	//Non-js version
-	> ul
-	{
-		a
-		{
-			display: block;
-			text-decoration: none;
-			padding: 10px;
-			color: #000;
-			@include transition(background .15s ease-in-out);
+  ul {
 
-			&:hover
-			{
-				background: #f9f9f9;
-			}
-		}
+    ul {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      z-index: 200;
+      height: 100%;
+      width: 100%;
+      background: #fff;
+      opacity: 0;
+      transform: translate(0, 0);
+      transition:
+        opacity .4s,
+        transform .4s;
 
-		li
-		{
-			ul
-			{
-				padding-left: 20px;
-			}
-		}
-	}
+      @include media($silk-drawer-disappears) {
+        top: 100%;
+        left: 0;
+        display: none;
+        height: auto;
+        opacity: 1;
+      }
 
-	//JS version
-	.js &
-	{
-		overflow-x: hidden;
+      @at-root .silk-nav > ul > li:hover > ul {
 
-		> ul
-		{
-			position: relative;
-			left: 0;
-			border-top: 1px solid #eee;
-			@include transition(left .25s ease-in);
+        @include media($silk-drawer-disappears) {
+          display: block;
+        }
 
-			ul
-			{
-				position: absolute;
-				top: 0;
-				left: 100%;
-				width: 100%;
+      }
 
-				&.hidden
-				{
-					display: none;
-				}
-			}
+      &.silk-menu--active {
+        opacity: 1;
+        transform: translate(-100%, 0);
+        transition:
+          opacity .4s,
+          transform .4s cubic-bezier(.175, .885, .24, 1.11);
 
-			li
-			{
-				border-bottom: 1px solid #eee;
+        @include media($silk-drawer-disappears) {
+          transform: none;
+        }
 
-				ul
-				{
-					padding: 0;
-				}
-			}
+      }
 
-			.parent
-			{
-				> *:first-child
-				{
-					position: relative;
-				}
-			}
+    }
 
-			.next
-			{
-				position: absolute;
-				right: 0;
-				top: 0;
-				height: 100%;
-				background: #f9f9f9;
-				width: 40px;
-				border-left: 1px solid #eee;
+  }
 
-				&:after
-				{
-					position: absolute;
-					content: "";
-					top: 50%;
-					left: 50%;
-					margin-top: -5px;
-					margin-left: -3px;
-					@include triangle(10px, #000, right);
-				}
-
-				&:hover
-				{
-					background: #000;
-
-					&:after
-					{
-						border-left-color: #fff;
-					}
-				}
-			}
-
-			.back
-			{
-				background: #f1f1f1;
-
-				&:before
-				{
-					display: inline-block;
-					content: "";
-					margin-right: 10px;
-					@include triangle(10px, #000, left);
-				}
-
-				&:hover
-				{
-					background: #f1f1f1;
-				}
-			}
-		}
-
-		@include breakpoint($silk-nav-expanded)
-		{
-			overflow-x: inherit;
-			min-height: 0 !important; //Overrides inline style added by JS
-			border-bottom: 1px solid #eee;
-			@include clearfix;
-
-			&.vertical
-			{
-				border-bottom: 0;
-				width: 200px;
-
-				> ul
-				{
-					ul
-					{
-						left: 100%;
-						top: 0;
-					}
-
-					li
-					{
-						float: none;
-						border-bottom: 1px solid #eee;
-
-						li
-						{
-							border: 0;
-						}
-					}
-
-					> li
-					{
-						&.parent
-						{
-							> *:first-child
-							{
-								&:after
-								{
-									top: 4px;
-									@include triangle(10px, #000, right);
-								}
-							}
-						}
-					}
-				}
-			}
-
-			> ul
-			{
-				position: static;
-				@include clearfix;
-
-				ul
-				{
-					display: none;
-					width: 200px;
-					left: 0;
-					top: auto;
-
-					ul
-					{
-						left: 100%;
-						top: 0;
-						z-index: 50;
-					}
-				}
-
-				li
-				{
-					position: relative;
-					float: left;
-					border: 0;
-
-					li
-					{
-						float: none;
-						background: #f9f9f9;
-
-						a:hover,
-						&:hover
-						{
-							background: #f1f1f1;
-						}
-					}
-
-					&:hover
-					{
-						background: #f9f9f9;
-
-						> ul
-						{
-							display: block;
-						}
-					}
-
-					&.parent
-					{
-						> *:first-child
-						{
-							&:after
-							{
-								position: relative;
-								display: inline-block;
-								float: right;
-								content: "";
-								top: 4px;
-								left: 7px;
-								margin-right: 10px;
-								@include triangle(10px, #000, right);
-							}
-						}
-
-						.next
-						{
-							display: none;
-						}
-					}
-				}
-
-				> li
-				{
-					&.parent
-					{
-						> *:first-child
-						{
-							&:after
-							{
-								top: 7px;
-								@include triangle(10px, #000, down);
-							}
-						}
-					}
-				}
-
-				.back
-				{
-					display: none;
-				}
-			}
-
-			&.menuaim
-			{
-				li
-				{
-					ul
-					{
-						li
-						{
-							&:hover
-							{
-								> ul
-								{
-									display: none;
-								}
-							}
-
-							&.hover
-							{
-								> ul
-								{
-									display: block;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
 }
+
+  .trigger--revert,
+  .trigger--reverse {
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity .3s,
+      visibility .3s;
+
+    .silk-menu--active & {
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }

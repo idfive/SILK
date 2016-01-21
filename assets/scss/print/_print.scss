@@ -1,11 +1,10 @@
-#page-preloader,
-#page-preloader img,
-#site-header,
-#site-offCanvas,
-.m-hero,
-.nav,
-.m-video
-{
-  visibility: hidden;
+/* ========================================
+// Print
+// ===================================== */
+
+.site__header,
+.site__footer,
+.video {
   display: none;
+  visibility: hidden;
 }

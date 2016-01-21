@@ -1,101 +1,56 @@
-$silk-tabs-accordion: 'small' !default;
+/* ========================================
+// Silk Tabs
+// ===================================== */
 
-.silk-tabs
-{
-	> .silk-tabs__nav
-	{
-		display: none;
+.silk-tabs {}
 
-		ul
-		{
-			border-bottom: 1px solid #eee;
-			margin: 0;
-			padding: 0;
-			list-style: none;
-			@include clearfix;
-		}
+  .silk-tabs__nav {
+    display: none;
 
-		li
-		{
-			float: left;
-		}
+    @include media($silk-tabs-to-accordion) {
+      display: block;
+    }
 
-		a
-		{
-			border: 1px solid transparent;
-			border-bottom-color: #eee;
-			display: block;
-			margin-bottom: -1px;
-			padding: .75em;
-			text-decoration: none;
-			color: #000;
+    li {
+      display: inline-block;
+      vertical-align: top;
+    }
 
-			&.is-active,
-			&.is-active-tabs
-			{
-				border-color: #eee;
-				border-bottom-color: #fff;
-			}
-		}
-	}
+      a {
+        @include h4;
+        display: block;
+        text-decoration: none;
+        color: inherit;
+      }
 
-	&__header
-	{
-		h1, h2, h3, h4, h5, h6
-		{
-			@extend .silk-reset-type;
-		}
+  }
 
-		a
-		{
-			@extend .silk-toggle-content;
-		}
-	}
+  .silk-tabs__header {
 
-	&__content
-	{
-		padding: 1px 10px;
-		opacity: 1;
-		@include transition(opacity .25s ease-in-out);
+    @include media($silk-tabs-to-accordion) {
+      display: none;
+    }
 
-		&.is-hidden
-		{
-			opacity: 0;
-		}
+    a {
+      @extend %silk-toggle;
+    }
 
-		&.is-hidden-accordion
-		{
-			display: none;
-			opacity: 0;
-		}
-	}
+  }
 
-	@include breakpoint($silk-tabs-accordion)
-	{
-		.silk-tabs
-		{
-			border: 0;
-		}
+  .silk-tabs__content {
+    display: block;
 
-		.silk-tabs__header
-		{
-			display: none;
-		}
+    &.is-hidden {
+      display: none;
+    }
 
-		.silk-tabs__content
-		{
-			border-top: 0;
+    &.is-hidden-accordion {
+      display: none;
 
-			&.is-hidden-accordion
-			{
-				display: inherit;
-				opacity: 1;
-			}
-		}
+      @include media($silk-tabs-to-accordion) {
+        display: inherit;
+      }
 
-		> .silk-tabs__nav
-		{
-			display: block;
-		}
-	}
-}
+    }
+
+  }

@@ -1,4 +1,20 @@
-.l-wrapper
-{
-	@include outer-container;
+/* ========================================
+// Root Layer
+// ===================================== */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
+
+html {
+  font-family: $content-family;
+  background: none;
+  color: $content-color;
+}
+
+  body {
+    font-size: em($content-size, 16);
+    line-height: su(em($content-line, $content-size));
+  }

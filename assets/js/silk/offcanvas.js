@@ -1,50 +1,41 @@
-(function($) {
+silk.offcanvas = (function() {
 
-	//Plugin
-	$.fn.silkoffcanvas = function(options) {
+  var self = {};
 
-		//Default settings
-		var defaults = {};
+  self.init = function() {
 
-		//Set options
-		var opts = $.extend({}, defaults, options);
+    $('body').attr('data-drawer-state','invisible');
 
-		//Toggle canvas
-		var toggle = function($context)
-		{
-			return function(e)
-			{
-				e.preventDefault();
-			};
-		};
+    $('.drawer__trigger').click(function() {
 
-		//Let's do this...
-		return this.each(function(i) {
+      if ($('[data-drawer-state=invisible]').length === 1) {
 
-			//Get id of element
-			var id = $(this).attr('id');
+        $('body').attr('data-drawer-state','visible');
 
-			//Get toggle open button
-			var $toggleOpen = $('a[href="#'+id+'"]');
+      }
 
-			//Add toggle close button
-			$(this).prepend('<a href="#'+id+'" class="hidden-desktop">&times;</a>');
+      else {
 
-			//If we have an toggle open element
-			if($toggleOpen.length)
-			{
-				//Toggle open/close
-				$('a[href="#'+id+'"]').click(function(e) {
+        $('body').attr('data-drawer-state','invisible');
 
-					e.preventDefault();
+      }
 
-					$('#'+id).toggleClass('visible');
+    });
 
-				});
-			}
+    $(document).on('click', function(event) {
 
-		});
+      if (!$(event.target).closest('.drawer, .drawer__trigger').length) {
 
-	};
+        $('body').attr('data-drawer-state','invisible');
 
-}(jQuery));
+      }
+
+    });
+
+  };
+
+  return self;
+
+})();
+
+silk.offcanvas.init();
