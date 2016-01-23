@@ -1,64 +1,21 @@
-// ========================================
+/* ========================================
 // Silk Tabs
-// ========================================
+// ===================================== */
 
-$silk-tabs-accordion: 'small' !default;
+.silk-tabs {}
 
-.silk-tabs {
+  .silk-tabs__nav {
 
-  > .silk-tabs__nav {
+    li {}
 
-    // Nav container (does not display when tabs-accordion mode activates)
-    ul {
-    }
-
-      // Nav item container
-      li {
-      }
-
-        // Nav item link
-        a {
-
-          // Active classes
-          &.is-active,
-          &.is-active-tabs {
-          }
-
-        }
+      a {}
 
   }
 
-  &__header {
+  .silk-tabs__header {
 
-    // Tab element in accordion mode
-    h1, h2, h3, h4, h5, h6 {
-      
-    }
-
-    // Tab element link
-    a {
-    }
+    a {}
 
   }
 
-  // Tab content container
-  &__content {
-  }
-
-  @include breakpoint($silk-tabs-accordion) {
-
-    // Header container when in tab mode
-    .silk-tabs__header {
-    }
-
-    // Content container when in tab mode
-    .silk-tabs__content {
-    }
-
-    // Nav container when in tab mode
-    > .silk-tabs__nav {
-    }
-
-  }
-
-}
+  .silk-tabs__content {}

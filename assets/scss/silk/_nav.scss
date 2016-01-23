@@ -1,116 +1,71 @@
-// ========================================
+/* ========================================
 // Silk Nav
-// ========================================
+// ===================================== */
 
 .silk-nav {
-  @include clearfix;
-  overflow: hidden;
 
-  @include breakpoint($silk-drawer-disappears) {
-    overflow: inherit;
-  }
+  ul {
 
-  > ul {
-    position: relative;
-    left: 0;
-    transition: left .3s;
-
-    > li {
-
-      &:hover {
-
-        > ul {
-
-          @include breakpoint($silk-drawer-disappears) {
-            display: block;
-          }
-
-        }
-
-      }
-
-    }
-
-      ul {
-        position: absolute;
-        top: 0;
-        left: 100%;
-        width: 100%;
-
-        @include breakpoint($silk-drawer-disappears) {
-          top: 100%;
-          left: 0;
-          display: none;
-          width: 200%;
-        }
-
-        &.hidden {
-          display: none;
-        }
-
-        li {
-
-          @include breakpoint($silk-drawer-disappears) {
-            display: block;
-          }
-
-        }
-
-      }
-
-  }
-
-    li {
-
-      @include breakpoint($silk-drawer-disappears) {
-        position: relative;
-        display: inline-block;
-      }
-
-    }
-
-      a {
-        position: relative;
-        display: block;
-        padding: .5em;
-        text-decoration: none;
-      }
-
-    .next {
+    ul {
       position: absolute;
       top: 0;
-      right: 0;
+      left: 100%;
+      z-index: 200;
       height: 100%;
-      width: em(50);
-      text-align: center;
+      width: 100%;
+      background: #fff;
+      opacity: 0;
+      transform: translate(0, 0);
+      transition:
+        opacity .4s,
+        transform .4s;
 
-      @include breakpoint($silk-drawer-disappears) {
-        display: none;
-      }
-
-      &:before {
-        position: absolute;
-        top: 50%;
+      @include media($silk-drawer-disappears) {
+        top: 100%;
         left: 0;
-        width: 100%;
-        content: '>';
-        @include transform(translate(0, -50%));
-      }
-
-    }
-
-    .back {
-
-      @include breakpoint($silk-drawer-disappears) {
         display: none;
+        height: auto;
+        opacity: 1;
       }
 
-      &:before {
-        display: inline-block;
-        margin-right: em(10);
-        content: '<';
+      @at-root .silk-nav > ul > li:hover > ul {
+
+        @include media($silk-drawer-disappears) {
+          display: block;
+        }
+
+      }
+
+      &.silk-menu--active {
+        opacity: 1;
+        transform: translate(-100%, 0);
+        transition:
+          opacity .4s,
+          transform .4s cubic-bezier(.175, .885, .24, 1.11);
+
+        @include media($silk-drawer-disappears) {
+          transform: none;
+        }
+
       }
 
     }
+
+  }
 
 }
+
+  .trigger--revert,
+  .trigger--reverse {
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity .3s,
+      visibility .3s;
+
+    .silk-menu--active & {
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }

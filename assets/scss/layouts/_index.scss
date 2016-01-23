@@ -1,35 +1,20 @@
-// ========================================
+/* ========================================
 // Root Layer
-// ========================================
+// ===================================== */
 
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 html {
-  overflow-x: hidden;
-  font-family: $base-font-family;
-  color: $base-font-color;
+  font-family: $content-family;
+  background: none;
+  color: $content-color;
 }
 
   body {
-    overflow-x: hidden;
-    font-size: em($base-font-size, 16);
-    line-height: su(em(28, $base-font-size));
+    font-size: em($content-size, 16);
+    line-height: su(em($content-line, $content-size));
   }
-
-
-// ========================================
-// Compartment
-// ========================================
-
-.compartment,
-.l-wrapper {
-  @include clearfix;
-  margin: 0 auto;
-  max-width: em(1400);
-}

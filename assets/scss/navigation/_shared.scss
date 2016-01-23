@@ -1,0 +1,16 @@
+/* ========================================
+// Shared Navigation
+// ===================================== */
+
+nav {
+
+  ul {
+    @include list-reset;
+  }
+
+    a {
+      display: block;
+      text-decoration: none;
+    }
+
+}

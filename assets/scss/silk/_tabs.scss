@@ -1,13 +1,13 @@
-// ========================================
+/* ========================================
 // Silk Tabs
-// ========================================
+// ===================================== */
 
-.silk-tabs {
+.silk-tabs {}
 
-  > .silk-tabs__nav {
+  .silk-tabs__nav {
     display: none;
 
-    @include breakpoint($silk-tabs-accordion) {
+    @include media($silk-tabs-to-accordion) {
       display: block;
     }
 
@@ -20,39 +20,37 @@
         @include h4;
         display: block;
         text-decoration: none;
+        color: inherit;
       }
 
   }
 
-  &__header {
+  .silk-tabs__header {
 
-    @include breakpoint($silk-tabs-accordion) {
+    @include media($silk-tabs-to-accordion) {
       display: none;
     }
 
     a {
-      @extend %silk-toggle-content;
+      @extend %silk-toggle;
     }
 
   }
 
-  &__content {
-    opacity: 1;
-    transition: opacity .3s;
+  .silk-tabs__content {
+    display: block;
 
     &.is-hidden {
-      opacity: 0;
+      display: none;
     }
 
     &.is-hidden-accordion {
       display: none;
 
-      @include breakpoint($silk-tabs-accordion) {
+      @include media($silk-tabs-to-accordion) {
         display: inherit;
       }
 
     }
 
   }
-
-}

@@ -1,37 +1,62 @@
-.row {
-  @include outer-container;
+/* ========================================
+// Silk Grid
+// ===================================== */
+
+.grid {
+  @include clearfix;
+  margin-right: $column-between * -1;
+  margin-left: $column-between * -1;
+}
+
+
+/* ========================================
+// Silk Columns
+// ===================================== */
+
+/* http://codepen.io/mimoduo/pen/vOMxLE */
+
+[class^='col'] {
+  float: left;
+  margin: 0 $column-between $column-between * 2;
+  width: 98%;
 }
 
 @for $i from 1 to length($breakpoints) + 1 {
-  
-  @include breakpoint(nth(nth($breakpoints, $i), 1)) {
-    
-    //Column
-    @for $x from 2 to $grid-columns {
-   
-      .#{nth(nth($breakpoints, $i), 1)}-#{$x} {
-        @include span-columns($x);
+
+  @include media(nth(nth($breakpoints, $i), 1)) {
+
+    @for $x from 1 to $column-base {
+
+      .col-#{nth(nth($breakpoints, $i), 1)}-#{$x} {
+        width: 100% / $column-base * $x - $column-between * 2;
       }
-    
+
     }
-  
-    //Push
-    @for $x from 0 to $grid-columns {
-  
-      .#{nth(nth($breakpoints, $i), 1)}-push-#{$x} {
-        @include shift($x);
+
+    @if $column-push-desired {
+
+      @for $x from 1 to $column-base {
+
+        .col-#{nth(nth($breakpoints, $i), 1)}-push-#{$x} {
+          margin-left: 100% / $column-base * $x + $column-between;
+        }
+
       }
-      
+
     }
-  
-    //Pull
-    @for $x from 1 to $grid-columns {
-  
-      .#{nth(nth($breakpoints, $i), 1)}-pull-#{$x} {
-        @include shift($x * -1);
+
+    @if $column-pull-desired {
+
+      @for $x from 1 to $column-base {
+
+        .col-#{nth(nth($breakpoints, $i), 1)}-pull-#{$x} {
+          margin-left: 100% / $column-base * $x * -1 + $column-between;
+        }
+
       }
-      
+
     }
-    
+
   }
+
 }

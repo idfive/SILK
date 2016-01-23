@@ -1,6 +1,6 @@
-// ========================================
+/* ========================================
 // Headings
-// ========================================
+// ===================================== */
 
 %heading {
   font-weight: normal;
@@ -8,13 +8,13 @@
 }
 
 
-// 1:Heading One
-// ----------------------------------------
+/* 1:Heading One
+// ------------------------------------- */
 
 @mixin h1 {
   @extend %heading;
   font-size: em($h1-size);
-  line-height: su(em($h1-size, $h1-size));
+  line-height: su(em($h1-line, $h1-size));
 }
 
 h1,
@@ -23,13 +23,13 @@ h1,
 }
 
 
-// 2:Heading Two
-// ----------------------------------------
+/* 2:Heading Two
+// ------------------------------------- */
 
 @mixin h2 {
   @extend %heading;
   font-size: em($h2-size);
-  line-height: su(em($h2-size, $h2-size));
+  line-height: su(em($h2-line, $h2-size));
 }
 
 h2,
@@ -38,13 +38,13 @@ h2,
 }
 
 
-// 3:Heading Three
-// ----------------------------------------
+/* 3:Heading Three
+// ------------------------------------- */
 
 @mixin h3 {
   @extend %heading;
   font-size: em($h3-size);
-  line-height: su(em($h3-size, $h3-size));
+  line-height: su(em($h3-line, $h3-size));
 }
 
 h3,
@@ -53,13 +53,13 @@ h3,
 }
 
 
-// 4:Heading Four
-// ----------------------------------------
+/* 4:Heading Four
+// ------------------------------------- */
 
 @mixin h4 {
   @extend %heading;
   font-size: em($h4-size);
-  line-height: su(em($h4-size, $h4-size));
+  line-height: su(em($h4-line, $h4-size));
 }
 
 h4,
@@ -68,13 +68,13 @@ h4,
 }
 
 
-// 5:Heading Five
-// ----------------------------------------
+/* 5:Heading Five
+// ------------------------------------- */
 
 @mixin h5 {
   @extend %heading;
   font-size: em($h5-size);
-  line-height: su(em($h5-size, $h5-size));
+  line-height: su(em($h5-line, $h5-size));
 }
 
 h5,
@@ -83,13 +83,13 @@ h5,
 }
 
 
-// 6:Heading Six
-// ----------------------------------------
+/* 6:Heading Six
+// ------------------------------------- */
 
 @mixin h6 {
   @extend %heading;
   font-size: em($h6-size);
-  line-height: su(em($h6-size, $h6-size));
+  line-height: su(em($h6-line, $h6-size));
 }
 
 h6,
@@ -98,9 +98,22 @@ h6,
 }
 
 
-// ========================================
+/* 7:Mini Copy
+// ------------------------------------- */
+
+@mixin mini {
+  font-size: em($mini-size);
+  line-height: su(em($mini-line, $mini-size));
+}
+
+.mini {
+  @include mini;
+}
+
+
+/* ========================================
 // Anchors
-// ========================================
+// ===================================== */
 
 a {
 
@@ -108,4 +121,49 @@ a {
 
   &:hover {}
 
+}
+
+
+/* ========================================
+// Blockquote / Cite
+// ===================================== */
+
+blockquote {
+
+  &:before {
+    margin-right: em(5);
+    content: '\201C';
+  }
+
+  &:after {
+    content: '\201D';
+  }
+
+}
+
+cite {
+  @include h6;
+  font-style: normal;
+
+  &:before {
+    content: '';
+  }
+
+}
+
+
+/* ========================================
+// Lists
+// ===================================== */
+
+ul,
+ol {}
+
+
+/* ========================================
+// Paragraphs
+// ===================================== */
+
+p {
+  margin: 0 0 em(30) 0;
 }
