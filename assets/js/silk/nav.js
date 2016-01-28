@@ -1,6 +1,6 @@
-// ========================================
-// Navigation
-// ========================================
+/* ========================================
+// Silk Nav
+// ===================================== */
 
 (function($) {
 
@@ -17,7 +17,7 @@
       // Add a data-item-id & trigger to each list
       $(this)
         .attr('data-item-id', itemId)
-        .before('<button aria-hidden="true" class="trigger--advance"><i class="icon icon-chevron-right"></i><span class="visible-for-screen-readers">Next Munu</span></button>');
+        .before('<button aria-hidden="true" class="trigger--advance"><svg class="symbol-chevron-right"><use xlink:href="#chevron-right"></use></svg><span class="visible-for-screen-readers">Next Munu</span></button>');
 
       // Increment the item Id to identify the next list
       itemId++;

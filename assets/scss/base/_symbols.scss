@@ -1,0 +1,17 @@
+/* ========================================
+// Symbols
+// ===================================== */
+
+.symbol {
+
+  /* Silk Nav Symbols */
+
+  &-home,
+  &-undo,
+  &-chevron-left,
+  &-chevron-right {
+    height: em(16);
+    width: em(16);
+  }
+
+}

@@ -7,13 +7,30 @@
 
 form {}
 
-  fieldset {}
+  fieldset {
+    border: 0;
+    padding: 0;
+  }
 
 
 /* Input
 // ------------------------------------- */
 
-input {}
+input {
+
+  &:disabled {}
+
+  &:checked {}
+
+  &[type='text'] {}
+
+  &[type='radio'] {}
+
+  &[type='checkbox'] {}
+
+  &[type='range'] {}
+
+}
 
 
 /* Select / Option

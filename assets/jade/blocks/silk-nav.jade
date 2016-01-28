@@ -1,0 +1,41 @@
+//- ========================================
+//- Silk Navigation
+//- ========================================
+
+button.drawer__trigger(aria-hidden="true")
+
+nav.silk-nav.nav-main.drawer
+  .silk-nav__controls
+    a.trigger--home(href="/")
+      +symbol("home")
+      span Home
+    button.trigger--revert
+      +symbol("undo")
+      span Main Menu
+    button.trigger--reverse
+      +symbol("chevron-left")
+  ul
+    li
+      a(href="/") Games
+      ul
+        li
+          a(href="/") Viewtiful Joe
+        li
+          a(href="/") Cooking Mama
+    li
+      a(href="/") Anime
+      ul
+        li
+          a(href="/") Tokyo Ghoul
+        li
+          a(href="/") Aldnoah Zero
+    li
+      a(href="/") About
+    li
+      a(href="/") Academics
+    li
+      a(href="/") Admissions
+    li
+      a(href="/") Athletics
+
+

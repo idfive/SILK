@@ -50,8 +50,9 @@
 @mixin compartment($width) {
   @include clearfix;
   margin: 0 auto;
-  max-width: $width * 1px;
-  max-width: rem($width);
+  padding: 0 em(20);
+  max-width: ($width + 40) * 1px;
+  max-width: rem($width + 40);
 }
 
 .compartment {

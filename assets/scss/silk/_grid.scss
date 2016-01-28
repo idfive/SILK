@@ -4,6 +4,8 @@
 
 .grid {
   @include clearfix;
+  display: flex;
+  flex-wrap: wrap;
   margin-right: $column-between * -1;
   margin-left: $column-between * -1;
 }
@@ -21,36 +23,40 @@
   width: 98%;
 }
 
+[class*='flush'] {
+  margin-right: 0;
+  margin-left: 0;
+  width: 100%;
+}
+
 @for $i from 1 to length($breakpoints) + 1 {
 
-  @include media(nth(nth($breakpoints, $i), 1)) {
+  // Iterates through each breakpoint within $breakpoints
+  @media (min-width: nth(nth($breakpoints, $i), 2)) {
 
     @for $x from 1 to $column-base {
 
+      // Given the index of this loop, how many columns does that take up?
       .col-#{nth(nth($breakpoints, $i), 1)}-#{$x} {
         width: 100% / $column-base * $x - $column-between * 2;
       }
 
-    }
+      // Create 'flush' classes *if* $column-flush-desired is set to true
+      @if $column-flush-desired {
 
-    @if $column-push-desired {
-
-      @for $x from 1 to $column-base {
-
-        .col-#{nth(nth($breakpoints, $i), 1)}-push-#{$x} {
-          margin-left: 100% / $column-base * $x + $column-between;
+        .col-#{nth(nth($breakpoints, $i), 1)}-flush-#{$x} {
+          width: 100% / $column-base * $x;
         }
 
       }
 
-    }
+      // Create 'push' classes *if* $column-push-desired is set to true
+      @if $column-push-desired {
 
-    @if $column-pull-desired {
-
-      @for $x from 1 to $column-base {
-
-        .col-#{nth(nth($breakpoints, $i), 1)}-pull-#{$x} {
-          margin-left: 100% / $column-base * $x * -1 + $column-between;
+        // Push classes push a column x number of columns on it's left
+        // Given the index of this loop, how many columns does this push on the left?
+        .col-#{nth(nth($breakpoints, $i), 1)}-push-#{$x} {
+          margin-left: 100% / $column-base * $x + $column-between;
         }
 
       }

@@ -13,15 +13,9 @@
   @if $direction == 'ltr' {
     transform: translate3d($transform-intensity * -1, 0, 0);
     transform: translate($transform-intensity * -1, 0);
-  } @else if $direction == 'rtl' {
+  } @else {
     transform: translate3d($transform-intensity, 0, 0);
     transform: translate($transform-intensity, 0);
-  } @else if $direction == 'ttb' {
-    transform: translate3d(0, $transform-intensity * -1, 0);
-    transform: translate(0, $transform-intensity * -1);
-  } @else {
-    transform: translate3d(0, $transform-intensity, 0);
-    transform: translate(0, $transform-intensity);
   }
 
 }

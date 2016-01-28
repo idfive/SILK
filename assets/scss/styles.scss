@@ -3,7 +3,6 @@
 // ===================================== */
 
 @import "base/config";
-@import "base/icons";
 
 @media screen {
 
@@ -13,7 +12,9 @@
     "helpers/normalize",
     "helpers/utilities";
 
-  @import "base/typography";
+  @import
+    "base/typography",
+    "base/symbols";
 
   @import
     "silk/accordion",

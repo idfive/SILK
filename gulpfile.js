@@ -29,7 +29,7 @@ var paths = {
   },
   js: {
     compile: ['assets/js/*.js'],
-    src:  ['assets/js/*.js','assets/js/silk/*.js'],
+    src:  ['assets/js/*.js', 'assets/js/silk/*.js'],
     dest: 'assets/js/build'
   },
   sprite: {
@@ -44,7 +44,7 @@ var paths = {
 // Jade
 // ========================================
 
-gulp.task('jade', function() {
+gulp.task('jade', ['sprite'], function() {
 
   return gulp.src(paths.jade.src)
     .pipe(jade({
@@ -65,7 +65,7 @@ gulp.task('sass', function() {
   return gulp.src(paths.sass.src)
     .pipe(sass({
       outputStyle: 'compressed',
-      precision: 2
+      precision: 4
     }).on('error', sass.logError))
     .pipe(postcss([
       require('autoprefixer')({
@@ -78,21 +78,6 @@ gulp.task('sass', function() {
 
 });
 
-gulp.task('check-css', function() {
-
-  return gulp.src(paths.sass.dest + '/*.css')
-    .pipe(postcss([
-      require('doiuse')({
-        browsers: [
-          'ie >= 9',
-          'last 3 versions'
-        ],
-        ignore: ['css-transitions']
-      })
-    ]));
-
-});
-
 
 // ========================================
 // Compile js
@@ -102,7 +87,6 @@ gulp.task('js', function() {
 
   return gulp.src(paths.js.compile)
     .pipe(include())
-    .pipe(gulp.dest(paths.js.dest))
     .pipe(uglify({
       mangle: false
     }))
@@ -121,8 +105,8 @@ gulp.task('sprite', function() {
     .pipe(svgSprite({
       shape: {
         dimension: {
-          maxWidth: 80,
-          maxHeight: 80
+          maxWidth: 300,
+          maxHeight: 300
         }
       },
       mode: {
@@ -144,7 +128,7 @@ gulp.task('sprite', function() {
 
 gulp.task('accessibility', function() {
 
-  return gulp.src('*.html')
+  return gulp.src('index.html')
     .pipe(accessibility());
 
 });
@@ -183,4 +167,11 @@ gulp.task('watch', function() {
 // Default 'gulp' task
 // ========================================
 
-gulp.task('default', ['jade', 'sass', 'js', 'sprite', 'watch', 'browser-sync']);
+gulp.task('default', [
+  'jade',
+  'sass',
+  'js',
+  'sprite',
+  'watch',
+  'browser-sync'
+]);

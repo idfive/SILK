@@ -1,3 +1,7 @@
+/* ========================================
+// Silk Accordion
+// ===================================== */
+
 (function($) {
 
   $.fn.silkaccordion = function(options) {

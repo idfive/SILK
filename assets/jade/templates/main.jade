@@ -1,11 +1,16 @@
+//- ========================================
+//- Main Site Template
+//- ========================================
+
 doctype html
 html(
   dir="ltr"
   lang="en-US"
 )
   include ../regions/head.jade
+  include ../mixins/symbol.jade
   body
-    .sprite
+    .sprite(style="display: none;")
       include ../../svg/sprite.symbol.svg
     include ../regions/header.jade
     main

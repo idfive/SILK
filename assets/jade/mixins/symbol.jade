@@ -1,0 +1,7 @@
+//- ========================================
+//- SVG Symbol Inclusion
+//- ========================================
+
+mixin symbol(name)
+  svg(class="symbol-#{name}")
+    use(xlink:href="##{name}")
