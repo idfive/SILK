@@ -4,6 +4,7 @@ var site = (function($) {
 
   idfive.domReady = function() {
     idfive.hero();
+    idfive.another();
   };
 
   idfive.hero = function() {
@@ -14,6 +15,10 @@ var site = (function($) {
       $(this).css('background-image', 'url(' + image + ')');
 
     });
+
+  };
+
+  idfive.another = function() {
 
   };
 
