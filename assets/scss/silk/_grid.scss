@@ -5,16 +5,11 @@
 // 1: All grids have their right and left margins pulled outward by default
 // 1: This ensures that the columns inside will be flush with the grid container
 .grid {
+  @include clearfix;
   display: flex;
   flex-wrap: wrap;
   margin-right: $column-between * -1;
   margin-left: $column-between * -1;
-}
-
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
 }
 
 
