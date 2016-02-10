@@ -1,7 +1,7 @@
 {
   "name": "SILK",
-  "version": "1.0.0",
-  "description": "A light-weight, modular CSS framework from idfive",
+  "version": "2.0.0",
+  "description": "A light-weight, modular SASS framework from idfive",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,16 +13,16 @@
   "author": "idfive",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "autoprefixer": "^6.3.1",
+    "autoprefixer": "^6.3.2",
     "browser-sync": "^2.11.1",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-accessibility": "^1.2.1",
     "gulp-include": "^2.1.0",
     "gulp-jade": "^1.1.0",
-    "gulp-postcss": "^6.0.1",
-    "gulp-sass": "^2.1.1",
+    "gulp-postcss": "^6.1.0",
+    "gulp-sass": "^2.2.0",
     "gulp-svg-sprite": "^1.2.19",
-    "gulp-uglify": "^1.5.1"
+    "gulp-uglify": "^1.5.2"
   },
   "dependencies": {
     "jquery": "~2.1.4"
