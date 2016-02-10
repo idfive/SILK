@@ -1,5 +1,9 @@
 # idfive SILK
 
-## Libraries/Packages/Dependencies
+A simple framework for building sites of all kinds.
 
-## Install
+## Features
+
+* Sass
+* Jade
+* Gulp
