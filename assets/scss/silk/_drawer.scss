@@ -11,9 +11,11 @@
   visibility: hidden;
 
   @if $direction == 'ltr' {
+    left: 0;
     transform: translate3d($transform-intensity * -1, 0, 0);
     transform: translate($transform-intensity * -1, 0);
   } @else {
+    right: 0;
     transform: translate3d($transform-intensity, 0, 0);
     transform: translate($transform-intensity, 0);
   }
