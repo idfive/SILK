@@ -1,6 +1,5 @@
 // Vendor
-//= include vendor/jquery-2.1.4.min.js
-//= include vendor/jquery.menuaim.js
+//= include vendor/jquery-2.2.0.min.js
 
 // SILK Core
 //= include silk/silk.js
@@ -18,10 +17,10 @@
   // Run SILK bootstrap
 
   // Initialize SILK modules
-  $('.silk-nav').silknav();
-  $('.silk-tabs').silktabs();
   $('.silk-accordion').silkaccordion();
+  $('.silk-nav').silknav();
   $('.silk-table').silktable();
+  $('.silk-tabs').silktabs();
 
 
 }(jQuery));

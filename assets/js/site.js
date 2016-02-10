@@ -9,12 +9,16 @@ var site = (function($) {
 
   idfive.hero = function() {
 
-    $('.hero').each(function() {
+    if($('.hero').length) {
 
-      var image = $(this).find('img').attr('src');
-      $(this).css('background-image', 'url(' + image + ')');
+      $('.hero').each(function() {
 
-    });
+        var image = $(this).find('img').attr('src');
+        $(this).css('background-image', 'url(' + image + ')');
+
+      });
+
+    }
 
   };
 
