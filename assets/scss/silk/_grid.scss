@@ -1,9 +1,9 @@
-// ================
+/* ================
 // Grid
-// ================
+// ============= */
 
-// 1: All grids have their right and left margins pulled outward by default
-// 1: This ensures that the columns inside will be flush with the grid container
+/* 1: All grids have their right and left margins pulled outward by default
+// 1: This ensures that the columns inside will be flush with the grid container */
 .grid {
   @include clearfix;
   display: flex;
@@ -13,20 +13,20 @@
 }
 
 
-// ================
+/* ================
 // Columns
-// ================
+// ============= */
 
-// 1: All columns must begin with the class of 'col' within your markup
-// 1: If the dependency on that class string is low, you may change the '^' filter to '*'
+/* 1: All columns must begin with the class of 'col' within your markup
+// 1: If the dependency on that class string is low, you may change the '^' filter to '*' */
 
-// 2: Or change this to a generic class rather than a filtered selector
+/* 2: Or change this to a generic class rather than a filtered selector
 // 2: All columns are float left by default
-// 2: This reduces the amount of float declarations and media queries without sacrificing integrity
+// 2: This reduces the amount of float declarations and media queries without sacrificing integrity */
 
-// 3: All columns have right and left margins pushed inward by default
+/* 3: All columns have right and left margins pushed inward by default
 // 3: This reduces the amount of margin declarations and media queries without sacrificing integrity
-// 3: The grid container will stretch these back out so that each column will appear full width by default
+// 3: The grid container will stretch these back out so that each column will appear full width by default */
 [class^='col-'] {
   float: left;
   margin: 0 $column-between $column-between * 2;
@@ -39,21 +39,21 @@
   width: 100%;
 }
 
-// Iterates through a loop given the amount of breakpoints with $breakpoints
-// Example class output: .col-small-4, .col-large-push-4, .col-nation-pull-4
+/* Iterates through a loop given the amount of breakpoints with $breakpoints
+// Example class output: .col-small-4, .col-large-push-4, .col-nation-pull-4 */
 @for $i from 1 to length($breakpoints) + 1 {
 
-  // Iterates through each breakpoint within $breakpoints
+  /* Iterates through each breakpoint within $breakpoints */
   @include media(nth(nth($breakpoints, $i), 1)) {
 
     @for $x from 1 to $column-base {
 
-      // Given the index of this loop, how many columns does that take up?
+      /* Given the index of this loop, how many columns does that take up? */
       .col-#{nth(nth($breakpoints, $i), 1)}-#{$x} {
         width: 100% / $column-base * $x - $column-between * 2;
       }
 
-      // Create 'flush' classes *if* $column-flush-desired is set to true
+      /* Create 'flush' classes *if* $column-flush-desired is set to true */
       @if $column-flush-desired {
 
         .col-#{nth(nth($breakpoints, $i), 1)}-flush-#{$x} {
@@ -62,11 +62,11 @@
 
       }
 
-      // Create 'push' classes *if* $column-push-desired is set to true
+      /* Create 'push' classes *if* $column-push-desired is set to true */
       @if $column-push-desired {
 
-        // Push classes push a column x number of columns on it's left
-        // Given the index of this loop, how many columns does this push on the left?
+        /* Push classes push a column x number of columns on it's left */
+        /* Given the index of this loop, how many columns does this push on the left? */
         .col-#{nth(nth($breakpoints, $i), 1)}-push-#{$x} {
           margin-left: 100% / $column-base * $x + $column-between;
         }
