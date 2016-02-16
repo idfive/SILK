@@ -125,6 +125,10 @@ h6,
 // ===================================== */
 
 a {
+  text-decoration: none;
+  transition:
+    background .3s,
+    color .3s;
 
   &:active {}
 
