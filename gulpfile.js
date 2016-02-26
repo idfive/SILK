@@ -6,8 +6,11 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     jade = require('gulp-jade'),
     postcss = require('gulp-postcss'),
+    cssnano = require('gulp-cssnano'),
+    rename = require('gulp-rename'),
     include = require('gulp-include'),
     uglify = require('gulp-uglify'),
+    imagemin = require('gulp-imagemin'),
     svgSprite = require('gulp-svg-sprite'),
     accessibility = require('gulp-accessibility');
 
@@ -30,6 +33,10 @@ var paths = {
     compile: ['assets/js/*.js'],
     src:  ['assets/js/*.js', 'assets/js/silk/*.js'],
     dest: 'assets/js/build'
+  },
+  images: {
+    src: 'assets/images/*',
+    dest: 'assets/images/processed'
   },
   sprite: {
     src:  'assets/icons/*.svg'
@@ -107,6 +114,12 @@ gulp.task('postcss', function() {
       })
     ]))
     .pipe(gulp.dest(paths.postcss.dest))
+    .pipe(browserSync.stream())
+    .pipe(cssnano())
+    .pipe(rename(function(path) {
+      path.basename += '.min';
+    }))
+    .pipe(gulp.dest(paths.postcss.dest))
     .pipe(browserSync.stream());
 
 });
@@ -123,7 +136,25 @@ gulp.task('js', function() {
     .pipe(uglify({
       mangle: false
     }))
-    .pipe(gulp.dest(paths.js.dest));
+    .pipe(gulp.dest(paths.js.dest))
+    .pipe(browserSync.stream());
+
+});
+
+
+// ========================================
+// SVG Sprite
+// ========================================
+
+gulp.task('images', function() {
+
+  return gulp.src(paths.images.src)
+    .pipe(imagemin({
+      optimizationLevel: 4,
+      progressive: true
+    }))
+    .pipe(gulp.dest(paths.images.dest))
+    .pipe(browserSync.stream());
 
 });
 
@@ -149,8 +180,7 @@ gulp.task('sprite', function() {
         }
       }
     }))
-    .pipe(gulp.dest('assets/'))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest('assets/'));
 
 });
 
