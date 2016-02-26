@@ -1518,6 +1518,13 @@ p {
   margin-top: 1.8125em;
 }
 
+@media (min-width: 900px) {
+
+  .silk-nav > ul > li > ul {
+    margin-top: 0;
+  }
+}
+
 .silk-nav ul ul {
   position: absolute;
   top: 0;

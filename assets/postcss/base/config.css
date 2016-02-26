@@ -113,6 +113,8 @@ $penguindrum: 1300px;
 /* Silk Nav
 // ------------------------------------- */
 
+$silk-nav-offset: 29;
+
 $silk-drawer-disappears: $huge;
 
 /* Define the total trigger height and width */

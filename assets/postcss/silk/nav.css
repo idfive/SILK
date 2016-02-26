@@ -9,7 +9,12 @@
     > li {
 
       > ul {
-        margin-top: em(29);
+        margin-top: em($silk-nav-offset);
+
+        @mixin media $silk-drawer-disappears {
+          margin-top: 0;
+        }
+
       }
 
     }
