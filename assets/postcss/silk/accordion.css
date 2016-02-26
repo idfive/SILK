@@ -1,0 +1,15 @@
+/* ========================================
+// Silk Accordion
+// ===================================== */
+
+.silk-accordion {}
+
+  /* Accordion item header container */
+  .silk-accordion__header {
+    @mixin silk-toggle;
+  }
+
+  /* Accordion item content container */
+  .silk-accordion__content {
+    @mixin silk-content;
+  }

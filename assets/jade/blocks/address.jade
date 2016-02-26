@@ -4,11 +4,8 @@
 
 #hcard.vcard
   .org Organization
-  a.email(href="mailto:organization@gmail.com") organization@gmail.com
   .adr
     .street-address 92 West Pegasus St.
-    span.locality Washington
-    span.region MA
-    span.postal-code 493123
-    span.country-name United States
-  .tel 444-444-4444
+    .location #[span.locality Washington] #[span.region MA] #[span.postal-code 493123]
+  a.email(href="mailto:organization@gmail.com") organization@gmail.com
+  a.tel(href="tel:443-283-3847") 443-283-3847

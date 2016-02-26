@@ -5,7 +5,6 @@
 var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     jade = require('gulp-jade'),
-    sass = require('gulp-sass'),
     postcss = require('gulp-postcss'),
     include = require('gulp-include'),
     uglify = require('gulp-uglify'),
@@ -23,8 +22,8 @@ var paths = {
     src:  'assets/jade/pages/*.jade',
     dest: '',
   },
-  sass: {
-    src:  'assets/scss/**/*.scss',
+  postcss: {
+    src:  'assets/postcss/**/*.css',
     dest: 'assets/css',
   },
   js: {
@@ -33,8 +32,7 @@ var paths = {
     dest: 'assets/js/build'
   },
   sprite: {
-    src:  'assets/icons/*.svg',
-    dest: 'assets/images/'
+    src:  'assets/icons/*.svg'
   }
 
 };
@@ -60,20 +58,55 @@ gulp.task('jade', ['sprite'], function() {
 // Compile Sass / Examine Output
 // ========================================
 
-gulp.task('sass', function() {
+var body = {
+  size: 16,
+  line: 24
+}
 
-  return gulp.src(paths.sass.src)
-    .pipe(sass({
-      outputStyle: 'compressed',
-      precision: 4
-    }).on('error', sass.logError))
+gulp.task('postcss', function() {
+
+  gulp.src('assets/postcss/styles.css')
     .pipe(postcss([
+      require('postcss-import'),
+      require('postcss-mixins')({
+        mixins: {
+          collage: function(mixin, xspan, yspan, xpoint, ypoint, xmax, ymax) {
+            return {
+              top: ypoint / ymax * 100 + '%',
+              left: xpoint / xmax * 100 + '%',
+              height: yspan / ymax * 100 + '%',
+              width: xspan / xmax * 100 + '%'
+            }
+          }
+        }
+      }),
+      require('postcss-nested'),
+      require('postcss-simple-grid')({
+        separator: '-'
+      }),
+      require('postcss-simple-vars'),
+      require('postcss-functions')({
+        functions: {
+          nu: function(value) {
+            var nuValue = value / body.size;
+            return nuValue;
+          },
+          em: function(value) {
+            var emValue = value / body.size;
+            return emValue + 'em';
+          },
+          rem: function(value) {
+            var emValue = value / 16;
+            return emValue + 'rem';
+          },
+        }
+      }),
       require('autoprefixer')({
         browsers: ['last 8 versions'],
         cascade: false
       })
     ]))
-    .pipe(gulp.dest(paths.sass.dest))
+    .pipe(gulp.dest(paths.postcss.dest))
     .pipe(browserSync.stream());
 
 });
@@ -157,7 +190,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function() {
 
   gulp.watch('assets/jade/**/*.jade', ['jade']);
-  gulp.watch(paths.sass.src, ['sass', 'jade']);
+  gulp.watch(paths.postcss.src, ['postcss', 'jade']);
   gulp.watch(paths.js.src, ['js']);
 
 });
@@ -169,7 +202,7 @@ gulp.task('watch', function() {
 
 gulp.task('default', [
   'jade',
-  'sass',
+  'postcss',
   'js',
   'sprite',
   'watch',

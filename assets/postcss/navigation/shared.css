@@ -1,0 +1,16 @@
+/* ========================================
+// Shared Navigation
+// ===================================== */
+
+nav {
+
+  ul {
+    @mixin list-reset;
+  }
+
+    a {
+      display: block;
+      text-decoration: none;
+    }
+
+}

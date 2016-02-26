@@ -1,0 +1,90 @@
+/* ========================================
+// Swift Slide
+// ===================================== */
+
+.swift-slide {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+
+  & li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity .3s,
+      visibility .3s,
+      transform .3s;
+
+    &.active {
+      position: relative;
+      pointer-events: auto;
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }
+
+}
+
+
+/* ========================================
+// Swift Controls
+// ===================================== */
+
+.controls {
+  user-select: none;
+
+  & button {
+    border: 0;
+    outline: 0;
+    background: none;
+
+    /* Previous Button */
+    &:first-child {
+
+      &:before {
+        content: '<';
+      }
+
+    }
+
+    /* Next Button */
+    &:last-child {
+
+      &:before {
+        content: '>';
+      }
+
+    }
+
+    &:hover {}
+
+  }
+
+}
+
+
+/* ========================================
+// Swift Pager
+// ===================================== */
+
+.pager {
+  user-select: none;
+
+  & span {
+    display: inline-block;
+    cursor: pointer;
+
+    &:hover {}
+
+    &.active {}
+
+  }
+
+}

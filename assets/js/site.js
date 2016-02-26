@@ -4,7 +4,7 @@ var site = (function($) {
 
   idfive.domReady = function() {
     idfive.hero();
-    idfive.another();
+    idfive.slideshow();
   };
 
   idfive.hero = function() {
@@ -22,7 +22,12 @@ var site = (function($) {
 
   };
 
-  idfive.another = function() {
+  idfive.slideshow = function() {
+
+    swift({
+      container: '.swift-slide',
+      elements: 'li'
+    });
 
   };
 

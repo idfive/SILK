@@ -1,7 +1,7 @@
 {
   "name": "SILK",
-  "version": "2.0.0",
-  "description": "A light-weight, modular SASS framework from idfive",
+  "version": "3.0.0",
+  "description": "A light-weight, modular Postcss framework from idfive",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,16 +13,22 @@
   "author": "idfive",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "autoprefixer": "^6.3.2",
+    "autoprefixer": "^6.3.3",
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.1",
     "gulp-accessibility": "^1.2.1",
     "gulp-include": "^2.1.0",
     "gulp-jade": "^1.1.0",
     "gulp-postcss": "^6.1.0",
-    "gulp-sass": "^2.2.0",
     "gulp-svg-sprite": "^1.2.19",
-    "gulp-uglify": "^1.5.2"
+    "gulp-uglify": "^1.5.2",
+    "postcss": "^5.0.16",
+    "postcss-functions": "^2.1.0",
+    "postcss-import": "^8.0.2",
+    "postcss-mixins": "^4.0.1",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-grid": "^0.7.1",
+    "postcss-simple-vars": "^1.2.0"
   },
   "dependencies": {
     "jquery": "~2.1.4"

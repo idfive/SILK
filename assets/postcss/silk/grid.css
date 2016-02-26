@@ -1,0 +1,114 @@
+/* ========================================
+// Grid / Columns
+// ===================================== */
+
+.grid {
+  @mixin clear;
+}
+
+  [class^='col-'] {
+    float: left;
+    width: 100%;
+  }
+
+  [class*='flush'] {
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  @media (min-width: 300px) {
+
+    .col-mini {
+      create-grid: 2;
+    }
+
+  }
+
+  @media (min-width: 400px) {
+
+    .col-tiny {
+      create-grid: 2;
+    }
+
+  }
+
+  @media (min-width: 500px) {
+
+    .col-small {
+      create-grid: 12;
+    }
+
+  }
+
+  @media (min-width: 600px) {
+
+    .col-medium {
+      create-grid: 12;
+    }
+
+  }
+
+  @media (min-width: 700px) {
+
+    .col-big {
+      create-grid: 12;
+    }
+
+  }
+
+  @media (min-width: 800px) {
+
+    .col-large {
+      create-grid: 12;
+    }
+
+  }
+
+  @media (min-width: 900px) {
+
+    .col-huge {
+      create-grid: 12;
+    }
+
+  }
+
+  @media (min-width: 1000px) {
+
+    .col-wooser {
+      create-grid: 12;
+    }
+
+  }
+
+  @media (min-width: 1100px) {
+
+    .col-yatterman {
+      create-grid: 12;
+    }
+
+  }
+
+  @media (min-width: 1200px) {
+
+    .col-gamagori {
+      create-grid: 12;
+    }
+
+  }
+
+  @media (min-width: 1300px) {
+
+    .col-aldnoah {
+      create-grid: 12;
+    }
+
+  }
+
+  @media (min-width: 1400px) {
+
+    .col-penguindrum {
+      create-grid: 12;
+    }
+
+  }

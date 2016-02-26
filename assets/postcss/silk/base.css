@@ -1,0 +1,85 @@
+/* ========================================
+// Silk Resets
+// ===================================== */
+
+[class^='silk'] {
+
+  ul {
+    @mixin list-reset;
+  }
+
+}
+
+
+/* ========================================
+// Silk Utilities
+// ===================================== */
+
+.hidden--large {
+
+  @mixin media $large {
+    display: none;
+  }
+
+}
+
+
+/* ========================================
+// Silk Toggle
+// ===================================== */
+
+@define-mixin silk-toggle {
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+    a {
+      display: block;
+      padding: rem(10) rem(20);
+      text-decoration: none;
+      color: inherit;
+
+      &:after {
+        display: inline-block;
+        margin-left: em(10);
+        content: '>';
+        transition: transform .3s;
+      }
+
+      &.is-active {
+
+        &:after {
+          transform: rotate(90deg);
+        }
+
+      }
+
+    }
+
+}
+
+
+/* ========================================
+// Silk Content
+// ===================================== */
+
+@define-mixin silk-content {
+  display: block;
+  padding: rem(20);
+
+  &.is-hidden {
+    display: none;
+  }
+
+  p {
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+}
+

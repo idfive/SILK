@@ -8,6 +8,7 @@
 //= include silk/accordion.js
 //= include silk/offcanvas.js
 //= include silk/nav.js
+//= include silk/slide.js
 //= include silk/table.js
 //= include silk/tabs.js
 
