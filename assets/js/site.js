@@ -49,7 +49,15 @@ var site = (function($) {
   idfive.instagram = function() {
 
     var feed = new Instafeed({
-      clientId: '00dbf1c65fd84dd38fa9b69417654cd8'
+      get: 'user',
+      userId: '31863373',
+      clientId: '00dbf1c65fd84dd38fa9b69417654cd8',
+      accessToken: '31863373.00dbf1c.9febb535908b473ab6eacaae13a1f230',
+      target: 'instagram-feed',
+      limit: 1,
+      resolution: 'standard_resolution',
+      sortBy: 'most-recent',
+      template: '<a class="instagram-item" href="{{link}}"><img class="instagram-item__image" src="{{image}}" /><div class="instagram-item__details"><p class="instagram-item__caption">{{caption}}</p></div></a>'
     });
 
     feed.run();

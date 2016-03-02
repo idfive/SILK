@@ -1,0 +1,16 @@
+/* ========================================
+// Instagram
+// ===================================== */
+
+.instagram-feed {}
+
+  .instagram-item {
+    position: relative;
+    display: block;
+  }
+
+    .instagram-item__image {}
+
+    .instagram-item__details {}
+
+      .instagram-item__caption {}
