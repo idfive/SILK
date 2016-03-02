@@ -11,17 +11,3 @@
 //= include silk/slide.js
 //= include silk/table.js
 //= include silk/tabs.js
-
-// Bootstrap
-(function($) {
-
-  // Run SILK bootstrap
-
-  // Initialize SILK modules
-  $('.silk-accordion').silkaccordion();
-  $('.silk-nav').silknav();
-  $('.silk-table').silktable();
-  $('.silk-tabs').silktabs();
-
-
-}(jQuery));

@@ -34,12 +34,12 @@
 @import 'navigation/main';
 @import 'navigation/unique';
 
+@import 'modules/address';
 @import 'modules/basic';
 @import 'modules/buttons';
 @import 'modules/forms';
 @import 'modules/hero';
 @import 'modules/media';
-@import 'modules/custom';
 
 @import 'silk/intro';
 
