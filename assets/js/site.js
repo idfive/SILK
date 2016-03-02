@@ -6,6 +6,7 @@ var site = (function($) {
     idfive.readySilk();
     idfive.hero();
     idfive.slideshow();
+    idfive.instagram();
   };
 
   idfive.readySilk = function() {
@@ -44,6 +45,16 @@ var site = (function($) {
     }
 
   };
+
+  idfive.instagram = function() {
+
+    var feed = new Instafeed({
+      clientId: '00dbf1c65fd84dd38fa9b69417654cd8'
+    });
+
+    feed.run();
+
+  }
 
   return idfive;
 
