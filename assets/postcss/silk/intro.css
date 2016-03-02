@@ -91,6 +91,11 @@
     &:nth-of-type(odd) {
       background: #00A98D;
       color: #fff;
+
+      a {
+        color: inherit;
+      }
+
     }
 
   }

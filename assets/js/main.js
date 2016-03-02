@@ -1,6 +1,7 @@
 // Vendor
 //= include vendor/jquery-2.2.0.min.js
 //= include vendor/instafeed.min.js
+//= include vendor/twitterFetcher.min.js
 
 // SILK Core
 //= include silk/silk.js

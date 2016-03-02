@@ -2327,6 +2327,10 @@ video {}
   color: #fff;
 }
 
+.compartment > section:nth-of-type(odd) a {
+  color: inherit;
+}
+
 .compartment h2 {
   margin-top: 0;
 }

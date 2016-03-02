@@ -7,6 +7,7 @@ var site = (function($) {
     idfive.hero();
     idfive.slideshow();
     idfive.instagram();
+    idfive.twitter();
   };
 
   idfive.readySilk = function() {
@@ -57,10 +58,40 @@ var site = (function($) {
       limit: 1,
       resolution: 'standard_resolution',
       sortBy: 'most-recent',
-      template: '<a class="instagram-item" href="{{link}}"><img class="instagram-item__image" src="{{image}}" /><div class="instagram-item__details"><p class="instagram-item__caption">{{caption}}</p></div></a>'
+      template: '<li class="instagram-item"><a class="instagram-item__link" href="{{link}}"><img class="instagram-item__image" src="{{image}}" /><div class="instagram-item__details"><p class="instagram-item__caption">{{caption}}</p></div></a></li>'
     });
 
     feed.run();
+
+  }
+
+  idfive.twitter = function() {
+
+    var twitterConfig = {
+      id: '347099293930377217',
+      domId: 'twitter-feed',
+      maxTweets: 1,
+      enableLinks: true,
+      showInteraction: false,
+      showUser: false,
+      showTime: false,
+      lang: 'en',
+      customCallback: twitterTemplate,
+    }
+
+    function twitterTemplate(tweets) {
+
+      var element = document.getElementById('twitter-feed');
+      var i = 0;
+
+      while(i < tweets.length) {
+        element.innerHTML += '<li class="twitter-item">' + tweets[i] + '</li>';
+        i++;
+      }
+
+    }
+
+    twitterFetcher.fetch(twitterConfig);
 
   }
 
