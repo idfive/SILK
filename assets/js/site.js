@@ -2,6 +2,30 @@ var site = (function($) {
 
   var idfive = {};
 
+  var instagramConfig = {
+    get: 'user',
+    userId: '31863373',
+    clientId: '00dbf1c65fd84dd38fa9b69417654cd8',
+    accessToken: '31863373.00dbf1c.9febb535908b473ab6eacaae13a1f230',
+    target: 'instagram-feed',
+    limit: 1,
+    resolution: 'standard_resolution',
+    sortBy: 'most-recent',
+    template: '<li class="instagram-item"><a class="instagram-item__link" href="{{link}}"><img class="instagram-item__image" src="{{image}}" /><div class="instagram-item__details"><p class="instagram-item__caption">{{caption}}</p></div></a></li>'
+  };
+
+  var twitterConfig = {
+    id: '347099293930377217',
+    domId: 'twitter-feed',
+    maxTweets: 1,
+    enableLinks: true,
+    showInteraction: false,
+    showUser: false,
+    showTime: false,
+    lang: 'en',
+    customCallback: twitterTemplate,
+  };
+
   idfive.domReady = function() {
     idfive.readySilk();
     idfive.hero();
@@ -49,49 +73,27 @@ var site = (function($) {
 
   idfive.instagram = function() {
 
-    var feed = new Instafeed({
-      get: 'user',
-      userId: '31863373',
-      clientId: '00dbf1c65fd84dd38fa9b69417654cd8',
-      accessToken: '31863373.00dbf1c.9febb535908b473ab6eacaae13a1f230',
-      target: 'instagram-feed',
-      limit: 1,
-      resolution: 'standard_resolution',
-      sortBy: 'most-recent',
-      template: '<li class="instagram-item"><a class="instagram-item__link" href="{{link}}"><img class="instagram-item__image" src="{{image}}" /><div class="instagram-item__details"><p class="instagram-item__caption">{{caption}}</p></div></a></li>'
-    });
+    var feed = new Instafeed(instagramConfig);
 
     feed.run();
 
-  }
+  };
 
   idfive.twitter = function() {
 
-    var twitterConfig = {
-      id: '347099293930377217',
-      domId: 'twitter-feed',
-      maxTweets: 1,
-      enableLinks: true,
-      showInteraction: false,
-      showUser: false,
-      showTime: false,
-      lang: 'en',
-      customCallback: twitterTemplate,
-    }
-
-    function twitterTemplate(tweets) {
-
-      var element = document.getElementById('twitter-feed');
-      var i = 0;
-
-      while(i < tweets.length) {
-        element.innerHTML += '<li class="twitter-item">' + tweets[i] + '</li>';
-        i++;
-      }
-
-    }
-
     twitterFetcher.fetch(twitterConfig);
+
+  };
+
+  function twitterTemplate(tweets) {
+
+    var element = document.getElementById('twitter-feed');
+    var i = 0;
+
+    while(i < tweets.length) {
+      element.innerHTML += '<li class="twitter-item">' + tweets[i] + '</li>';
+      i++;
+    }
 
   }
 
