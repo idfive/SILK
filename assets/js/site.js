@@ -3,9 +3,19 @@ var site = (function($) {
   var idfive = {};
 
   idfive.domReady = function() {
+    idfive.readySilk();
     idfive.hero();
     idfive.slideshow();
   };
+
+  idfive.readySilk = function() {
+
+    $('.silk-accordion').silkaccordion();
+    $('.silk-nav').silknav();
+    $('.silk-table').silktable();
+    $('.silk-tabs').silktabs();
+
+  }
 
   idfive.hero = function() {
 
@@ -24,10 +34,14 @@ var site = (function($) {
 
   idfive.slideshow = function() {
 
-    swift({
-      container: '.swift-slide',
-      elements: 'li'
-    });
+    if($('.swift-slide').length) {
+
+      swift({
+        container: '.swift-slide',
+        elements: 'li'
+      });
+
+    }
 
   };
 
