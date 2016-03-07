@@ -2248,6 +2248,34 @@ svg {}
 video {}
 
 /* ========================================
+// Instagram
+// ===================================== */
+
+.instagram-feed {}
+
+.instagram-item {
+    position: relative;
+    display: block;
+  }
+
+.instagram-item__image {
+      display: block;
+      max-width: 100%;
+    }
+
+.instagram-item__details {}
+
+.instagram-item__caption {}
+
+/* ========================================
+// Twitter
+// ===================================== */
+
+.twitter-feed {}
+
+.twitter-item {}
+
+/* ========================================
 // Silk Header
 // ===================================== */
 

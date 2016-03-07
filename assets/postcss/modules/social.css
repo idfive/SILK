@@ -9,7 +9,10 @@
     display: block;
   }
 
-    .instagram-item__image {}
+    .instagram-item__image {
+      display: block;
+      max-width: 100%;
+    }
 
     .instagram-item__details {}
 

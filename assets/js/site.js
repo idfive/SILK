@@ -73,15 +73,18 @@ var site = (function($) {
 
   idfive.instagram = function() {
 
-    var feed = new Instafeed(instagramConfig);
-
-    feed.run();
+    if($('#instagram-feed').length) {
+      var feed = new Instafeed(instagramConfig);
+      feed.run();
+    }
 
   };
 
   idfive.twitter = function() {
 
-    twitterFetcher.fetch(twitterConfig);
+    if($('#twitter-feed').length) {
+      twitterFetcher.fetch(twitterConfig);
+    }
 
   };
 
