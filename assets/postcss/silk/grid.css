@@ -3,17 +3,15 @@
 // ===================================== */
 
 .grid {
-  @mixin clear;
+
+  &:after {
+    @mixin clear;
+  }
+
 }
 
   [class^='col-'] {
     float: left;
-    width: 100%;
-  }
-
-  [class*='flush'] {
-    margin-right: 0;
-    margin-left: 0;
     width: 100%;
   }
 
