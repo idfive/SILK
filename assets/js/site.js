@@ -45,9 +45,13 @@ var site = (function($) {
 
   idfive.hero = function() {
 
-    var hero = document.querySelector('.hero');
+    var hero = document.querySelectorAll('.hero');
 
-    if(document.contains(hero)) {
+    if(document.contains(hero[0])) {
+
+      for(var i = 0; i < hero.length; i++) {
+
+      }
 
       $('.hero').each(function() {
 

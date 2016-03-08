@@ -2194,8 +2194,8 @@ select {}
 // ===================================== */
 
 .hero {
-  background-position: 50% 50%;
-  background-size: cover;
+  background-position: 50% 50% !important;
+  background-size: cover !important;
 
 }
 
@@ -2203,6 +2203,10 @@ select {}
   height: 30vw;
   max-height: 31.25em;
   min-height: 18.75em;
+}
+
+.hero h1, .hero h2 {
+  margin: 0;
 }
 
 .hero img {
