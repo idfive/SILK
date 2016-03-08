@@ -2,7 +2,13 @@
 // Address
 // ===================================== */
 
-.vcard {}
+.vcard {
+
+  a {
+    display: block;
+  }
+
+}
 
   .org {
     font-size: em(20);
