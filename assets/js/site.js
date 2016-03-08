@@ -60,7 +60,9 @@ var site = (function($) {
 
   idfive.slideshow = function() {
 
-    if($('.swift-slide').length) {
+    var swiftSlide = document.querySelector('.swift-slide');
+
+    if(document.contains(swiftSlide)) {
 
       swift({
         container: '.swift-slide',
@@ -73,7 +75,9 @@ var site = (function($) {
 
   idfive.instagram = function() {
 
-    if($('#instagram-feed').length) {
+    var instagramFeed = document.querySelector('#instagram-feed');
+
+    if(document.contains(instagramFeed)) {
       var feed = new Instafeed(instagramConfig);
       feed.run();
     }
@@ -82,7 +86,9 @@ var site = (function($) {
 
   idfive.twitter = function() {
 
-    if($('#twitter-feed').length) {
+    var twitterFeed = document.querySelector('#twitter-feed');
+
+    if(document.contains(twitterFeed)) {
       twitterFetcher.fetch(twitterConfig);
     }
 
