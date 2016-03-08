@@ -45,20 +45,16 @@ var site = (function($) {
 
   idfive.hero = function() {
 
-    var hero = document.querySelectorAll('.hero');
+    var hero = document.querySelectorAll('.hero img');
 
     if(document.contains(hero[0])) {
 
       for(var i = 0; i < hero.length; i++) {
 
+        var image = hero[i].getAttribute('src');
+        hero[i].parentNode.style.backgroundImage = 'url(' + image + ')';
+
       }
-
-      $('.hero').each(function() {
-
-        var image = $(this).find('img').attr('src');
-        $(this).css('background-image', 'url(' + image + ')');
-
-      });
 
     }
 
