@@ -94,8 +94,8 @@ gulp.task('postcss', function() {
       require('postcss-simple-vars'),
       require('postcss-functions')({
         functions: {
-          nu: function(value) {
-            var nuValue = value / body.size;
+          nu: function(value, additionalValue) {
+            var nuValue = value / additionalValue;
             return nuValue;
           },
           em: function(value) {
