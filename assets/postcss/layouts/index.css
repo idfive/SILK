@@ -15,6 +15,6 @@ html {
 }
 
   body {
-    font-size: em($content-size);
+    font-size: rem($content-size);
     line-height: nu($content-line);
   }
