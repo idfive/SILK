@@ -439,6 +439,19 @@ th {
 // Media Query
 // ===================================== */
 /* ========================================
+// Screen Reader Visibility
+// ===================================== */
+.visible-for-screen-readers {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  margin: -1px;
+  padding: 0;
+}
+/* ========================================
 // Headings
 // ===================================== */
 h1, .h1,
@@ -757,18 +770,13 @@ p {
 /* ========================================
 // Grid / Columns
 // ===================================== */
-.grid {
+.grid:after {
   display: table;
   clear: both;
   content: '';
 }
 [class^='col-'] {
     float: left;
-    width: 100%;
-  }
-[class*='flush'] {
-    margin-right: 0;
-    margin-left: 0;
     width: 100%;
   }
 @media (min-width: 300px) {
@@ -1663,7 +1671,7 @@ html {
   color: #565452;
 }
 body {
-    font-size: 1em;
+    font-size: 1rem;
     line-height: 1.5;
   }
 /* ========================================
