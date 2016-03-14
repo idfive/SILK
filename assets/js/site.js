@@ -47,7 +47,7 @@ var site = (function($) {
 
     var hero = document.querySelectorAll('.hero img');
 
-    if(document.contains(hero[0])) {
+    if(document.body.contains(hero[0])) {
 
       for(var i = 0; i < hero.length; i++) {
 
@@ -64,7 +64,7 @@ var site = (function($) {
 
     var swiftSlide = document.querySelector('.swift-slide');
 
-    if(document.contains(swiftSlide)) {
+    if(document.body.contains(swiftSlide)) {
 
       swift({
         container: '.swift-slide',
@@ -79,7 +79,7 @@ var site = (function($) {
 
     var instagramFeed = document.querySelector('#instagram-feed');
 
-    if(document.contains(instagramFeed)) {
+    if(document.body.contains(instagramFeed)) {
       var feed = new Instafeed(instagramConfig);
       feed.run();
     }
@@ -90,7 +90,7 @@ var site = (function($) {
 
     var twitterFeed = document.querySelector('#twitter-feed');
 
-    if(document.contains(twitterFeed)) {
+    if(document.body.contains(twitterFeed)) {
       twitterFetcher.fetch(twitterConfig);
     }
 
