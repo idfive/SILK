@@ -1878,7 +1878,12 @@ video {}
 /* ========================================
 // Instagram
 // ===================================== */
-.instagram-feed {}
+.instagram-feed {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
 .instagram-item {
     position: relative;
     display: block;
@@ -1892,7 +1897,12 @@ video {}
 /* ========================================
 // Twitter
 // ===================================== */
-.twitter-feed {}
+.twitter-feed {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
 .twitter-item {}
 /* ========================================
 // Silk Type

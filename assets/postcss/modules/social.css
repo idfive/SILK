@@ -2,7 +2,9 @@
 // Instagram
 // ===================================== */
 
-.instagram-feed {}
+.instagram-feed {
+  @mixin list-reset;
+}
 
   .instagram-item {
     position: relative;
@@ -23,6 +25,8 @@
 // Twitter
 // ===================================== */
 
-.twitter-feed {}
+.twitter-feed {
+  @mixin list-reset;
+}
 
   .twitter-item {}
