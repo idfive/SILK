@@ -1,0 +1,23 @@
+//- ========================================
+//- Site Search
+//- ========================================
+
+label(
+  for="site-search-input"
+  class="visible-for-screen-readers"
+) Search this site for:
+input(
+  placeholder="Search..."
+  type="text"
+  id="site-search-input"
+  name="site-search-input"
+  class="site-search__text"
+)
+input(
+  type="submit"
+  value="go"
+  aria-label="Query search"
+  class="site-search__submit"
+)
+.vertically-center
+  +symbol("search")
