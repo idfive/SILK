@@ -115,7 +115,10 @@ gulp.task('postcss', function() {
     ]))
     .pipe(gulp.dest(paths.postcss.dest))
     .pipe(browserSync.stream())
-    .pipe(cleanCss())
+    .pipe(cleanCss({
+      keepSpecialComments: 0,
+      restructuring: false
+    }))
     .pipe(rename(function(path) {
       path.basename += '.min';
     }))
