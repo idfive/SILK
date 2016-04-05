@@ -4,9 +4,8 @@ var site = (function($) {
 
   var instagramConfig = {
     get: 'user',
-    userId: '31863373',
-    clientId: '00dbf1c65fd84dd38fa9b69417654cd8',
-    accessToken: '31863373.00dbf1c.9febb535908b473ab6eacaae13a1f230',
+    userId: '1288755802',
+    clientId: 'f74cfb0933924430b7013270b4fda066',
     target: 'instagram-feed',
     limit: 1,
     resolution: 'standard_resolution',
