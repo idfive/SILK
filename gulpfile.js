@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     jade = require('gulp-jade'),
     postcss = require('gulp-postcss'),
-    cssCondense = require('gulp-css-condense'),
+    cleanCss = require('gulp-clean-css'),
     rename = require('gulp-rename'),
     include = require('gulp-include'),
     uglify = require('gulp-uglify'),
@@ -115,7 +115,7 @@ gulp.task('postcss', function() {
     ]))
     .pipe(gulp.dest(paths.postcss.dest))
     .pipe(browserSync.stream())
-    .pipe(cssCondense())
+    .pipe(cleanCss())
     .pipe(rename(function(path) {
       path.basename += '.min';
     }))

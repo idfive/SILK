@@ -17,7 +17,7 @@
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.1",
     "gulp-accessibility": "^1.2.1",
-    "gulp-css-condense": "^1.1.2",
+    "gulp-clean-css": "^2.0.4",
     "gulp-imagemin": "^2.4.0",
     "gulp-include": "^2.1.0",
     "gulp-jade": "^1.1.0",
