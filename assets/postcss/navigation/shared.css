@@ -4,7 +4,8 @@
 
 nav {
 
-  ul {
+  ul,
+  ol {
     @mixin list-reset;
   }
 
