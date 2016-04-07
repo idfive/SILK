@@ -36,7 +36,7 @@
 
 .drawer {
   @mixin drawer;
-  top: em(64);
+  top: 100%;
   right: 0;
   z-index: 200;
   overflow: hidden;
@@ -52,6 +52,11 @@
 
   [data-drawer-state="visible"] & {
     @mixin active-drawer;
+
+    @mixin media $silk-drawer-disappears {
+      @mixin reset-drawer;
+    }
+
   }
 
 }

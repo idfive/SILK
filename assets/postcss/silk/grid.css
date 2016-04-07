@@ -15,7 +15,7 @@
     width: 100%;
   }
 
-  @media (min-width: 300px) {
+  @media (min-width: $mini) {
 
     .col-mini {
       create-grid: 2;
@@ -23,7 +23,7 @@
 
   }
 
-  @media (min-width: 400px) {
+  @media (min-width: $tiny) {
 
     .col-tiny {
       create-grid: 2;
@@ -31,7 +31,7 @@
 
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: $small) {
 
     .col-small {
       create-grid: 12;
@@ -39,7 +39,7 @@
 
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: $medium) {
 
     .col-medium {
       create-grid: 12;
@@ -47,7 +47,7 @@
 
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: $big) {
 
     .col-big {
       create-grid: 12;
@@ -55,7 +55,7 @@
 
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: $large) {
 
     .col-large {
       create-grid: 12;
@@ -63,7 +63,7 @@
 
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: $huge) {
 
     .col-huge {
       create-grid: 12;
@@ -71,7 +71,7 @@
 
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: $wooser) {
 
     .col-wooser {
       create-grid: 12;
@@ -79,7 +79,7 @@
 
   }
 
-  @media (min-width: 1100px) {
+  @media (min-width: $yatterman) {
 
     .col-yatterman {
       create-grid: 12;
@@ -87,7 +87,7 @@
 
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: $gamagori) {
 
     .col-gamagori {
       create-grid: 12;
@@ -95,7 +95,7 @@
 
   }
 
-  @media (min-width: 1300px) {
+  @media (min-width: $aldnoah) {
 
     .col-aldnoah {
       create-grid: 12;
@@ -103,7 +103,7 @@
 
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: $penguindrum) {
 
     .col-penguindrum {
       create-grid: 12;

@@ -12,6 +12,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     svgSprite = require('gulp-svg-sprite'),
+    svgMin = require('gulp-svgmin'),
     accessibility = require('gulp-accessibility');
 
 
@@ -98,8 +99,11 @@ gulp.task('postcss', function() {
             var nuValue = value / additionalValue;
             return nuValue;
           },
-          em: function(value) {
-            var emValue = value / body.size;
+          em: function(value, context) {
+            if(context == null) {
+              context = body.size;
+            }
+            var emValue = value / context;
             return emValue + 'em';
           },
           rem: function(value) {
@@ -169,6 +173,7 @@ gulp.task('images', function() {
 gulp.task('sprite', function() {
 
   return gulp.src(paths.sprite.src)
+    .pipe(svgMin())
     .pipe(svgSprite({
       shape: {
         dimension: {
@@ -181,6 +186,11 @@ gulp.task('sprite', function() {
           bust: false,
           dest: './'
         }
+      },
+      svg: {
+        xmlDeclaration: false,
+        doctypeDeclaration: false,
+        dimensionAttributes: false
       }
     }))
     .pipe(gulp.dest('assets/'));

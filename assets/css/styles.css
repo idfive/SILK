@@ -640,7 +640,7 @@ p {
   transform: translate(0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  top: 4em;
+  top: 100%;
   right: 0;
   z-index: 200;
   overflow: hidden;
@@ -678,6 +678,22 @@ p {
   transform: translate(0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+}
+@media (min-width: 900px){
+  [data-drawer-state="visible"] .drawer{
+    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    position: static;
+    overflow: inherit;
+    max-width: 100%;
+    background: none;
+  }
 }
 /* ========================================
 // Drawer Trigger
@@ -1702,7 +1718,8 @@ main {}
 /* ========================================
 // Shared Navigation
 // ===================================== */
-nav ul {
+nav ul,
+  nav ol {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;

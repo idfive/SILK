@@ -2,7 +2,7 @@
 // Font Face
 // ===================================== */
 
-@define-mixin font-face $name $style: normal $weight: normal {
+@define-mixin font-face $name, $style: normal, $weight: normal {
 
   @font-face {
     font-family: "#{$name}";

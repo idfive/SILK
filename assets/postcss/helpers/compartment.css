@@ -2,7 +2,7 @@
 // Compartment
 // ===================================== */
 
-@define-mixin compartment $max-width: 1180 {
+@define-mixin compartment $max-width: $boundary {
   max-width: rem($max-width);
   margin-right: auto;
   margin-left: auto;
