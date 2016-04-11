@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     jade = require('gulp-jade'),
     postcss = require('gulp-postcss'),
+    sourcemaps = require('gulp-sourcemaps'),
     cleanCss = require('gulp-clean-css'),
     rename = require('gulp-rename'),
     include = require('gulp-include'),
@@ -74,6 +75,7 @@ var body = {
 gulp.task('postcss', function() {
 
   gulp.src('assets/postcss/styles.css')
+    .pipe(sourcemaps.init())
     .pipe(postcss([
       require('postcss-import'),
       require('postcss-mixins')({
@@ -117,8 +119,15 @@ gulp.task('postcss', function() {
         cascade: false
       })
     ]))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.postcss.dest))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream());
+
+});
+
+gulp.task('minify-css', function() {
+
+  gulp.src('assets/postcss/styles.css')
     .pipe(cleanCss({
       keepSpecialComments: 0,
       restructuring: false
@@ -127,7 +136,6 @@ gulp.task('postcss', function() {
       path.basename += '.min';
     }))
     .pipe(gulp.dest(paths.postcss.dest))
-    .pipe(browserSync.stream());
 
 });
 
@@ -233,7 +241,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function() {
 
   gulp.watch('assets/jade/**/*.jade', ['jade']);
-  gulp.watch(paths.postcss.src, ['postcss', 'jade']);
+  gulp.watch(paths.postcss.src, ['postcss', 'minify-css', 'jade']);
   gulp.watch(paths.js.src, ['js']);
 
 });
