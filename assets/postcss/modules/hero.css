@@ -1,0 +1,23 @@
+/* ========================================
+// Hero
+// ===================================== */
+
+.hero {
+  background-position: 50% 50% !important;
+  background-size: cover !important;
+
+  &--empty {
+    height: 30vw;
+    max-height: em(500);
+    min-height: em(300);
+  }
+
+  h1, h2 {
+    margin: 0;
+  }
+
+  img {
+    display: none;
+  }
+
+}

@@ -1,0 +1,19 @@
+//- ========================================
+//- Silk Navigation
+//- ========================================
+
+button.drawer__trigger(aria-hidden="true")
+
+nav.silk-nav.nav-main.drawer
+  .silk-nav__controls
+    a.trigger--home(href="/")
+      +symbol("home")
+      span Home
+    button.trigger--revert
+      +symbol("undo")
+      span Main Menu
+    button.trigger--reverse
+      +symbol("chevron-left")
+  include nav-main.jade
+
+

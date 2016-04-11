@@ -1,0 +1,267 @@
+/* ========================================
+// Silk Type
+// ===================================== */
+
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400italic);
+
+
+/* ========================================
+// Silk Header
+// ===================================== */
+
+.site__header {
+
+  .compartment {
+    padding: em(20) em(30);
+
+    @mixin media $silk-drawer-disappears {
+      display: flex;
+    }
+
+  }
+
+}
+
+
+/* ========================================
+// Silk Logo
+// ===================================== */
+
+.site__logo {
+  height: em(24);
+  max-width: em(24);
+}
+
+
+/* ========================================
+// Silk Drawer Trigger
+// ===================================== */
+
+.drawer__trigger {
+  right: em(10);
+}
+
+
+/* ========================================
+// Silk Nav
+// ===================================== */
+
+.nav-main {
+
+  @mixin media $silk-drawer-disappears {
+    padding-left: em(10);
+    text-align: right;
+  }
+
+  > ul {
+
+    > li {
+
+      &:last-child {
+
+        > a {
+          padding-right: 0;
+        }
+
+      }
+
+      > ul {
+        padding: em(10) 0;
+        text-align: left;
+      }
+
+    }
+
+  }
+
+    a {
+      color: #00A98D;
+
+      @mixin media $silk-drawer-disappears {
+        padding: 0 em(10);
+      }
+
+    }
+
+}
+
+
+/* ========================================
+// Silk Content
+// ===================================== */
+
+.compartment {
+
+  > section {
+    padding: em(60) em(30);
+
+    &:nth-of-type(odd) {
+      background: #00A98D;
+      color: #fff;
+
+      a {
+        color: inherit;
+      }
+
+    }
+
+  }
+
+    h2 {
+      margin-top: 0;
+    }
+
+}
+
+a {
+  color: #00A98D;
+}
+
+
+/* ========================================
+// Silk Accordion / Tabs
+// ===================================== */
+
+.silk-accordion__header,
+.silk-tabs__header,
+.silk-tabs__nav {
+
+  a {
+    border-right: 1px solid #00A98D;
+    border-bottom: 1px solid #00A98D;
+    background: rgba(255, 255, 255, .15);
+
+    &:hover {
+      background: rgba(255, 255, 255, .25);
+    }
+
+  }
+
+}
+
+
+/* ========================================
+// Silk Collage
+// ===================================== */
+
+.silk-collage {
+  @mixin list-reset;
+  position: relative;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  height: em(400);
+  counter-reset: collage;
+
+  li {
+    position: absolute;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    text-align: center;
+    counter-increment: collage;
+
+    &:nth-child(1) {
+      @mixin collage 2, 3, 0, 0, 6, 6;
+    }
+
+    &:nth-child(2) {
+      @mixin collage 2, 3, 0, 3, 6, 6;
+    }
+
+    &:nth-child(3) {
+      @mixin collage 2, 6, 2, 0, 6, 6;
+    }
+
+    &:nth-child(4) {
+      @mixin collage 2, 1, 4, 0, 6, 6;
+    }
+
+    &:nth-child(5) {
+      @mixin collage 2, 4, 4, 1, 6, 6;
+    }
+
+    &:nth-child(6) {
+      @mixin collage 2, 1, 4, 5, 6, 6;
+    }
+
+    &:before {
+      @mixin h4;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      content: counter(collage);
+      transform: translate(0, -50%);
+    }
+
+  }
+
+}
+
+
+/* ========================================
+// Swift Slide
+// ===================================== */
+
+.swift-slide {
+  counter-reset: swift;
+  text-align: center;
+
+  li {
+    counter-increment: swift;
+
+    &:before {
+      @mixin h2;
+      content: counter(swift);
+    }
+
+    &:after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: em(200);
+      width: em(200);
+      border: 1px solid #fff;
+      content: '';
+      pointer-events: none;
+      background: rgba(255, 255, 255, .75);
+      border-radius: 100%;
+      transform:
+        translate(-50%, -50%)
+        scale(0);
+    }
+
+    &.active {
+
+      &:after {
+        animation: burst .25s;
+      }
+
+    }
+
+  }
+
+}
+
+@keyframes burst {
+
+  100% {
+    opacity: 0;
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+  }
+
+}
+
+
+/* ========================================
+// Silk Footer
+// ===================================== */
+
+.site__footer {
+
+  .compartment {
+    padding: em(20) em(30);
+  }
+
+}

@@ -1,7 +1,7 @@
 {
   "name": "SILK",
-  "version": "0.1.0",
-  "description": "A light-weight, modular CSS framework from idfive",
+  "version": "3.0.0",
+  "description": "A light-weight, modular Postcss framework from idfive",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,19 +13,25 @@
   "author": "idfive",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "autoprefixer": "^6.1.2",
-    "browser-sync": "^2.10.0",
-    "doiuse": "^2.2.0",
-    "gulp": "^3.9.0",
+    "autoprefixer": "^6.3.3",
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
     "gulp-accessibility": "^1.2.1",
-    "gulp-include": "^2.0.2",
+    "gulp-clean-css": "^2.0.4",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-include": "^2.1.0",
     "gulp-jade": "^1.1.0",
-    "gulp-postcss": "^6.0.1",
-    "gulp-sass": "^2.1.1",
-    "gulp-svg-sprite": "^1.2.13",
-    "gulp-uglify": "^1.2.0"
-  },
-  "dependencies": {
-    "jquery": "~2.1.4"
+    "gulp-postcss": "^6.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-svg-sprite": "^1.2.19",
+    "gulp-svgmin": "^1.2.2",
+    "gulp-uglify": "^1.5.2",
+    "postcss": "^5.0.16",
+    "postcss-functions": "^2.1.0",
+    "postcss-import": "^8.0.2",
+    "postcss-mixins": "^4.0.1",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-grid": "^0.7.1",
+    "postcss-simple-vars": "^1.2.0"
   }
 }

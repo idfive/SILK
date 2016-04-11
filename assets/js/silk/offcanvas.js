@@ -1,4 +1,8 @@
-silk.offcanvas = (function() {
+/* ========================================
+// Silk Off Canvas
+// ===================================== */
+
+silk.offcanvas = (function($) {
 
   var self = {};
 
@@ -36,6 +40,6 @@ silk.offcanvas = (function() {
 
   return self;
 
-})();
+})(jQuery);
 
 silk.offcanvas.init();

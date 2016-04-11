@@ -1,0 +1,170 @@
+/* ========================================
+// Headings
+// ===================================== */
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.mini {
+  font-family: $serif;
+  font-weight: normal;
+}
+
+
+/* 1:Heading One */
+
+@define-mixin h1 {
+  font-size: em($h1-size);
+}
+
+h1,
+.h1 {
+  @mixin h1;
+}
+
+
+/* 2:Heading Two */
+
+@define-mixin h2 {
+  font-size: em($h2-size);
+}
+
+h2,
+.h2 {
+  @mixin h2;
+}
+
+
+/* 3:Heading Three */
+
+@define-mixin h3 {
+  font-size: em($h3-size);
+}
+
+h3,
+.h3 {
+  @mixin h3;
+}
+
+
+/* 4:Heading Four */
+
+@define-mixin h4 {
+  font-size: em($h4-size);
+}
+
+h4,
+.h4 {
+  @mixin h4;
+}
+
+
+/* 5:Heading Five */
+
+@define-mixin h5 {
+  font-size: em($h5-size);
+}
+
+h5,
+.h5 {
+  @mixin h5;
+}
+
+
+/* 6:Heading Six */
+
+@define-mixin h6 {
+  font-size: em($h6-size);
+}
+
+h6,
+.h6 {
+  @mixin h6;
+}
+
+
+/* 7:Heading Mini */
+
+@define-mixin mini {
+  font-size: em($mini-size);
+}
+
+.mini {
+  @mixin mini;
+}
+
+
+/* ========================================
+// Lead In
+// ===================================== */
+
+.lead-in {
+  @mixin h6;
+}
+
+
+/* ========================================
+// Anchors
+// ===================================== */
+
+a {
+  text-decoration: none;
+  transition:
+    background .3s,
+    color .3s;
+
+  &:active {}
+
+  &:hover {}
+
+}
+
+
+/* ========================================
+// Blockquote / Cite
+// ===================================== */
+
+blockquote {
+
+  &:before {
+    margin-right: em(5);
+    content: '\201C';
+  }
+
+  &:after {
+    content: '\201D';
+  }
+
+}
+
+cite {
+  @mixin h6;
+  font-style: normal;
+
+  &:before {
+    content: '';
+  }
+
+}
+
+
+/* ========================================
+// Lists
+// ===================================== */
+
+ul,
+ol {}
+
+  li {}
+
+
+/* ========================================
+// Paragraphs
+// ===================================== */
+
+p {
+  margin: 0 0 em(30) 0;
+}

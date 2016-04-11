@@ -1,0 +1,125 @@
+/* ========================================
+// Drawer Mixin
+// ===================================== */
+
+@define-mixin drawer $transform-intensity: 20% {
+  position: absolute;
+  min-height: 100%;
+  width: 100%;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+@define-mixin active-drawer {
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+@define-mixin reset-drawer {
+  @mixin active-drawer;
+  position: static;
+  overflow: inherit;
+  max-width: 100%;
+  background: none;
+}
+
+
+/* ========================================
+// Drawer
+// ===================================== */
+
+.drawer {
+  @mixin drawer;
+  top: 100%;
+  right: 0;
+  z-index: 200;
+  overflow: hidden;
+  max-width: em(500);
+  background: #fff;
+  transition:
+    opacity .3s,
+    visibility .3s;
+
+  @mixin media $silk-drawer-disappears {
+    @mixin reset-drawer;
+  }
+
+  [data-drawer-state="visible"] & {
+    @mixin active-drawer;
+
+    @mixin media $silk-drawer-disappears {
+      @mixin reset-drawer;
+    }
+
+  }
+
+}
+
+
+/* ========================================
+// Drawer Trigger
+// ===================================== */
+
+.drawer__trigger {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: em($trigger-dimension);
+  width: em($trigger-dimension);
+  border: 0;
+  padding: 0;
+  outline: 0;
+  cursor: pointer;
+  background: none;
+  transform: translate(0, -50%);
+
+  @mixin media $silk-drawer-disappears {
+    display: none;
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: em($stripe-height);
+    width: em(20);
+    content: '';
+    background: $stripe-color;
+    transform: translate(-50%, -50%);
+    transition:
+      background .4s,
+      box-shadow .4s,
+      margin .4s,
+      transform .4s;
+  }
+
+  &:before {
+    margin-top: em(-6);
+  }
+
+  &:after {
+    box-shadow: 0 em(6) 0 0 $stripe-color;
+  }
+
+}
+
+  [data-drawer-state="visible"] .drawer__trigger:before {
+    margin-top: 0;
+    transform:
+      translate(-50%, -50%)
+      rotate(-45deg);
+  }
+
+  [data-drawer-state="visible"] .drawer__trigger:after {
+    box-shadow: 0 0 0 0 transparent;
+    transform:
+      translate(-50%, -50%)
+      rotate(45deg);
+  }

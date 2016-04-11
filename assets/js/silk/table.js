@@ -1,6 +1,6 @@
-// ========================================
-// Table
-// ========================================
+/* ========================================
+// Silk Table
+// ===================================== */
 
 (function($) {
 
@@ -64,7 +64,7 @@
         for(var i = header_offset; i < table.headers.length; i++) {
           if($children.eq(i).text() !== '') {
             $li = $('<li />');
-            $li.append($('<h3>'+table.headers[i]+'</h3>'));
+            $li.append($('<h4>'+table.headers[i]+'</h4>'));
             $li.append($('<div>'+$children.eq(i).text()+'</div>'));
             $ul.append($li);
           }

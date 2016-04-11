@@ -1,0 +1,59 @@
+/* ========================================
+// Silk Table
+// ===================================== */
+
+.silk-table {
+  display: none;
+  width: 100%;
+  border-spacing: 0;
+  margin-bottom: 1em;
+
+  @mixin media $silk-table-expanded {
+    display: table;
+  }
+
+  th,
+  td {
+    padding: rem(10) rem(20);
+  }
+
+  /* Header table cells */
+  th {
+    @mixin h4;
+    font-weight: normal;
+    text-align: left;
+    background: rgba(30, 0, 0, .075);
+  }
+
+  /* Regular table cells */
+  td {}
+
+}
+
+  /* Every td in every odd row */
+  .silk-table tr:nth-of-type(even) td {
+    background: rgba(30, 0, 0, .025);
+  }
+
+  /* Collapsed table */
+  .silk-table--collapsed {
+    margin-bottom: em(20);
+    padding: 0 0 em(10);
+    background: rgba(30, 0, 0, .025);
+
+    @mixin media $silk-table-expanded {
+      display: none;
+    }
+
+    h4 {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: rem(10) rem(20);
+    }
+
+    div {
+      padding: rem(10) rem(20);
+    }
+
+  }
+

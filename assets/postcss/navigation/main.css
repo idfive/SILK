@@ -1,0 +1,34 @@
+/* ========================================
+// Main Navigation
+// ===================================== */
+
+.nav-main {
+
+  > ul {
+
+    > li {
+
+      @mixin media $silk-drawer-disappears {
+        position: relative;
+        display: inline-block;
+      }
+
+      &:hover {
+
+        > ul {
+
+          @mixin media $silk-drawer-disappears {
+            display: block;
+          }
+
+        }
+
+      }
+
+      > a {}
+
+    }
+
+  }
+
+}

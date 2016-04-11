@@ -1,0 +1,20 @@
+/* ========================================
+// Root Layer
+// ===================================== */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $content-family;
+  background: none;
+  color: $content-color;
+}
+
+  body {
+    font-size: rem($content-size);
+    line-height: nu($content-line, $content-size);
+  }
