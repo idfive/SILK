@@ -7,12 +7,12 @@ html(
   dir="ltr"
   lang="en-US"
 )
-  include ../regions/head.jade
-  include ../mixins/symbol.jade
+  include ../regions/head.pug
+  include ../mixins/symbol.pug
   body
     .sprite(style="display: none;")
       include ../../svg/sprite.symbol.svg
-    include ../regions/header.jade
+    include ../regions/header.pug
     main
       block content
-    include ../regions/footer.jade
+    include ../regions/footer.pug

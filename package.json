@@ -22,8 +22,8 @@
     "gulp-cssdepth-check": "^0.1.0",
     "gulp-imagemin": "^2.4.0",
     "gulp-include": "^2.1.0",
-    "gulp-jade": "^1.1.0",
     "gulp-postcss": "^6.1.0",
+    "gulp-pug": "^1.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-svg-sprite": "^1.2.19",
@@ -36,6 +36,7 @@
     "postcss-mixins": "^4.0.1",
     "postcss-nested": "^1.0.0",
     "postcss-simple-grid": "^0.7.1",
-    "postcss-simple-vars": "^1.2.0"
+    "postcss-simple-vars": "^1.2.0",
+    "pug": "^2.0.0-alpha3"
   }
 }
