@@ -4,6 +4,6 @@ A simple framework for building sites of all kinds.
 
 ## Features
 
-* Gulp
-* Jade
-* Postcss
+* Gulp Task Runner
+* Pug Templates
+* Postcss Post Processor
