@@ -4,7 +4,7 @@
 
 var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
-    pug = require('gulp-pug'),
+    jade = require('gulp-jade'),
     postcss = require('gulp-postcss'),
     sourcemaps = require('gulp-sourcemaps'),
     cssdepth = require('gulp-cssdepth-check'),
@@ -25,8 +25,8 @@ var gulp = require('gulp'),
 
 var paths = {
 
-  pug: {
-    src:  'assets/pug/pages/*.pug',
+  jade: {
+    src:  'assets/jade/pages/*.jade',
     dest: '',
   },
   postcss: {
@@ -53,13 +53,13 @@ var paths = {
 // Jade
 // ========================================
 
-gulp.task('pug', ['sprite'], function() {
+gulp.task('jade', ['sprite'], function() {
 
-  return gulp.src(paths.pug.src)
-    .pipe(pug({
+  return gulp.src(paths.jade.src)
+    .pipe(jade({
       pretty: true
     }))
-    .pipe(gulp.dest(paths.pug.dest))
+    .pipe(gulp.dest(paths.jade.dest))
     .pipe(browserSync.stream());
 
 });
@@ -249,8 +249,8 @@ gulp.task('browser-sync', function() {
 
 gulp.task('watch', function() {
 
-  gulp.watch('assets/pug/**/*.pug', ['pug']);
-  gulp.watch(paths.postcss.src, ['postcss', 'minify-css', 'pug']);
+  gulp.watch('assets/jade/**/*.jade', ['jade']);
+  gulp.watch(paths.postcss.src, ['postcss', 'minify-css', 'jade']);
   gulp.watch(paths.js.src, ['js']);
 
 });
@@ -261,7 +261,7 @@ gulp.task('watch', function() {
 // ========================================
 
 gulp.task('default', [
-  'pug',
+  'jade',
   'postcss',
   'js',
   'sprite',
