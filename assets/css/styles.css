@@ -1851,6 +1851,7 @@ input[type='range'] {}
   height: 100%;
   width: 3.125em;
   content: '';
+  pointer-events: none;
   background: #ccc url(../icons/chevron-down.svg) no-repeat 50% 50%;
 }
 select {

@@ -47,6 +47,7 @@ input {
     height: 100%;
     width: em(50);
     content: '';
+    pointer-events: none;
     background: #ccc url(../icons/chevron-down.svg) no-repeat 50% 50%;
   }
 
