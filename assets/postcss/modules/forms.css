@@ -33,10 +33,33 @@ input {
 }
 
 
-/* Select / Option
+/* Select
 // ------------------------------------- */
 
-select {}
+.select-field {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: em(50);
+    content: '';
+    background: #ccc url(../icons/chevron-down.svg) no-repeat 50% 50%;
+  }
+
+}
+
+  select {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: em(10) em(20);
+    appearance: none;
+    background: #fff;
+    border-radius: 0;
+  }
 
 
 /* ========================================

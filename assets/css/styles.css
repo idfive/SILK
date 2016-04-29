@@ -1837,9 +1837,32 @@ input[type='text'] {}
 input[type='radio'] {}
 input[type='checkbox'] {}
 input[type='range'] {}
-/* Select / Option
+/* Select
 // ------------------------------------- */
-select {}
+.select-field {
+  position: relative;
+  overflow: hidden;
+
+}
+.select-field:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 3.125em;
+  content: '';
+  background: #ccc url(../icons/chevron-down.svg) no-repeat 50% 50%;
+}
+select {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 0.625em 1.25em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #fff;
+    border-radius: 0;
+  }
 /* ========================================
 // Unique Form Elements
 // ===================================== */
