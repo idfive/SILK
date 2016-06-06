@@ -12,14 +12,14 @@ block content
     section.hero.hero--empty
       img(src="http://i.imgur.com/9FnCMYs.jpg")
     section
-      h2 Silk Accordion
-      include ../blocks/silk-accordion.jade
+      h2 Silk Harmonica
+      include ../blocks/silk-harmonica.jade
+    section
+      h2 Silk Tab
+      include ../blocks/silk-harmonica-expanded.jade
     section
       h2 Silk Table
       include ../blocks/silk-table.jade
-    section
-      h2 Silk Tab
-      include ../blocks/silk-tabs.jade
     section
       h2 Silk Collage
       ol.silk-collage
@@ -44,9 +44,63 @@ block content
       ol#twitter-feed.twitter-feed.list-reset
     section
       h2 Forms
-      form
-        .select-field
-          select(required).select--interior.select--full
-            option(value="What can we do for you? (required)") What can we do for you?
-            option(value="Tell me more about idfive") Tell me more about idfive
-            option(value="Teach me to love again") Teach me to love again
+      form.grid.grid--20
+        .col-large-6.col-aldnoah-4
+          .input-field.input-field--empty
+            input(
+              type="text"
+              placeholder="Enter Search Keywords"
+            )
+            .input-hint.input-hint--search
+              input.input-hint__field(type="submit")
+        .col-large-6.col-aldnoah-4
+          .input-field
+            select(required).select--interior.select--full
+              option(value="What can we do for you? (required)") What can we do for you?
+              option(value="Tell me more about idfive") Tell me more about idfive
+              option(value="Teach me to love again") Teach me to love again
+            span.input-hint
+        .col-aldnoah-4
+          input.input--interior.input--full(
+            placeholder="Name (required)"
+            name="name"
+            type="text"
+            required
+          )
+        .col-flush
+          textarea.textarea--interior(
+            placeholder="Tell us more (optional):"
+            name="comments"
+            rows="8"
+          )
+        .col-flush
+          fieldset
+            input(
+              type="radio" 
+              name="radio-input" 
+              value="twoday"
+            )
+            label(for="radio-input") Radio Input
+            input(
+              type="checkbox" 
+              name="checkbox-input" 
+              value="twoday"
+            )
+            label(for="checkbox-input") Checkbox Input
+        .col-flush
+          input.button(
+            type="submit"
+            value="Submit"
+          )
+    section
+      h2 Filters
+      include ../blocks/pagination.jade
+    section
+      h2 Buttons
+      button.button HTML Button Filled 
+      a.button(href="") Link Button Filled
+      button.button.button--hollow HTML Button Hollow 
+      a.button.button--hollow(href="") Link Button Hollow
+    section
+      h2 Modal
+      include ../blocks/silk-modal.jade

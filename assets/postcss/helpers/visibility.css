@@ -1,7 +1,3 @@
-/* ========================================
-// Screen Reader Visibility
-// ===================================== */
-
 .visible-for-screen-readers {
   position: absolute;
   overflow: hidden;

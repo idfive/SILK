@@ -1,79 +1,46 @@
-/* ========================================
-// Swift Slide
-// ===================================== */
-
 function swift(parameters) {
 
-  // ================
-  // Setup
-  // ================
-
-  // Assign variables to previously mentioned elements
   var container = document.querySelector(parameters.container);
   var elements = document.querySelectorAll(parameters.container + ' ' + parameters.elements);
 
-  // Controller Setup
-  // ----------------
-
-  // Create controller container
   var controller = document.createElement('div');
-  controller.classList.add('controls');
-
-  // Append controller to the swift-slide container
+  controller.classList.add('swift-controls');
   container.appendChild(controller);
 
-  // Create previous control
   var prev = document.createElement('button');
   prev.addEventListener('click', previousSlide, false);
+  prev.classList.add('swift-control', 'swift-prev');
+  prev.innerHTML = '<svg class="symbol symbol-' + parameters.prevSymbol + '"><use xlink:href="#' + parameters.prevSymbol + '"></use></svg>';
+  controller.appendChild(prev);
 
-  // Create next control
   var next = document.createElement('button');
   next.addEventListener('click', nextSlide, false);
-
-  // Append controls to the controller
-  controller.appendChild(prev);
+  next.classList.add('swift-control', 'swift-next');
+  next.innerHTML = '<svg class="symbol symbol-' + parameters.nextSymbol + '"><use xlink:href="#' + parameters.nextSymbol + '"></use></svg>';
   controller.appendChild(next);
 
-  // The very first active slide by default
   var currentSlide = 1;
 
-  // Pager Setup
-  // ----------------
-
-  // Create pager
   var pager = document.createElement('div');
-  pager.classList.add('pager');
-
-  // Append pager to the swift-slide container
+  pager.classList.add('swift-pager');
   container.appendChild(pager);
 
-  // Create pages array to indicate each page
   var pages = [];
 
-  // For each slide
   for (var i = 0; i < elements.length; i++) {
 
-    // Create a page
     pages.push(document.createElement('span'));
 
-    // Append that page into the pager
     pager.appendChild(pages[i]);
 
-    // Add an event listener to that page
     pages[i].addEventListener('click', slide.bind(null, i), false);
 
   }
 
-  // Activate the first slide by default
-  pages[1].click();
-
-  // ================
-  // Actions
-  // ================
+  pages[currentSlide].click();
 
   function clearClasses() {
 
-    // Remove active class from all pages and slides
     for (var i = 0; i < elements.length; i++) {
       pages[i].classList.remove('active');
       elements[i].classList.remove('active');
@@ -83,7 +50,6 @@ function swift(parameters) {
 
   function assignClasses(index) {
 
-    // Add active class to the selected page and slide
     pages[index].classList.add('active');
     elements[index].classList.add('active');
 
@@ -110,7 +76,7 @@ function swift(parameters) {
 
   function nextSlide() {
 
-    if (currentSlide === elements.length - 1) {
+    if (currentSlide == elements.length - 1) {
       currentSlide = -1;
     }
 

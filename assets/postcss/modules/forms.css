@@ -9,8 +9,70 @@ form {}
 
   fieldset {
     border: 0;
+    margin-bottom: em(20);
     padding: 0;
   }
+
+
+/* Label
+// ------------------------------------- */
+
+label {
+  margin-right: em(20);
+}
+
+
+/* Shared Input/Select/Textarea
+// ------------------------------------- */
+
+@define-mixin form-item-container {
+  position: relative;
+  overflow: hidden;
+}
+
+@define-mixin form-item {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: em(10) em(20);
+  appearance: none;
+  background: #fff;
+  border-radius: 0;
+}
+
+
+.input-field {
+  @mixin form-item-container;
+}
+
+  .input-hint {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: em(50);
+    background: #ccc url(../icons/chevron-down.svg) no-repeat 50% 50%;
+    transition: background .2s;
+
+    &:hover {
+      background-color: #bbb;
+    }
+
+    &--search {
+      background-image: url(../icons/search.svg);
+    }
+
+  }
+
+    .input-hint__field {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      border: 0;
+      background: none;
+      color: transparent;
+    }
 
 
 /* Input
@@ -22,49 +84,55 @@ input {
 
   &:checked {}
 
-  &[type='text'] {}
+  &[type='text'] {
+    @mixin form-item-container;
+    @mixin form-item;
+  }
 
-  &[type='radio'] {}
+  &[type='radio'],
+  &[type='checkbox'] {
+    height: em(15);
+    width: em(15);
+    border: 1px solid;
+    appearance: none;
+    transition:
+      border .2s,
+      background .2s;
 
-  &[type='checkbox'] {}
+    &:checked {
+      background: currentColor;
+    }
+
+  }
+
+  &[type='radio'] {
+    border-radius: 100%;
+  }
 
   &[type='range'] {}
 
 }
 
 
+/* Textarea
+// ------------------------------------- */
+
+textarea {
+  @mixin form-item-container;
+  @mixin form-item;
+}
+
+
 /* Select
 // ------------------------------------- */
 
-.select-field {
-  position: relative;
-  overflow: hidden;
-
-  &:after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: em(50);
-    content: '';
-    pointer-events: none;
-    background: #ccc url(../icons/chevron-down.svg) no-repeat 50% 50%;
-  }
-
+select {
+  @mixin form-item;
 }
-
-  select {
-    width: 100%;
-    border: 1px solid #ccc;
-    padding: em(10) em(20);
-    appearance: none;
-    background: #fff;
-    border-radius: 0;
-  }
 
 
 /* ========================================
 // Unique Form Elements
 // ===================================== */
 
-.search {}
+.site-search {}

@@ -1,7 +1,3 @@
-/* ========================================
-// List Reset
-// ===================================== */
-
 @define-mixin list-reset {
   margin-top: 0;
   margin-bottom: 0;

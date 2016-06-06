@@ -1,0 +1,62 @@
+/* ========================================
+// Silk Harmonica
+// ===================================== */
+
+/* When do accordions become harmonicas? */
+$accordionToHarmonica: 900px;
+
+.silk-harmonica {
+
+  &--expanded {
+
+    @media(min-width: $accordionToHarmonica) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+  }
+
+}
+
+  .silk-harmonica__header {
+    cursor: pointer;
+
+    .silk-harmonica--expanded & {
+
+      @media(min-width: $accordionToHarmonica) {
+        flex: 1 auto;
+        order: 1;
+      }
+
+    }
+
+    &:hover {}
+
+    &.active {
+
+      + * {
+        display: block;
+      }
+
+    }
+
+    > * {
+      margin: 0;
+      padding: em(10) 0;
+    }
+
+  }
+
+  .silk-harmonica__content {
+    display: none;
+
+    .silk-harmonica--expanded & {
+
+      @media(min-width: $accordionToHarmonica) {
+        order: 2;
+        width: 100%;
+      }
+
+    }
+
+  }

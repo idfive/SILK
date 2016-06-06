@@ -8,7 +8,7 @@
 
     > li {
 
-      @mixin media $silk-drawer-disappears {
+      @mixin media $silkDrawerDisappears {
         position: relative;
         display: inline-block;
       }
@@ -17,7 +17,7 @@
 
         > ul {
 
-          @mixin media $silk-drawer-disappears {
+          @mixin media $silkDrawerDisappears {
             display: block;
           }
 
@@ -26,6 +26,13 @@
       }
 
       > a {}
+
+      ul {
+        background: #fff;
+        
+        a {}
+
+      }
 
     }
 

@@ -9,12 +9,12 @@
 }
 
 html {
-  font-family: $content-family;
+  font-family: $sansSerif;
   background: none;
-  color: $content-color;
+  color: $bodyColor;
 }
 
   body {
-    font-size: rem($content-size);
-    line-height: nu($content-line, $content-size);
+    font-size: rem($bodySize);
+    line-height: nu($bodyLine, $bodySize);
   }

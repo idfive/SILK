@@ -12,9 +12,9 @@
 .site__header {
 
   .compartment {
-    padding: em(20) em(30);
+    padding: em(18) em(30);
 
-    @mixin media $silk-drawer-disappears {
+    @mixin media $silkDrawerDisappears {
       display: flex;
     }
 
@@ -39,6 +39,12 @@
 
 .drawer__trigger {
   right: em(10);
+
+  &:before,
+  &:after {
+    color: $m1;
+  }
+
 }
 
 
@@ -48,7 +54,7 @@
 
 .nav-main {
 
-  @mixin media $silk-drawer-disappears {
+  @mixin media $silkDrawerDisappears {
     padding-left: em(10);
     text-align: right;
   }
@@ -75,9 +81,9 @@
   }
 
     a {
-      color: #00A98D;
+      color: $m1;
 
-      @mixin media $silk-drawer-disappears {
+      @mixin media $silkDrawerDisappears {
         padding: 0 em(10);
       }
 
@@ -96,7 +102,7 @@
     padding: em(60) em(30);
 
     &:nth-of-type(odd) {
-      background: #00A98D;
+      background: $m1;
       color: #fff;
 
       a {
@@ -114,7 +120,7 @@
 }
 
 a {
-  color: #00A98D;
+  color: $m1;
 }
 
 
@@ -127,8 +133,8 @@ a {
 .silk-tabs__nav {
 
   a {
-    border-right: 1px solid #00A98D;
-    border-bottom: 1px solid #00A98D;
+    border-right: 1px solid $m1;
+    border-bottom: 1px solid $m1;
     background: rgba(255, 255, 255, .15);
 
     &:hover {
@@ -210,7 +216,7 @@ a {
     counter-increment: swift;
 
     &:before {
-      @mixin h2;
+      @mixin h1;
       content: counter(swift);
     }
 
@@ -242,6 +248,40 @@ a {
 
 }
 
+  .swift-controls {
+
+    button {
+      padding: em(10) em(5);
+      font-size: 150%;
+    }
+
+      svg {
+        fill: #fff;
+      }
+
+  }
+
+  .swift-pager {
+
+    span {
+      height: em(12);
+      width: em(12);
+      margin: em(5);
+      border-radius: 100%;
+      box-shadow: inset 0 0 0 em(2) #fff;
+
+      &:hover {
+        background: rgba(255, 255, 255, .5);
+      }
+
+      &.active {
+        background: #fff;
+      }
+
+    }
+
+  }
+
 @keyframes burst {
 
   100% {
@@ -253,6 +293,46 @@ a {
 
 }
 
+
+/* ========================================
+// Silk Filters
+// ===================================== */
+
+.pagination__control {
+  font-size: 150%;
+
+  svg  {
+    fill: #fff;
+  }
+
+}
+
+
+/* ========================================
+// Silk Buttons
+// ===================================== */
+
+.button {
+  font-size: em(14);
+
+  @mixin media $medium {
+    font-size: em(18);
+  }
+
+}
+
+
+/* ========================================
+// Silk Modal
+// ===================================== */
+
+.silk-modal {
+
+  .silk-modal__details {
+    color: $bodyColor;
+  }
+
+}
 
 /* ========================================
 // Silk Footer

@@ -1,118 +1,149 @@
-var site = (function($) {
+/* ========================================
+// Social Settings
+// ===================================== */
 
-  var idfive = {};
+var instagramConfig = {
+  get: 'user',
+  userId: '1288755802',
+  accessToken: '31863373.d8d1d50.272aa08df34a412aa98bcfd58f8e49d1',
+  target: 'instagram-feed',
+  limit: 1,
+  resolution: 'standard_resolution',
+  sortBy: 'most-recent',
+  template: '<li class="instagram-item"><a class="instagram-item__link" href="{{link}}"><img class="instagram-item__image" src="{{image}}" alt="{{caption}}"/><div class="instagram-item__details"><p class="instagram-item__caption">{{caption}}</p></div></a></li>'
+};
 
-  var instagramConfig = {
-    get: 'user',
-    userId: '1288755802',
-    clientId: 'f74cfb0933924430b7013270b4fda066',
-    target: 'instagram-feed',
-    limit: 1,
-    resolution: 'standard_resolution',
-    sortBy: 'most-recent',
-    template: '<li class="instagram-item"><a class="instagram-item__link" href="{{link}}"><img class="instagram-item__image" src="{{image}}" alt="{{caption}}"/><div class="instagram-item__details"><p class="instagram-item__caption">{{caption}}</p></div></a></li>'
-  };
+var twitterConfig = {
+  id: '347099293930377217',
+  domId: 'twitter-feed',
+  maxTweets: 1,
+  enableLinks: true,
+  showInteraction: false,
+  showUser: false,
+  showTime: false,
+  lang: 'en',
+  customCallback: twitterTemplate,
+};
 
-  var twitterConfig = {
-    id: '347099293930377217',
-    domId: 'twitter-feed',
-    maxTweets: 1,
-    enableLinks: true,
-    showInteraction: false,
-    showUser: false,
-    showTime: false,
-    lang: 'en',
-    customCallback: twitterTemplate,
-  };
 
-  idfive.domReady = function() {
-    idfive.readySilk();
-    idfive.hero();
-    idfive.slideshow();
-    idfive.instagram();
-    idfive.twitter();
-  };
+/* ========================================
+// Site Functions
+// ===================================== */
 
-  idfive.readySilk = function() {
+init();
 
-    $('.silk-accordion').silkaccordion();
-    $('.silk-nav').silknav();
-    $('.silk-table').silktable();
-    $('.silk-tabs').silktabs();
+function init() {
 
-  }
+  silkNav();
+  heroes();
+  harmonicas();
+  modals();
+  slideshows();
+  triggers();
+  instagram();
+  twitter();
 
-  idfive.hero = function() {
+}
 
-    var hero = document.querySelectorAll('.hero img');
+function heroes() {
 
-    if(document.body.contains(hero[0])) {
+  var hero = document.querySelectorAll('.hero img');
 
-      for(var i = 0; i < hero.length; i++) {
+  if(document.body.contains(hero[0])) {
 
-        var image = hero[i].getAttribute('src');
-        hero[i].parentNode.style.backgroundImage = 'url(' + image + ')';
+    for(var i = 0; i < hero.length; i++) {
 
-      }
+      var image = hero[i].getAttribute('src');
+      hero[i].parentNode.style.backgroundImage = 'url(' + image + ')';
 
-    }
-
-  };
-
-  idfive.slideshow = function() {
-
-    var swiftSlide = document.querySelector('.swift-slide');
-
-    if(document.body.contains(swiftSlide)) {
-
-      swift({
-        container: '.swift-slide',
-        elements: 'li'
-      });
-
-    }
-
-  };
-
-  idfive.instagram = function() {
-
-    var instagramFeed = document.querySelector('#instagram-feed');
-
-    if(document.body.contains(instagramFeed)) {
-      var feed = new Instafeed(instagramConfig);
-      feed.run();
-    }
-
-  };
-
-  idfive.twitter = function() {
-
-    var twitterFeed = document.querySelector('#twitter-feed');
-
-    if(document.body.contains(twitterFeed)) {
-      twitterFetcher.fetch(twitterConfig);
-    }
-
-  };
-
-  function twitterTemplate(tweets) {
-
-    var element = document.getElementById('twitter-feed');
-    var i = 0;
-
-    while(i < tweets.length) {
-      element.innerHTML += '<li class="twitter-item">' + tweets[i] + '</li>';
-      i++;
     }
 
   }
 
-  return idfive;
+}
 
-})(jQuery);
+function harmonicas() {
 
-(function($){
+  harmonica({
+    container: '.silk-harmonica--condensed',
+    header: '.silk-harmonica__header'
+  });
 
-  site.domReady();
+  harmonica({
+    container: '.silk-harmonica--expanded',
+    header: '.silk-harmonica__header'
+  });
 
-})(jQuery);
+}
+
+function slideshows() {
+
+  var swiftSlide = document.querySelector('.swift-slide');
+
+  if(document.body.contains(swiftSlide)) {
+
+    swift({
+      container: '.swift-slide',
+      elements: 'li',
+      prevSymbol: 'chevron-left',
+      nextSymbol: 'chevron-right'
+    });
+
+  }
+
+}
+
+function modals() {
+
+  var modal = document.querySelector('.silk-modal');
+
+  if(document.body.contains(modal)) {
+    silkModal();
+  }
+
+}
+
+function triggers() {
+
+  triggerParent({
+    trigger: '.silk-modal__trigger'
+  });
+
+  triggerParent({
+    trigger: '.nav-tier__trigger'
+  });
+
+}
+
+function instagram() {
+
+  var instagramFeed = document.querySelector('#instagram-feed');
+
+  if(document.body.contains(instagramFeed)) {
+    var feed = new Instafeed(instagramConfig);
+    feed.run();
+  }
+
+}
+
+function twitter() {
+
+  var twitterFeed = document.querySelector('#twitter-feed');
+
+  if(document.body.contains(twitterFeed)) {
+    twitterFetcher.fetch(twitterConfig);
+  }
+
+}
+
+function twitterTemplate(tweets) {
+
+  var element = document.getElementById('twitter-feed');
+  var i = 0;
+
+  while(i < tweets.length) {
+    element.innerHTML += '<li class="twitter-item">' + tweets[i] + '</li>';
+    i++;
+  }
+
+}

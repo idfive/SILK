@@ -3,7 +3,9 @@
 // ========================================
 
 var gulp = require('gulp'),
+    configuration = require('./configuration'),
     browserSync = require('browser-sync').create(),
+    changed = require('gulp-changed'),
     jade = require('gulp-jade'),
     postcss = require('gulp-postcss'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -27,7 +29,7 @@ var paths = {
 
   jade: {
     src:  'assets/jade/pages/*.jade',
-    dest: '',
+    dest: './',
   },
   postcss: {
     src:  'assets/postcss/**/*.css',
@@ -56,6 +58,11 @@ var paths = {
 gulp.task('jade', ['sprite'], function() {
 
   return gulp.src(paths.jade.src)
+    .pipe(changed(
+      paths.jade.dest, {
+        extension: '.html'
+      }
+    ))
     .pipe(jade({
       pretty: true
     }))
@@ -68,11 +75,6 @@ gulp.task('jade', ['sprite'], function() {
 // ========================================
 // Compile Sass / Examine Output
 // ========================================
-
-var body = {
-  size: 16,
-  line: 24
-}
 
 gulp.task('postcss', function() {
 
@@ -96,7 +98,9 @@ gulp.task('postcss', function() {
       require('postcss-simple-grid')({
         separator: '-'
       }),
-      require('postcss-simple-vars'),
+      require('postcss-simple-vars')({
+        variables: configuration
+      }),
       require('postcss-functions')({
         functions: {
           nu: function(value, additionalValue) {
@@ -105,7 +109,7 @@ gulp.task('postcss', function() {
           },
           em: function(value, context) {
             if(context == null) {
-              context = body.size;
+              context = configuration.bodySize;
             }
             var emValue = value / context;
             return emValue + 'em';
@@ -235,6 +239,7 @@ gulp.task('browser-sync', function() {
 
   browserSync.init({
     logPrefix: 'idfive',
+    notify: false,
     server: {
       baseDir: './',
     }
@@ -250,7 +255,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function() {
 
   gulp.watch('assets/jade/**/*.jade', ['jade']);
-  gulp.watch(paths.postcss.src, ['postcss', 'minify-css', 'jade']);
+  gulp.watch(paths.postcss.src, ['postcss', 'minify-css']);
   gulp.watch(paths.js.src, ['js']);
 
 });

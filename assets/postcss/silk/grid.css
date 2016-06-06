@@ -8,11 +8,36 @@
     @mixin clear;
   }
 
+  &--20 {
+    margin: 0 em(-10);
+  }
+
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+
+  &--centered {
+    align-content: center;
+    align-items: center;
+  }
+
+  &--justified {
+    justify-content: space-around;
+  }
+
 }
 
   [class^='col-'] {
     float: left;
     width: 100%;
+
+    .grid--20 & {
+      margin-bottom: em(20);
+      padding: 0 em(10);
+    }
+
   }
 
   @media (min-width: $mini) {

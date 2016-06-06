@@ -3,15 +3,23 @@
 // ===================================== */
 
 .symbol {
-
-  /* Silk Nav Symbols */
+  transition:
+    fill .2s,
+    stroke .2s;
 
   &-home,
   &-undo,
   &-chevron-left,
-  &-chevron-right {
+  &-chevron-right,
+  &-search,
+  &-close {
     height: em(16);
     width: em(16);
+  }
+
+  &-play {
+    height: em(65);
+    width: em(65);
   }
 
 }

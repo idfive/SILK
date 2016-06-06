@@ -8,7 +8,7 @@
   padding-left: 0;
   list-style: none;
 
-  & li {
+  li {
     position: absolute;
     top: 0;
     left: 0;
@@ -37,31 +37,19 @@
 // Swift Controls
 // ===================================== */
 
-.controls {
+.swift-controls {
   user-select: none;
 
-  & button {
+  button {
     border: 0;
     outline: 0;
     background: none;
 
     /* Previous Button */
-    &:first-child {
-
-      &:before {
-        content: '<';
-      }
-
-    }
+    &:first-child {}
 
     /* Next Button */
-    &:last-child {
-
-      &:before {
-        content: '>';
-      }
-
-    }
+    &:last-child {}
 
     &:hover {}
 
@@ -74,10 +62,10 @@
 // Swift Pager
 // ===================================== */
 
-.pager {
+.swift-pager {
   user-select: none;
 
-  & span {
+  span {
     display: inline-block;
     cursor: pointer;
 
