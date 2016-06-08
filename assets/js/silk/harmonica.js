@@ -4,12 +4,16 @@ function harmonica(parameters) {
   var headings = document.querySelectorAll(parameters.container + ' ' + parameters.header);
   var currentNote;
 
-  for (var i = 0; i < headings.length; i++) {
-    headings[i].addEventListener('click', toggleNote, false);
+  if(document.body.contains(container)) {
+
+    for (var i = 0; i < headings.length; i++) {
+      headings[i].addEventListener('click', toggleNote, false);
+    }
+
+    headings[0].click();
+
   }
-
-  headings[0].click();
-
+  
   function clearClasses() {
 
     for (var i = 0; i < headings.length; i++) {

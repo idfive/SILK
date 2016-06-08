@@ -1,0 +1,37 @@
+//- ========================================
+//- Form Inclusion
+//- ========================================
+
+mixin input(placeholder, hintType)
+  .input-field
+    input(
+      type="text"
+      placeholder="#{placeholder}"
+    )
+    .input-hint(class="input-hint--#{hintType}")
+      input.input-hint__field(type="#{hintType}")
+
+mixin select(...options)
+  .input-field
+    select
+      each option in options
+        option(value="#{option}") #{option}
+    span.input-hint.input-hint--select
+
+mixin radio(id, value)
+  input(
+    type="radio" 
+    name="#{id}" 
+    id="#{id}" 
+    value="#{value}"
+  )
+  label(for="#{id}") #{value}
+  
+mixin checkbox(id, value)
+  input(
+    type="checkbox" 
+    name="#{id}" 
+    id="#{id}" 
+    value="#{value}"
+  )
+  label(for="#{id}") #{value}

@@ -36,6 +36,8 @@ function silkNav() {
 
   function startOver() {
 
+    nav.classList.remove('silk-nav--active');
+
     for (var i = 0; i < nestedNavs.length; i++) {
       nestedNavs[i].classList.remove('silk-nav__nest--active')
     }
@@ -48,6 +50,10 @@ function silkNav() {
 
     history[history.length - 1].nextSibling.classList.remove('silk-nav__nest--active');
     history.pop();
+
+    if(history.length == 0) {
+      startOver();
+    }
 
   }
 

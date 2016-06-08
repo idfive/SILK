@@ -1431,12 +1431,12 @@ table tr:nth-of-type(even) td {
     display: none;
     overflow: scroll;
     height: 90%;
-    height: -webkit-calc(100% - 2.5em);
-    height: calc(100% - 2.5em);
+    height: -webkit-calc(100% - 5em);
+    height: calc(100% - 5em);
     max-width: 81.25em;
     width: 100%;
-    width: -webkit-calc(100% - 2.5em);
-    width: calc(100% - 2.5em);
+    width: -webkit-calc(100% - 5em);
+    width: calc(100% - 5em);
     padding: 1.25em;
     background: #fff;
     -webkit-box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, .25);
@@ -1448,10 +1448,10 @@ table tr:nth-of-type(even) td {
   }
 .event-triggered .silk-modal__details {
   display: block;
-  -webkit-animation: fade-in .2s forwards;
-  animation: fade-in .2s forwards;
+  -webkit-animation: animate-modal .2s forwards;
+  animation: animate-modal .2s forwards;
 }
-@-webkit-keyframes fade-in {
+@-webkit-keyframes animate-modal {
 
     0% {
       opacity: 0;
@@ -1462,7 +1462,7 @@ table tr:nth-of-type(even) td {
     }
 
   }
-@keyframes fade-in {
+@keyframes animate-modal {
 
     0% {
       opacity: 0;
@@ -1476,9 +1476,18 @@ table tr:nth-of-type(even) td {
 .silk-modal__trigger--close {
       margin-bottom: 0.625em;
       cursor: pointer;
+      -webkit-transition: color .2s;
+      transition: color .2s;
 
     }
+.silk-modal__trigger--close svg {
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+}
 .silk-modal__trigger--close span {
+  display: inline-block;
+  vertical-align: middle;
   margin-left: 0.625em;
 }
 /* ========================================
@@ -1581,6 +1590,11 @@ table tr:nth-of-type(even) td {
     display: none;
   }
 }
+.silk-nav__trigger {
+    border: 0;
+    background: none;
+
+  }
 @media (min-width: 1000px){
   .silk-nav__trigger{
     display: none;
@@ -1594,6 +1608,10 @@ table tr:nth-of-type(even) td {
 }
 .silk-nav--active .silk-nav__trigger--revert, .silk-nav--active .silk-nav__trigger--reverse {
   opacity: 1;
+}
+.silk-nav__trigger svg {
+  display: inline-block;
+  vertical-align: middle;
 }
 /* ========================================
 // Swift Slide
@@ -1916,7 +1934,10 @@ label {
 .input-hint:hover {
   background-color: #bbb;
 }
-.input-hint--search {
+.input-hint--select {
+  pointer-events: none;
+}
+.input-hint--submit {
   background-image: url(../icons/search.svg);
 }
 .input-hint__field {
@@ -1926,6 +1947,7 @@ label {
       height: 100%;
       width: 100%;
       border: 0;
+      padding: 0;
       background: none;
       color: transparent;
     }
@@ -1950,6 +1972,7 @@ input[type='radio'],
   height: 0.9375em;
   width: 0.9375em;
   border: 1px solid;
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1991,6 +2014,11 @@ select {
   appearance: none;
   background: #fff;
   border-radius: 0;
+  cursor: pointer;
+
+}
+select:hover + .input-hint {
+  background-color: #bbb;
 }
 /* ========================================
 // Unique Form Elements
@@ -2032,7 +2060,7 @@ img.full-width {
   display: block;
   width: 100%;
 }
-.hero img {
+.hero > img {
   display: none;
 }
 /* Iframe

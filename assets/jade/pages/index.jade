@@ -46,47 +46,26 @@ block content
       h2 Forms
       form.grid.grid--20
         .col-large-6.col-aldnoah-4
-          .input-field.input-field--empty
-            input(
-              type="text"
-              placeholder="Enter Search Keywords"
-            )
-            .input-hint.input-hint--search
-              input.input-hint__field(type="submit")
+          +input("Enter Search Keywords", "submit")
         .col-large-6.col-aldnoah-4
-          .input-field
-            select(required).select--interior.select--full
-              option(value="What can we do for you? (required)") What can we do for you?
-              option(value="Tell me more about idfive") Tell me more about idfive
-              option(value="Teach me to love again") Teach me to love again
-            span.input-hint
+          +select("Select From Options", "Who", "What", "Why", "Where", "When")
         .col-aldnoah-4
-          input.input--interior.input--full(
+          input(
             placeholder="Name (required)"
             name="name"
             type="text"
             required
           )
         .col-flush
-          textarea.textarea--interior(
+          textarea(
             placeholder="Tell us more (optional):"
             name="comments"
             rows="8"
           )
         .col-flush
           fieldset
-            input(
-              type="radio" 
-              name="radio-input" 
-              value="twoday"
-            )
-            label(for="radio-input") Radio Input
-            input(
-              type="checkbox" 
-              name="checkbox-input" 
-              value="twoday"
-            )
-            label(for="checkbox-input") Checkbox Input
+            +radio("radio-input", "Radio Input")
+            +radio("checkbox-input", "Checkbox Input")
         .col-flush
           input.button(
             type="submit"

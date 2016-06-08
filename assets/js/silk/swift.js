@@ -3,41 +3,45 @@ function swift(parameters) {
   var container = document.querySelector(parameters.container);
   var elements = document.querySelectorAll(parameters.container + ' ' + parameters.elements);
 
-  var controller = document.createElement('div');
-  controller.classList.add('swift-controls');
-  container.appendChild(controller);
+  if(document.body.contains(container)) {
 
-  var prev = document.createElement('button');
-  prev.addEventListener('click', previousSlide, false);
-  prev.classList.add('swift-control', 'swift-prev');
-  prev.innerHTML = '<svg class="symbol symbol-' + parameters.prevSymbol + '"><use xlink:href="#' + parameters.prevSymbol + '"></use></svg>';
-  controller.appendChild(prev);
+    var controller = document.createElement('div');
+    controller.classList.add('swift-controls');
+    container.appendChild(controller);
 
-  var next = document.createElement('button');
-  next.addEventListener('click', nextSlide, false);
-  next.classList.add('swift-control', 'swift-next');
-  next.innerHTML = '<svg class="symbol symbol-' + parameters.nextSymbol + '"><use xlink:href="#' + parameters.nextSymbol + '"></use></svg>';
-  controller.appendChild(next);
+    var prev = document.createElement('button');
+    prev.addEventListener('click', previousSlide, false);
+    prev.classList.add('swift-control', 'swift-prev');
+    prev.innerHTML = '<svg class="symbol symbol-' + parameters.prevSymbol + '"><use xlink:href="#' + parameters.prevSymbol + '"></use></svg>';
+    controller.appendChild(prev);
 
-  var currentSlide = 1;
+    var next = document.createElement('button');
+    next.addEventListener('click', nextSlide, false);
+    next.classList.add('swift-control', 'swift-next');
+    next.innerHTML = '<svg class="symbol symbol-' + parameters.nextSymbol + '"><use xlink:href="#' + parameters.nextSymbol + '"></use></svg>';
+    controller.appendChild(next);
 
-  var pager = document.createElement('div');
-  pager.classList.add('swift-pager');
-  container.appendChild(pager);
+    var currentSlide = 1;
 
-  var pages = [];
+    var pager = document.createElement('div');
+    pager.classList.add('swift-pager');
+    container.appendChild(pager);
 
-  for (var i = 0; i < elements.length; i++) {
+    var pages = [];
 
-    pages.push(document.createElement('span'));
+    for (var i = 0; i < elements.length; i++) {
 
-    pager.appendChild(pages[i]);
+      pages.push(document.createElement('span'));
 
-    pages[i].addEventListener('click', slide.bind(null, i), false);
+      pager.appendChild(pages[i]);
+
+      pages[i].addEventListener('click', slide.bind(null, i), false);
+
+    }
+
+    pages[currentSlide].click();
 
   }
-
-  pages[currentSlide].click();
 
   function clearClasses() {
 

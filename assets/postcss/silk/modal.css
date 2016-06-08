@@ -35,10 +35,10 @@
     display: none;
     overflow: scroll;
     height: 90%;
-    height: calc(100% - em(40));
+    height: calc(100% - em(80));
     max-width: em(1300);
     width: 100%;
-    width: calc(100% - em(40));
+    width: calc(100% - em(80));
     padding: em(20);
     background: #fff;
     box-shadow: 0 0 em(8) 0 rgba(0, 0, 0, .25);
@@ -46,12 +46,12 @@
 
     .event-triggered & {
       display: block;
-      animation: fade-in .2s forwards;
+      animation: animate-modal .2s forwards;
     }
 
   }
 
-  @keyframes fade-in {
+  @keyframes animate-modal {
 
     0% {
       opacity: 0;
@@ -66,8 +66,17 @@
     .silk-modal__trigger--close {
       margin-bottom: em(10);
       cursor: pointer;
+      transition: color .2s;
+
+      svg {
+        display: inline-block;
+        vertical-align: middle;
+        fill: currentColor;
+      }
 
       span {
+        display: inline-block;
+        vertical-align: middle;
         margin-left: em(10);
       }
 

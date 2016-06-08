@@ -93,6 +93,8 @@
 }
 
   .silk-nav__trigger {
+    border: 0;
+    background: none;
 
     @mixin media $silkDrawerDisappears {
       display: none;
@@ -107,6 +109,11 @@
         opacity: 1;
       }
 
+    }
+
+    svg {
+      display: inline-block;
+      vertical-align: middle;
     }
 
   }

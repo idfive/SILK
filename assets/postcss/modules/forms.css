@@ -57,7 +57,11 @@ label {
       background-color: #bbb;
     }
 
-    &--search {
+    &--select {
+      pointer-events: none;
+    }
+
+    &--submit {
       background-image: url(../icons/search.svg);
     }
 
@@ -70,6 +74,7 @@ label {
       height: 100%;
       width: 100%;
       border: 0;
+      padding: 0;
       background: none;
       color: transparent;
     }
@@ -94,6 +99,7 @@ input {
     height: em(15);
     width: em(15);
     border: 1px solid;
+    cursor: pointer;
     appearance: none;
     transition:
       border .2s,
@@ -128,6 +134,16 @@ textarea {
 
 select {
   @mixin form-item;
+  cursor: pointer;
+
+  &:hover {
+
+    + .input-hint {
+      background-color: #bbb;
+    }
+
+  }
+
 }
 
 

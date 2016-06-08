@@ -5,13 +5,5 @@
 button.drawer__trigger(aria-hidden="true")
 
 nav.silk-nav.nav-main.drawer
-  .silk-nav__controls
-    a.silk-nav__trigger.silk-nav__trigger--home(href="/")
-      +symbol("home")
-      span Home
-    button.silk-nav__trigger.silk-nav__trigger--revert
-      +symbol("undo")
-      span Main Menu
-    button.silk-nav__trigger.silk-nav__trigger--reverse
-      +symbol("chevron-left")
+  include silk-nav-controls.jade
   include nav-main.jade

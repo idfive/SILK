@@ -150,34 +150,37 @@
           <h2>Forms</h2>
           <form class="grid grid--20">
             <div class="col-large-6 col-aldnoah-4">
-              <div class="input-field input-field--empty">
-                <input type="text" placeholder="Enter Search Keywords">
-                <div class="input-hint input-hint--search">
-                  <input type="submit" class="input-hint__field">
+                <div class="input-field">
+                  <input type="text" placeholder="Enter Search Keywords">
+                  <div class="input-hint input-hint--submit">
+                    <input type="submit" class="input-hint__field">
+                  </div>
                 </div>
-              </div>
             </div>
             <div class="col-large-6 col-aldnoah-4">
-              <div class="input-field">
-                <select required class="select--interior select--full">
-                  <option value="What can we do for you? (required)">What can we do for you?</option>
-                  <option value="Tell me more about idfive">Tell me more about idfive</option>
-                  <option value="Teach me to love again">Teach me to love again</option>
-                </select><span class="input-hint"></span>
-              </div>
+                <div class="input-field">
+                  <select>
+                    <option value="Select From Options">Select From Options</option>
+                    <option value="Who">Who</option>
+                    <option value="What">What</option>
+                    <option value="Why">Why</option>
+                    <option value="Where">Where</option>
+                    <option value="When">When</option>
+                  </select><span class="input-hint input-hint--select"></span>
+                </div>
             </div>
             <div class="col-aldnoah-4">
-              <input placeholder="Name (required)" name="name" type="text" required class="input--interior input--full">
+              <input placeholder="Name (required)" name="name" type="text" required>
             </div>
             <div class="col-flush">
-              <textarea placeholder="Tell us more (optional):" name="comments" rows="8" class="textarea--interior"></textarea>
+              <textarea placeholder="Tell us more (optional):" name="comments" rows="8"></textarea>
             </div>
             <div class="col-flush">
               <fieldset>
-                <input type="radio" name="radio-input" value="twoday">
-                <label for="radio-input">Radio Input</label>
-                <input type="checkbox" name="checkbox-input" value="twoday">
-                <label for="checkbox-input">Checkbox Input</label>
+                  <input type="radio" name="radio-input" id="radio-input" value="Radio Input">
+                  <label for="radio-input">Radio Input</label>
+                  <input type="radio" name="checkbox-input" id="checkbox-input" value="Checkbox Input">
+                  <label for="checkbox-input">Checkbox Input</label>
               </fieldset>
             </div>
             <div class="col-flush">

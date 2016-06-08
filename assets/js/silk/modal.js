@@ -5,8 +5,12 @@ function silkModal() {
   var videoBottles = document.querySelectorAll('.silk-modal__bottle');
   var videos = document.querySelectorAll('.silk-modal__bottle iframe');
 
-  for (var i = 0; i < closeTriggers.length; i++) {
-    closeTriggers[i].addEventListener('click', closeModal, false);
+  if(document.body.contains(modals[0])) {
+
+    for (var i = 0; i < closeTriggers.length; i++) {
+      closeTriggers[i].addEventListener('click', closeModal, false);
+    }
+
   }
 
   function closeModal() {

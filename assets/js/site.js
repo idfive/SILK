@@ -47,7 +47,7 @@ function init() {
 
 function heroes() {
 
-  var hero = document.querySelectorAll('.hero img');
+  var hero = document.querySelectorAll('.hero > img');
 
   if(document.body.contains(hero[0])) {
 
