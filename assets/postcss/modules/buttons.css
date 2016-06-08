@@ -8,6 +8,7 @@
   margin: em(5) em(10) em(5) 0;
   padding: em(10) em(20);
   cursor: pointer;
+  text-align: center;
   text-decoration: none;
   background: $m1;
   color: #fff;

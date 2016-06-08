@@ -34,8 +34,32 @@ $accordionToHarmonica: 900px;
 
     &.active {
 
+      .symbol {
+
+        &-plus {
+          display: none;
+        }
+
+        &-minus {
+          display: block;
+        }
+
+      }
+
       + * {
         display: block;
+      }
+
+    }
+
+    .symbol {
+
+      &-plus {
+        display: block;
+      }
+
+      &-minus {
+        display: none;
       }
 
     }
