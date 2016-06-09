@@ -2,7 +2,10 @@
 // Site Footer
 // ===================================== */
 
-.site__footer {}
+.site__footer {
+  position: relative;
+  overflow: hidden;
+}
 
   .lace {}
 

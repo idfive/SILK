@@ -1,5 +1,5 @@
 /* ========================================
-// Root Layer
+// Index
 // ===================================== */
 
 *,
@@ -10,6 +10,7 @@
 
 html {
   font-family: $sansSerif;
+  -webkit-font-smoothing: antialiased;
   background: none;
   color: $bodyColor;
 }

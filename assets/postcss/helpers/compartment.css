@@ -6,4 +6,9 @@
 
 .compartment {
   @mixin compartment;
+
+  &--nested {
+    max-width: rem(980);
+  }
+
 }

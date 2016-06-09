@@ -95,11 +95,7 @@ function slideshows() {
 
 function modals() {
 
-  var modal = document.querySelector('.silk-modal');
-
-  if(document.body.contains(modal)) {
-    silkModal();
-  }
+  silkModal();
 
 }
 

@@ -355,6 +355,10 @@ th {
   max-width: 73.75rem;
   margin-right: auto;
   margin-left: auto;
+
+}
+.compartment--nested {
+  max-width: 61.25rem;
 }
 .cover {
   position: absolute;
@@ -1730,20 +1734,20 @@ table tr:nth-of-type(even) td {
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity .3s,
-      visibility .3s,
-      -webkit-transform .3s;
-  transition: opacity .3s,
-      visibility .3s,
-      -webkit-transform .3s;
-  transition: opacity .3s,
-      visibility .3s,
-      transform .3s;
+  -webkit-transition: opacity .4s,
+      visibility .4s,
+      -webkit-transform .4s;
+  transition: opacity .4s,
+      visibility .4s,
+      -webkit-transform .4s;
+  transition: opacity .4s,
+      visibility .4s,
+      transform .4s;
   transition:
-      opacity .3s,
-      visibility .3s,
-      transform .3s,
-      -webkit-transform .3s;
+      opacity .4s,
+      visibility .4s,
+      transform .4s,
+      -webkit-transform .4s;
 }
 .swift-slide li.active {
   position: relative;
@@ -1803,7 +1807,7 @@ table tr:nth-of-type(even) td {
   }
 }
 /* ========================================
-// Root Layer
+// Index
 // ===================================== */
 *,
 *:before,
@@ -1813,6 +1817,7 @@ table tr:nth-of-type(even) td {
 }
 html {
   font-family: Open Sans;
+  -webkit-font-smoothing: antialiased;
   background: none;
   color: #333;
 }
@@ -1821,9 +1826,9 @@ body {
     line-height: 1.375;
   }
 /* ========================================
-// Content Section
+// Sections
 // ===================================== */
-.content {
+.section {
   padding: 1.25em;
 }
 /* ========================================
@@ -1837,7 +1842,10 @@ body {
 /* ========================================
 // Site Footer
 // ===================================== */
-.site__footer {}
+.site__footer {
+  position: relative;
+  overflow: hidden;
+}
 .lace {}
 .sole {}
 /* ========================================
@@ -1929,7 +1937,6 @@ nav a {
   border: 1px solid;
   background: none;
   color: #00A98D;
-
 }
 .button--hollow:hover {}
 /* ========================================
@@ -1946,7 +1953,8 @@ nav a {
 .site__logo {
   display: block;
   overflow: hidden;
-  max-width: 12.5em;
+  height: 1.5em;
+  max-width: 1.5em;
   width: 100%;
   white-space: nowrap;
   background: url('../images/logo.svg') no-repeat 0 50%;
@@ -2219,13 +2227,6 @@ video {}
     display: -ms-flexbox;
     display: flex;
   }
-}
-/* ========================================
-// Silk Logo
-// ===================================== */
-.site__logo {
-  height: 1.5em;
-  max-width: 1.5em;
 }
 /* ========================================
 // Silk Drawer Trigger
