@@ -17,6 +17,12 @@
     width: em(16);
   }
 
+  &-minus,
+  &-plus {
+    height: em(20);
+    width: em(20);
+  }
+
   &-play {
     height: em(65);
     width: em(65);

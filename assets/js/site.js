@@ -1,5 +1,5 @@
 /* ========================================
-// Social Settings
+// Social Configurations
 // ===================================== */
 
 var instagramConfig = {
@@ -11,7 +11,7 @@ var instagramConfig = {
   resolution: 'standard_resolution',
   sortBy: 'most-recent',
   template: '<li class="instagram-item"><a class="instagram-item__link" href="{{link}}"><img class="instagram-item__image" src="{{image}}" alt="{{caption}}"/><div class="instagram-item__details"><p class="instagram-item__caption">{{caption}}</p></div></a></li>'
-};
+}
 
 var twitterConfig = {
   id: '347099293930377217',
@@ -23,7 +23,7 @@ var twitterConfig = {
   showTime: false,
   lang: 'en',
   customCallback: twitterTemplate,
-};
+}
 
 
 /* ========================================
@@ -111,6 +111,16 @@ function triggers() {
 
   triggerParent({
     trigger: '.nav-tier__trigger'
+  });
+
+}
+
+function halfways() {
+
+  halfway({
+    element: '.compartment > section',
+    anchors: true,
+    offset: 0
   });
 
 }

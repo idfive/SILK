@@ -3,6 +3,7 @@
 //= include vendor/twitterFetcher.min.js
 
 // SILK Modules
+//= include silk/halfway.js
 //= include silk/harmonica.js
 //= include silk/modal.js
 //= include silk/nav.js

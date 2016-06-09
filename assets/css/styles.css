@@ -589,6 +589,11 @@ table tr:nth-of-type(even) td {
   height: 1em;
   width: 1em;
 }
+.symbol-minus,
+  .symbol-plus {
+  height: 1.25em;
+  width: 1.25em;
+}
 .symbol-play {
   height: 4.0625em;
   width: 4.0625em;
@@ -609,6 +614,7 @@ table tr:nth-of-type(even) td {
   }
 }
 .silk-harmonica__header {
+    position: relative;
     cursor: pointer;
 
   }
@@ -625,25 +631,38 @@ table tr:nth-of-type(even) td {
   }
 }
 .silk-harmonica__header:hover {}
-.silk-harmonica__header.active .symbol-plus {
-  display: none;
-}
-.silk-harmonica__header.active .symbol-minus {
-  display: block;
-}
 .silk-harmonica__header.active + * {
   display: block;
 }
-.silk-harmonica__header .symbol-plus {
-  display: block;
+.silk-harmonica__header > *:first-child {
+  margin-bottom: 0;
 }
-.silk-harmonica__header .symbol-minus {
+.silk-harmonica__bottle {
+      position: absolute;
+      top: 50%;
+      right: 1.25em;
+      -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+
+    }
+.active .silk-harmonica__bottle:first-of-type {
   display: none;
 }
-.silk-harmonica__header > * {
-  margin: 0;
-  padding: 0.625em 0;
+.silk-harmonica__bottle:last-child {
+  display: none;
 }
+.active .silk-harmonica__bottle:last-child {
+  display: block;
+}
+@media(min-width: 900px) {
+  .silk-harmonica--expanded .silk-harmonica__bottle{
+    visibility: hidden;
+  }
+}
+.silk-harmonica__symbol {
+        display: block;
+      }
 .silk-harmonica__content {
     display: none;
 
@@ -1396,6 +1415,74 @@ table tr:nth-of-type(even) td {
   }
 
   }
+/* ========================================
+// Silk Halfway
+// ===================================== */
+.anchor-set {
+  display: none;
+
+}
+@media (min-width: 1300px){
+  .anchor-set{
+    position: fixed;
+    top: 50%;
+    right: 0;
+    display: block;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+}
+.anchor-set__point {
+    position: relative;
+    display: block;
+    height: 1.25em;
+    width: 1.25em;
+    margin: 0.625em;
+    border: 1px solid #aaa;
+    border-radius: 100%;
+
+  }
+.anchor-set__point:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  content: '';
+  background: #ccc;
+  border-radius: inherit;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+.anchor-set__point.indicate-halfway:before {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+.anchor-set__label {
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      display: block;
+      margin-right: 0.625em;
+      white-space: nowrap;
+      opacity: 0;
+      -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      -webkit-transition: opacity .2s;
+      transition: opacity .2s;
+
+    }
+.anchor-set__point:hover .anchor-set__label {
+  opacity: 1;
+}
 /* ========================================
 // Silk Modal
 // ===================================== */
@@ -2197,13 +2284,22 @@ a {
 /* ========================================
 // Silk Accordion / Tabs
 // ===================================== */
-.silk-accordion__header a, .silk-tabs__header a, .silk-tabs__nav a {
-  border-right: 1px solid #00A98D;
-  border-bottom: 1px solid #00A98D;
-  background: rgba(255, 255, 255, .15);
+.silk-harmonica__header {
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
+  padding: 0.625em;
+  background: rgba(0, 0, 0, .05);
+  -webkit-transition: background .2s;
+  transition: background .2s;
+
 }
-.silk-accordion__header a:hover, .silk-tabs__header a:hover, .silk-tabs__nav a:hover {
-  background: rgba(255, 255, 255, .25);
+.silk-harmonica__header:hover {
+  background: rgba(0, 0, 0, .125);
+}
+.silk-harmonica__symbol {
+    fill: #fff;
+  }
+.silk-harmonica__content {
+  padding: 0.625em;
 }
 /* ========================================
 // Silk Collage
@@ -2409,6 +2505,21 @@ a {
 .silk-modal .silk-modal__details {
   color: #333;
 }
+/* ========================================
+// Silk Halfway
+// ===================================== */
+.anchor-set__point {
+  border-color: #00A98D;
+
+}
+.anchor-set__point:before {
+  background: #00A98D;
+}
+.anchor-set__label {
+    padding: 0.625em 1.25em;
+    background: #00A98D;
+    color: #fff;
+  }
 /* ========================================
 // Silk Footer
 // ===================================== */

@@ -128,21 +128,24 @@ a {
 // Silk Accordion / Tabs
 // ===================================== */
 
-.silk-accordion__header,
-.silk-tabs__header,
-.silk-tabs__nav {
+.silk-harmonica__header {
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
+  padding: em(10);
+  background: rgba(0, 0, 0, .05);
+  transition: background .2s;
 
-  a {
-    border-right: 1px solid $m1;
-    border-bottom: 1px solid $m1;
-    background: rgba(255, 255, 255, .15);
-
-    &:hover {
-      background: rgba(255, 255, 255, .25);
-    }
-
+  &:hover {
+    background: rgba(0, 0, 0, .125);
   }
 
+}
+
+  .silk-harmonica__symbol {
+    fill: #fff;
+  }
+
+.silk-harmonica__content {
+  padding: em(10);
 }
 
 
@@ -333,6 +336,27 @@ a {
   }
 
 }
+
+
+/* ========================================
+// Silk Halfway
+// ===================================== */
+
+.anchor-set__point {
+  border-color: $m1;
+
+  &:before {
+    background: $m1;
+  }
+
+}
+
+  .anchor-set__label {
+    padding: em(10) em(20);
+    background: $m1;
+    color: #fff;
+  }
+
 
 /* ========================================
 // Silk Footer
