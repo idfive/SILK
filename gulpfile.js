@@ -3,17 +3,22 @@
 // ========================================
 
 var gulp = require('gulp'),
+    configuration = require('./configuration'),
     browserSync = require('browser-sync').create(),
+    changed = require('gulp-changed'),
     jade = require('gulp-jade'),
     postcss = require('gulp-postcss'),
+    sourcemaps = require('gulp-sourcemaps'),
+    cssdepth = require('gulp-cssdepth-check'),
     cleanCss = require('gulp-clean-css'),
     rename = require('gulp-rename'),
     include = require('gulp-include'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
-    svgSprite = require('gulp-svg-sprite'),
+    svgStore = require('gulp-svgstore'),
     svgMin = require('gulp-svgmin'),
-    accessibility = require('gulp-accessibility');
+    accessibility = require('gulp-accessibility'),
+    a11y = require('gulp-a11y');
 
 
 // ========================================
@@ -24,7 +29,7 @@ var paths = {
 
   jade: {
     src:  'assets/jade/pages/*.jade',
-    dest: '',
+    dest: './',
   },
   postcss: {
     src:  'assets/postcss/**/*.css',
@@ -53,6 +58,11 @@ var paths = {
 gulp.task('jade', ['sprite'], function() {
 
   return gulp.src(paths.jade.src)
+    .pipe(changed(
+      paths.jade.dest, {
+        extension: '.html'
+      }
+    ))
     .pipe(jade({
       pretty: true
     }))
@@ -66,14 +76,10 @@ gulp.task('jade', ['sprite'], function() {
 // Compile Sass / Examine Output
 // ========================================
 
-var body = {
-  size: 16,
-  line: 24
-}
-
 gulp.task('postcss', function() {
 
   gulp.src('assets/postcss/styles.css')
+    .pipe(sourcemaps.init())
     .pipe(postcss([
       require('postcss-import'),
       require('postcss-mixins')({
@@ -92,7 +98,9 @@ gulp.task('postcss', function() {
       require('postcss-simple-grid')({
         separator: '-'
       }),
-      require('postcss-simple-vars'),
+      require('postcss-simple-vars')({
+        variables: configuration
+      }),
       require('postcss-functions')({
         functions: {
           nu: function(value, additionalValue) {
@@ -101,7 +109,7 @@ gulp.task('postcss', function() {
           },
           em: function(value, context) {
             if(context == null) {
-              context = body.size;
+              context = configuration.bodySize;
             }
             var emValue = value / context;
             return emValue + 'em';
@@ -117,8 +125,15 @@ gulp.task('postcss', function() {
         cascade: false
       })
     ]))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.postcss.dest))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream());
+
+});
+
+gulp.task('minify-css', function() {
+
+  gulp.src('assets/css/styles.css')
     .pipe(cleanCss({
       keepSpecialComments: 0,
       restructuring: false
@@ -127,7 +142,17 @@ gulp.task('postcss', function() {
       path.basename += '.min';
     }))
     .pipe(gulp.dest(paths.postcss.dest))
-    .pipe(browserSync.stream());
+
+});
+
+gulp.task('check-cssdepth', function() {
+
+  gulp.src('assets/css/styles.css')
+    .pipe(cssdepth({
+      'depthAllowed': 3,
+      'showStats': true,
+      'showSelectors': true
+    }));
 
 });
 
@@ -174,26 +199,14 @@ gulp.task('sprite', function() {
 
   return gulp.src(paths.sprite.src)
     .pipe(svgMin())
-    .pipe(svgSprite({
-      shape: {
-        dimension: {
-          maxWidth: 300,
-          maxHeight: 300
-        }
-      },
-      mode: {
-        symbol: {
-          bust: false,
-          dest: './'
-        }
-      },
-      svg: {
-        xmlDeclaration: false,
-        doctypeDeclaration: false,
-        dimensionAttributes: false
-      }
+    .pipe(svgStore({
+      inlineSvg: true
     }))
-    .pipe(gulp.dest('assets/'));
+    .pipe(rename({
+      prefix: 'sprite.',
+      basename: 'symbol'
+    }))
+    .pipe(gulp.dest('assets/svg'));
 
 });
 
@@ -209,6 +222,14 @@ gulp.task('accessibility', function() {
 
 });
 
+gulp.task('a11y', function() {
+
+  return gulp.src('index.html')
+    .pipe(a11y())
+    .pipe(a11y.reporter());
+
+});
+
 
 // ========================================
 // Initialize Browser Sync
@@ -218,6 +239,7 @@ gulp.task('browser-sync', function() {
 
   browserSync.init({
     logPrefix: 'idfive',
+    notify: false,
     server: {
       baseDir: './',
     }
@@ -233,7 +255,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function() {
 
   gulp.watch('assets/jade/**/*.jade', ['jade']);
-  gulp.watch(paths.postcss.src, ['postcss', 'jade']);
+  gulp.watch(paths.postcss.src, ['postcss', 'minify-css']);
   gulp.watch(paths.js.src, ['js']);
 
 });

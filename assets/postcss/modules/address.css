@@ -10,8 +10,10 @@
 
 }
 
-  .org {
-    font-size: em(20);
-  }
+  .org {}
 
   .adr {}
+
+  .tel {}
+
+  .email {}

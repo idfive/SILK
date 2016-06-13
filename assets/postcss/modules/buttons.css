@@ -5,10 +5,13 @@
 [class*='button'] {
   display: inline-block;
   border: 0;
-  margin: 0 em(10) em(10) 0;
-  padding: em(10);
+  margin: em(5) em(10) em(5) 0;
+  padding: em(10) em(20);
   cursor: pointer;
+  text-align: center;
   text-decoration: none;
+  background: $m1;
+  color: #fff;
   outline: 0;
   transition:
     background .2s,
@@ -21,9 +24,16 @@
 /* Additional Buttons
 // ------------------------------------- */
 
-.button--color {
+.button {
 
-  &:hover {}
+  &--hollow {
+    border: 1px solid;
+    background: none;
+    color: $m1;
+
+    &:hover {}
+
+  }
 
 }
 
@@ -46,7 +56,8 @@
 .site__logo {
   display: block;
   overflow: hidden;
-  max-width: em(200);
+  height: em(24);
+  max-width: em(24);
   width: 100%;
   white-space: nowrap;
   background: url('../images/logo.svg') no-repeat 0 50%;

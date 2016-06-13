@@ -1,9 +1,3 @@
 # idfive SILK
 
-A simple framework for building sites of all kinds.
-
-## Features
-
-* Gulp
-* Jade
-* Postcss
+<a href="http://staging.idfive.com/silk" target="_blank">Silk Demo Site</a>

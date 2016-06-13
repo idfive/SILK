@@ -1,0 +1,102 @@
+/* ========================================
+// Anchors
+// ===================================== */
+
+a {
+  text-decoration: none;
+  transition:
+    background .3s,
+    color .3s;
+
+  &:active {}
+
+  &:hover {}
+
+}
+
+
+/* ========================================
+// Blockquote / Cite
+// ===================================== */
+
+blockquote {
+
+  &:before {
+    margin-right: em(5);
+    content: '\201C';
+  }
+
+  &:after {
+    content: '\201D';
+  }
+
+}
+
+cite {
+  @mixin h6;
+  font-style: normal;
+
+  &:before {
+    content: '';
+  }
+
+}
+
+
+/* ========================================
+// Lists
+// ===================================== */
+
+ul,
+ol {}
+
+  li {}
+
+
+/* ========================================
+// Paragraphs
+// ===================================== */
+
+p {
+  margin: 0 0 em(30) 0;
+}
+
+
+/* ========================================
+// Tables
+// ===================================== */
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  margin-bottom: 1em;
+
+  th,
+  td {
+    padding: rem(10) rem(20);
+  }
+
+  th {
+    @mixin h4;
+    font-weight: normal;
+    text-align: left;
+    background: rgba(30, 0, 0, .075);
+  }
+
+  td {}
+
+}
+
+  /* Every td in every odd row */
+  table tr:nth-of-type(even) td {
+    background: rgba(30, 0, 0, .025);
+  }
+
+
+/* ========================================
+// Lead In
+// ===================================== */
+
+.lead-in {
+  @mixin h4;
+}

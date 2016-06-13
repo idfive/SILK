@@ -9,9 +9,9 @@
     > li {
 
       > ul {
-        margin-top: em($silk-nav-offset);
+        margin-top: em(27);
 
-        @mixin media $silk-drawer-disappears {
+        @mixin media $silkDrawerDisappears {
           margin-top: 0;
         }
 
@@ -30,31 +30,43 @@
       z-index: 200;
       height: 100%;
       width: 100%;
-      background: #fff;
       opacity: 0;
+      visibility: hidden;
       transform: translate(0, 0);
       transition:
         opacity .4s,
+        visibility .4s,
         transform .4s;
 
-      @mixin media $silk-drawer-disappears {
+      @mixin media $silkDrawerDisappears {
         top: 100%;
         left: 0;
         display: none;
         height: auto;
         width: 200%;
         opacity: 1;
+        visibility: visible;
       }
 
-      &.silk-menu--active {
+      &.silk-nav__nest--active {
         opacity: 1;
+        visibility: visible;
         transform: translate(-100%, 0);
         transition:
           opacity .4s,
+          visibility .4s,
           transform .4s cubic-bezier(.175, .885, .24, 1.11);
 
-        @mixin media $silk-drawer-disappears {
+        @mixin media $silkDrawerDisappears {
           transform: none;
+        }
+
+      }
+
+      > a {
+
+        @mixin media $silkDrawerDisappears {
+          display: none;
         }
 
       }
@@ -66,41 +78,42 @@
 }
 
 
-
-
 /* ========================================
 // Silk Nav Controls
 // ===================================== */
 
 .silk-nav__controls {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
 
-  @mixin media $silk-drawer-disappears {
+  @mixin media $silkDrawerDisappears {
     display: none;
   }
 
 }
 
-  .trigger--revert,
-  .trigger--reverse {
-    opacity: 0;
-    visibility: hidden;
-    transition:
-      opacity .3s,
-      visibility .3s;
+  .silk-nav__trigger {
+    border: 0;
+    background: none;
 
-    .silk-menu--active & {
-      opacity: 1;
-      visibility: visible;
+    @mixin media $silkDrawerDisappears {
+      display: none;
     }
 
-  }
+    &--revert,
+    &--reverse {
+      opacity: 0;
+      transition: opacity .2s;
 
-  .trigger--advance {
+      .silk-nav--active & {
+        opacity: 1;
+      }
 
-    @mixin media $silk-drawer-disappears {
-      display: none;
+    }
+
+    svg {
+      display: inline-block;
+      vertical-align: middle;
     }
 
   }

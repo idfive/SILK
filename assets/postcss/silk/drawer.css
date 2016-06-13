@@ -13,7 +13,7 @@
   transform: translate3d(0, 0, 0);
 }
 
-@define-mixin active-drawer {
+@define-mixin visible-drawer {
   pointer-events: auto;
   opacity: 1;
   visibility: visible;
@@ -22,7 +22,7 @@
 }
 
 @define-mixin reset-drawer {
-  @mixin active-drawer;
+  @mixin visible-drawer;
   position: static;
   overflow: inherit;
   max-width: 100%;
@@ -46,14 +46,14 @@
     opacity .3s,
     visibility .3s;
 
-  @mixin media $silk-drawer-disappears {
+  @mixin media $silkDrawerDisappears {
     @mixin reset-drawer;
   }
 
-  [data-drawer-state="visible"] & {
-    @mixin active-drawer;
+  .visible-drawer & {
+    @mixin visible-drawer;
 
-    @mixin media $silk-drawer-disappears {
+    @mixin media $silkDrawerDisappears {
       @mixin reset-drawer;
     }
 
@@ -70,8 +70,8 @@
   position: absolute;
   top: 50%;
   right: 0;
-  height: em($trigger-dimension);
-  width: em($trigger-dimension);
+  height: em(60);
+  width: em(60);
   border: 0;
   padding: 0;
   outline: 0;
@@ -79,7 +79,7 @@
   background: none;
   transform: translate(0, -50%);
 
-  @mixin media $silk-drawer-disappears {
+  @mixin media $silkDrawerDisappears {
     display: none;
   }
 
@@ -88,10 +88,11 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    height: em($stripe-height);
+    height: em(2);
     width: em(20);
     content: '';
-    background: $stripe-color;
+    background: currentColor;
+    color: #000;
     transform: translate(-50%, -50%);
     transition:
       background .4s,
@@ -102,24 +103,26 @@
 
   &:before {
     margin-top: em(-6);
+
+    .visible-drawer & {
+      margin-top: 0;
+      transform:
+        translate(-50%, -50%)
+        rotate(-45deg);
+    }
+
   }
 
   &:after {
-    box-shadow: 0 em(6) 0 0 $stripe-color;
+    box-shadow: 0 em(6) 0 0 currentColor;
+
+    .visible-drawer & {
+      box-shadow: 0 0 0 0 transparent;
+      transform:
+        translate(-50%, -50%)
+        rotate(45deg);
+    }
+
   }
 
 }
-
-  [data-drawer-state="visible"] .drawer__trigger:before {
-    margin-top: 0;
-    transform:
-      translate(-50%, -50%)
-      rotate(-45deg);
-  }
-
-  [data-drawer-state="visible"] .drawer__trigger:after {
-    box-shadow: 0 0 0 0 transparent;
-    transform:
-      translate(-50%, -50%)
-      rotate(45deg);
-  }

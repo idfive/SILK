@@ -1,0 +1,65 @@
+/* ========================================
+// Silk Halfway
+// ===================================== */
+
+.anchor-set {
+  display: none;
+
+  @mixin media $aldnoah {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    display: block;
+    transform: translate(0, -50%);
+  }
+
+}
+
+  .anchor-set__point {
+    position: relative;
+    display: block;
+    height: em(20);
+    width: em(20);
+    margin: em(10);
+    border: 1px solid #aaa;
+    border-radius: 100%;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      content: '';
+      background: #ccc;
+      border-radius: inherit;
+      transform: scale(0);
+      transition: transform .2s;
+    }
+
+    &.indicate-halfway {
+
+      &:before {
+        transform: scale(1);
+      }
+
+    }
+
+  }
+
+    .anchor-set__label {
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      display: block;
+      margin-right: em(10);
+      white-space: nowrap;
+      opacity: 0;
+      transform: translate(0, -50%);
+      transition: opacity .2s;
+
+      .anchor-set__point:hover & {
+        opacity: 1;
+      }
+
+    }
