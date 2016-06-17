@@ -40,6 +40,7 @@ function init() {
   modals();
   slideshows();
   triggers();
+  halfways();
   instagram();
   twitter();
 
@@ -114,7 +115,7 @@ function triggers() {
 function halfways() {
 
   halfway({
-    element: '.compartment > section',
+    element: '.halfway-section',
     anchors: true,
     offset: 0
   });

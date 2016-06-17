@@ -10,6 +10,9 @@
 // ===================================== */
 
 .site__header {
+  position: relative;
+  z-index: 20;
+  background: #fff;
 
   .compartment {
     padding: em(18) em(30);
@@ -20,6 +23,17 @@
 
   }
 
+}
+
+
+/* ========================================
+// Silk Footer
+// ===================================== */
+
+.site__footer {
+  position: relative;
+  z-index: 20;
+  background: #fff;
 }
 
 
@@ -332,19 +346,51 @@ a {
 // Silk Halfway
 // ===================================== */
 
-.anchor-set__point {
-  border-color: $m1;
-
-  &:before {
-    background: $m1;
-  }
-
+.anchor-set {
+  mix-blend-mode: exclusion;
 }
 
-  .anchor-set__label {
-    padding: em(10) em(20);
-    background: $m1;
-    color: #fff;
+  .anchor-set__point {
+    z-index: 40;
+    border-color: $m1;
+
+    &:before {
+      background: $m1;
+    }
+
+  }
+
+    .anchor-set__label {
+      padding: em(10) em(20);
+      background: $m1;
+      color: #fff;
+    }
+
+
+/* ========================================
+// Silk Halfway
+// ===================================== */
+
+.halfway-section {}
+
+  .halfway-content {
+
+    .halfway-section:nth-of-type(odd) & {
+      background: $m1;
+    }
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      content: 'Halfway';
+      font-family: $serif;
+      font-size: 4vmin;
+      text-align: center;
+      transform: translate(0, -50%);
+    }
+
   }
 
 

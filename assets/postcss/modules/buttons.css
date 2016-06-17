@@ -4,6 +4,7 @@
 
 [class*='button'] {
   display: inline-block;
+  vertical-align: top;
   border: 0;
   margin: em(5) em(10) em(5) 0;
   padding: em(10) em(20);

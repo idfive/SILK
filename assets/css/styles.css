@@ -1422,6 +1422,41 @@ table tr:nth-of-type(even) td {
 /* ========================================
 // Silk Halfway
 // ===================================== */
+.halfway-section {
+  position: relative;
+  height: 100vh;
+}
+.halfway-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    -webkit-transform: translate(0, -20vh);
+    -ms-transform: translate(0, -20vh);
+    transform: translate(0, -20vh);
+    -webkit-transition: opacity 1s,
+      -webkit-transform 2s;
+    transition: opacity 1s,
+      -webkit-transform 2s;
+    transition: opacity 1s,
+      transform 2s;
+    transition:
+      opacity 1s,
+      transform 2s,
+      -webkit-transform 2s;
+
+  }
+.element-halfway .halfway-content {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+/* ========================================
+// Silk Halfway Anchor Set
+// ===================================== */
 .anchor-set {
   display: none;
 
@@ -1720,6 +1755,7 @@ table tr:nth-of-type(even) td {
 // Swift Slide
 // ===================================== */
 .swift-slide {
+  position: relative;
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
@@ -1902,6 +1938,7 @@ nav a {
 // ===================================== */
 [class*='button'] {
   display: inline-block;
+  vertical-align: top;
   border: 0;
   margin: 0.3125em 0.625em 0.3125em 0;
   padding: 0.625em 1.25em;
@@ -2217,6 +2254,12 @@ video {}
 /* ========================================
 // Silk Header
 // ===================================== */
+.site__header {
+  position: relative;
+  z-index: 20;
+  background: #fff;
+
+}
 .site__header .compartment {
   padding: 1.125em 1.875em;
 }
@@ -2227,6 +2270,14 @@ video {}
     display: -ms-flexbox;
     display: flex;
   }
+}
+/* ========================================
+// Silk Footer
+// ===================================== */
+.site__footer {
+  position: relative;
+  z-index: 20;
+  background: #fff;
 }
 /* ========================================
 // Silk Drawer Trigger
@@ -2509,18 +2560,42 @@ a {
 /* ========================================
 // Silk Halfway
 // ===================================== */
-.anchor-set__point {
-  border-color: #00A98D;
-
+.anchor-set {
+  mix-blend-mode: exclusion;
 }
+.anchor-set__point {
+    z-index: 40;
+    border-color: #00A98D;
+
+  }
 .anchor-set__point:before {
   background: #00A98D;
 }
 .anchor-set__label {
-    padding: 0.625em 1.25em;
-    background: #00A98D;
-    color: #fff;
-  }
+      padding: 0.625em 1.25em;
+      background: #00A98D;
+      color: #fff;
+    }
+/* ========================================
+// Silk Halfway
+// ===================================== */
+.halfway-section {}
+.halfway-section:nth-of-type(odd) .halfway-content {
+  background: #00A98D;
+}
+.halfway-content:before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  content: 'Halfway';
+  font-family: Lora;
+  font-size: 4vmin;
+  text-align: center;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
 /* ========================================
 // Silk Footer
 // ===================================== */

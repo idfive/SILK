@@ -5,6 +5,7 @@ function halfway(parameters) {
   var windowHeight = window.innerHeight;
   var elements = document.querySelectorAll(parameters.element);
   var elementHitBoxes = [];
+  var scrollTimeout;
 
   if(parameters.anchors) {
 
@@ -53,12 +54,16 @@ function halfway(parameters) {
   function calculateHalfway() {
 
     for(var i = 0; i < elements.length; i++) {
-      
+
       elementHitBoxes[i] = elements[i].getBoundingClientRect();
 
       if(elementHitBoxes[i].top <= windowHeight / 2 && elementHitBoxes[i].bottom >= windowHeight / 2) {
 
-        elements[i].classList.add('element-halfway');
+        if(!(elements[i].classList.contains('element-halfway'))) {
+          elements[i].classList.add('element-halfway');
+          document.body.classList.add('halfway-lock');
+          scrollTimeout = window.setTimeout(unlockScroll, 400);
+        }
 
         if(parameters.anchors) {
           anchorSet.children[i].classList.add('indicate-halfway');
@@ -75,6 +80,12 @@ function halfway(parameters) {
       }
 
     }
+
+  }
+
+  function unlockScroll() {
+
+    document.body.classList.remove('halfway-lock');
 
   }
 

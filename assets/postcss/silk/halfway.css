@@ -2,6 +2,35 @@
 // Silk Halfway
 // ===================================== */
 
+.halfway-section {
+  position: relative;
+  height: 100vh;
+}
+
+  .halfway-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transform: translate(0, -20vh);
+    transition:
+      opacity 1s,
+      transform 2s;
+
+    .element-halfway & {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+  }
+
+
+/* ========================================
+// Silk Halfway Anchor Set
+// ===================================== */
+
 .anchor-set {
   display: none;
 
