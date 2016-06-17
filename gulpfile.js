@@ -165,6 +165,10 @@ gulp.task('js', function() {
 
   return gulp.src(paths.js.compile)
     .pipe(include())
+    .pipe(gulp.dest(paths.js.dest))
+    .pipe(rename(function(path) {
+      path.basename += '.min';
+    }))
     .pipe(uglify({
       mangle: false
     }))
