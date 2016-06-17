@@ -40,7 +40,6 @@ function init() {
   modals();
   slideshows();
   triggers();
-  halfways();
   instagram();
   twitter();
 
@@ -101,10 +100,6 @@ function modals() {
 }
 
 function triggers() {
-
-  triggerParent({
-    trigger: '.silk-modal__trigger'
-  });
 
   triggerParent({
     trigger: '.nav-tier__trigger'

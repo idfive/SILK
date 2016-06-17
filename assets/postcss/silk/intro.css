@@ -76,8 +76,12 @@
       }
 
       > ul {
-        padding: em(10) 0;
-        text-align: left;
+
+        @mixin media $silkDrawerDisappears {
+          padding: em(10) 0;
+          text-align: left;
+        }
+        
       }
 
     }

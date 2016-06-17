@@ -9,7 +9,7 @@
     > li {
 
       > ul {
-        margin-top: em(27);
+        margin-top: em(39);
 
         @mixin media $silkDrawerDisappears {
           margin-top: 0;
@@ -83,8 +83,12 @@
 // ===================================== */
 
 .silk-nav__controls {
+  position: relative;
+  z-index: 400;
+  border-top: 1px solid rgba(0, 0, 0, .25);
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 
   @mixin media $silkDrawerDisappears {
     display: none;
@@ -94,16 +98,32 @@
 
   .silk-nav__trigger {
     border: 0;
+    padding: em(8) em(10);
     background: none;
+    transition:
+      background .2s,
+      color .2s,
+      opacity .2s;
+
+    &:hover {}
 
     @mixin media $silkDrawerDisappears {
       display: none;
     }
 
+    &--home,
+    &--revert {
+
+      svg {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+    }
+
     &--revert,
     &--reverse {
       opacity: 0;
-      transition: opacity .2s;
 
       .silk-nav--active & {
         opacity: 1;
@@ -111,9 +131,35 @@
 
     }
 
-    svg {
-      display: inline-block;
-      vertical-align: middle;
+    &--revert {
+      border-left: 1px solid rgba(0, 0, 0, .25);
     }
+
+    &--reverse,
+    &--advance {
+      position: absolute;
+      padding: em(13) em(20);
+
+      &:hover {}
+
+        svg {
+          display: block;
+        }
+
+    }
+
+    &--reverse {
+      top: 100%;
+      left: 0;
+      border-right: 1px solid rgba(0, 0, 0, .25);
+    }
+
+    &--advance {
+      right: 0;
+      border-left: 1px solid rgba(0, 0, 0, .25);
+      margin-top: em(-42);
+    }
+
+
 
   }

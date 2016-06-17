@@ -1566,8 +1566,10 @@ table tr:nth-of-type(even) td {
     position: fixed;
     top: 50%;
     left: 50%;
+    z-index: 800;
     display: none;
     overflow: scroll;
+    webkit-overflow-scrolling: touch;
     height: 90%;
     height: -webkit-calc(100% - 5em);
     height: calc(100% - 5em);
@@ -1586,31 +1588,7 @@ table tr:nth-of-type(even) td {
   }
 .event-triggered .silk-modal__details {
   display: block;
-  -webkit-animation: animate-modal .2s forwards;
-  animation: animate-modal .2s forwards;
 }
-@-webkit-keyframes animate-modal {
-
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-
-  }
-@keyframes animate-modal {
-
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-
-  }
 .silk-modal__trigger--close {
       margin-bottom: 0.625em;
       cursor: pointer;
@@ -1618,6 +1596,7 @@ table tr:nth-of-type(even) td {
       transition: color .2s;
 
     }
+.silk-modal__trigger--close:hover {}
 .silk-modal__trigger--close svg {
   display: inline-block;
   vertical-align: middle;
@@ -1628,11 +1607,15 @@ table tr:nth-of-type(even) td {
   vertical-align: middle;
   margin-left: 0.625em;
 }
+/* Effect on body */
+.modal-triggered {
+  overflow: hidden;
+}
 /* ========================================
 // Silk Nav
 // ===================================== */
 .silk-nav > ul > li > ul {
-  margin-top: 1.6875em;
+  margin-top: 2.4375em;
 }
 @media (min-width: 1000px){
   .silk-nav > ul > li > ul{
@@ -1714,6 +1697,9 @@ table tr:nth-of-type(even) td {
 // Silk Nav Controls
 // ===================================== */
 .silk-nav__controls {
+  position: relative;
+  z-index: 400;
+  border-top: 1px solid rgba(0, 0, 0, .25);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1721,6 +1707,10 @@ table tr:nth-of-type(even) td {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 
 }
 @media (min-width: 1000px){
@@ -1730,26 +1720,57 @@ table tr:nth-of-type(even) td {
 }
 .silk-nav__trigger {
     border: 0;
+    padding: 0.5em 0.625em;
     background: none;
+    -webkit-transition: background .2s,
+      color .2s,
+      opacity .2s;
+    transition:
+      background .2s,
+      color .2s,
+      opacity .2s;
+
+
 
   }
+.silk-nav__trigger:hover {}
 @media (min-width: 1000px){
   .silk-nav__trigger{
     display: none;
   }
 }
+.silk-nav__trigger--home svg, .silk-nav__trigger--revert svg {
+  display: inline-block;
+  vertical-align: middle;
+}
 .silk-nav__trigger--revert,
     .silk-nav__trigger--reverse {
   opacity: 0;
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
 }
 .silk-nav--active .silk-nav__trigger--revert, .silk-nav--active .silk-nav__trigger--reverse {
   opacity: 1;
 }
-.silk-nav__trigger svg {
-  display: inline-block;
-  vertical-align: middle;
+.silk-nav__trigger--revert {
+  border-left: 1px solid rgba(0, 0, 0, .25);
+}
+.silk-nav__trigger--reverse,
+    .silk-nav__trigger--advance {
+  position: absolute;
+  padding: 0.8125em 1.25em;
+}
+.silk-nav__trigger--reverse:hover, .silk-nav__trigger--advance:hover {}
+.silk-nav__trigger--reverse svg, .silk-nav__trigger--advance svg {
+  display: block;
+}
+.silk-nav__trigger--reverse {
+  top: 100%;
+  left: 0;
+  border-right: 1px solid rgba(0, 0, 0, .25);
+}
+.silk-nav__trigger--advance {
+  right: 0;
+  border-left: 1px solid rgba(0, 0, 0, .25);
+  margin-top: -2.625em;
 }
 /* ========================================
 // Swift Slide
@@ -1912,11 +1933,19 @@ nav a {
     display: block;
   }
 }
-.nav-main > ul > li > a {}
+.nav-main > ul > li > a {
+  padding: 0.625em;
+}
 .nav-main > ul > li ul {
   background: #fff;
 }
-.nav-main > ul > li ul a {}
+.nav-main > ul > li ul a {
+  padding: 0.625em;
+}
+.nav-main > ul > li ul > a {
+  padding: 0.625em;
+  padding-left: 4.375em;
+}
 /* ========================================
 // Unique Navigation
 // ===================================== */
@@ -2302,9 +2331,11 @@ video {}
 .nav-main > ul > li:last-child > a {
   padding-right: 0;
 }
-.nav-main > ul > li > ul {
-  padding: 0.625em 0;
-  text-align: left;
+@media (min-width: 1000px){
+  .nav-main > ul > li > ul{
+    padding: 0.625em 0;
+    text-align: left;
+  }
 }
 .nav-main a {
   color: #00A98D;
