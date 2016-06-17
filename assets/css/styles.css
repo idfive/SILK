@@ -1,34 +1,44 @@
 
+@import 'navigation/breadcrumbs';
 
 @import url(https://fonts.googleapis.com/css?family=Lora:400,400italic);
+
 /* ========================================
 // Styles Manifest
 // ===================================== */
+
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS and IE text size adjust after device orientation change,
  *    without disabling user zoom.
  */
+
 html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
+
 /**
  * Remove default margin.
  */
+
 body {
   margin: 0;
 }
+
 /* HTML5 display definitions
    ========================================================================== */
+
 /**
  * Correct `block` display not defined for any HTML5 element in IE 8/9.
  * Correct `block` display not defined for `details` or `summary` in IE 10/11
  * and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
+
 article,
 aside,
 details,
@@ -44,10 +54,12 @@ section,
 summary {
   display: block;
 }
+
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
+
 audio,
 canvas,
 progress,
@@ -55,83 +67,107 @@ video {
   display: inline-block; /* 1 */
   vertical-align: baseline; /* 2 */
 }
+
 /**
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
+
 audio:not([controls]) {
   display: none;
   height: 0;
 }
+
 /**
  * Address `[hidden]` styling not present in IE 8/9/10.
  * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
  */
+
 [hidden],
 template {
   display: none;
 }
+
 /* Links
    ========================================================================== */
+
 /**
  * Remove the gray background color from active links in IE 10.
  */
+
 a {
   background-color: transparent;
 }
+
 /**
  * Improve readability of focused elements when they are also in an
  * active/hover state.
  */
+
 a:active,
 a:hover {
   outline: 0;
 }
+
 /* Text-level semantics
    ========================================================================== */
+
 /**
  * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
  */
+
 abbr[title] {
   border-bottom: 1px dotted;
 }
+
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
+
 b,
 strong {
   font-weight: bold;
 }
+
 /**
  * Address styling not present in Safari and Chrome.
  */
+
 dfn {
   font-style: italic;
 }
+
 /**
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari, and Chrome.
  */
+
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
+
 /**
  * Address styling not present in IE 8/9.
  */
+
 mark {
   background: #ff0;
   color: #000;
 }
+
 /**
  * Address inconsistent and variable font size in all browsers.
  */
+
 small {
   font-size: 80%;
 }
+
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
+
 sub,
 sup {
   font-size: 75%;
@@ -139,51 +175,67 @@ sup {
   position: relative;
   vertical-align: baseline;
 }
+
 sup {
   top: -0.5em;
 }
+
 sub {
   bottom: -0.25em;
 }
+
 /* Embedded content
    ========================================================================== */
+
 /**
  * Remove border when inside `a` element in IE 8/9/10.
  */
+
 img {
   border: 0;
 }
+
 /**
  * Correct overflow not hidden in IE 9/10/11.
  */
+
 svg:not(:root) {
   overflow: hidden;
 }
+
 /* Grouping content
    ========================================================================== */
+
 /**
  * Address margin not present in IE 8/9 and Safari.
  */
+
 figure {
   margin: 1em 40px;
 }
+
 /**
  * Address differences between Firefox and other browsers.
  */
+
 hr {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
+
 /**
  * Contain overflow in all browsers.
  */
+
 pre {
   overflow: auto;
 }
+
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
+
 code,
 kbd,
 pre,
@@ -191,18 +243,22 @@ samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
+
 /* Forms
    ========================================================================== */
+
 /**
  * Known limitation: by default, Chrome and Safari on OS X allow very limited
  * styling of `select`, unless a `border` property is set.
  */
+
 /**
  * 1. Correct color not being inherited.
  *    Known issue: affects color of disabled elements.
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
+
 button,
 input,
 optgroup,
@@ -212,22 +268,27 @@ textarea {
   font: inherit; /* 2 */
   margin: 0; /* 3 */
 }
+
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
+
 button {
   overflow: visible;
 }
+
 /**
  * Address inconsistent `text-transform` inheritance for `button` and `select`.
  * All other form control elements do not inherit `text-transform` values.
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
+
 button,
 select {
   text-transform: none;
 }
+
 /**
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
  *    and `video` controls.
@@ -235,6 +296,7 @@ select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
+
 button,
 html input[type="button"], /* 1 */
 input[type="reset"],
@@ -242,28 +304,35 @@ input[type="submit"] {
   -webkit-appearance: button; /* 2 */
   cursor: pointer; /* 3 */
 }
+
 /**
  * Re-set default cursor for disabled elements.
  */
+
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
+
 /**
  * Remove inner padding and border in Firefox 4+.
  */
+
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
+
 /**
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
+
 input {
   line-height: normal;
 }
+
 /**
  * It's recommended that you don't attempt to style these elements.
  * Firefox's implementation doesn't respect box-sizing, padding, or width.
@@ -271,95 +340,118 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
+
 input[type="checkbox"],
 input[type="radio"] {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
+
 /**
  * Fix the cursor style for Chrome's increment/decrement buttons. For certain
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
+
 /**
  * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
  */
+
 input[type="search"] {
   -webkit-appearance: textfield; /* 1 */
   -webkit-box-sizing: content-box;
   box-sizing: content-box; /* 2 */
 }
+
 /**
  * Remove inner padding and search cancel button in Safari and Chrome on OS X.
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
+
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
+
 /**
  * Define consistent border, margin, and padding.
  */
+
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
+
 /**
  * 1. Correct `color` not being inherited in IE 8/9/10/11.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
+
 legend {
   border: 0; /* 1 */
   padding: 0; /* 2 */
 }
+
 /**
  * Remove default vertical scrollbar in IE 8/9/10/11.
  */
+
 textarea {
   overflow: auto;
 }
+
 /**
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
+
 optgroup {
   font-weight: bold;
 }
+
 /* Tables
    ========================================================================== */
+
 /**
  * Remove most spacing between table cells.
  */
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 td,
 th {
   padding: 0;
 }
+
 .clear:after {
   display: table;
   clear: both;
   content: '';
 }
+
 .compartment {
   max-width: 73.75rem;
   margin-right: auto;
   margin-left: auto;
 
 }
+
 .compartment--nested {
   max-width: 61.25rem;
 }
+
 .cover {
   position: absolute;
   top: 0;
@@ -367,12 +459,14 @@ th {
   height: 100%;
   width: 100%;
 }
+
 .list-reset {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
 }
+
 .visible-for-screen-readers {
   position: absolute;
   overflow: hidden;
@@ -383,10 +477,13 @@ th {
   margin: -1px;
   padding: 0;
 }
+
 /* ========================================
 // Headings
 // ===================================== */
+
 /* 1:Heading One */
+
 h1,
 .h1 {
   margin-top: 0;
@@ -395,14 +492,18 @@ h1,
   font-size: 2.1875em;
   line-height: 1.2857142857142858;
 }
+
 @media (min-width: 600px){
+
   h1,
 .h1{
     font-size: 2.5em;
     line-height: 1.25;
   }
 }
+
 /* 2:Heading Two */
+
 h2,
 .h2 {
   margin-top: 0;
@@ -411,14 +512,18 @@ h2,
   font-size: 1.875em;
   line-height: 1.3333333333333333;
 }
+
 @media (min-width: 600px){
+
   h2,
 .h2{
     font-size: 2.1875em;
     line-height: 1.2857142857142858;
   }
 }
+
 /* 3:Heading Three */
+
 h3,
 .h3 {
   margin-top: 0;
@@ -427,14 +532,18 @@ h3,
   font-size: 1.5625em;
   line-height: 1.4;
 }
+
 @media (min-width: 600px){
+
   h3,
 .h3{
     font-size: 1.875em;
     line-height: 1.3333333333333333;
   }
 }
+
 /* 4:Heading Four */
+
 h4,
 .h4 {
   margin-top: 0;
@@ -443,14 +552,18 @@ h4,
   font-size: 1.25em;
   line-height: 1.5;
 }
+
 @media (min-width: 600px){
+
   h4,
 .h4{
     font-size: 1.5625em;
     line-height: 1.4;
   }
 }
+
 /* 5:Heading Five */
+
 h5,
 .h5 {
   margin-top: 0;
@@ -459,14 +572,18 @@ h5,
   font-size: 1em;
   line-height: 1.375;
 }
+
 @media (min-width: 600px){
+
   h5,
 .h5{
     font-size: 1.25em;
     line-height: 1.5;
   }
 }
+
 /* 6:Heading Six */
+
 h6,
 .h6 {
   margin-top: 0;
@@ -475,9 +592,11 @@ h6,
   font-size: 1em;
   line-height: 1.375;
 }
+
 /* ========================================
 // Anchors
 // ===================================== */
+
 a {
   text-decoration: none;
   -webkit-transition: background .3s,
@@ -487,18 +606,24 @@ a {
     color .3s;
 
 }
+
 a:active {}
+
 a:hover {}
+
 /* ========================================
 // Blockquote / Cite
 // ===================================== */
+
 blockquote:before {
   margin-right: 0.3125em;
   content: '\201C';
 }
+
 blockquote:after {
   content: '\201D';
 }
+
 cite {
   margin-top: 0;
   font-family: Lora;
@@ -508,34 +633,44 @@ cite {
   font-style: normal;
 
 }
+
 cite:before {
   content: '';
 }
+
 /* ========================================
 // Lists
 // ===================================== */
+
 ul,
 ol {}
+
 li {}
+
 /* ========================================
 // Paragraphs
 // ===================================== */
+
 p {
   margin: 0 0 1.875em 0;
 }
+
 /* ========================================
 // Tables
 // ===================================== */
+
 table {
   width: 100%;
   border-spacing: 0;
   margin-bottom: 1em;
 
 }
+
 table th,
   table td {
   padding: 0.625rem 1.25rem;
 }
+
 table th {
   margin-top: 0;
   font-family: Lora;
@@ -546,20 +681,27 @@ table th {
   text-align: left;
   background: rgba(30, 0, 0, .075);
 }
+
 @media (min-width: 600px){
+
   table th{
     font-size: 1.5625em;
     line-height: 1.4;
   }
 }
+
 table td {}
+
 /* Every td in every odd row */
+
 table tr:nth-of-type(even) td {
     background: rgba(30, 0, 0, .025);
   }
+
 /* ========================================
 // Lead In
 // ===================================== */
+
 .lead-in {
   margin-top: 0;
   font-family: Lora;
@@ -567,15 +709,19 @@ table tr:nth-of-type(even) td {
   font-size: 1.25em;
   line-height: 1.5;
 }
+
 @media (min-width: 600px){
+
   .lead-in{
     font-size: 1.5625em;
     line-height: 1.4;
   }
 }
+
 /* ========================================
 // Symbols
 // ===================================== */
+
 .symbol {
   -webkit-transition: fill .2s,
     stroke .2s;
@@ -584,6 +730,7 @@ table tr:nth-of-type(even) td {
     stroke .2s;
 
 }
+
 .symbol-home,
   .symbol-undo,
   .symbol-chevron-left,
@@ -593,20 +740,26 @@ table tr:nth-of-type(even) td {
   height: 1em;
   width: 1em;
 }
+
 .symbol-minus,
   .symbol-plus {
   height: 1.25em;
   width: 1.25em;
 }
+
 .symbol-play {
   height: 4.0625em;
   width: 4.0625em;
 }
+
 /* ========================================
 // Silk Harmonica
 // ===================================== */
+
 /* When do accordions become harmonicas? */
+
 @media(min-width: 900px) {
+
   .silk-harmonica--expanded{
     display: -webkit-box;
     display: -webkit-flex;
@@ -617,12 +770,15 @@ table tr:nth-of-type(even) td {
     flex-wrap: wrap;
   }
 }
+
 .silk-harmonica__header {
     position: relative;
     cursor: pointer;
 
   }
+
 @media(min-width: 900px) {
+
   .silk-harmonica--expanded .silk-harmonica__header{
     -webkit-box-flex: 1;
     -webkit-flex: 1 auto;
@@ -634,13 +790,17 @@ table tr:nth-of-type(even) td {
     order: 1;
   }
 }
+
 .silk-harmonica__header:hover {}
+
 .silk-harmonica__header.active + * {
   display: block;
 }
+
 .silk-harmonica__header > *:first-child {
   margin-bottom: 0;
 }
+
 .silk-harmonica__bottle {
       position: absolute;
       top: 50%;
@@ -650,28 +810,37 @@ table tr:nth-of-type(even) td {
       transform: translate(0, -50%);
 
     }
+
 .active .silk-harmonica__bottle:first-of-type {
   display: none;
 }
+
 .silk-harmonica__bottle:last-child {
   display: none;
 }
+
 .active .silk-harmonica__bottle:last-child {
   display: block;
 }
+
 @media(min-width: 900px) {
+
   .silk-harmonica--expanded .silk-harmonica__bottle{
     visibility: hidden;
   }
 }
+
 .silk-harmonica__symbol {
         display: block;
       }
+
 .silk-harmonica__content {
     display: none;
 
   }
+
 @media(min-width: 900px) {
+
   .silk-harmonica--expanded .silk-harmonica__content{
     -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
@@ -680,12 +849,15 @@ table tr:nth-of-type(even) td {
     width: 100%;
   }
 }
+
 /* ========================================
 // Drawer Mixin
 // ===================================== */
+
 /* ========================================
 // Drawer
 // ===================================== */
+
 .drawer {
   position: absolute;
   min-height: 100%;
@@ -711,7 +883,9 @@ table tr:nth-of-type(even) td {
     visibility .3s;
 
 }
+
 @media (min-width: 1000px){
+
   .drawer{
     pointer-events: auto;
     opacity: 1;
@@ -727,6 +901,7 @@ table tr:nth-of-type(even) td {
     background: none;
   }
 }
+
 .visible-drawer .drawer {
   pointer-events: auto;
   opacity: 1;
@@ -737,7 +912,9 @@ table tr:nth-of-type(even) td {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
+
 @media (min-width: 1000px){
+
   .visible-drawer .drawer{
     pointer-events: auto;
     opacity: 1;
@@ -753,9 +930,11 @@ table tr:nth-of-type(even) td {
     background: none;
   }
 }
+
 /* ========================================
 // Drawer Trigger
 // ===================================== */
+
 .drawer__trigger {
   position: absolute;
   top: 50%;
@@ -772,11 +951,14 @@ table tr:nth-of-type(even) td {
   transform: translate(0, -50%);
 
 }
+
 @media (min-width: 1000px){
+
   .drawer__trigger{
     display: none;
   }
 }
+
 .drawer__trigger:before,
   .drawer__trigger:after {
   position: absolute;
@@ -810,9 +992,11 @@ table tr:nth-of-type(even) td {
       -webkit-box-shadow .4s,
       -webkit-transform .4s;
 }
+
 .drawer__trigger:before {
   margin-top: -0.375em;
 }
+
 .visible-drawer .drawer__trigger:before {
   margin-top: 0;
   -webkit-transform:
@@ -825,10 +1009,12 @@ table tr:nth-of-type(even) td {
         translate(-50%, -50%)
         rotate(-45deg);
 }
+
 .drawer__trigger:after {
   -webkit-box-shadow: 0 0.375em 0 0 currentColor;
   box-shadow: 0 0.375em 0 0 currentColor;
 }
+
 .visible-drawer .drawer__trigger:after {
   -webkit-box-shadow: 0 0 0 0 transparent;
   box-shadow: 0 0 0 0 transparent;
@@ -842,17 +1028,21 @@ table tr:nth-of-type(even) td {
         translate(-50%, -50%)
         rotate(45deg);
 }
+
 /* ========================================
 // Grid / Columns
 // ===================================== */
+
 .grid:after {
   display: table;
   clear: both;
   content: '';
 }
+
 .grid--20 {
   margin: 0 -0.625em;
 }
+
 .flex {
   display: -webkit-box;
   display: -webkit-flex;
@@ -863,6 +1053,7 @@ table tr:nth-of-type(even) td {
   flex-wrap: wrap;
 
 }
+
 .flex--centered {
   -webkit-align-content: center;
   -ms-flex-line-pack: center;
@@ -873,20 +1064,24 @@ table tr:nth-of-type(even) td {
   -ms-grid-row-align: center;
   align-items: center;
 }
+
 .flex--justified {
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
 }
+
 [class^='col-'] {
     float: left;
     width: 100%;
 
   }
+
 .grid--20 [class^='col-'] {
   margin-bottom: 1.25em;
   padding: 0 0.625em;
 }
+
 @media (min-width: 300px) {
 
     .col-mini-1{
@@ -898,6 +1093,7 @@ table tr:nth-of-type(even) td {
   }
 
   }
+
 @media (min-width: 400px) {
 
     .col-tiny-1{
@@ -909,6 +1105,7 @@ table tr:nth-of-type(even) td {
   }
 
   }
+
 @media (min-width: 500px) {
 
     .col-small-1{
@@ -960,6 +1157,7 @@ table tr:nth-of-type(even) td {
   }
 
   }
+
 @media (min-width: 600px) {
 
     .col-medium-1{
@@ -1011,6 +1209,7 @@ table tr:nth-of-type(even) td {
   }
 
   }
+
 @media (min-width: 700px) {
 
     .col-big-1{
@@ -1062,6 +1261,7 @@ table tr:nth-of-type(even) td {
   }
 
   }
+
 @media (min-width: 800px) {
 
     .col-large-1{
@@ -1113,6 +1313,7 @@ table tr:nth-of-type(even) td {
   }
 
   }
+
 @media (min-width: 900px) {
 
     .col-huge-1{
@@ -1164,6 +1365,7 @@ table tr:nth-of-type(even) td {
   }
 
   }
+
 @media (min-width: 1000px) {
 
     .col-wooser-1{
@@ -1215,6 +1417,7 @@ table tr:nth-of-type(even) td {
   }
 
   }
+
 @media (min-width: 1100px) {
 
     .col-yatterman-1{
@@ -1266,6 +1469,7 @@ table tr:nth-of-type(even) td {
   }
 
   }
+
 @media (min-width: 1200px) {
 
     .col-gamagori-1{
@@ -1317,6 +1521,7 @@ table tr:nth-of-type(even) td {
   }
 
   }
+
 @media (min-width: 1300px) {
 
     .col-aldnoah-1{
@@ -1368,6 +1573,7 @@ table tr:nth-of-type(even) td {
   }
 
   }
+
 @media (min-width: 1400px) {
 
     .col-penguindrum-1{
@@ -1419,13 +1625,16 @@ table tr:nth-of-type(even) td {
   }
 
   }
+
 /* ========================================
 // Silk Halfway
 // ===================================== */
+
 .halfway-section {
   position: relative;
   height: 100vh;
 }
+
 .halfway-content {
     position: fixed;
     top: 0;
@@ -1448,20 +1657,25 @@ table tr:nth-of-type(even) td {
       -webkit-transform 2s;
 
   }
+
 .element-halfway .halfway-content {
   opacity: 1;
   -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);
 }
+
 /* ========================================
 // Silk Halfway Anchor Set
 // ===================================== */
+
 .anchor-set {
   display: none;
 
 }
+
 @media (min-width: 1300px){
+
   .anchor-set{
     position: fixed;
     top: 50%;
@@ -1472,6 +1686,7 @@ table tr:nth-of-type(even) td {
     transform: translate(0, -50%);
   }
 }
+
 .anchor-set__point {
     position: relative;
     display: block;
@@ -1482,6 +1697,7 @@ table tr:nth-of-type(even) td {
     border-radius: 100%;
 
   }
+
 .anchor-set__point:before {
   position: absolute;
   top: 0;
@@ -1499,11 +1715,13 @@ table tr:nth-of-type(even) td {
   transition: transform .2s;
   transition: transform .2s, -webkit-transform .2s;
 }
+
 .anchor-set__point.indicate-halfway:before {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
+
 .anchor-set__label {
       position: absolute;
       top: 50%;
@@ -1519,15 +1737,19 @@ table tr:nth-of-type(even) td {
       transition: opacity .2s;
 
     }
+
 .anchor-set__point:hover .anchor-set__label {
   opacity: 1;
 }
+
 /* ========================================
 // Silk Modal
 // ===================================== */
+
 .silk-modal {
   position: relative;
 }
+
 .silk-modal__trigger {
     position: absolute;
     top: 50%;
@@ -1548,6 +1770,7 @@ table tr:nth-of-type(even) td {
     transition: transform .2s, -webkit-transform .2s;
 
   }
+
 .silk-modal__trigger:hover {
   -webkit-transform:
         translate(-50%, -50%)
@@ -1559,9 +1782,11 @@ table tr:nth-of-type(even) td {
         translate(-50%, -50%)
         scale(1.25);
 }
+
 .silk-modal__trigger svg {
   fill: #fff;
 }
+
 .silk-modal__details {
     position: fixed;
     top: 50%;
@@ -1586,9 +1811,11 @@ table tr:nth-of-type(even) td {
     transform: translate(-50%, -50%);
 
   }
+
 .event-triggered .silk-modal__details {
   display: block;
 }
+
 .silk-modal__trigger--close {
       margin-bottom: 0.625em;
       cursor: pointer;
@@ -1596,32 +1823,42 @@ table tr:nth-of-type(even) td {
       transition: color .2s;
 
     }
+
 .silk-modal__trigger--close:hover {}
+
 .silk-modal__trigger--close svg {
   display: inline-block;
   vertical-align: middle;
   fill: currentColor;
 }
+
 .silk-modal__trigger--close span {
   display: inline-block;
   vertical-align: middle;
   margin-left: 0.625em;
 }
+
 /* Effect on body */
+
 .modal-triggered {
   overflow: hidden;
 }
+
 /* ========================================
 // Silk Nav
 // ===================================== */
+
 .silk-nav > ul > li > ul {
   margin-top: 2.4375em;
 }
+
 @media (min-width: 1000px){
+
   .silk-nav > ul > li > ul{
     margin-top: 0;
   }
 }
+
 .silk-nav ul ul {
   position: absolute;
   top: 0;
@@ -1649,7 +1886,9 @@ table tr:nth-of-type(even) td {
         transform .4s,
         -webkit-transform .4s;
 }
+
 @media (min-width: 1000px){
+
   .silk-nav ul ul{
     top: 100%;
     left: 0;
@@ -1660,6 +1899,7 @@ table tr:nth-of-type(even) td {
     visibility: visible;
   }
 }
+
 .silk-nav ul ul.silk-nav__nest--active {
   opacity: 1;
   visibility: visible;
@@ -1681,21 +1921,27 @@ table tr:nth-of-type(even) td {
           transform .4s cubic-bezier(.175, .885, .24, 1.11),
           -webkit-transform .4s cubic-bezier(.175, .885, .24, 1.11);
 }
+
 @media (min-width: 1000px){
+
   .silk-nav ul ul.silk-nav__nest--active{
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
   }
 }
+
 @media (min-width: 1000px){
+
   .silk-nav ul ul > a{
     display: none;
   }
 }
+
 /* ========================================
 // Silk Nav Controls
 // ===================================== */
+
 .silk-nav__controls {
   position: relative;
   z-index: 400;
@@ -1713,11 +1959,14 @@ table tr:nth-of-type(even) td {
   align-items: center;
 
 }
+
 @media (min-width: 1000px){
+
   .silk-nav__controls{
     display: none;
   }
 }
+
 .silk-nav__trigger {
     border: 0;
     padding: 0.5em 0.625em;
@@ -1733,48 +1982,62 @@ table tr:nth-of-type(even) td {
 
 
   }
+
 .silk-nav__trigger:hover {}
+
 @media (min-width: 1000px){
+
   .silk-nav__trigger{
     display: none;
   }
 }
+
 .silk-nav__trigger--home svg, .silk-nav__trigger--revert svg {
   display: inline-block;
   vertical-align: middle;
 }
+
 .silk-nav__trigger--revert,
     .silk-nav__trigger--reverse {
   opacity: 0;
 }
+
 .silk-nav--active .silk-nav__trigger--revert, .silk-nav--active .silk-nav__trigger--reverse {
   opacity: 1;
 }
+
 .silk-nav__trigger--revert {
   border-left: 1px solid rgba(0, 0, 0, .25);
 }
+
 .silk-nav__trigger--reverse,
     .silk-nav__trigger--advance {
   position: absolute;
   padding: 0.8125em 1.25em;
 }
+
 .silk-nav__trigger--reverse:hover, .silk-nav__trigger--advance:hover {}
+
 .silk-nav__trigger--reverse svg, .silk-nav__trigger--advance svg {
   display: block;
 }
+
 .silk-nav__trigger--reverse {
   top: 100%;
   left: 0;
   border-right: 1px solid rgba(0, 0, 0, .25);
 }
+
 .silk-nav__trigger--advance {
   right: 0;
   border-left: 1px solid rgba(0, 0, 0, .25);
   margin-top: -2.625em;
 }
+
 /* ========================================
 // Swift Slide
 // ===================================== */
+
 .swift-slide {
   position: relative;
   margin-top: 0;
@@ -1783,6 +2046,7 @@ table tr:nth-of-type(even) td {
   list-style: none;
 
 }
+
 .swift-slide li {
   position: absolute;
   top: 0;
@@ -1806,15 +2070,18 @@ table tr:nth-of-type(even) td {
       transform .4s,
       -webkit-transform .4s;
 }
+
 .swift-slide li.active {
   position: relative;
   pointer-events: auto;
   opacity: 1;
   visibility: visible;
 }
+
 /* ========================================
 // Swift Controls
 // ===================================== */
+
 .swift-controls {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1822,19 +2089,27 @@ table tr:nth-of-type(even) td {
   user-select: none;
 
 }
+
 .swift-controls button {
   border: 0;
   outline: 0;
   background: none;
 }
+
 /* Previous Button */
+
 .swift-controls button:first-child {}
+
 /* Next Button */
+
 .swift-controls button:last-child {}
+
 .swift-controls button:hover {}
+
 /* ========================================
 // Swift Pager
 // ===================================== */
+
 .swift-pager {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1842,72 +2117,96 @@ table tr:nth-of-type(even) td {
   user-select: none;
 
 }
+
 .swift-pager span {
   display: inline-block;
   cursor: pointer;
 }
+
 .swift-pager span:hover {}
+
 .swift-pager span.active {}
+
 /* ========================================
 // Silk Style Tile
 // ===================================== */
+
 /* ========================================
 // Silk Table
 // ===================================== */
+
 .silk-table {
   overflow-x: scroll;
 
 }
+
 @media (min-width: 800px){
+
   .silk-table{
     overflow-x: visible;
   }
 }
+
 /* ========================================
 // Index
 // ===================================== */
+
 *,
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 html {
   font-family: Open Sans;
   -webkit-font-smoothing: antialiased;
   background: none;
   color: #333;
 }
+
 body {
     font-size: 1rem;
     line-height: 1.375;
   }
+
 /* ========================================
 // Sections
 // ===================================== */
+
 .section {
   padding: 1.25em;
 }
+
 /* ========================================
 // Site Header
 // ===================================== */
+
 .site__header {
   position: relative;
 }
+
 .hat {}
+
 .scarf {}
+
 /* ========================================
 // Site Footer
 // ===================================== */
+
 .site__footer {
   position: relative;
   overflow: hidden;
 }
+
 .lace {}
+
 .sole {}
+
 /* ========================================
 // Shared Navigation
 // ===================================== */
+
 nav ul,
   nav ol {
   margin-top: 0;
@@ -1915,56 +2214,78 @@ nav ul,
   padding-left: 0;
   list-style: none;
 }
+
 nav a {
   display: block;
   text-decoration: none;
 }
+
 /* ========================================
 // Main Navigation
 // ===================================== */
+
 @media (min-width: 1000px){
+
   .nav-main > ul > li{
     position: relative;
     display: inline-block;
   }
 }
+
 @media (min-width: 1000px){
+
   .nav-main > ul > li:hover > ul{
     display: block;
   }
 }
+
 .nav-main > ul > li > a {
   padding: 0.625em;
 }
+
 .nav-main > ul > li ul {
   background: #fff;
 }
+
 .nav-main > ul > li ul a {
   padding: 0.625em;
 }
+
 .nav-main > ul > li ul > a {
   padding: 0.625em;
   padding-left: 4.375em;
 }
+
 /* ========================================
 // Unique Navigation
 // ===================================== */
+
 .nav-example ul {}
+
 .nav-example li {}
+
 .nav-example a:hover {}
+
 /* ========================================
 // Address
 // ===================================== */
+
 .vcard a {
   display: block;
 }
+
 .org {}
+
 .adr {}
+
 .tel {}
+
 .email {}
+
 /* ========================================
 // Buttons
 // ===================================== */
+
 [class*='button'] {
   display: inline-block;
   vertical-align: top;
@@ -1997,25 +2318,35 @@ nav a {
     -webkit-box-shadow .2s,
     -webkit-transform .2s;
 }
+
 /* Additional Buttons
 // ------------------------------------- */
+
 .button--hollow {
   border: 1px solid;
   background: none;
   color: #00A98D;
 }
+
 .button--hollow:hover {}
+
 /* ========================================
 // Site Logo/Link
 // ===================================== */
+
 /* If the site logo is text based */
+
 .site__link {
   display: block;
   text-decoration: none;
 }
+
 /* If the site logo is image based */
+
 /* Set the max-width to the logo's size */
+
 /* overflow: hidden and white-space: nowrap prevent line breaks */
+
 .site__logo {
   display: block;
   overflow: hidden;
@@ -2028,15 +2359,19 @@ nav a {
   color: transparent;
 
 }
+
 .site__logo:hover {
   color: transparent;
 }
+
 /* ========================================
 // Pagination
 // ===================================== */
+
 .pagination {
   text-align: center;
 }
+
 .pagination__control {
     display: inline-block;
     vertical-align: middle;
@@ -2044,6 +2379,7 @@ nav a {
     padding: 0;
     background: none;
   }
+
 .pagination__key {
     margin-top: 0;
     margin-bottom: 0;
@@ -2054,46 +2390,60 @@ nav a {
     padding: 0 1.25em;
 
   }
+
 .pagination__key li {
   display: inline-block;
   vertical-align: top;
 }
+
 .pagination__key a {
   display: block;
   padding: 0 0.25em;
 }
+
 @media (min-width: 600px){
+
   .pagination__key a{
     padding: 0 0.5em;
     font-size: 1.25em;
   }
 }
+
 .pagination__key a:hover,
         .pagination__key a.active {
   text-decoration: underline;
 }
+
 /* ========================================
 // Forms
 // ===================================== */
+
 /* Container
 // ------------------------------------- */
+
 form {}
+
 fieldset {
     border: 0;
     margin-bottom: 1.25em;
     padding: 0;
   }
+
 /* Label
 // ------------------------------------- */
+
 label {
   margin-right: 1.25em;
 }
+
 /* Shared Input/Select/Textarea
 // ------------------------------------- */
+
 .input-field {
   position: relative;
   overflow: hidden;
 }
+
 .input-hint {
     position: absolute;
     top: 0;
@@ -2105,15 +2455,19 @@ label {
     transition: background .2s;
 
   }
+
 .input-hint:hover {
   background-color: #bbb;
 }
+
 .input-hint--select {
   pointer-events: none;
 }
+
 .input-hint--submit {
   background-image: url(../icons/search.svg);
 }
+
 .input-hint__field {
       position: absolute;
       top: 0;
@@ -2125,10 +2479,14 @@ label {
       background: none;
       color: transparent;
     }
+
 /* Input
 // ------------------------------------- */
+
 input:disabled {}
+
 input:checked {}
+
 input[type='text'] {
   position: relative;
   overflow: hidden;
@@ -2141,6 +2499,7 @@ input[type='text'] {
   background: #fff;
   border-radius: 0;
 }
+
 input[type='radio'],
   input[type='checkbox'] {
   height: 0.9375em;
@@ -2156,15 +2515,20 @@ input[type='radio'],
       border .2s,
       background .2s;
 }
+
 input[type='radio']:checked, input[type='checkbox']:checked {
   background: currentColor;
 }
+
 input[type='radio'] {
   border-radius: 100%;
 }
+
 input[type='range'] {}
+
 /* Textarea
 // ------------------------------------- */
+
 textarea {
   position: relative;
   overflow: hidden;
@@ -2177,8 +2541,10 @@ textarea {
   background: #fff;
   border-radius: 0;
 }
+
 /* Select
 // ------------------------------------- */
+
 select {
   width: 100%;
   border: 1px solid #ccc;
@@ -2191,108 +2557,143 @@ select {
   cursor: pointer;
 
 }
+
 select:hover + .input-hint {
   background-color: #bbb;
 }
+
 /* ========================================
 // Unique Form Elements
 // ===================================== */
+
 .site-search {}
+
 /* ========================================
 // Hero
 // ===================================== */
+
 .hero {
   background-position: 50% 50% !important;
   background-size: cover !important;
   
 }
+
 .hero--empty {
   height: 40vw;
   min-height: 15em;
   max-height: 31.25em;
 }
+
 /* ========================================
 // Media
 // ===================================== */
+
 /* Figure
 // ------------------------------------- */
+
 figure {
   margin: 0;
 
 }
+
 figure img {
   display: block;
   width: 100%;
 }
+
 figcaption {
     margin-top: 0.625em;
     font-style: italic;
   }
+
 /* Image
 // ------------------------------------- */
+
 img.full-width {
   display: block;
   width: 100%;
 }
+
 .hero > img {
   display: none;
 }
+
 /* Iframe
 // ------------------------------------- */
+
 .silk-modal__details iframe {
   width: 100%;
 }
+
 /* SVG
 // ------------------------------------- */
+
 svg {}
+
 /* Video
 // ------------------------------------- */
+
 video {}
+
 /* ========================================
 // Instagram
 // ===================================== */
+
 .instagram-feed {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
 }
+
 .instagram-item {
     position: relative;
     display: block;
   }
+
 .instagram-item__image {
       display: block;
       max-width: 100%;
     }
+
 .instagram-item__details {}
+
 .instagram-item__caption {}
+
 /* ========================================
 // Twitter
 // ===================================== */
+
 .twitter-feed {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
 }
+
 .twitter-item {}
+
 /* ========================================
 // Silk Type
 // ===================================== */
+
 /* ========================================
 // Silk Header
 // ===================================== */
+
 .site__header {
   position: relative;
   z-index: 20;
   background: #fff;
 
 }
+
 .site__header .compartment {
   padding: 1.125em 1.875em;
 }
+
 @media (min-width: 1000px){
+
   .site__header .compartment{
     display: -webkit-box;
     display: -webkit-flex;
@@ -2300,73 +2701,95 @@ video {}
     display: flex;
   }
 }
+
 /* ========================================
 // Silk Footer
 // ===================================== */
+
 .site__footer {
   position: relative;
   z-index: 20;
   background: #fff;
 }
+
 /* ========================================
 // Silk Drawer Trigger
 // ===================================== */
+
 .drawer__trigger {
   right: 0.625em;
 
 }
+
 .drawer__trigger:before,
   .drawer__trigger:after {
   color: #00A98D;
 }
+
 /* ========================================
 // Silk Nav
 // ===================================== */
+
 @media (min-width: 1000px){
+
   .nav-main{
     padding-left: 0.625em;
     text-align: right;
   }
 }
+
 .nav-main > ul > li:last-child > a {
   padding-right: 0;
 }
+
 @media (min-width: 1000px){
+
   .nav-main > ul > li > ul{
     padding: 0.625em 0;
     text-align: left;
   }
 }
+
 .nav-main a {
   color: #00A98D;
 }
+
 @media (min-width: 1000px){
+
   .nav-main a{
     padding: 0 0.625em;
   }
 }
+
 /* ========================================
 // Silk Content
 // ===================================== */
+
 .compartment > section {
   padding: 3.75em 1.875em;
 }
+
 .compartment > section:nth-of-type(odd) {
   background: #00A98D;
   color: #fff;
 }
+
 .compartment > section:nth-of-type(odd) a {
   color: inherit;
 }
+
 .compartment h2 {
   margin-top: 0;
 }
+
 a {
   color: #00A98D;
 }
+
 /* ========================================
 // Silk Accordion / Tabs
 // ===================================== */
+
 .silk-harmonica__header {
   border-bottom: 1px solid rgba(0, 0, 0, .05);
   padding: 0.625em;
@@ -2375,18 +2798,23 @@ a {
   transition: background .2s;
 
 }
+
 .silk-harmonica__header:hover {
   background: rgba(0, 0, 0, .125);
 }
+
 .silk-harmonica__symbol {
     fill: #fff;
   }
+
 .silk-harmonica__content {
   padding: 0.625em;
 }
+
 /* ========================================
 // Silk Collage
 // ===================================== */
+
 .silk-collage {
   margin-top: 0;
   margin-bottom: 0;
@@ -2399,6 +2827,7 @@ a {
   counter-reset: collage;
 
 }
+
 .silk-collage li {
   position: absolute;
   border-right: 1px solid;
@@ -2406,42 +2835,49 @@ a {
   text-align: center;
   counter-increment: collage;
 }
+
 .silk-collage li:nth-child(1) {
   top: 0%;
   left: 0%;
   height: 50%;
   width: 33.33333333333333%;
 }
+
 .silk-collage li:nth-child(2) {
   top: 50%;
   left: 0%;
   height: 50%;
   width: 33.33333333333333%;
 }
+
 .silk-collage li:nth-child(3) {
   top: 0%;
   left: 33.33333333333333%;
   height: 100%;
   width: 33.33333333333333%;
 }
+
 .silk-collage li:nth-child(4) {
   top: 0%;
   left: 66.66666666666666%;
   height: 16.666666666666664%;
   width: 33.33333333333333%;
 }
+
 .silk-collage li:nth-child(5) {
   top: 16.666666666666664%;
   left: 66.66666666666666%;
   height: 66.66666666666666%;
   width: 33.33333333333333%;
 }
+
 .silk-collage li:nth-child(6) {
   top: 83.33333333333334%;
   left: 66.66666666666666%;
   height: 16.666666666666664%;
   width: 33.33333333333333%;
 }
+
 .silk-collage li:before {
   margin-top: 0;
   font-family: Lora;
@@ -2457,23 +2893,29 @@ a {
   -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
+
 @media (min-width: 600px){
+
   .silk-collage li:before{
     font-size: 1.5625em;
     line-height: 1.4;
   }
 }
+
 /* ========================================
 // Swift Slide
 // ===================================== */
+
 .swift-slide {
   counter-reset: swift;
   text-align: center;
 
 }
+
 .swift-slide li {
   counter-increment: swift;
 }
+
 .swift-slide li:before {
   margin-top: 0;
   font-family: Lora;
@@ -2482,12 +2924,15 @@ a {
   line-height: 1.2857142857142858;
   content: counter(swift);
 }
+
 @media (min-width: 600px){
+
   .swift-slide li:before{
     font-size: 2.5em;
     line-height: 1.25;
   }
 }
+
 .swift-slide li:after {
   position: absolute;
   top: 50%;
@@ -2509,17 +2954,21 @@ a {
         translate(-50%, -50%)
         scale(0);
 }
+
 .swift-slide li.active:after {
   -webkit-animation: burst .25s;
   animation: burst .25s;
 }
+
 .swift-controls button {
   padding: 0.625em 0.3125em;
   font-size: 150%;
 }
+
 .swift-controls svg {
   fill: #fff;
 }
+
 .swift-pager span {
   height: 0.75em;
   width: 0.75em;
@@ -2528,12 +2977,15 @@ a {
   -webkit-box-shadow: inset 0 0 0 0.125em #fff;
   box-shadow: inset 0 0 0 0.125em #fff;
 }
+
 .swift-pager span:hover {
   background: rgba(255, 255, 255, .5);
 }
+
 .swift-pager span.active {
   background: #fff;
 }
+
 @-webkit-keyframes burst {
 
   100% {
@@ -2547,6 +2999,7 @@ a {
   }
 
 }
+
 @keyframes burst {
 
   100% {
@@ -2560,60 +3013,78 @@ a {
   }
 
 }
+
 /* ========================================
 // Silk Filters
 // ===================================== */
+
 .pagination__control {
   font-size: 150%;
 
 }
+
 .pagination__control svg  {
   fill: #fff;
 }
+
 /* ========================================
 // Silk Buttons
 // ===================================== */
+
 .button {
   font-size: 0.875em;
 
 }
+
 @media (min-width: 600px){
+
   .button{
     font-size: 1.125em;
   }
 }
+
 /* ========================================
 // Silk Modal
 // ===================================== */
+
 .silk-modal .silk-modal__details {
   color: #333;
 }
+
 /* ========================================
 // Silk Halfway
 // ===================================== */
+
 .anchor-set {
   mix-blend-mode: exclusion;
 }
+
 .anchor-set__point {
     z-index: 40;
     border-color: #00A98D;
 
   }
+
 .anchor-set__point:before {
   background: #00A98D;
 }
+
 .anchor-set__label {
       padding: 0.625em 1.25em;
       background: #00A98D;
       color: #fff;
     }
+
 /* ========================================
 // Silk Halfway
 // ===================================== */
+
 .halfway-section {}
+
 .halfway-section:nth-of-type(odd) .halfway-content {
   background: #00A98D;
 }
+
 .halfway-content:before {
   position: absolute;
   top: 50%;
@@ -2627,12 +3098,15 @@ a {
   -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
+
 /* ========================================
 // Silk Footer
 // ===================================== */
+
 .site__footer .compartment {
   padding: 1.25em 1.875em;
 }
+
 @media print {
 
   @import 'print/print';
