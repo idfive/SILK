@@ -103,7 +103,8 @@
     transition:
       background .2s,
       color .2s,
-      opacity .2s;
+      opacity .2s,
+      visibilty .2s;
 
     &:hover {}
 
@@ -124,9 +125,11 @@
     &--revert,
     &--reverse {
       opacity: 0;
+      visibility: hidden;
 
       .silk-nav--active & {
         opacity: 1;
+        visibility: visible;
       }
 
     }

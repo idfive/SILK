@@ -1724,11 +1724,13 @@ table tr:nth-of-type(even) td {
     background: none;
     -webkit-transition: background .2s,
       color .2s,
-      opacity .2s;
+      opacity .2s,
+      visibilty .2s;
     transition:
       background .2s,
       color .2s,
-      opacity .2s;
+      opacity .2s,
+      visibilty .2s;
 
 
 
@@ -1746,9 +1748,11 @@ table tr:nth-of-type(even) td {
 .silk-nav__trigger--revert,
     .silk-nav__trigger--reverse {
   opacity: 0;
+  visibility: hidden;
 }
 .silk-nav--active .silk-nav__trigger--revert, .silk-nav--active .silk-nav__trigger--reverse {
   opacity: 1;
+  visibility: visible;
 }
 .silk-nav__trigger--revert {
   border-left: 1px solid rgba(0, 0, 0, .25);

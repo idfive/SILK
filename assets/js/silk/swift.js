@@ -3,7 +3,7 @@ function swift(parameters) {
   var container = document.querySelector(parameters.container);
   var elements = document.querySelectorAll(parameters.container + ' ' + parameters.elements);
 
-  if(document.body.contains(container)) {
+  if(container.length) {
 
     var controller = document.createElement('div');
     controller.classList.add('swift-controls');
