@@ -181,8 +181,16 @@ function harmonica(parameters) {
 
     currentNote = event.currentTarget;
 
-    clearClasses();
-    assignClasses(currentNote);
+    if(currentNote.parentNode.classList.contains('silk-harmonica--condensed')) {
+
+      currentNote.classList.toggle('active');
+
+    } else {
+
+      clearClasses(currentNote);
+      assignClasses(currentNote);
+
+    }
 
   }
 
