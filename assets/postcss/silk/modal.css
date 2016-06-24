@@ -4,6 +4,7 @@
 
 .silk-modal {
   position: relative;
+  margin-bottom: em($push);
 }
 
   .silk-modal__trigger {

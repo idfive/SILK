@@ -492,6 +492,10 @@ a:hover {}
 /* ========================================
 // Blockquote / Cite
 // ===================================== */
+blockquote {
+  margin: 0 0 1.875em;
+
+}
 blockquote:before {
   margin-right: 0.3125em;
   content: '\201C';
@@ -618,6 +622,10 @@ hr {
 // Silk Harmonica
 // ===================================== */
 /* When do accordions become harmonicas? */
+.silk-harmonica {
+  margin-bottom: 1.875em;
+
+}
 @media(min-width: 900px) {
   .silk-harmonica--expanded{
     display: -webkit-box;
@@ -1542,6 +1550,7 @@ hr {
 // ===================================== */
 .silk-modal {
   position: relative;
+  margin-bottom: 1.875em;
 }
 .silk-modal__trigger {
     position: absolute;

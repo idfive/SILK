@@ -20,7 +20,8 @@ a {
 // ===================================== */
 
 blockquote {
-
+  margin: 0 0 em($push);
+  
   &:before {
     margin-right: em(5);
     content: '\201C';
@@ -50,7 +51,7 @@ cite {
 ul,
 ol {
   margin-top: 0;
-  margin-bottom: em(30);
+  margin-bottom: em($push);
 }
 
   li {}
@@ -62,7 +63,7 @@ ol {
 
 p {
   margin-top: 0;
-  margin-bottom: em(30);
+  margin-bottom: em($push);
 }
 
 

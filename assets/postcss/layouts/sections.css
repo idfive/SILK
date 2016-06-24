@@ -3,7 +3,7 @@
 // ===================================== */
 
 .content {
-  padding: em(40) em(20);
+  padding: em(40) em($gutter);
 }
 
 

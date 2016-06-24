@@ -13,7 +13,7 @@
   }
 
   &--push-bottom {
-    margin-bottom: em(30);
+    margin-bottom: em($push);
   }
 
 }
