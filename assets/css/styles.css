@@ -371,6 +371,7 @@ th {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
+  font-size: 1rem;
   list-style: none;
 }
 .visible-for-screen-readers {
@@ -480,11 +481,11 @@ h6,
 // ===================================== */
 a {
   text-decoration: none;
-  -webkit-transition: background .3s,
-    color .3s;
+  -webkit-transition: background .2s,
+    color .2s;
   transition:
-    background .3s,
-    color .3s;
+    background .2s,
+    color .2s;
 
 }
 a:active {}
@@ -537,7 +538,7 @@ p {
 table {
   width: 100%;
   border-spacing: 0;
-  margin-bottom: 1em;
+  margin-bottom: 1.875em;
 
 }
 table th,
@@ -1949,6 +1950,7 @@ nav ul,
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
+  font-size: 1rem;
   list-style: none;
 }
 nav a {
@@ -2111,6 +2113,7 @@ nav a {
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 0;
+    font-size: 1rem;
     list-style: none;
     display: inline-block;
     vertical-align: top;
@@ -2143,7 +2146,7 @@ nav a {
 form {}
 fieldset {
     border: 0;
-    margin-bottom: 1.25em;
+    margin-bottom: 1.875em;
     padding: 0;
   }
 /* Label
@@ -2344,6 +2347,7 @@ video {}
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
+  font-size: 1rem;
   list-style: none;
 }
 .instagram-item {
@@ -2363,6 +2367,7 @@ video {}
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
+  font-size: 1rem;
   list-style: none;
 }
 .twitter-item {}
@@ -2480,6 +2485,7 @@ a {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
+  font-size: 1rem;
   list-style: none;
   position: relative;
   border-top: 1px solid;

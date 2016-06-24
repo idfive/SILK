@@ -9,7 +9,7 @@ form {}
 
   fieldset {
     border: 0;
-    margin-bottom: em(20);
+    margin-bottom: em($push);
     padding: 0;
   }
 
