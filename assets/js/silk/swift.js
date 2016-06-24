@@ -3,6 +3,45 @@ function swift(parameters) {
   var container = document.querySelector(parameters.container);
   var elements = document.querySelectorAll(parameters.container + ' ' + parameters.elements);
 
+  container.addEventListener('touchstart', handleTouchStart, false);
+  container.addEventListener('touchmove', handleTouchMove, false);
+
+  var xDown = null;
+  var yDown = null;
+
+  function handleTouchStart(evt) {
+    xDown = evt.touches[0].clientX;
+    yDown = evt.touches[0].clientY;
+  };
+
+  function handleTouchMove(evt) {
+
+    if ( ! xDown || ! yDown ) {
+      return;
+    }
+
+    var xUp = evt.touches[0].clientX;
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+
+      if ( xDiff > 0 ) {
+        nextSlide();
+      } else {
+        previousSlide();
+      }
+
+    }
+
+    /* reset values */
+    xDown = null;
+    yDown = null;
+
+  };
+  
   if(container.length) {
 
     var controller = document.createElement('div');
