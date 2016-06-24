@@ -1,0 +1,9 @@
+//- ========================================
+//- Heroes
+//- ========================================
+
+mixin hero(title, image, modifier)
+  .hero(class="hero--#{modifier}")
+    .compartment
+      h1.hero__title #{title}
+    +image(image)

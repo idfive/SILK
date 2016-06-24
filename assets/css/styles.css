@@ -574,6 +574,14 @@ table tr:nth-of-type(even) td {
   }
 }
 /* ========================================
+// Horizontal Rule
+// ===================================== */
+hr {
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  margin: 1.875em 0;
+}
+/* ========================================
 // Symbols
 // ===================================== */
 .symbol {
@@ -1860,6 +1868,7 @@ table tr:nth-of-type(even) td {
 // ===================================== */
 .silk-table {
   overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
 
 }
 @media (min-width: 800px){
@@ -1891,6 +1900,13 @@ body {
 // ===================================== */
 .section {
   padding: 1.25em;
+}
+/* ========================================
+// Situational
+// ===================================== */
+.block-out {
+  overflow: hidden;
+  width: auto;
 }
 /* ========================================
 // Site Header
@@ -2235,12 +2251,16 @@ select:hover + .input-hint {
 .hero {
   background-position: 50% 50% !important;
   background-size: cover !important;
-  
+
 }
 .hero--empty {
   height: 40vw;
   min-height: 15em;
   max-height: 31.25em;
+}
+.hero--default {
+  padding-top: 6.25em;
+  padding-bottom: 1.25em;
 }
 /* ========================================
 // Media
@@ -2255,15 +2275,37 @@ figure img {
   display: block;
   width: 100%;
 }
+.shifted-asset {
+  margin-bottom: 1.25em;
+
+}
+@media (min-width: 900px){
+  .shifted-asset{
+    max-width: 23.75em;
+  }
+}
+@media (min-width: 900px){
+  .shifted-asset--left{
+    float: left;
+    margin-right: 2.5em;
+  }
+}
+@media (min-width: 900px){
+  .shifted-asset--right{
+    float: right;
+    margin-left: 2.5em;
+  }
+}
 figcaption {
     margin-top: 0.625em;
     font-style: italic;
   }
 /* Image
 // ------------------------------------- */
-img.full-width {
+img {
   display: block;
   width: 100%;
+
 }
 .hero > img {
   display: none;

@@ -100,3 +100,14 @@ table {
 .lead-in {
   @mixin h4;
 }
+
+
+/* ========================================
+// Horizontal Rule
+// ===================================== */
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  margin: em(30) 0;
+}

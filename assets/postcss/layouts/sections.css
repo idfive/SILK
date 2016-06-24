@@ -5,3 +5,13 @@
 .section {
   padding: em(20);
 }
+
+
+/* ========================================
+// Situational
+// ===================================== */
+
+.block-out {
+  overflow: hidden;
+  width: auto;
+}

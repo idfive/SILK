@@ -328,7 +328,7 @@ function swift(parameters) {
     next.innerHTML = '<svg class="symbol symbol-' + parameters.nextSymbol + '"><use xlink:href="#' + parameters.nextSymbol + '"></use></svg>';
     controller.appendChild(next);
 
-    var currentSlide = 1;
+    var currentSlide = 0;
 
     var pager = document.createElement('div');
     pager.classList.add('swift-pager');
