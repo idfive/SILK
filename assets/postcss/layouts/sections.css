@@ -2,8 +2,8 @@
 // Sections
 // ===================================== */
 
-.section {
-  padding: em(20);
+.content {
+  padding: em(40) em(20);
 }
 
 
