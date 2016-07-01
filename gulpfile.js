@@ -58,11 +58,6 @@ var paths = {
 gulp.task('jade', ['sprite'], function() {
 
   return gulp.src(paths.jade.src)
-    .pipe(changed(
-      paths.jade.dest, {
-        extension: '.html'
-      }
-    ))
     .pipe(jade({
       pretty: true
     }))
