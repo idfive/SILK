@@ -102,7 +102,7 @@ function modals() {
 function triggers() {
 
   triggerParent({
-    trigger: '.nav-tier__trigger'
+    trigger: '.site-search__trigger'
   });
 
 }

@@ -4,23 +4,6 @@
 
 .silk-nav {
 
-  > ul {
-
-    > li {
-
-      > ul {
-        margin-top: em(39);
-
-        @mixin media $silkDrawerDisappears {
-          margin-top: 0;
-        }
-
-      }
-
-    }
-
-  }
-
   ul {
 
     ul {
