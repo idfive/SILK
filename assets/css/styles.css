@@ -1639,14 +1639,6 @@ hr {
 /* ========================================
 // Silk Nav
 // ===================================== */
-.silk-nav > ul > li > ul {
-  margin-top: 2.4375em;
-}
-@media (min-width: 1000px){
-  .silk-nav > ul > li > ul{
-    margin-top: 0;
-  }
-}
 .silk-nav ul ul {
   position: absolute;
   top: 0;
@@ -2263,7 +2255,70 @@ select:hover + .input-hint {
 /* ========================================
 // Unique Form Elements
 // ===================================== */
-.site-search {}
+.site-search {
+  position: relative;
+}
+.site-search__trigger {
+    position: relative;
+    height: 3.125em;
+    width: 3.125em;
+    cursor: pointer;
+
+  }
+.site-search__trigger .vertically-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.site-search__trigger svg {
+  display: block;
+}
+.site-search__details {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    opacity: 0;
+    -webkit-transform: scale(.5);
+    -ms-transform: scale(.5);
+    transform: scale(.5);
+    -webkit-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top;
+    -webkit-transition: opacity .2s,
+      -webkit-transform .2s;
+    transition: opacity .2s,
+      -webkit-transform .2s;
+    transition: opacity .2s,
+      transform .2s;
+    transition:
+      opacity .2s,
+      transform .2s,
+      -webkit-transform .2s;
+
+  }
+.event-triggered .site-search__details {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+.site-search__details .site-search__text {
+  width: 18.75em;
+}
+.site-search__details .site-search__submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border: 0;
+  padding: 0 1.25em;
+  -webkit-transition: background .3s;
+  transition: background .3s;
+}
+.site-search__details .site-search__submit:hover {}
 /* ========================================
 // Hero
 // ===================================== */

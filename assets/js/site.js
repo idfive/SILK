@@ -78,16 +78,21 @@ function harmonicas() {
 
 function slideshows() {
 
-  var swiftSlide = document.querySelector('.swift-slide');
+  var swiftSlide = document.querySelectorAll('.swift-slide');
 
-  if(document.body.contains(swiftSlide)) {
+  if(document.body.contains(swiftSlide[0])) {
 
-    swift({
-      container: '.swift-slide',
-      elements: 'li',
-      prevSymbol: 'chevron-left',
-      nextSymbol: 'chevron-right'
-    });
+    for(var i = 0; i < swiftSlide.length; i++) {
+      swiftSlide[i].classList.add('swift-slide-' + i);
+
+      swift({
+        container: '.swift-slide-' + i,
+        elements: 'li',
+        prevSymbol: 'chevron-left',
+        nextSymbol: 'chevron-right'
+      });
+
+    }
 
   }
 

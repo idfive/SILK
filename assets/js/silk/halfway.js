@@ -1,11 +1,15 @@
 function halfway(parameters) {
 
-  document.addEventListener('scroll', calculateHalfway, false);
-
   var windowHeight = window.innerHeight;
   var elements = document.querySelectorAll(parameters.element);
   var elementHitBoxes = [];
   var scrollTimeout;
+
+  if(document.body.contains(elements[0])) {
+
+    document.addEventListener('scroll', calculateHalfway, false);
+
+  }
 
   if(parameters.anchors) {
 

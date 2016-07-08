@@ -30,12 +30,16 @@ c.push(b);d++}C(c);x=!1;0<v.length&&(L.fetch(v[0]),v.splice(0,1))}};return windo
 // SILK Modules
 function halfway(parameters) {
 
-  document.addEventListener('scroll', calculateHalfway, false);
-
   var windowHeight = window.innerHeight;
   var elements = document.querySelectorAll(parameters.element);
   var elementHitBoxes = [];
   var scrollTimeout;
+
+  if(document.body.contains(elements[0])) {
+
+    document.addEventListener('scroll', calculateHalfway, false);
+
+  }
 
   if(parameters.anchors) {
 
@@ -348,8 +352,8 @@ function swift(parameters) {
     yDown = null;
 
   };
-  
-  if(container.length) {
+
+  if(document.body.contains(container)) {
 
     var controller = document.createElement('div');
     controller.classList.add('swift-controls');

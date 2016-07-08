@@ -41,8 +41,8 @@ function swift(parameters) {
     yDown = null;
 
   };
-  
-  if(container.length) {
+
+  if(document.body.contains(container)) {
 
     var controller = document.createElement('div');
     controller.classList.add('swift-controls');
