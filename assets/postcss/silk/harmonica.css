@@ -6,7 +6,8 @@
 $accordionToHarmonica: 900px;
 
 .silk-harmonica {
-
+  margin-bottom: em(30);
+  
   &--expanded {
 
     @media(min-width: $accordionToHarmonica) {

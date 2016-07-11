@@ -33,6 +33,7 @@
 
 @import 'navigation/shared';
 @import 'navigation/main';
+@import 'navigation/breadcrumbs';
 @import 'navigation/unique';
 
 @import 'modules/address';

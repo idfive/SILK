@@ -9,7 +9,7 @@ form {}
 
   fieldset {
     border: 0;
-    margin-bottom: em(20);
+    margin-bottom: em($push);
     padding: 0;
   }
 
@@ -151,4 +151,60 @@ select {
 // Unique Form Elements
 // ===================================== */
 
-.site-search {}
+.site-search {
+  position: relative;
+}
+
+  .site-search__trigger {
+    position: relative;
+    height: em(50);
+    width: em(50);
+    cursor: pointer;
+
+    .vertically-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+      svg {
+        display: block;
+      }
+
+  }
+
+  .site-search__details {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    opacity: 0;
+    transform: scale(.5);
+    transform-origin: right top;
+    transition:
+      opacity .2s,
+      transform .2s;
+
+    .event-triggered & {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .site-search__text {
+      width: em(300);
+    }
+
+    .site-search__submit {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      border: 0;
+      padding: 0 em(20);
+      transition: background .3s;
+
+      &:hover {}
+
+    }
+
+  }

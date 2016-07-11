@@ -4,6 +4,7 @@
 
 .silk-modal {
   position: relative;
+  margin-bottom: em($push);
 }
 
   .silk-modal__trigger {
@@ -32,8 +33,10 @@
     position: fixed;
     top: 50%;
     left: 50%;
+    z-index: 800;
     display: none;
     overflow: scroll;
+    webkit-overflow-scrolling: touch;
     height: 90%;
     height: calc(100% - em(80));
     max-width: em(1300);
@@ -46,19 +49,6 @@
 
     .event-triggered & {
       display: block;
-      animation: animate-modal .2s forwards;
-    }
-
-  }
-
-  @keyframes animate-modal {
-
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
     }
 
   }
@@ -67,6 +57,8 @@
       margin-bottom: em(10);
       cursor: pointer;
       transition: color .2s;
+
+      &:hover {}
 
       svg {
         display: inline-block;
@@ -81,3 +73,10 @@
       }
 
     }
+
+
+/* Effect on body */
+
+.modal-triggered {
+  overflow: hidden;
+}

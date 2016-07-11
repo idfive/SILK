@@ -2,6 +2,16 @@
 // Sections
 // ===================================== */
 
-.section {
-  padding: em(20);
+.content {
+  padding: em(40) em($gutter);
+}
+
+
+/* ========================================
+// Situational
+// ===================================== */
+
+.block-out {
+  overflow: hidden;
+  width: auto;
 }

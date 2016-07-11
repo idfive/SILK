@@ -32,6 +32,9 @@ module.exports = {
 
   boundary: 1180,
 
+  gutter: 20,
+  push: 30,
+
   silkDrawerDisappears: '1000px',
   silkTableExpanded: '800px',
 

@@ -5,8 +5,8 @@
 a {
   text-decoration: none;
   transition:
-    background .3s,
-    color .3s;
+    background .2s,
+    color .2s;
 
   &:active {}
 
@@ -20,6 +20,7 @@ a {
 // ===================================== */
 
 blockquote {
+  margin: 0 0 em($push);
 
   &:before {
     margin-right: em(5);
@@ -48,7 +49,10 @@ cite {
 // ===================================== */
 
 ul,
-ol {}
+ol {
+  margin-top: 0;
+  margin-bottom: em($push);
+}
 
   li {}
 
@@ -58,7 +62,8 @@ ol {}
 // ===================================== */
 
 p {
-  margin: 0 0 em(30) 0;
+  margin-top: 0;
+  margin-bottom: em($push);
 }
 
 
@@ -69,11 +74,11 @@ p {
 table {
   width: 100%;
   border-spacing: 0;
-  margin-bottom: 1em;
+  margin-bottom: em($push);
 
   th,
   td {
-    padding: rem(10) rem(20);
+    padding: rem(10) rem($gutter);
   }
 
   th {
@@ -99,4 +104,15 @@ table {
 
 .lead-in {
   @mixin h4;
+}
+
+
+/* ========================================
+// Horizontal Rule
+// ===================================== */
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  margin: em($push) 0;
 }

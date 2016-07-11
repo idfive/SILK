@@ -1,0 +1,36 @@
+/* ========================================
+// Breadcrumbs Navigation
+// ===================================== */
+
+.nav-breadcrumbs {
+  display: none;
+
+  @mixin media $silkDrawerDisappears {
+    display: block;
+    margin-bottom: em(20);
+  }
+
+  ul {}
+
+    li {
+      display: inline-block;
+      vertical-align: middle;
+
+      &:not(:last-child) {
+
+        &:after {
+          display: inline-block;
+          vertical-align: top;
+          content: '>';
+        }
+
+      }
+
+    }
+
+      a {
+        display: inline-block;
+        color: inherit;
+      }
+
+}

@@ -78,16 +78,21 @@ function harmonicas() {
 
 function slideshows() {
 
-  var swiftSlide = document.querySelector('.swift-slide');
+  var swiftSlide = document.querySelectorAll('.swift-slide');
 
-  if(document.body.contains(swiftSlide)) {
+  if(document.body.contains(swiftSlide[0])) {
 
-    swift({
-      container: '.swift-slide',
-      elements: 'li',
-      prevSymbol: 'chevron-left',
-      nextSymbol: 'chevron-right'
-    });
+    for(var i = 0; i < swiftSlide.length; i++) {
+      swiftSlide[i].classList.add('swift-slide-' + i);
+
+      swift({
+        container: '.swift-slide-' + i,
+        elements: 'li',
+        prevSymbol: 'chevron-left',
+        nextSymbol: 'chevron-right'
+      });
+
+    }
 
   }
 
@@ -102,11 +107,7 @@ function modals() {
 function triggers() {
 
   triggerParent({
-    trigger: '.silk-modal__trigger'
-  });
-
-  triggerParent({
-    trigger: '.nav-tier__trigger'
+    trigger: '.site-search__trigger'
   });
 
 }
@@ -114,7 +115,7 @@ function triggers() {
 function halfways() {
 
   halfway({
-    element: '.compartment > section',
+    element: '.halfway-section',
     anchors: true,
     offset: 0
   });

@@ -10,19 +10,27 @@ function harmonica(parameters) {
       var openSymbolBottle = document.createElement('span');
       openSymbolBottle.classList.add('silk-harmonica__bottle');
 
+      var openSymbolBubble = document.createElement('span');
+      openSymbolBubble.classList.add('silk-harmonica__bubble');
+      openSymbolBottle.appendChild(openSymbolBubble);
+
       var openSymbol = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       openSymbol.classList.add('silk-harmonica__symbol', 'symbol', 'symbol-plus');
       openSymbol.innerHTML = '<use xlink:href="#plus"></use>';
-      openSymbolBottle.appendChild(openSymbol);
+      openSymbolBubble.appendChild(openSymbol);
       headings[i].appendChild(openSymbolBottle);
 
       var closeSymbolBottle = document.createElement('span');
       closeSymbolBottle.classList.add('silk-harmonica__bottle');
 
+      var closeSymbolBubble = document.createElement('span');
+      closeSymbolBubble.classList.add('silk-harmonica__bubble');
+      closeSymbolBottle.appendChild(closeSymbolBubble);
+
       var closeSymbol = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       closeSymbol.classList.add('silk-harmonica__symbol', 'symbol', 'symbol-minus');
       closeSymbol.innerHTML = '<use xlink:href="#minus"></use>';
-      closeSymbolBottle.appendChild(closeSymbol);
+      closeSymbolBubble.appendChild(closeSymbol);
       headings[i].appendChild(closeSymbolBottle);
 
       headings[i].addEventListener('click', toggleNote, false);
@@ -50,8 +58,16 @@ function harmonica(parameters) {
 
     currentNote = event.currentTarget;
 
-    clearClasses();
-    assignClasses(currentNote);
+    if(currentNote.parentNode.classList.contains('silk-harmonica--condensed')) {
+
+      currentNote.classList.toggle('active');
+
+    } else {
+
+      clearClasses(currentNote);
+      assignClasses(currentNote);
+
+    }
 
   }
 

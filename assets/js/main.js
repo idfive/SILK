@@ -1,4 +1,5 @@
 // Vendor
+//= include vendor/classList.min.js
 //= include vendor/instafeed.min.js
 //= include vendor/twitterFetcher.min.js
 

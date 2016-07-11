@@ -58,11 +58,6 @@ var paths = {
 gulp.task('jade', ['sprite'], function() {
 
   return gulp.src(paths.jade.src)
-    .pipe(changed(
-      paths.jade.dest, {
-        extension: '.html'
-      }
-    ))
     .pipe(jade({
       pretty: true
     }))
@@ -165,6 +160,10 @@ gulp.task('js', function() {
 
   return gulp.src(paths.js.compile)
     .pipe(include())
+    .pipe(gulp.dest(paths.js.dest))
+    .pipe(rename(function(path) {
+      path.basename += '.min';
+    }))
     .pipe(uglify({
       mangle: false
     }))
