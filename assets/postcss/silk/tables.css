@@ -1,0 +1,13 @@
+/* ========================================
+// Silk Table
+// ===================================== */
+
+.silk-table {
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  
+  @mixin media $silkTableExpanded {
+    overflow-x: visible;
+  }
+
+}

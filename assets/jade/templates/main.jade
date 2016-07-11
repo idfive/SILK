@@ -1,0 +1,21 @@
+//- ========================================
+//- Main Site Template
+//- ========================================
+
+doctype html
+html(
+  dir="ltr"
+  lang="en-US"
+)
+  include ../regions/head.jade
+  include ../mixins/symbol.jade
+  include ../mixins/image.jade
+  include ../mixins/forms.jade
+  include ../mixins/heroes.jade
+  body
+    .sprite(style="display: none;")
+      include ../../svg/sprite.symbol.svg
+    include ../regions/header.jade
+    main
+      block content
+    include ../regions/footer.jade

@@ -1,0 +1,118 @@
+/* ========================================
+// Anchors
+// ===================================== */
+
+a {
+  text-decoration: none;
+  transition:
+    background .2s,
+    color .2s;
+
+  &:active {}
+
+  &:hover {}
+
+}
+
+
+/* ========================================
+// Blockquote / Cite
+// ===================================== */
+
+blockquote {
+  margin: 0 0 em($push);
+
+  &:before {
+    margin-right: em(5);
+    content: '\201C';
+  }
+
+  &:after {
+    content: '\201D';
+  }
+
+}
+
+cite {
+  @mixin h6;
+  font-style: normal;
+
+  &:before {
+    content: '';
+  }
+
+}
+
+
+/* ========================================
+// Lists
+// ===================================== */
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: em($push);
+}
+
+  li {}
+
+
+/* ========================================
+// Paragraphs
+// ===================================== */
+
+p {
+  margin-top: 0;
+  margin-bottom: em($push);
+}
+
+
+/* ========================================
+// Tables
+// ===================================== */
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  margin-bottom: em($push);
+
+  th,
+  td {
+    padding: rem(10) rem($gutter);
+  }
+
+  th {
+    @mixin h4;
+    font-weight: normal;
+    text-align: left;
+    background: rgba(30, 0, 0, .075);
+  }
+
+  td {}
+
+}
+
+  /* Every td in every odd row */
+  table tr:nth-of-type(even) td {
+    background: rgba(30, 0, 0, .025);
+  }
+
+
+/* ========================================
+// Lead In
+// ===================================== */
+
+.lead-in {
+  @mixin h4;
+}
+
+
+/* ========================================
+// Horizontal Rule
+// ===================================== */
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  margin: em($push) 0;
+}

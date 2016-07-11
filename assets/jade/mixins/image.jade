@@ -1,0 +1,17 @@
+//- ========================================
+//- Image Inclusion
+//- ========================================
+
+mixin image(name, description)
+  img(
+    src="./assets/images/#{name}",
+    alt="#{description}"
+  )
+
+mixin figure(name, description, direction)
+  figure(class="shifted-asset shifted-asset--#{direction}")
+    img(
+      src="./assets/images/#{name}",
+      alt="#{description}"
+    )
+    figcaption #{description}

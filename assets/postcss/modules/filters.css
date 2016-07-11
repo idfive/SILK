@@ -1,0 +1,44 @@
+/* ========================================
+// Pagination
+// ===================================== */
+
+.pagination {
+  text-align: center;
+}
+
+  .pagination__control {
+    display: inline-block;
+    vertical-align: middle;
+    border: 0;
+    padding: 0;
+    background: none;
+  }
+
+  .pagination__key {
+    @mixin list-reset;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 em(20);
+
+    li {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+      a {
+        display: block;
+        padding: 0 em(5, 20);
+
+        @mixin media $medium {
+          padding: 0 em(10, 20);
+          font-size: em(20);
+        }
+
+        &:hover,
+        &.active {
+          text-decoration: underline;
+        }
+
+      }
+
+  }

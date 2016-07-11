@@ -1,0 +1,151 @@
+/* ========================================
+// Silk Nav
+// ===================================== */
+
+.silk-nav {
+
+  ul {
+
+    ul {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      z-index: 200;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(0, 0);
+      transition:
+        opacity .4s,
+        visibility .4s,
+        transform .4s;
+
+      @mixin media $silkDrawerDisappears {
+        top: 100%;
+        left: 0;
+        display: none;
+        height: auto;
+        width: 200%;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      &.silk-nav__nest--active {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-100%, 0);
+        transition:
+          opacity .4s,
+          visibility .4s,
+          transform .4s cubic-bezier(.175, .885, .24, 1.11);
+
+        @mixin media $silkDrawerDisappears {
+          transform: none;
+        }
+
+      }
+
+      > a {
+
+        @mixin media $silkDrawerDisappears {
+          display: none;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+/* ========================================
+// Silk Nav Controls
+// ===================================== */
+
+.silk-nav__controls {
+  position: relative;
+  z-index: 400;
+  border-top: 1px solid rgba(0, 0, 0, .25);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @mixin media $silkDrawerDisappears {
+    display: none;
+  }
+
+}
+
+  .silk-nav__trigger {
+    border: 0;
+    padding: em(8) em(10);
+    background: none;
+    transition:
+      background .2s,
+      color .2s,
+      opacity .2s,
+      visibilty .2s;
+
+    &:hover {}
+
+    @mixin media $silkDrawerDisappears {
+      display: none;
+    }
+
+    &--home,
+    &--revert {
+
+      svg {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+    }
+
+    &--revert,
+    &--reverse {
+      opacity: 0;
+      visibility: hidden;
+
+      .silk-nav--active & {
+        opacity: 1;
+        visibility: visible;
+      }
+
+    }
+
+    &--revert {
+      border-left: 1px solid rgba(0, 0, 0, .25);
+    }
+
+    &--reverse,
+    &--advance {
+      position: absolute;
+      padding: em(13) em(20);
+
+      &:hover {}
+
+        svg {
+          display: block;
+        }
+
+    }
+
+    &--reverse {
+      top: 100%;
+      left: 0;
+      border-right: 1px solid rgba(0, 0, 0, .25);
+    }
+
+    &--advance {
+      right: 0;
+      border-left: 1px solid rgba(0, 0, 0, .25);
+      margin-top: em(-42);
+    }
+
+
+
+  }

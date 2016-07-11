@@ -1,8 +1,13 @@
-.silk-nav__controls
-  a.trigger--home(href="/")
-    i.icon.icon-home Home
-  button.trigger--revert
-    i.icon.icon-undo Main Menu
-  button.trigger--reverse
-    i.icon.icon-chevron-left
+//- ========================================
+//- Silk Navigation Controls
+//- ========================================
 
+.silk-nav__controls
+  a.silk-nav__trigger.silk-nav__trigger--home(href="/")
+    +symbol("home")
+    span Home
+  button.silk-nav__trigger.silk-nav__trigger--revert
+    +symbol("undo")
+    span Main Menu
+  button.silk-nav__trigger.silk-nav__trigger--reverse
+    +symbol("chevron-left")

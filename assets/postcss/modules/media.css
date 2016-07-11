@@ -1,0 +1,86 @@
+/* ========================================
+// Media
+// ===================================== */
+
+/* Figure
+// ------------------------------------- */
+
+figure {
+  margin: 0;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+}
+
+.shifted-asset {
+  margin-bottom: em(20);
+
+  @mixin media $huge {
+    max-width: em(380);
+  }
+
+  &--left {
+
+    @mixin media $huge {
+      float: left;
+      margin-right: em(40);
+    }
+
+  }
+
+  &--right {
+
+    @mixin media $huge {
+      float: right;
+      margin-left: em(40);
+    }
+
+  }
+
+}
+
+  figcaption {
+    margin-top: em(10);
+    font-style: italic;
+  }
+
+
+/* Image
+// ------------------------------------- */
+
+img {
+  display: block;
+  width: 100%;
+  
+  .hero > & {
+    display: none;
+  }
+
+}
+
+
+/* Iframe
+// ------------------------------------- */
+
+iframe {
+
+  .silk-modal__details & {
+    width: 100%;
+  }
+
+}
+
+
+/* SVG
+// ------------------------------------- */
+
+svg {}
+
+
+/* Video
+// ------------------------------------- */
+
+video {}

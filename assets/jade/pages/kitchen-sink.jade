@@ -1,0 +1,56 @@
+//- ========================================
+//- Style Tile
+//- ========================================
+
+extends ../templates/main.jade
+
+block content
+  +hero("Kitchen Sink", "interior.jpg", "default")
+  .content
+    .compartment
+      +figure("interior.jpg", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. dolor sit amet, consectetur", "left")
+      .block-out
+        p.lead-in Lead in Copy Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non rhoncus velit. Nam egestas sodales nisl ac volutpat. Etiam convallis malesuada arcu, a consectetur lectus porttitor vel.
+        h2 Subheading
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu tempus lorem. Aliquam viverra, urna vitae sagittis tempor, elit velit #[a(href="") luctus purus], sit amet luctus felis lectus nec dolor. Morbi convallis dolor sit amet laoreet. In hac habitasse platea dictumst. Ut accumsan nisl et bibendum convallis. Quisque pellentesque mauris quis eros eleifend posuere. Nunc consectetur dictum nisl.
+        p Maecenas erat leo, aliquet sit amet turpis sed, imperdiet accumsan quam. Maecenas vel ullamcorper enim, quis iaculis sapien. Mauris eget magna eu erat mollis semper eu ac odio. Suspendisse viverra fringilla tempus.
+        h3 Heading lorem ipsum dor sit amet
+        p Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+      hr
+      h2 Subheading
+      p Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+      ul
+        li Aliquet sit amet
+        li Eget magna eu erat mollis semper
+        li Lorem ipsum dolor sit amet
+        li Quis iaculis sapien
+      p Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum.
+      blockquote Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+      p Maecenas erat leo, aliquet sit amet turpis sed, imperdiet accumsan quam. Maecenas vel ullamcorper enim, quis iaculis sapien. Mauris eget magna eu erat mollis semper eu ac odio. Suspendisse viverra fringilla tempus.
+      ol
+        li Aliquam viverra, urna vitae sagittis tempor, elit velit
+        li Luctus felis lectus nec dolor
+        li Consectetur adipiscing elit
+        li Maecenas vel ullamcorper enim, quis
+      p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+      .grid--push-bottom
+        a.button(href="") Button
+        a.button(href="") Button
+      p Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+      p Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+      .grid--push-bottom
+        a.button.button--hollow(href="") Button
+        a.button.button--hollow(href="") Button
+      hr
+      h2 Subheading
+      p Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+      include ../blocks/silk-harmonica.jade
+      hr
+      h2 Subheading
+      p Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
+      include ../blocks/silk-harmonica-expanded.jade
+      p Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum.
+      p Maecenas erat leo, aliquet sit amet turpis sed, imperdiet accumsan quam. Maecenas vel ullamcorper enim, quis iaculis sapien. Mauris eget magna eu erat mollis semper eu ac odio. Suspendisse viverra fringilla tempus.
+      include ../blocks/silk-modal.jade
+      p Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum.
+      include ../blocks/silk-table.jade

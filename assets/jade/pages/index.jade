@@ -1,6 +1,85 @@
-extends ../layouts/main.jade
+//- ========================================
+//- Home Page
+//- ========================================
+
+extends ../templates/main.jade
 
 block content
-  include ../blocks/silk-tabs.jade
-  include ../blocks/silk-accordion.jade
-  include ../blocks/silk-table.jade
+  .compartment
+    section.hero#hero-section
+      h2 Silk Hero
+      img(src="http://i.imgur.com/amMWTop.jpg")
+    section.hero.hero--empty#empty-hero-section
+      img(src="http://i.imgur.com/9FnCMYs.jpg")
+    section#harmonica-section
+      h2 Silk Harmonica
+      include ../blocks/silk-harmonica.jade
+    section#harmonica-expanded-section
+      h2 Silk Harmonica Expanded
+      include ../blocks/silk-harmonica-expanded.jade
+    section#table-section
+      h2 Silk Table
+      include ../blocks/silk-table.jade
+    section#collage-section
+      h2 Silk Collage
+      ol.silk-collage
+        li
+        li
+        li
+        li
+        li
+        li
+    section#swift-slide-section
+      h2 Swift Slide
+      ol.swift-slide
+        li
+        li
+        li
+        li
+    section#instagram-section
+      h2 Instagram Feed
+      ol#instagram-feed.instagram-feed.list-reset
+    section#twitter-section
+      h2 Twitter Feed
+      ol#twitter-feed.twitter-feed.list-reset
+    section#forms-section
+      h2 Forms
+      form.grid.grid--20
+        .col-large-6.col-aldnoah-4
+          +input("Enter Search Keywords", "submit")
+        .col-large-6.col-aldnoah-4
+          +select("Select From Options", "Who", "What", "Why", "Where", "When")
+        .col-aldnoah-4
+          input(
+            placeholder="Name (required)"
+            name="name"
+            type="text"
+            required
+          )
+        .col-flush
+          textarea(
+            placeholder="Tell us more (optional):"
+            name="comments"
+            rows="8"
+          )
+        .col-flush
+          fieldset
+            +radio("radio-input", "Radio Input")
+            +radio("checkbox-input", "Checkbox Input")
+        .col-flush
+          input.button(
+            type="submit"
+            value="Submit"
+          )
+    section#filter-section
+      h2 Filters
+      include ../blocks/pagination.jade
+    section#buttons-section
+      h2 Buttons
+      button.button HTML Button Filled 
+      a.button(href="") Link Button Filled
+      button.button.button--hollow HTML Button Hollow 
+      a.button.button--hollow(href="") Link Button Hollow
+    section#modal-section
+      h2 Modal
+      include ../blocks/silk-modal.jade

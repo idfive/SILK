@@ -1,0 +1,54 @@
+/* ========================================
+// Main Navigation
+// ===================================== */
+
+@define-mixin tier-one {
+  padding: em(10);
+}
+
+.nav-main {
+
+  > ul {
+
+    > li {
+
+      @mixin media $silkDrawerDisappears {
+        position: relative;
+        display: inline-block;
+      }
+
+      &:hover {
+
+        > ul {
+
+          @mixin media $silkDrawerDisappears {
+            display: block;
+          }
+
+        }
+
+      }
+
+      > a {
+        @mixin tier-one;
+      }
+
+      ul {
+        background: #fff;
+
+        a {
+          padding: em(10);
+        }
+
+        > a {
+          @mixin tier-one;
+          padding-left: em(70);
+        }
+
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,210 @@
+/* ========================================
+// Forms
+// ===================================== */
+
+/* Container
+// ------------------------------------- */
+
+form {}
+
+  fieldset {
+    border: 0;
+    margin-bottom: em($push);
+    padding: 0;
+  }
+
+
+/* Label
+// ------------------------------------- */
+
+label {
+  margin-right: em(20);
+}
+
+
+/* Shared Input/Select/Textarea
+// ------------------------------------- */
+
+@define-mixin form-item-container {
+  position: relative;
+  overflow: hidden;
+}
+
+@define-mixin form-item {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: em(10) em(20);
+  appearance: none;
+  background: #fff;
+  border-radius: 0;
+}
+
+
+.input-field {
+  @mixin form-item-container;
+}
+
+  .input-hint {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: em(50);
+    background: #ccc url(../icons/chevron-down.svg) no-repeat 50% 50%;
+    transition: background .2s;
+
+    &:hover {
+      background-color: #bbb;
+    }
+
+    &--select {
+      pointer-events: none;
+    }
+
+    &--submit {
+      background-image: url(../icons/search.svg);
+    }
+
+  }
+
+    .input-hint__field {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      border: 0;
+      padding: 0;
+      background: none;
+      color: transparent;
+    }
+
+
+/* Input
+// ------------------------------------- */
+
+input {
+
+  &:disabled {}
+
+  &:checked {}
+
+  &[type='text'] {
+    @mixin form-item-container;
+    @mixin form-item;
+  }
+
+  &[type='radio'],
+  &[type='checkbox'] {
+    height: em(15);
+    width: em(15);
+    border: 1px solid;
+    cursor: pointer;
+    appearance: none;
+    transition:
+      border .2s,
+      background .2s;
+
+    &:checked {
+      background: currentColor;
+    }
+
+  }
+
+  &[type='radio'] {
+    border-radius: 100%;
+  }
+
+  &[type='range'] {}
+
+}
+
+
+/* Textarea
+// ------------------------------------- */
+
+textarea {
+  @mixin form-item-container;
+  @mixin form-item;
+}
+
+
+/* Select
+// ------------------------------------- */
+
+select {
+  @mixin form-item;
+  cursor: pointer;
+
+  &:hover {
+
+    + .input-hint {
+      background-color: #bbb;
+    }
+
+  }
+
+}
+
+
+/* ========================================
+// Unique Form Elements
+// ===================================== */
+
+.site-search {
+  position: relative;
+}
+
+  .site-search__trigger {
+    position: relative;
+    height: em(50);
+    width: em(50);
+    cursor: pointer;
+
+    .vertically-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+      svg {
+        display: block;
+      }
+
+  }
+
+  .site-search__details {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    opacity: 0;
+    transform: scale(.5);
+    transform-origin: right top;
+    transition:
+      opacity .2s,
+      transform .2s;
+
+    .event-triggered & {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .site-search__text {
+      width: em(300);
+    }
+
+    .site-search__submit {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      border: 0;
+      padding: 0 em(20);
+      transition: background .3s;
+
+      &:hover {}
+
+    }
+
+  }

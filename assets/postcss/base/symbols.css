@@ -1,0 +1,31 @@
+/* ========================================
+// Symbols
+// ===================================== */
+
+.symbol {
+  transition:
+    fill .2s,
+    stroke .2s;
+
+  &-home,
+  &-undo,
+  &-chevron-left,
+  &-chevron-right,
+  &-search,
+  &-close {
+    height: em(16);
+    width: em(16);
+  }
+
+  &-minus,
+  &-plus {
+    height: em(20);
+    width: em(20);
+  }
+
+  &-play {
+    height: em(65);
+    width: em(65);
+  }
+
+}
