@@ -3,46 +3,46 @@ function swift(parameters) {
   var container = document.querySelector(parameters.container);
   var elements = document.querySelectorAll(parameters.container + ' ' + parameters.elements);
 
-  container.addEventListener('touchstart', handleTouchStart, false);
-  container.addEventListener('touchmove', handleTouchMove, false);
+  if(document.body.contains(container)) {
 
-  var xDown = null;
-  var yDown = null;
+    container.addEventListener('touchstart', handleTouchStart, false);
+    container.addEventListener('touchmove', handleTouchMove, false);
 
-  function handleTouchStart(evt) {
-    xDown = evt.touches[0].clientX;
-    yDown = evt.touches[0].clientY;
-  };
+    var xDown = null;
+    var yDown = null;
 
-  function handleTouchMove(evt) {
+    function handleTouchStart(evt) {
+      xDown = evt.touches[0].clientX;
+      yDown = evt.touches[0].clientY;
+    };
 
-    if ( ! xDown || ! yDown ) {
-      return;
-    }
+    function handleTouchMove(evt) {
 
-    var xUp = evt.touches[0].clientX;
-    var yUp = evt.touches[0].clientY;
-
-    var xDiff = xDown - xUp;
-    var yDiff = yDown - yUp;
-
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
-
-      if ( xDiff > 0 ) {
-        nextSlide();
-      } else {
-        previousSlide();
+      if ( ! xDown || ! yDown ) {
+        return;
       }
 
-    }
+      var xUp = evt.touches[0].clientX;
+      var yUp = evt.touches[0].clientY;
 
-    /* reset values */
-    xDown = null;
-    yDown = null;
+      var xDiff = xDown - xUp;
+      var yDiff = yDown - yUp;
 
-  };
+      if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
 
-  if(document.body.contains(container)) {
+        if ( xDiff > 0 ) {
+          nextSlide();
+        } else {
+          previousSlide();
+        }
+
+      }
+
+      /* reset values */
+      xDown = null;
+      yDown = null;
+
+    };
 
     var controller = document.createElement('div');
     controller.classList.add('swift-controls');
