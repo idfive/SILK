@@ -26,8 +26,10 @@ function silkModal() {
 
     for (var i = 0; i < modals.length; i++) {
       modals[i].classList.remove('event-triggered');
-      videoBottles[i].removeChild(videos[i]);
-      videoBottles[i].appendChild(videos[i]);
+      if(videoBottles.length >= 1) {
+        videoBottles[i].removeChild(videos[i]);
+        videoBottles[i].appendChild(videos[i]);
+      }
     }
 
   }
