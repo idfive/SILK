@@ -28,7 +28,7 @@ function silkModal() {
     for (var i = 0; i < modals.length; i++) {
       modals[i].classList.remove('event-triggered');
 
-      if(videoBottles.length >= 1) {
+      if(document.body.contains(videos[i])) {
         videoBottles[i].removeChild(videos[i]);
         videoBottles[i].appendChild(videos[i]);
       }
