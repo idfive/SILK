@@ -1,3 +1,62 @@
 /* ========================================
 // Silk Style Tile
 // ===================================== */
+
+.style-tile .site__header,
+.style-tile .site__footer {
+  display: none;
+}
+
+.style-tile__bubble {
+  padding: em(30);
+}
+
+  .style-tile__pallette {
+    @mixin list-reset;
+    margin: 0 em(-10);
+
+    &:after {
+      @mixin clear;
+    }
+
+    li {
+      float: left;
+      margin: 0 em(10) em(40);
+      height: em(60);
+      width: em(60);
+      border-radius: 100%;
+    }
+
+  }
+
+  .style-tile__colors {
+
+    li {
+
+      @each $color, $i in $m1, $m1, $m2, $m3 {
+
+        &:nth-child($(i)) {
+          background: $$(color);
+        }
+
+      }
+
+    }
+
+  }
+
+  .style-tile__shades {
+
+    li {
+
+      @each $color, $i in $s1, $s1, $s2 {
+
+        &:nth-child($(i)) {
+          background: $$(color);
+        }
+
+      }
+
+    }
+
+  }

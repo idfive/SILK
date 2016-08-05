@@ -29,6 +29,11 @@ module.exports = {
   h6Line: 22,
 
   m1: '#00A98D',
+  m2: '#00C7EF',
+  m3: '#A900FF',
+
+  s1: '#eee',
+  s2: '#888',
 
   boundary: 1180,
 

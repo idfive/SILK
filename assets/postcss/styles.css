@@ -25,6 +25,7 @@
 @import 'silk/slides';
 @import 'silk/style-tile';
 @import 'silk/tables';
+@import 'silk/style-tile';
 
 @import 'layouts/index';
 @import 'layouts/sections';

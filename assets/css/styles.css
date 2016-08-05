@@ -1446,106 +1446,8 @@ hr {
 /* ========================================
 // Silk Halfway
 // ===================================== */
-.halfway-section {
-  position: relative;
-  height: 100vh;
-}
-.halfway-content {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    -webkit-transform: translate(0, -20vh);
-    -ms-transform: translate(0, -20vh);
-    transform: translate(0, -20vh);
-    -webkit-transition: opacity 1s,
-      -webkit-transform 2s;
-    transition: opacity 1s,
-      -webkit-transform 2s;
-    transition: opacity 1s,
-      transform 2s;
-    transition:
-      opacity 1s,
-      transform 2s,
-      -webkit-transform 2s;
-
-  }
-.element-halfway .halfway-content {
-  opacity: 1;
-  -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-/* ========================================
-// Silk Halfway Anchor Set
-// ===================================== */
-.anchor-set {
-  display: none;
-
-}
-@media (min-width: 1300px){
-  .anchor-set{
-    position: fixed;
-    top: 50%;
-    right: 0;
-    display: block;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-  }
-}
-.anchor-set__point {
-    position: relative;
-    display: block;
-    height: 1.25em;
-    width: 1.25em;
-    margin: 0.625em;
-    border: 1px solid #aaa;
-    border-radius: 100%;
-
-  }
-.anchor-set__point:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  content: '';
-  background: #ccc;
-  border-radius: inherit;
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: -webkit-transform .2s;
-  transition: -webkit-transform .2s;
-  transition: transform .2s;
-  transition: transform .2s, -webkit-transform .2s;
-}
-.anchor-set__point.indicate-halfway:before {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-.anchor-set__label {
-      position: absolute;
-      top: 50%;
-      right: 100%;
-      display: block;
-      margin-right: 0.625em;
-      white-space: nowrap;
-      opacity: 0;
-      -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
-      transform: translate(0, -50%);
-      -webkit-transition: opacity .2s;
-      transition: opacity .2s;
-
-    }
-.anchor-set__point:hover .anchor-set__label {
-  opacity: 1;
-}
+@media (min-width: 1200px){}
+@media (min-width: 1200px){}
 /* ========================================
 // Silk Modal
 // ===================================== */
@@ -1593,15 +1495,13 @@ hr {
     left: 50%;
     z-index: 800;
     display: none;
-    overflow: scroll;
+    /*overflow: scroll;
     webkit-overflow-scrolling: touch;
     height: 90%;
-    height: -webkit-calc(100% - 5em);
-    height: calc(100% - 5em);
-    max-width: 81.25em;
+    height: calc(100% - em(80));
+    max-width: em(1300);
     width: 100%;
-    width: -webkit-calc(100% - 5em);
-    width: calc(100% - 5em);
+    width: calc(100% - em(80));*/
     padding: 1.25em;
     background: #fff;
     -webkit-box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, .25);
@@ -1613,6 +1513,11 @@ hr {
   }
 .event-triggered .silk-modal__details {
   display: block;
+}
+.silk-modal__details img {
+  max-height: 80vh;
+  max-width: 80vw;
+  width: auto;
 }
 .silk-modal__trigger--close {
       margin-bottom: 0.625em;
@@ -1872,6 +1777,55 @@ hr {
 /* ========================================
 // Silk Style Tile
 // ===================================== */
+.style-tile .site__header,
+.style-tile .site__footer {
+  display: none;
+}
+.style-tile__bubble {
+  padding: 1.875em;
+}
+.style-tile__pallette {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    font-size: 1rem;
+    list-style: none;
+    margin: 0 -0.625em;
+
+  }
+.style-tile__pallette:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+.style-tile__pallette li {
+  float: left;
+  margin: 0 0.625em 2.5em;
+  height: 3.75em;
+  width: 3.75em;
+  border-radius: 100%;
+}
+.style-tile__colors li:nth-child(0){
+  background: #00A98D;
+}
+.style-tile__colors li:nth-child(1){
+  background: #00A98D;
+}
+.style-tile__colors li:nth-child(2){
+  background: #00C7EF;
+}
+.style-tile__colors li:nth-child(3){
+  background: #A900FF;
+}
+.style-tile__shades li:nth-child(0){
+  background: #eee;
+}
+.style-tile__shades li:nth-child(1){
+  background: #eee;
+}
+.style-tile__shades li:nth-child(2){
+  background: #888;
+}
 /* ========================================
 // Silk Table
 // ===================================== */

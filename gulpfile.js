@@ -89,6 +89,7 @@ gulp.task('postcss', function() {
           }
         }
       }),
+      require('postcss-each'),
       require('postcss-nested'),
       require('postcss-simple-grid')({
         separator: '-'
