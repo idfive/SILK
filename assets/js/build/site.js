@@ -115,9 +115,7 @@ function triggers() {
 function halfways() {
 
   halfway({
-    element: '.halfway-section',
-    anchors: true,
-    offset: 0
+    element: '.halfway-section'
   });
 
 }
