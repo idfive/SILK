@@ -2015,6 +2015,7 @@ body {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+.nav-social svg {}
 /* ========================================
 // Unique Navigation
 // ===================================== */
@@ -2348,6 +2349,7 @@ select + .input-hint {
 // Hero
 // ===================================== */
 .hero {
+  position: relative;
   background-position: 50% 50% !important;
   background-size: cover !important;
 
@@ -2360,6 +2362,18 @@ select + .input-hint {
 .hero--default {
   padding-top: 6.25em;
   padding-bottom: 1.25em;
+}
+.hero--shade:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  content: '';
+  background: rgba(0, 0, 0, .5);
+}
+.hero--shade > * {
+  position: relative;
 }
 /* ========================================
 // Media
