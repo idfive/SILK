@@ -47,6 +47,7 @@
 @import 'modules/media';
 @import 'modules/social';
 
+/* Delete upon starting a build */
 @import 'silk/intro';
 
 @media print {
