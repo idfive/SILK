@@ -1,0 +1,20 @@
+@define-mixin absolutely-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.absolutely-centered {
+  @mixin absolutely-centered;
+}
+
+@define-mixin vertically-centered {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.vertically-centered {
+  @mixin vertically-centered;
+}

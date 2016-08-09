@@ -3,6 +3,7 @@
   margin-bottom: 0;
   padding-left: 0;
   font-size: rem($bodySize);
+  line-height: nu($bodyLine, $bodySize);
   list-style: none;
 }
 

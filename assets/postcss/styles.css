@@ -4,6 +4,7 @@
 
 @import 'helpers/normalize';
 
+@import 'helpers/centering';
 @import 'helpers/clear';
 @import 'helpers/compartment';
 @import 'helpers/cover';
@@ -35,6 +36,7 @@
 @import 'navigation/shared';
 @import 'navigation/main';
 @import 'navigation/breadcrumbs';
+@import 'navigation/social';
 @import 'navigation/unique';
 
 @import 'modules/address';

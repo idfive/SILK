@@ -1,4 +1,3 @@
-
 function silkModal() {
 
   var modals = document.querySelectorAll('.silk-modal');

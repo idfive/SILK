@@ -4,6 +4,8 @@ function harmonica(parameters) {
   var headings = document.querySelectorAll(parameters.container + ' ' + parameters.header);
   var currentNote;
 
+  var windowWidth = window.innerWidth;
+  
   if(document.body.contains(container)) {
 
     for (var i = 0; i < headings.length; i++) {
@@ -58,7 +60,7 @@ function harmonica(parameters) {
 
     currentNote = event.currentTarget;
 
-    if(currentNote.parentNode.classList.contains('silk-harmonica--condensed')) {
+    if(currentNote.parentNode.classList.contains('silk-harmonica--condensed') || windowWidth < 900) {
 
       currentNote.classList.toggle('active');
 

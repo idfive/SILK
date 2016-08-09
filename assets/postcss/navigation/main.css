@@ -2,10 +2,6 @@
 // Main Navigation
 // ===================================== */
 
-@define-mixin tier-one {
-  padding: em(10);
-}
-
 .nav-main {
 
   > ul {
@@ -29,6 +25,10 @@
 
       }
 
+      @define-mixin tier-one {
+        padding: em(10);
+      }
+
       > a {
         @mixin tier-one;
       }
@@ -36,10 +36,22 @@
       ul {
         background: #fff;
 
-        a {
-          padding: em(10);
+        @mixin media $silkDrawerDisappears {
+          width: em(220);
         }
 
+        a {
+          padding: em(10);
+          padding-left: em(70);
+
+          @mixin media $silkDrawerDisappears {
+            padding-left: em(10);
+          }
+
+        }
+
+        /* Hidden above silkDrawerDisappears */
+        
         > a {
           @mixin tier-one;
           padding-left: em(70);

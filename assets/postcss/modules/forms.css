@@ -39,7 +39,6 @@ label {
   border-radius: 0;
 }
 
-
 .input-field {
   @mixin form-item-container;
 }
@@ -50,33 +49,17 @@ label {
     right: 0;
     height: 100%;
     width: em(50);
-    background: #ccc url(../icons/chevron-down.svg) no-repeat 50% 50%;
+    background: #ccc;
     transition: background .2s;
 
     &:hover {
-      background-color: #bbb;
-    }
-
-    &--select {
-      pointer-events: none;
-    }
-
-    &--submit {
-      background-image: url(../icons/search.svg);
+      background: #ddd;
     }
 
   }
 
-    .input-hint__field {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: 100%;
-      border: 0;
-      padding: 0;
-      background: none;
-      color: transparent;
+    .input-symbol {
+      pointer-events: none;
     }
 
 
@@ -90,7 +73,6 @@ input {
   &:checked {}
 
   &[type='text'] {
-    @mixin form-item-container;
     @mixin form-item;
   }
 
@@ -119,12 +101,16 @@ input {
 
 }
 
+.hidden-submit {
+  z-index: 20;
+  opacity: 0;
+}
+
 
 /* Textarea
 // ------------------------------------- */
 
 textarea {
-  @mixin form-item-container;
   @mixin form-item;
 }
 
@@ -139,9 +125,13 @@ select {
   &:hover {
 
     + .input-hint {
-      background-color: #bbb;
+      background: #ddd;
     }
 
+  }
+
+  + .input-hint {
+    pointer-events: none;
   }
 
 }
@@ -153,6 +143,12 @@ select {
 
 .site-search {
   position: relative;
+
+  @mixin media $silkDrawerDisappears {
+    height: em(50);
+    width: em(50);
+  }
+
 }
 
   .site-search__trigger {
@@ -160,6 +156,11 @@ select {
     height: em(50);
     width: em(50);
     cursor: pointer;
+
+    @mixin media $silkDrawerDisappears {
+      height: 100%;
+      width: 100%;
+    }
 
     .vertically-center {
       position: absolute;
@@ -206,15 +207,17 @@ select {
     }
 
     .site-search__submit {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      border: 0;
+      padding: 0 em(20);
+      opacity: 0;
+      transition: background .3s;
 
       @mixin media $silkDrawerDisappears {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        border: 0;
-        padding: 0 em(20);
-        transition: background .3s;
+        opacity: 1;
       }
 
       &:hover {}
