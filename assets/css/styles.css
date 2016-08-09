@@ -772,6 +772,9 @@ hr {
     overflow: inherit;
     max-width: 100%;
     background: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
   }
 }
 .visible-drawer .drawer {
@@ -783,22 +786,6 @@ hr {
   transform: translate(0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-}
-@media (min-width: 1000px){
-  .visible-drawer .drawer{
-    pointer-events: auto;
-    opacity: 1;
-    visibility: visible;
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    position: static;
-    overflow: inherit;
-    max-width: 100%;
-    background: none;
-  }
 }
 /* ========================================
 // Drawer Trigger
