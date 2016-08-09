@@ -12,8 +12,12 @@
 
 }
 
-.element-halfway & {
+.element-halfway {
 
-  @mixin media $gamagori {}
+  .cssanimations & {
+    
+    @mixin media $gamagori {}
+
+  }
 
 }
