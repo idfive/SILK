@@ -78,6 +78,9 @@
   cursor: pointer;
   background: none;
   transform: translate(0, -50%);
+  transition:
+    background .2s,
+    transform .2s;
 
   @mixin media $silkDrawerDisappears {
     display: none;
@@ -124,5 +127,7 @@
     }
 
   }
+
+  .visible-drawer & {}
 
 }
