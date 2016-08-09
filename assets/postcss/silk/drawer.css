@@ -1,5 +1,5 @@
 /* ========================================
-// Drawer Mixin
+// Drawer
 // ===================================== */
 
 @define-mixin drawer $transform-intensity: 20% {
@@ -29,11 +29,6 @@
   background: none;
   transform: none;
 }
-
-
-/* ========================================
-// Drawer
-// ===================================== */
 
 .drawer {
   @mixin drawer;
