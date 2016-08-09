@@ -804,16 +804,16 @@ hr {
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
-  -webkit-transition: background .2s,
-    -webkit-transform .2s;
-  transition: background .2s,
-    -webkit-transform .2s;
-  transition: background .2s,
-    transform .2s;
+  -webkit-transition: background .3s,
+    -webkit-transform .3s;
+  transition: background .3s,
+    -webkit-transform .3s;
+  transition: background .3s,
+    transform .3s;
   transition:
-    background .2s,
-    transform .2s,
-    -webkit-transform .2s;
+    background .3s,
+    transform .3s,
+    -webkit-transform .3s;
 
 }
 @media (min-width: 1000px){
@@ -834,25 +834,25 @@ hr {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-transition: background .4s,
-      margin .4s,
-      -webkit-box-shadow .4s,
-      -webkit-transform .4s;
-  transition: background .4s,
-      margin .4s,
-      -webkit-box-shadow .4s,
-      -webkit-transform .4s;
-  transition: background .4s,
-      box-shadow .4s,
-      margin .4s,
-      transform .4s;
+  -webkit-transition: background .3s,
+      margin .3s,
+      -webkit-box-shadow .3s,
+      -webkit-transform .3s;
+  transition: background .3s,
+      margin .3s,
+      -webkit-box-shadow .3s,
+      -webkit-transform .3s;
+  transition: background .3s,
+      box-shadow .3s,
+      margin .3s,
+      transform .3s;
   transition:
-      background .4s,
-      box-shadow .4s,
-      margin .4s,
-      transform .4s,
-      -webkit-box-shadow .4s,
-      -webkit-transform .4s;
+      background .3s,
+      box-shadow .3s,
+      margin .3s,
+      transform .3s,
+      -webkit-box-shadow .3s,
+      -webkit-transform .3s;
 }
 .drawer__trigger:before {
   margin-top: -0.375em;

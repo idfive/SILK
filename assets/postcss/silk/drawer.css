@@ -75,8 +75,8 @@
   background: none;
   transform: translate(0, -50%);
   transition:
-    background .2s,
-    transform .2s;
+    background .3s,
+    transform .3s;
 
   @mixin media $silkDrawerDisappears {
     display: none;
@@ -94,10 +94,10 @@
     color: #000;
     transform: translate(-50%, -50%);
     transition:
-      background .4s,
-      box-shadow .4s,
-      margin .4s,
-      transform .4s;
+      background .3s,
+      box-shadow .3s,
+      margin .3s,
+      transform .3s;
   }
 
   &:before {
