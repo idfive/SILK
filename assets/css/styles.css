@@ -407,7 +407,7 @@ th {
 h1,
 .h1 {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 2.1875em;
   line-height: 1.2857142857142858;
@@ -423,7 +423,7 @@ h1,
 h2,
 .h2 {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1.875em;
   line-height: 1.3333333333333333;
@@ -439,7 +439,7 @@ h2,
 h3,
 .h3 {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1.5625em;
   line-height: 1.4;
@@ -455,7 +455,7 @@ h3,
 h4,
 .h4 {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1.25em;
   line-height: 1.5;
@@ -471,7 +471,7 @@ h4,
 h5,
 .h5 {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1em;
   line-height: 1.375;
@@ -487,7 +487,7 @@ h5,
 h6,
 .h6 {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1em;
   line-height: 1.375;
@@ -523,7 +523,7 @@ blockquote:after {
 }
 cite {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1em;
   line-height: 1.375;
@@ -564,7 +564,7 @@ table th,
 }
 table th {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1.25em;
   line-height: 1.5;
@@ -588,7 +588,7 @@ table tr:nth-of-type(even) td {
 // ===================================== */
 .lead-in {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1.25em;
   line-height: 1.5;
@@ -1876,7 +1876,7 @@ hr {
   box-sizing: border-box;
 }
 html {
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   background: none;
   color: #333;
@@ -2627,7 +2627,7 @@ a {
 }
 .silk-collage li:before {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1.25em;
   line-height: 1.5;
@@ -2659,7 +2659,7 @@ a {
 }
 .swift-slide li:before {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 2.1875em;
   line-height: 1.2857142857142858;
@@ -2803,7 +2803,7 @@ a {
   left: 0;
   width: 100%;
   content: 'Halfway';
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-size: 4vmin;
   text-align: center;
   -webkit-transform: translate(0, -50%);

@@ -2,8 +2,8 @@ module.exports = {
 
   name: "idfive",
 
-  sansSerif: "Open Sans",
-  serif: "Lora",
+  sansSerif: '"Open Sans", sans-serif',
+  serif: '"Lora", serif',
   slab: null,
 
   bodySize: 16,
