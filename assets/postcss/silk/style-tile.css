@@ -2,11 +2,6 @@
 // Silk Style Tile
 // ===================================== */
 
-.style-tile .site__header,
-.style-tile .site__footer {
-  display: none;
-}
-
 .style-tile__bubble {
   padding: em(30);
 }

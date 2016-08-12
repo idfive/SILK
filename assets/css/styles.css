@@ -1803,10 +1803,6 @@ hr {
 /* ========================================
 // Silk Style Tile
 // ===================================== */
-.style-tile .site__header,
-.style-tile .site__footer {
-  display: none;
-}
 .style-tile__bubble {
   padding: 1.875em;
 }

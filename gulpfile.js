@@ -242,6 +242,7 @@ gulp.task('browser-sync', function() {
     notify: false,
     server: {
       baseDir: './',
+      index: 'style-tile.html'
     }
   });
 
