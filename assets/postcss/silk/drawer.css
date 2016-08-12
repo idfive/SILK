@@ -36,6 +36,7 @@
   right: 0;
   z-index: 200;
   overflow: hidden;
+  overflow-y: scroll;
   max-width: em(500);
   background: #fff;
   transition:

@@ -750,6 +750,7 @@ hr {
   right: 0;
   z-index: 200;
   overflow: hidden;
+  overflow-y: scroll;
   max-width: 31.25em;
   background: #fff;
   -webkit-transition: opacity .3s,
@@ -1571,7 +1572,7 @@ hr {
 // ===================================== */
 .silk-nav ul ul {
   position: absolute;
-  top: 0;
+  top: 2.625em;
   left: 100%;
   z-index: 200;
   height: 100%;
@@ -1666,7 +1667,7 @@ hr {
 }
 .silk-nav__trigger {
     border: 0;
-    padding: 0.5em 0.625em;
+    padding: 0.625em 0.625em;
     background: none;
     -webkit-transition: background .2s,
       color .2s,
@@ -1690,6 +1691,7 @@ hr {
 .silk-nav__trigger--home svg, .silk-nav__trigger--revert svg {
   display: inline-block;
   vertical-align: middle;
+  margin-right: 0.25em;
 }
 .silk-nav__trigger--revert,
     .silk-nav__trigger--reverse {
@@ -1706,7 +1708,7 @@ hr {
 .silk-nav__trigger--reverse,
     .silk-nav__trigger--advance {
   position: absolute;
-  padding: 0.8125em 1.25em;
+  padding: 0.6875em 1.25em;
 }
 .silk-nav__trigger--reverse:hover, .silk-nav__trigger--advance:hover {}
 .silk-nav__trigger--reverse svg, .silk-nav__trigger--advance svg {
@@ -1890,13 +1892,6 @@ body {
   padding: 2.5em 1.25em;
 }
 /* ========================================
-// Situational
-// ===================================== */
-.block-out {
-  overflow: hidden;
-  width: auto;
-}
-/* ========================================
 // Site Header
 // ===================================== */
 .site__header {
@@ -2043,7 +2038,6 @@ body {
   padding: 0.625em 1.25em;
   cursor: pointer;
   text-align: center;
-  text-decoration: none;
   background: #00A98D;
   color: #fff;
   outline: 0;
@@ -2382,11 +2376,6 @@ select + .input-hint {
 // ------------------------------------- */
 figure {
   margin: 0;
-
-}
-figure img {
-  display: block;
-  width: 100%;
 }
 .shifted-asset {
   margin-bottom: 1.25em;
@@ -2417,6 +2406,7 @@ figcaption {
 // ------------------------------------- */
 img {
   display: block;
+  max-width: 100%;
   width: 100%;
 
 }
@@ -2425,7 +2415,7 @@ img {
 }
 /* Iframe
 // ------------------------------------- */
-.silk-modal__details iframe {
+iframe {
   width: 100%;
 }
 /* SVG
