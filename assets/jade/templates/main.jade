@@ -2,6 +2,9 @@
 //- Main Site Template
 //- ========================================
 
+block pageTheme
+  - var theme = "interior"
+  
 doctype html
 html(
   dir="ltr"
@@ -12,7 +15,7 @@ html(
   include ../mixins/image.jade
   include ../mixins/forms.jade
   include ../mixins/heroes.jade
-  body
+  body(class="#{theme}")
     .sprite(style="display: none;")
       include ../../svg/sprite.symbol.svg
     include ../regions/header.jade

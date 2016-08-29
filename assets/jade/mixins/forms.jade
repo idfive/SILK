@@ -2,22 +2,39 @@
 //- Form Inclusion
 //- ========================================
 
-mixin input(placeholder, hintType)
+mixin input(placeholder, symbol)
   .input-field
     input(
       type="text"
       placeholder="#{placeholder}"
     )
-    .input-hint(class="input-hint--#{hintType}")
-      input.input-hint__field(type="#{hintType}")
+    .input-hint
+      span.input-symbol.absolutely-centered
+        +symbol("symbol")
 
+mixin search(placeholder)
+  .input-field
+    input(
+      type="text"
+      placeholder="#{placeholder}"
+    )
+    .input-hint
+      input.hidden-submit.cover(
+        type="submit"
+        value="Submit"
+      )
+      span.input-symbol.absolutely-centered
+        +symbol("search")
+      
 mixin select(...options)
   .input-field
     select
       each option in options
         option(value="#{option}") #{option}
-    span.input-hint.input-hint--select
-
+    .input-hint
+      span.input-symbol.absolutely-centered
+        +symbol("chevron-down")
+    
 mixin radio(id, value)
   input(
     type="radio" 

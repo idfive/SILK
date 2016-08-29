@@ -10,7 +10,6 @@
   padding: em(10) em(20);
   cursor: pointer;
   text-align: center;
-  text-decoration: none;
   background: $m1;
   color: #fff;
   outline: 0;

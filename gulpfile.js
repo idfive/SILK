@@ -89,6 +89,7 @@ gulp.task('postcss', function() {
           }
         }
       }),
+      require('postcss-each'),
       require('postcss-nested'),
       require('postcss-simple-grid')({
         separator: '-'
@@ -241,6 +242,7 @@ gulp.task('browser-sync', function() {
     notify: false,
     server: {
       baseDir: './',
+      index: 'style-tile.html'
     }
   });
 

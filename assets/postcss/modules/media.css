@@ -7,12 +7,6 @@
 
 figure {
   margin: 0;
-
-  img {
-    display: block;
-    width: 100%;
-  }
-
 }
 
 .shifted-asset {
@@ -53,8 +47,9 @@ figure {
 
 img {
   display: block;
+  max-width: 100%;
   width: 100%;
-  
+
   .hero > & {
     display: none;
   }
@@ -66,11 +61,7 @@ img {
 // ------------------------------------- */
 
 iframe {
-
-  .silk-modal__details & {
-    width: 100%;
-  }
-
+  width: 100%;
 }
 
 

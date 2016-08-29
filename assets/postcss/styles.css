@@ -4,6 +4,7 @@
 
 @import 'helpers/normalize';
 
+@import 'helpers/centering';
 @import 'helpers/clear';
 @import 'helpers/compartment';
 @import 'helpers/cover';
@@ -25,6 +26,7 @@
 @import 'silk/slides';
 @import 'silk/style-tile';
 @import 'silk/tables';
+@import 'silk/style-tile';
 
 @import 'layouts/index';
 @import 'layouts/sections';
@@ -34,6 +36,7 @@
 @import 'navigation/shared';
 @import 'navigation/main';
 @import 'navigation/breadcrumbs';
+@import 'navigation/social';
 @import 'navigation/unique';
 
 @import 'modules/address';
@@ -44,6 +47,7 @@
 @import 'modules/media';
 @import 'modules/social';
 
+/* Delete upon starting a build */
 @import 'silk/intro';
 
 @media print {

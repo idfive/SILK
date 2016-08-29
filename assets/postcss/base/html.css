@@ -4,6 +4,7 @@
 
 a {
   text-decoration: none;
+  color: $m1;
   transition:
     background .2s,
     color .2s;

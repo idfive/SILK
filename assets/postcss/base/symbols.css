@@ -8,13 +8,25 @@
     stroke .2s;
 
   &-home,
-  &-undo,
-  &-chevron-left,
-  &-chevron-right,
-  &-search,
-  &-close {
+  &-undo {
     height: em(16);
     width: em(16);
+  }
+
+  &-chevron-left,
+  &-chevron-right {
+    height: em(20);
+    width: em(20);
+  }
+
+  &-chevron-down {
+    height: em(16);
+    width: em(16);
+  }
+
+  &-close {
+    height: em(20);
+    width: em(20);
   }
 
   &-minus,
@@ -26,6 +38,11 @@
   &-play {
     height: em(65);
     width: em(65);
+  }
+
+  &-search {
+    height: em(16);
+    width: em(16);
   }
 
 }

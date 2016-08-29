@@ -31,6 +31,9 @@
       a {
         display: inline-block;
         color: inherit;
+
+        &:hover {}
+          
       }
 
 }

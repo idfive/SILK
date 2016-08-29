@@ -1,5 +1,5 @@
 /* ========================================
-// Drawer Mixin
+// Drawer
 // ===================================== */
 
 @define-mixin drawer $transform-intensity: 20% {
@@ -27,12 +27,8 @@
   overflow: inherit;
   max-width: 100%;
   background: none;
+  transform: none;
 }
-
-
-/* ========================================
-// Drawer
-// ===================================== */
 
 .drawer {
   @mixin drawer;
@@ -40,6 +36,7 @@
   right: 0;
   z-index: 200;
   overflow: hidden;
+  overflow-y: scroll;
   max-width: em(500);
   background: #fff;
   transition:
@@ -52,11 +49,6 @@
 
   .visible-drawer & {
     @mixin visible-drawer;
-
-    @mixin media $silkDrawerDisappears {
-      @mixin reset-drawer;
-    }
-
   }
 
 }
@@ -78,6 +70,9 @@
   cursor: pointer;
   background: none;
   transform: translate(0, -50%);
+  transition:
+    background .3s,
+    transform .3s;
 
   @mixin media $silkDrawerDisappears {
     display: none;
@@ -95,10 +90,10 @@
     color: #000;
     transform: translate(-50%, -50%);
     transition:
-      background .4s,
-      box-shadow .4s,
-      margin .4s,
-      transform .4s;
+      background .3s,
+      box-shadow .3s,
+      margin .3s,
+      transform .3s;
   }
 
   &:before {
@@ -124,5 +119,7 @@
     }
 
   }
+
+  .visible-drawer & {}
 
 }

@@ -346,6 +346,21 @@ td,
 th {
   padding: 0;
 }
+.absolutely-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.vertically-centered {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
 .clear:after {
   display: table;
   clear: both;
@@ -372,6 +387,7 @@ th {
   margin-bottom: 0;
   padding-left: 0;
   font-size: 1rem;
+  line-height: 1.375;
   list-style: none;
 }
 .visible-for-screen-readers {
@@ -391,7 +407,7 @@ th {
 h1,
 .h1 {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 2.1875em;
   line-height: 1.2857142857142858;
@@ -407,7 +423,7 @@ h1,
 h2,
 .h2 {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1.875em;
   line-height: 1.3333333333333333;
@@ -423,7 +439,7 @@ h2,
 h3,
 .h3 {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1.5625em;
   line-height: 1.4;
@@ -439,7 +455,7 @@ h3,
 h4,
 .h4 {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1.25em;
   line-height: 1.5;
@@ -455,7 +471,7 @@ h4,
 h5,
 .h5 {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1em;
   line-height: 1.375;
@@ -471,7 +487,7 @@ h5,
 h6,
 .h6 {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1em;
   line-height: 1.375;
@@ -481,6 +497,7 @@ h6,
 // ===================================== */
 a {
   text-decoration: none;
+  color: #00A98D;
   -webkit-transition: background .2s,
     color .2s;
   transition:
@@ -506,7 +523,7 @@ blockquote:after {
 }
 cite {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1em;
   line-height: 1.375;
@@ -547,7 +564,7 @@ table th,
 }
 table th {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1.25em;
   line-height: 1.5;
@@ -571,7 +588,7 @@ table tr:nth-of-type(even) td {
 // ===================================== */
 .lead-in {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1.25em;
   line-height: 1.5;
@@ -602,13 +619,22 @@ hr {
 
 }
 .symbol-home,
-  .symbol-undo,
-  .symbol-chevron-left,
-  .symbol-chevron-right,
-  .symbol-search,
-  .symbol-close {
+  .symbol-undo {
   height: 1em;
   width: 1em;
+}
+.symbol-chevron-left,
+  .symbol-chevron-right {
+  height: 1.25em;
+  width: 1.25em;
+}
+.symbol-chevron-down {
+  height: 1em;
+  width: 1em;
+}
+.symbol-close {
+  height: 1.25em;
+  width: 1.25em;
 }
 .symbol-minus,
   .symbol-plus {
@@ -618,6 +644,10 @@ hr {
 .symbol-play {
   height: 4.0625em;
   width: 4.0625em;
+}
+.symbol-search {
+  height: 1em;
+  width: 1em;
 }
 /* ========================================
 // Silk Harmonica
@@ -702,9 +732,6 @@ hr {
   }
 }
 /* ========================================
-// Drawer Mixin
-// ===================================== */
-/* ========================================
 // Drawer
 // ===================================== */
 .drawer {
@@ -723,6 +750,7 @@ hr {
   right: 0;
   z-index: 200;
   overflow: hidden;
+  overflow-y: scroll;
   max-width: 31.25em;
   background: #fff;
   -webkit-transition: opacity .3s,
@@ -746,6 +774,9 @@ hr {
     overflow: inherit;
     max-width: 100%;
     background: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
   }
 }
 .visible-drawer .drawer {
@@ -757,22 +788,6 @@ hr {
   transform: translate(0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-}
-@media (min-width: 1000px){
-  .visible-drawer .drawer{
-    pointer-events: auto;
-    opacity: 1;
-    visibility: visible;
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    position: static;
-    overflow: inherit;
-    max-width: 100%;
-    background: none;
-  }
 }
 /* ========================================
 // Drawer Trigger
@@ -791,6 +806,16 @@ hr {
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
+  -webkit-transition: background .3s,
+    -webkit-transform .3s;
+  transition: background .3s,
+    -webkit-transform .3s;
+  transition: background .3s,
+    transform .3s;
+  transition:
+    background .3s,
+    transform .3s,
+    -webkit-transform .3s;
 
 }
 @media (min-width: 1000px){
@@ -811,25 +836,25 @@ hr {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-transition: background .4s,
-      margin .4s,
-      -webkit-box-shadow .4s,
-      -webkit-transform .4s;
-  transition: background .4s,
-      margin .4s,
-      -webkit-box-shadow .4s,
-      -webkit-transform .4s;
-  transition: background .4s,
-      box-shadow .4s,
-      margin .4s,
-      transform .4s;
+  -webkit-transition: background .3s,
+      margin .3s,
+      -webkit-box-shadow .3s,
+      -webkit-transform .3s;
+  transition: background .3s,
+      margin .3s,
+      -webkit-box-shadow .3s,
+      -webkit-transform .3s;
+  transition: background .3s,
+      box-shadow .3s,
+      margin .3s,
+      transform .3s;
   transition:
-      background .4s,
-      box-shadow .4s,
-      margin .4s,
-      transform .4s,
-      -webkit-box-shadow .4s,
-      -webkit-transform .4s;
+      background .3s,
+      box-shadow .3s,
+      margin .3s,
+      transform .3s,
+      -webkit-box-shadow .3s,
+      -webkit-transform .3s;
 }
 .drawer__trigger:before {
   margin-top: -0.375em;
@@ -863,6 +888,7 @@ hr {
         translate(-50%, -50%)
         rotate(45deg);
 }
+.visible-drawer .drawer__trigger {}
 /* ========================================
 // Grid / Columns
 // ===================================== */
@@ -1446,106 +1472,8 @@ hr {
 /* ========================================
 // Silk Halfway
 // ===================================== */
-.halfway-section {
-  position: relative;
-  height: 100vh;
-}
-.halfway-content {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    -webkit-transform: translate(0, -20vh);
-    -ms-transform: translate(0, -20vh);
-    transform: translate(0, -20vh);
-    -webkit-transition: opacity 1s,
-      -webkit-transform 2s;
-    transition: opacity 1s,
-      -webkit-transform 2s;
-    transition: opacity 1s,
-      transform 2s;
-    transition:
-      opacity 1s,
-      transform 2s,
-      -webkit-transform 2s;
-
-  }
-.element-halfway .halfway-content {
-  opacity: 1;
-  -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-/* ========================================
-// Silk Halfway Anchor Set
-// ===================================== */
-.anchor-set {
-  display: none;
-
-}
-@media (min-width: 1300px){
-  .anchor-set{
-    position: fixed;
-    top: 50%;
-    right: 0;
-    display: block;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-  }
-}
-.anchor-set__point {
-    position: relative;
-    display: block;
-    height: 1.25em;
-    width: 1.25em;
-    margin: 0.625em;
-    border: 1px solid #aaa;
-    border-radius: 100%;
-
-  }
-.anchor-set__point:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  content: '';
-  background: #ccc;
-  border-radius: inherit;
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: -webkit-transform .2s;
-  transition: -webkit-transform .2s;
-  transition: transform .2s;
-  transition: transform .2s, -webkit-transform .2s;
-}
-.anchor-set__point.indicate-halfway:before {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-.anchor-set__label {
-      position: absolute;
-      top: 50%;
-      right: 100%;
-      display: block;
-      margin-right: 0.625em;
-      white-space: nowrap;
-      opacity: 0;
-      -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
-      transform: translate(0, -50%);
-      -webkit-transition: opacity .2s;
-      transition: opacity .2s;
-
-    }
-.anchor-set__point:hover .anchor-set__label {
-  opacity: 1;
-}
+@media (min-width: 1200px){}
+@media (min-width: 1200px){}
 /* ========================================
 // Silk Modal
 // ===================================== */
@@ -1593,15 +1521,13 @@ hr {
     left: 50%;
     z-index: 800;
     display: none;
-    overflow: scroll;
+    /*overflow: scroll;
     webkit-overflow-scrolling: touch;
     height: 90%;
-    height: -webkit-calc(100% - 5em);
-    height: calc(100% - 5em);
-    max-width: 81.25em;
+    height: calc(100% - em(80));
+    max-width: em(1300);
     width: 100%;
-    width: -webkit-calc(100% - 5em);
-    width: calc(100% - 5em);
+    width: calc(100% - em(80));*/
     padding: 1.25em;
     background: #fff;
     -webkit-box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, .25);
@@ -1613,6 +1539,11 @@ hr {
   }
 .event-triggered .silk-modal__details {
   display: block;
+}
+.silk-modal__details img {
+  max-height: 80vh;
+  max-width: 80vw;
+  width: auto;
 }
 .silk-modal__trigger--close {
       margin-bottom: 0.625em;
@@ -1641,7 +1572,7 @@ hr {
 // ===================================== */
 .silk-nav ul ul {
   position: absolute;
-  top: 0;
+  top: 2.625em;
   left: 100%;
   z-index: 200;
   height: 100%;
@@ -1672,7 +1603,6 @@ hr {
     left: 0;
     display: none;
     height: auto;
-    width: 200%;
     opacity: 1;
     visibility: visible;
   }
@@ -1737,7 +1667,7 @@ hr {
 }
 .silk-nav__trigger {
     border: 0;
-    padding: 0.5em 0.625em;
+    padding: 0.625em 0.625em;
     background: none;
     -webkit-transition: background .2s,
       color .2s,
@@ -1761,6 +1691,7 @@ hr {
 .silk-nav__trigger--home svg, .silk-nav__trigger--revert svg {
   display: inline-block;
   vertical-align: middle;
+  margin-right: 0.25em;
 }
 .silk-nav__trigger--revert,
     .silk-nav__trigger--reverse {
@@ -1777,7 +1708,7 @@ hr {
 .silk-nav__trigger--reverse,
     .silk-nav__trigger--advance {
   position: absolute;
-  padding: 0.8125em 1.25em;
+  padding: 0.6875em 1.25em;
 }
 .silk-nav__trigger--reverse:hover, .silk-nav__trigger--advance:hover {}
 .silk-nav__trigger--reverse svg, .silk-nav__trigger--advance svg {
@@ -1872,6 +1803,52 @@ hr {
 /* ========================================
 // Silk Style Tile
 // ===================================== */
+.style-tile__bubble {
+  padding: 1.875em;
+}
+.style-tile__pallette {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    font-size: 1rem;
+    line-height: 1.375;
+    list-style: none;
+    margin: 0 -0.625em;
+
+  }
+.style-tile__pallette:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+.style-tile__pallette li {
+  float: left;
+  margin: 0 0.625em 2.5em;
+  height: 3.75em;
+  width: 3.75em;
+  border-radius: 100%;
+}
+.style-tile__colors li:nth-child(0){
+  background: #00A98D;
+}
+.style-tile__colors li:nth-child(1){
+  background: #00A98D;
+}
+.style-tile__colors li:nth-child(2){
+  background: #00C7EF;
+}
+.style-tile__colors li:nth-child(3){
+  background: #A900FF;
+}
+.style-tile__shades li:nth-child(0){
+  background: #eee;
+}
+.style-tile__shades li:nth-child(1){
+  background: #eee;
+}
+.style-tile__shades li:nth-child(2){
+  background: #888;
+}
 /* ========================================
 // Silk Table
 // ===================================== */
@@ -1895,7 +1872,7 @@ hr {
   box-sizing: border-box;
 }
 html {
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   background: none;
   color: #333;
@@ -1909,13 +1886,6 @@ body {
 // ===================================== */
 .content {
   padding: 2.5em 1.25em;
-}
-/* ========================================
-// Situational
-// ===================================== */
-.block-out {
-  overflow: hidden;
-  width: auto;
 }
 /* ========================================
 // Site Header
@@ -1937,15 +1907,16 @@ body {
 /* ========================================
 // Shared Navigation
 // ===================================== */
-nav ul,
-  nav ol {
+.nav ul,
+  .nav ol {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
   font-size: 1rem;
+  line-height: 1.375;
   list-style: none;
 }
-nav a {
+.nav a {
   display: block;
   text-decoration: none;
 }
@@ -1969,9 +1940,21 @@ nav a {
 .nav-main > ul > li ul {
   background: #fff;
 }
+@media (min-width: 1000px){
+  .nav-main > ul > li ul{
+    width: 13.75em;
+  }
+}
 .nav-main > ul > li ul a {
   padding: 0.625em;
+  padding-left: 4.375em;
 }
+@media (min-width: 1000px){
+  .nav-main > ul > li ul a{
+    padding-left: 0.625em;
+  }
+}
+/* Hidden above silkDrawerDisappears */
 .nav-main > ul > li ul > a {
   padding: 0.625em;
   padding-left: 4.375em;
@@ -2003,6 +1986,27 @@ nav a {
   display: inline-block;
   color: inherit;
 }
+.nav-breadcrumbs a:hover {}
+/* ========================================
+// Social Navigation
+// ===================================== */
+.nav-social ul {}
+.nav-social li {}
+.nav-social a {
+  height: 1.875em;
+  width: 1.875em;
+  border-radius: 100%;
+}
+.nav-social a:hover {}
+.nav-social span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.nav-social svg {}
 /* ========================================
 // Unique Navigation
 // ===================================== */
@@ -2030,7 +2034,6 @@ nav a {
   padding: 0.625em 1.25em;
   cursor: pointer;
   text-align: center;
-  text-decoration: none;
   background: #00A98D;
   color: #fff;
   outline: 0;
@@ -2106,6 +2109,7 @@ nav a {
     margin-bottom: 0;
     padding-left: 0;
     font-size: 1rem;
+    line-height: 1.375;
     list-style: none;
     display: inline-block;
     vertical-align: top;
@@ -2158,38 +2162,22 @@ label {
     right: 0;
     height: 100%;
     width: 3.125em;
-    background: #ccc url(../icons/chevron-down.svg) no-repeat 50% 50%;
+    background: #ccc;
     -webkit-transition: background .2s;
     transition: background .2s;
 
   }
 .input-hint:hover {
-  background-color: #bbb;
+  background: #ddd;
 }
-.input-hint--select {
-  pointer-events: none;
-}
-.input-hint--submit {
-  background-image: url(../icons/search.svg);
-}
-.input-hint__field {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: 100%;
-      border: 0;
-      padding: 0;
-      background: none;
-      color: transparent;
+.input-symbol {
+      pointer-events: none;
     }
 /* Input
 // ------------------------------------- */
 input:disabled {}
 input:checked {}
 input[type='text'] {
-  position: relative;
-  overflow: hidden;
   width: 100%;
   border: 1px solid #ccc;
   padding: 0.625em 1.25em;
@@ -2221,11 +2209,13 @@ input[type='radio'] {
   border-radius: 100%;
 }
 input[type='range'] {}
+.hidden-submit {
+  z-index: 20;
+  opacity: 0;
+}
 /* Textarea
 // ------------------------------------- */
 textarea {
-  position: relative;
-  overflow: hidden;
   width: 100%;
   border: 1px solid #ccc;
   padding: 0.625em 1.25em;
@@ -2250,13 +2240,23 @@ select {
 
 }
 select:hover + .input-hint {
-  background-color: #bbb;
+  background: #ddd;
+}
+select + .input-hint {
+  pointer-events: none;
 }
 /* ========================================
 // Unique Form Elements
 // ===================================== */
 .site-search {
   position: relative;
+
+}
+@media (min-width: 1000px){
+  .site-search{
+    height: 3.125em;
+    width: 3.125em;
+  }
 }
 .site-search__trigger {
     position: relative;
@@ -2265,6 +2265,12 @@ select:hover + .input-hint {
     cursor: pointer;
 
   }
+@media (min-width: 1000px){
+  .site-search__trigger{
+    height: 100%;
+    width: 100%;
+  }
+}
 .site-search__trigger .vertically-center {
   position: absolute;
   top: 50%;
@@ -2276,7 +2282,8 @@ select:hover + .input-hint {
 .site-search__trigger svg {
   display: block;
 }
-.site-search__details {
+@media (min-width: 1000px){
+  .site-search__details{
     position: absolute;
     top: 100%;
     right: 0;
@@ -2288,25 +2295,28 @@ select:hover + .input-hint {
     -ms-transform-origin: right top;
     transform-origin: right top;
     -webkit-transition: opacity .2s,
-      -webkit-transform .2s;
+        -webkit-transform .2s;
     transition: opacity .2s,
-      -webkit-transform .2s;
+        -webkit-transform .2s;
     transition: opacity .2s,
-      transform .2s;
-    transition:
-      opacity .2s,
-      transform .2s,
-      -webkit-transform .2s;
-
+        transform .2s;
+    transition: opacity .2s,
+        transform .2s,
+        -webkit-transform .2s;
   }
-.event-triggered .site-search__details {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
 }
-.site-search__details .site-search__text {
-  width: 18.75em;
+@media (min-width: 1000px){
+  .event-triggered .site-search__details{
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@media (min-width: 1000px){
+  .site-search__details .site-search__text{
+    width: 18.75em;
+  }
 }
 .site-search__details .site-search__submit {
   position: absolute;
@@ -2315,14 +2325,21 @@ select:hover + .input-hint {
   height: 100%;
   border: 0;
   padding: 0 1.25em;
+  opacity: 0;
   -webkit-transition: background .3s;
   transition: background .3s;
+}
+@media (min-width: 1000px){
+  .site-search__details .site-search__submit{
+    opacity: 1;
+  }
 }
 .site-search__details .site-search__submit:hover {}
 /* ========================================
 // Hero
 // ===================================== */
 .hero {
+  position: relative;
   background-position: 50% 50% !important;
   background-size: cover !important;
 
@@ -2336,6 +2353,18 @@ select:hover + .input-hint {
   padding-top: 6.25em;
   padding-bottom: 1.25em;
 }
+.hero--shade:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  content: '';
+  background: rgba(0, 0, 0, .5);
+}
+.hero--shade > * {
+  position: relative;
+}
 /* ========================================
 // Media
 // ===================================== */
@@ -2343,11 +2372,6 @@ select:hover + .input-hint {
 // ------------------------------------- */
 figure {
   margin: 0;
-
-}
-figure img {
-  display: block;
-  width: 100%;
 }
 .shifted-asset {
   margin-bottom: 1.25em;
@@ -2378,6 +2402,7 @@ figcaption {
 // ------------------------------------- */
 img {
   display: block;
+  max-width: 100%;
   width: 100%;
 
 }
@@ -2386,7 +2411,7 @@ img {
 }
 /* Iframe
 // ------------------------------------- */
-.silk-modal__details iframe {
+iframe {
   width: 100%;
 }
 /* SVG
@@ -2403,6 +2428,7 @@ video {}
   margin-bottom: 0;
   padding-left: 0;
   font-size: 1rem;
+  line-height: 1.375;
   list-style: none;
 }
 .instagram-item {
@@ -2423,9 +2449,11 @@ video {}
   margin-bottom: 0;
   padding-left: 0;
   font-size: 1rem;
+  line-height: 1.375;
   list-style: none;
 }
 .twitter-item {}
+/* Delete upon starting a build */
 /* ========================================
 // Silk Type
 // ===================================== */
@@ -2541,6 +2569,7 @@ a {
   margin-bottom: 0;
   padding-left: 0;
   font-size: 1rem;
+  line-height: 1.375;
   list-style: none;
   position: relative;
   border-top: 1px solid;
@@ -2594,7 +2623,7 @@ a {
 }
 .silk-collage li:before {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 1.25em;
   line-height: 1.5;
@@ -2626,7 +2655,7 @@ a {
 }
 .swift-slide li:before {
   margin-top: 0;
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-weight: normal;
   font-size: 2.1875em;
   line-height: 1.2857142857142858;
@@ -2770,7 +2799,7 @@ a {
   left: 0;
   width: 100%;
   content: 'Halfway';
-  font-family: Lora;
+  font-family: "Lora", serif;
   font-size: 4vmin;
   text-align: center;
   -webkit-transform: translate(0, -50%);

@@ -35,13 +35,13 @@
     left: 50%;
     z-index: 800;
     display: none;
-    overflow: scroll;
+    /*overflow: scroll;
     webkit-overflow-scrolling: touch;
     height: 90%;
     height: calc(100% - em(80));
     max-width: em(1300);
     width: 100%;
-    width: calc(100% - em(80));
+    width: calc(100% - em(80));*/
     padding: em(20);
     background: #fff;
     box-shadow: 0 0 em(8) 0 rgba(0, 0, 0, .25);
@@ -49,6 +49,12 @@
 
     .event-triggered & {
       display: block;
+    }
+
+    img {
+      max-height: 80vh;
+      max-width: 80vw;
+      width: auto;
     }
 
   }

@@ -4,6 +4,9 @@
 
 extends ../templates/main.jade
 
+block pageTheme
+  - theme = "home"
+  
 block content
   .compartment
     section.hero#hero-section
@@ -46,7 +49,7 @@ block content
       h2 Forms
       form.grid.grid--20
         .col-large-6.col-aldnoah-4
-          +input("Enter Search Keywords", "submit")
+          +search("Enter Search Keywords", "submit")
         .col-large-6.col-aldnoah-4
           +select("Select From Options", "Who", "What", "Why", "Where", "When")
         .col-aldnoah-4

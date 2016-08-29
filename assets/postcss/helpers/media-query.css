@@ -5,3 +5,11 @@
   }
 
 }
+
+@define-mixin large-media $width, $height {
+
+  @media (min-width: $width) and (min-height: $height) {
+    @mixin-content;
+  }
+
+}
