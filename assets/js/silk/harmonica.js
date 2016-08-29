@@ -4,8 +4,6 @@ function harmonica(parameters) {
   var headings = document.querySelectorAll(parameters.container + ' ' + parameters.header);
   var currentNote;
 
-  var windowWidth = window.innerWidth;
-  
   if(document.body.contains(container)) {
 
     for (var i = 0; i < headings.length; i++) {
@@ -17,8 +15,11 @@ function harmonica(parameters) {
       openSymbolBottle.appendChild(openSymbolBubble);
 
       var openSymbol = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      openSymbol.classList.add('silk-harmonica__symbol', 'symbol', 'symbol-plus');
-      openSymbol.innerHTML = '<use xlink:href="#plus"></use>';
+      var openUseSymbol = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      openUseSymbol.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href','#caret-right');
+
+      openSymbol.classList.add('silk-harmonica__symbol', 'symbol', 'symbol-caret-right');
+      openSymbol.appendChild(openUseSymbol);
       openSymbolBubble.appendChild(openSymbol);
       headings[i].appendChild(openSymbolBottle);
 
@@ -30,8 +31,11 @@ function harmonica(parameters) {
       closeSymbolBottle.appendChild(closeSymbolBubble);
 
       var closeSymbol = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      closeSymbol.classList.add('silk-harmonica__symbol', 'symbol', 'symbol-minus');
-      closeSymbol.innerHTML = '<use xlink:href="#minus"></use>';
+      var closeUseSymbol = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      closeUseSymbol.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href','#caret-down');
+
+      closeSymbol.classList.add('silk-harmonica__symbol', 'symbol', 'symbol-caret-down');
+      closeSymbol.appendChild(closeUseSymbol);
       closeSymbolBubble.appendChild(closeSymbol);
       headings[i].appendChild(closeSymbolBottle);
 
@@ -60,7 +64,7 @@ function harmonica(parameters) {
 
     currentNote = event.currentTarget;
 
-    if(currentNote.parentNode.classList.contains('silk-harmonica--condensed') || windowWidth < 900) {
+    if(currentNote.parentNode.classList.contains('silk-harmonica--condensed')) {
 
       currentNote.classList.toggle('active');
 

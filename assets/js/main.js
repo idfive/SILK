@@ -1,5 +1,5 @@
 // Vendor
-//= include vendor/classList.min.js
+//= include vendor/classList.js
 //= include vendor/modernizr-custom.js
 //= include vendor/twitterFetcher.min.js
 
