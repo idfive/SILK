@@ -56,7 +56,7 @@ function slideshows() {
     for(var i = 0; i < swiftSlide.length; i++) {
       swiftSlide[i].classList.add('swift-slide-' + i);
 
-      swift({
+      new Swift({
         container: '.swift-slide-' + i,
         elements: 'li',
         prevSymbol: 'chevron-left',
