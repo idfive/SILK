@@ -1,6 +1,243 @@
 // Vendor
-/*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js*/
-;if("document" in self&&!("classList" in document.createElement("_"))){(function(j){"use strict";if(!("Element" in j)){return}var a="classList",f="prototype",m=j.Element[f],b=Object,k=String[f].trim||function(){return this.replace(/^\s+|\s+$/g,"")},c=Array[f].indexOf||function(q){var p=0,o=this.length;for(;p<o;p++){if(p in this&&this[p]===q){return p}}return -1},n=function(o,p){this.name=o;this.code=DOMException[o];this.message=p},g=function(p,o){if(o===""){throw new n("SYNTAX_ERR","An invalid or illegal string was specified")}if(/\s/.test(o)){throw new n("INVALID_CHARACTER_ERR","String contains an invalid character")}return c.call(p,o)},d=function(s){var r=k.call(s.getAttribute("class")||""),q=r?r.split(/\s+/):[],p=0,o=q.length;for(;p<o;p++){this.push(q[p])}this._updateClassName=function(){s.setAttribute("class",this.toString())}},e=d[f]=[],i=function(){return new d(this)};n[f]=Error[f];e.item=function(o){return this[o]||null};e.contains=function(o){o+="";return g(this,o)!==-1};e.add=function(){var s=arguments,r=0,p=s.length,q,o=false;do{q=s[r]+"";if(g(this,q)===-1){this.push(q);o=true}}while(++r<p);if(o){this._updateClassName()}};e.remove=function(){var t=arguments,s=0,p=t.length,r,o=false;do{r=t[s]+"";var q=g(this,r);if(q!==-1){this.splice(q,1);o=true}}while(++s<p);if(o){this._updateClassName()}};e.toggle=function(p,q){p+="";var o=this.contains(p),r=o?q!==true&&"remove":q!==false&&"add";if(r){this[r](p)}return !o};e.toString=function(){return this.join(" ")};if(b.defineProperty){var l={get:i,enumerable:true,configurable:true};try{b.defineProperty(m,a,l)}catch(h){if(h.number===-2146823252){l.enumerable=false;b.defineProperty(m,a,l)}}}else{if(b[f].__defineGetter__){m.__defineGetter__(a,i)}}}(self))};
+/*
+ * classList.js: Cross-browser full element.classList implementation.
+ * 1.1.20150312
+ *
+ * By Eli Grey, http://eligrey.com
+ * License: Dedicated to the public domain.
+ *   See https://github.com/eligrey/classList.js/blob/master/LICENSE.md
+ */
+
+/*global self, document, DOMException */
+
+/*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js */
+
+if ("document" in self) {
+
+// Full polyfill for browsers with no classList support
+// Including IE < Edge missing SVGElement.classList
+if (!("classList" in document.createElement("_"))
+  || document.createElementNS && !("classlist" in document.createElementNS("http://www.w3.org/2000/svg","g"))) {
+
+(function (view) {
+
+"use strict";
+
+if (!('Element' in view)) return;
+
+var
+    classListProp = "classList"
+  , protoProp = "prototype"
+  , elemCtrProto = view.Element[protoProp]
+  , objCtr = Object
+  , strTrim = String[protoProp].trim || function () {
+    return this.replace(/^\s+|\s+$/g, "");
+  }
+  , arrIndexOf = Array[protoProp].indexOf || function (item) {
+    var
+        i = 0
+      , len = this.length
+    ;
+    for (; i < len; i++) {
+      if (i in this && this[i] === item) {
+        return i;
+      }
+    }
+    return -1;
+  }
+  // Vendors: please allow content code to instantiate DOMExceptions
+  , DOMEx = function (type, message) {
+    this.name = type;
+    this.code = DOMException[type];
+    this.message = message;
+  }
+  , checkTokenAndGetIndex = function (classList, token) {
+    if (token === "") {
+      throw new DOMEx(
+          "SYNTAX_ERR"
+        , "An invalid or illegal string was specified"
+      );
+    }
+    if (/\s/.test(token)) {
+      throw new DOMEx(
+          "INVALID_CHARACTER_ERR"
+        , "String contains an invalid character"
+      );
+    }
+    return arrIndexOf.call(classList, token);
+  }
+  , ClassList = function (elem) {
+    var
+        trimmedClasses = strTrim.call(elem.getAttribute("class") || "")
+      , classes = trimmedClasses ? trimmedClasses.split(/\s+/) : []
+      , i = 0
+      , len = classes.length
+    ;
+    for (; i < len; i++) {
+      this.push(classes[i]);
+    }
+    this._updateClassName = function () {
+      elem.setAttribute("class", this.toString());
+    };
+  }
+  , classListProto = ClassList[protoProp] = []
+  , classListGetter = function () {
+    return new ClassList(this);
+  }
+;
+// Most DOMException implementations don't allow calling DOMException's toString()
+// on non-DOMExceptions. Error's toString() is sufficient here.
+DOMEx[protoProp] = Error[protoProp];
+classListProto.item = function (i) {
+  return this[i] || null;
+};
+classListProto.contains = function (token) {
+  token += "";
+  return checkTokenAndGetIndex(this, token) !== -1;
+};
+classListProto.add = function () {
+  var
+      tokens = arguments
+    , i = 0
+    , l = tokens.length
+    , token
+    , updated = false
+  ;
+  do {
+    token = tokens[i] + "";
+    if (checkTokenAndGetIndex(this, token) === -1) {
+      this.push(token);
+      updated = true;
+    }
+  }
+  while (++i < l);
+
+  if (updated) {
+    this._updateClassName();
+  }
+};
+classListProto.remove = function () {
+  var
+      tokens = arguments
+    , i = 0
+    , l = tokens.length
+    , token
+    , updated = false
+    , index
+  ;
+  do {
+    token = tokens[i] + "";
+    index = checkTokenAndGetIndex(this, token);
+    while (index !== -1) {
+      this.splice(index, 1);
+      updated = true;
+      index = checkTokenAndGetIndex(this, token);
+    }
+  }
+  while (++i < l);
+
+  if (updated) {
+    this._updateClassName();
+  }
+};
+classListProto.toggle = function (token, force) {
+  token += "";
+
+  var
+      result = this.contains(token)
+    , method = result ?
+      force !== true && "remove"
+    :
+      force !== false && "add"
+  ;
+
+  if (method) {
+    this[method](token);
+  }
+
+  if (force === true || force === false) {
+    return force;
+  } else {
+    return !result;
+  }
+};
+classListProto.toString = function () {
+  return this.join(" ");
+};
+
+if (objCtr.defineProperty) {
+  var classListPropDesc = {
+      get: classListGetter
+    , enumerable: true
+    , configurable: true
+  };
+  try {
+    objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+  } catch (ex) { // IE 8 doesn't support enumerable:true
+    if (ex.number === -0x7FF5EC54) {
+      classListPropDesc.enumerable = false;
+      objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+    }
+  }
+} else if (objCtr[protoProp].__defineGetter__) {
+  elemCtrProto.__defineGetter__(classListProp, classListGetter);
+}
+
+}(self));
+
+} else {
+// There is full or partial native classList support, so just check if we need
+// to normalize the add/remove and toggle APIs.
+
+(function () {
+  "use strict";
+
+  var testElement = document.createElement("_");
+
+  testElement.classList.add("c1", "c2");
+
+  // Polyfill for IE 10/11 and Firefox <26, where classList.add and
+  // classList.remove exist but support only one argument at a time.
+  if (!testElement.classList.contains("c2")) {
+    var createMethod = function(method) {
+      var original = DOMTokenList.prototype[method];
+
+      DOMTokenList.prototype[method] = function(token) {
+        var i, len = arguments.length;
+
+        for (i = 0; i < len; i++) {
+          token = arguments[i];
+          original.call(this, token);
+        }
+      };
+    };
+    createMethod('add');
+    createMethod('remove');
+  }
+
+  testElement.classList.toggle("c3", false);
+
+  // Polyfill for IE 10 and Firefox <24, where classList.toggle does not
+  // support the second argument.
+  if (testElement.classList.contains("c3")) {
+    var _toggle = DOMTokenList.prototype.toggle;
+
+    DOMTokenList.prototype.toggle = function(token, force) {
+      if (1 in arguments && !this.contains(token) === !force) {
+        return force;
+      } else {
+        return _toggle.call(this, token);
+      }
+    };
+
+  }
+
+  testElement = null;
+}());
+
+}
+
+}
 
 /*! modernizr 3.3.1 (Custom Build) | MIT *
  * http://modernizr.com/download/?-cssanimations-setclasses !*/
@@ -76,8 +313,6 @@ function harmonica(parameters) {
   var headings = document.querySelectorAll(parameters.container + ' ' + parameters.header);
   var currentNote;
 
-  var windowWidth = window.innerWidth;
-  
   if(document.body.contains(container)) {
 
     for (var i = 0; i < headings.length; i++) {
@@ -89,8 +324,11 @@ function harmonica(parameters) {
       openSymbolBottle.appendChild(openSymbolBubble);
 
       var openSymbol = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      openSymbol.classList.add('silk-harmonica__symbol', 'symbol', 'symbol-plus');
-      openSymbol.innerHTML = '<use xlink:href="#plus"></use>';
+      var openUseSymbol = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      openUseSymbol.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href','#caret-right');
+
+      openSymbol.classList.add('silk-harmonica__symbol', 'symbol', 'symbol-caret-right');
+      openSymbol.appendChild(openUseSymbol);
       openSymbolBubble.appendChild(openSymbol);
       headings[i].appendChild(openSymbolBottle);
 
@@ -102,8 +340,11 @@ function harmonica(parameters) {
       closeSymbolBottle.appendChild(closeSymbolBubble);
 
       var closeSymbol = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      closeSymbol.classList.add('silk-harmonica__symbol', 'symbol', 'symbol-minus');
-      closeSymbol.innerHTML = '<use xlink:href="#minus"></use>';
+      var closeUseSymbol = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      closeUseSymbol.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href','#caret-down');
+
+      closeSymbol.classList.add('silk-harmonica__symbol', 'symbol', 'symbol-caret-down');
+      closeSymbol.appendChild(closeUseSymbol);
       closeSymbolBubble.appendChild(closeSymbol);
       headings[i].appendChild(closeSymbolBottle);
 
@@ -132,7 +373,7 @@ function harmonica(parameters) {
 
     currentNote = event.currentTarget;
 
-    if(currentNote.parentNode.classList.contains('silk-harmonica--condensed') || windowWidth < 900) {
+    if(currentNote.parentNode.classList.contains('silk-harmonica--condensed')) {
 
       currentNote.classList.toggle('active');
 
@@ -277,138 +518,173 @@ function silkNav() {
 
 }
 
-function swift(parameters) {
+/**
+ * SwiftSlider
+ * v2.0.0
+ */
 
-  var container = document.querySelector(parameters.container);
-  var elements = document.querySelectorAll(parameters.container + ' ' + parameters.elements);
+'use strict';
+var Swift = function (parameters) {
+	this.container = document.querySelector(parameters.container);
+	this.elements = document.querySelectorAll(parameters.container + ' ' + parameters.elements);
+	this.elCount = this.elements.length;
+	this.currentSlide = 0;
+	this.cycle = parameters.cycle || false;
+	this.isPaused = this.cycle ? false : true;
+	this.interval = parameters.interval || 4000;
+	this.pages = [];
+	this.xDown = null;
+	this.yDown = null;
+	this.prevSymbol = parameters.prevSymbol;
+	this.nextSymbol = parameters.nextSymbol;
 
-  if(document.body.contains(container)) {
+	this.initialize.apply(this, parameters);
+};
 
-    container.addEventListener('touchstart', handleTouchStart, false);
-    container.addEventListener('touchmove', handleTouchMove, false);
+Swift.VERSION = '2.0.0';
 
-    var xDown = null;
-    var yDown = null;
+Swift.prototype.initialize = function () {
+	this.controls();
+	this.pager();
+	this.autoCycle();
+	this.container.addEventListener('touchstart', this.touchStartHandler.bind(this), false);
+	this.container.addEventListener('touchmove', this.touchMoveHandler.bind(this), false);
+};
 
-    function handleTouchStart(evt) {
-      xDown = evt.touches[0].clientX;
-      yDown = evt.touches[0].clientY;
-    };
+Swift.prototype.autoCycle = function () {
+	var self = this;
 
-    function handleTouchMove(evt) {
+	if (!self.cycle) {
+		return;
+	}
+	setInterval(function () {
+		if (self.isPaused) {
+			return;
+		}
+		self.nextSlide(self.currentSlide);
+	}, self.interval);
 
-      if ( ! xDown || ! yDown ) {
-        return;
-      }
+	this.pauseCycle();
+};
 
-      var xUp = evt.touches[0].clientX;
-      var yUp = evt.touches[0].clientY;
+Swift.prototype.pauseCycle = function (id) {
+	var self = this;
+	this.container.addEventListener('mouseover', function () {
+		self.isPaused = true;
+	});
+	this.container.addEventListener('mouseout', function () {
+		self.isPaused = false;
+	});
+};
 
-      var xDiff = xDown - xUp;
-      var yDiff = yDown - yUp;
+Swift.prototype.touchStartHandler = function (event) {
+	this.xDown = event.touches[0].clientX;
+	this.yDown = event.touches[0].clientY;
+};
 
-      if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+Swift.prototype.touchMoveHandler = function (event) {
 
-        if ( xDiff > 0 ) {
-          nextSlide();
-        } else {
-          previousSlide();
-        }
+	if (!this.xDown || !this.yDown) {
+		return;
+	}
 
-      }
+	var xUp = event.touches[0].clientX;
+	var yUp = event.touches[0].clientY;
 
-      /* reset values */
-      xDown = null;
-      yDown = null;
+	var xDiff = this.xDown - xUp;
+	var yDiff = this.yDown - yUp;
 
-    };
+	if (Math.abs(xDiff) > Math.abs(yDiff)) {
+		if (xDiff > 0) {
+			this.nextSlide();
+		} else {
+			this.previousSlide();
+		}
+	}
 
-    var controller = document.createElement('div');
-    controller.classList.add('swift-controls');
-    container.appendChild(controller);
+	/* reset values */
+	this.xDown = null;
+	this.yDown = null;
 
-    var prev = document.createElement('button');
-    prev.addEventListener('click', previousSlide, false);
-    prev.classList.add('swift-control', 'swift-prev');
-    prev.innerHTML = '<svg class="symbol symbol-' + parameters.prevSymbol + '"><use xlink:href="#' + parameters.prevSymbol + '"></use></svg>';
-    controller.appendChild(prev);
+};
 
-    var next = document.createElement('button');
-    next.addEventListener('click', nextSlide, false);
-    next.classList.add('swift-control', 'swift-next');
-    next.innerHTML = '<svg class="symbol symbol-' + parameters.nextSymbol + '"><use xlink:href="#' + parameters.nextSymbol + '"></use></svg>';
-    controller.appendChild(next);
 
-    var currentSlide = 0;
+Swift.prototype.clearClasses = function () {
+	for (var i = 0; i < this.elements.length; i++) {
+		this.pages[i].classList.remove('active');
+		this.elements[i].classList.remove('active');
+	}
+};
 
-    var pager = document.createElement('div');
-    pager.classList.add('swift-pager');
-    container.appendChild(pager);
+Swift.prototype.assignClasses = function (index) {
+	this.pages[index].classList.add('active');
+	this.elements[index].classList.add('active');
+};
 
-    var pages = [];
+Swift.prototype.pager = function () {
 
-    for (var i = 0; i < elements.length; i++) {
+	var pager = document.createElement('div');
+	pager.classList.add('swift-pager');
 
-      pages.push(document.createElement('span'));
+	this.container.appendChild(pager);
 
-      pager.appendChild(pages[i]);
+	for (var i = 0; i < this.elements.length; i++) {
+		this.pages.push(document.createElement('span'));
+		pager.appendChild(this.pages[i]);
+		this.pages[i].addEventListener('click', this.slide.bind(this, i), false);
+	}
 
-      pages[i].addEventListener('click', slide.bind(null, i), false);
+	this.pages[this.currentSlide].click();
+};
 
-    }
+Swift.prototype.slide = function (index) {
+	this.currentSlide = index;
+	this.clearClasses();
+	this.assignClasses(index);
+};
 
-    pages[currentSlide].click();
+Swift.prototype.nextSlide = function () {
 
-  }
+	if (this.currentSlide == this.elements.length - 1) {
+		this.currentSlide = -1;
+	}
 
-  function clearClasses() {
+	this.currentSlide = this.currentSlide + 1;
+	this.slide(this.currentSlide);
+};
 
-    for (var i = 0; i < elements.length; i++) {
-      pages[i].classList.remove('active');
-      elements[i].classList.remove('active');
-    }
+Swift.prototype.previousSlide = function () {
+	if (this.currentSlide === 0) {
+		this.currentSlide = this.elements.length;
+	}
 
-  }
+	this.currentSlide = this.currentSlide - 1;
+	this.slide(this.currentSlide);
+};
 
-  function assignClasses(index) {
+Swift.prototype.controls = function () {
+	var controller = document.createElement('div');
+	var prev = document.createElement('button');
+	var next = document.createElement('button');
+	// Controls Container
+	controller.classList.add('swift-controls');
+	this.container.appendChild(controller);
+	// Prev
+	prev.addEventListener('click', this.previousSlide.bind(this), false);
+	prev.classList.add('swift-control', 'swift-prev');
+	prev.innerHTML = '<svg class="symbol symbol-' + this.prevSymbol + '"><use xlink:href="#' + this.prevSymbol + '"></use></svg>';
+	// Next
+	next.addEventListener('click', this.nextSlide.bind(this), false);
+	next.classList.add('swift-control', 'swift-next');
+	next.innerHTML = '<svg class="symbol symbol-' + this.nextSymbol + '"><use xlink:href="#' + this.nextSymbol + '"></use></svg>';
 
-    pages[index].classList.add('active');
-    elements[index].classList.add('active');
+	controller.appendChild(prev);
+	controller.appendChild(next);
+};
 
-  }
 
-  function slide(index) {
 
-    clearClasses();
-    assignClasses(index);
 
-  }
-
-  function previousSlide() {
-
-    if(currentSlide === 0) {
-      currentSlide = elements.length;
-    }
-
-    currentSlide = currentSlide - 1;
-
-    slide(currentSlide);
-
-  }
-
-  function nextSlide() {
-
-    if (currentSlide == elements.length - 1) {
-      currentSlide = -1;
-    }
-
-    currentSlide = currentSlide + 1;
-
-    slide(currentSlide);
-
-  }
-
-}
 
 function triggerParent(parameters) {
 

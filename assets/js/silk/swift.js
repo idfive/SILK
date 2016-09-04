@@ -1,132 +1,167 @@
-function swift(parameters) {
+/**
+ * SwiftSlider
+ * v2.0.0
+ */
 
-  var container = document.querySelector(parameters.container);
-  var elements = document.querySelectorAll(parameters.container + ' ' + parameters.elements);
+'use strict';
+var Swift = function (parameters) {
+	this.container = document.querySelector(parameters.container);
+	this.elements = document.querySelectorAll(parameters.container + ' ' + parameters.elements);
+	this.elCount = this.elements.length;
+	this.currentSlide = 0;
+	this.cycle = parameters.cycle || false;
+	this.isPaused = this.cycle ? false : true;
+	this.interval = parameters.interval || 4000;
+	this.pages = [];
+	this.xDown = null;
+	this.yDown = null;
+	this.prevSymbol = parameters.prevSymbol;
+	this.nextSymbol = parameters.nextSymbol;
 
-  if(document.body.contains(container)) {
+	this.initialize.apply(this, parameters);
+};
 
-    container.addEventListener('touchstart', handleTouchStart, false);
-    container.addEventListener('touchmove', handleTouchMove, false);
+Swift.VERSION = '2.0.0';
 
-    var xDown = null;
-    var yDown = null;
+Swift.prototype.initialize = function () {
+	this.controls();
+	this.pager();
+	this.autoCycle();
+	this.container.addEventListener('touchstart', this.touchStartHandler.bind(this), false);
+	this.container.addEventListener('touchmove', this.touchMoveHandler.bind(this), false);
+};
 
-    function handleTouchStart(evt) {
-      xDown = evt.touches[0].clientX;
-      yDown = evt.touches[0].clientY;
-    };
+Swift.prototype.autoCycle = function () {
+	var self = this;
 
-    function handleTouchMove(evt) {
+	if (!self.cycle) {
+		return;
+	}
+	setInterval(function () {
+		if (self.isPaused) {
+			return;
+		}
+		self.nextSlide(self.currentSlide);
+	}, self.interval);
 
-      if ( ! xDown || ! yDown ) {
-        return;
-      }
+	this.pauseCycle();
+};
 
-      var xUp = evt.touches[0].clientX;
-      var yUp = evt.touches[0].clientY;
+Swift.prototype.pauseCycle = function (id) {
+	var self = this;
+	this.container.addEventListener('mouseover', function () {
+		self.isPaused = true;
+	});
+	this.container.addEventListener('mouseout', function () {
+		self.isPaused = false;
+	});
+};
 
-      var xDiff = xDown - xUp;
-      var yDiff = yDown - yUp;
+Swift.prototype.touchStartHandler = function (event) {
+	this.xDown = event.touches[0].clientX;
+	this.yDown = event.touches[0].clientY;
+};
 
-      if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+Swift.prototype.touchMoveHandler = function (event) {
 
-        if ( xDiff > 0 ) {
-          nextSlide();
-        } else {
-          previousSlide();
-        }
+	if (!this.xDown || !this.yDown) {
+		return;
+	}
 
-      }
+	var xUp = event.touches[0].clientX;
+	var yUp = event.touches[0].clientY;
 
-      /* reset values */
-      xDown = null;
-      yDown = null;
+	var xDiff = this.xDown - xUp;
+	var yDiff = this.yDown - yUp;
 
-    };
+	if (Math.abs(xDiff) > Math.abs(yDiff)) {
+		if (xDiff > 0) {
+			this.nextSlide();
+		} else {
+			this.previousSlide();
+		}
+	}
 
-    var controller = document.createElement('div');
-    controller.classList.add('swift-controls');
-    container.appendChild(controller);
+	/* reset values */
+	this.xDown = null;
+	this.yDown = null;
 
-    var prev = document.createElement('button');
-    prev.addEventListener('click', previousSlide, false);
-    prev.classList.add('swift-control', 'swift-prev');
-    prev.innerHTML = '<svg class="symbol symbol-' + parameters.prevSymbol + '"><use xlink:href="#' + parameters.prevSymbol + '"></use></svg>';
-    controller.appendChild(prev);
+};
 
-    var next = document.createElement('button');
-    next.addEventListener('click', nextSlide, false);
-    next.classList.add('swift-control', 'swift-next');
-    next.innerHTML = '<svg class="symbol symbol-' + parameters.nextSymbol + '"><use xlink:href="#' + parameters.nextSymbol + '"></use></svg>';
-    controller.appendChild(next);
 
-    var currentSlide = 0;
+Swift.prototype.clearClasses = function () {
+	for (var i = 0; i < this.elements.length; i++) {
+		this.pages[i].classList.remove('active');
+		this.elements[i].classList.remove('active');
+	}
+};
 
-    var pager = document.createElement('div');
-    pager.classList.add('swift-pager');
-    container.appendChild(pager);
+Swift.prototype.assignClasses = function (index) {
+	this.pages[index].classList.add('active');
+	this.elements[index].classList.add('active');
+};
 
-    var pages = [];
+Swift.prototype.pager = function () {
 
-    for (var i = 0; i < elements.length; i++) {
+	var pager = document.createElement('div');
+	pager.classList.add('swift-pager');
 
-      pages.push(document.createElement('span'));
+	this.container.appendChild(pager);
 
-      pager.appendChild(pages[i]);
+	for (var i = 0; i < this.elements.length; i++) {
+		this.pages.push(document.createElement('span'));
+		pager.appendChild(this.pages[i]);
+		this.pages[i].addEventListener('click', this.slide.bind(this, i), false);
+	}
 
-      pages[i].addEventListener('click', slide.bind(null, i), false);
+	this.pages[this.currentSlide].click();
+};
 
-    }
+Swift.prototype.slide = function (index) {
+	this.currentSlide = index;
+	this.clearClasses();
+	this.assignClasses(index);
+};
 
-    pages[currentSlide].click();
+Swift.prototype.nextSlide = function () {
 
-  }
+	if (this.currentSlide == this.elements.length - 1) {
+		this.currentSlide = -1;
+	}
 
-  function clearClasses() {
+	this.currentSlide = this.currentSlide + 1;
+	this.slide(this.currentSlide);
+};
 
-    for (var i = 0; i < elements.length; i++) {
-      pages[i].classList.remove('active');
-      elements[i].classList.remove('active');
-    }
+Swift.prototype.previousSlide = function () {
+	if (this.currentSlide === 0) {
+		this.currentSlide = this.elements.length;
+	}
 
-  }
+	this.currentSlide = this.currentSlide - 1;
+	this.slide(this.currentSlide);
+};
 
-  function assignClasses(index) {
+Swift.prototype.controls = function () {
+	var controller = document.createElement('div');
+	var prev = document.createElement('button');
+	var next = document.createElement('button');
+	// Controls Container
+	controller.classList.add('swift-controls');
+	this.container.appendChild(controller);
+	// Prev
+	prev.addEventListener('click', this.previousSlide.bind(this), false);
+	prev.classList.add('swift-control', 'swift-prev');
+	prev.innerHTML = '<svg class="symbol symbol-' + this.prevSymbol + '"><use xlink:href="#' + this.prevSymbol + '"></use></svg>';
+	// Next
+	next.addEventListener('click', this.nextSlide.bind(this), false);
+	next.classList.add('swift-control', 'swift-next');
+	next.innerHTML = '<svg class="symbol symbol-' + this.nextSymbol + '"><use xlink:href="#' + this.nextSymbol + '"></use></svg>';
 
-    pages[index].classList.add('active');
-    elements[index].classList.add('active');
+	controller.appendChild(prev);
+	controller.appendChild(next);
+};
 
-  }
 
-  function slide(index) {
 
-    clearClasses();
-    assignClasses(index);
 
-  }
-
-  function previousSlide() {
-
-    if(currentSlide === 0) {
-      currentSlide = elements.length;
-    }
-
-    currentSlide = currentSlide - 1;
-
-    slide(currentSlide);
-
-  }
-
-  function nextSlide() {
-
-    if (currentSlide == elements.length - 1) {
-      currentSlide = -1;
-    }
-
-    currentSlide = currentSlide + 1;
-
-    slide(currentSlide);
-
-  }
-
-}
