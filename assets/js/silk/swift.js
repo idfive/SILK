@@ -27,16 +27,18 @@ Swift.prototype.initialize = function () {
 	this.controls();
 	this.pager();
 	this.autoCycle();
+	this.container.addEventListener('touchstart', this.touchStartHandler.bind(this), false);
+	this.container.addEventListener('touchmove', this.touchMoveHandler.bind(this), false);
 };
 
 Swift.prototype.autoCycle = function () {
 	var self = this;
 
-	if (!self.cycle ) {
+	if (!self.cycle) {
 		return;
 	}
 	setInterval(function () {
-		if (self.isPaused ) {
+		if (self.isPaused) {
 			return;
 		}
 		self.nextSlide(self.currentSlide);
@@ -55,7 +57,7 @@ Swift.prototype.pauseCycle = function (id) {
 	});
 };
 
-Swift.prototype.handleTouchStart = function (event) {
+Swift.prototype.touchStartHandler = function (event) {
 	this.xDown = event.touches[0].clientX;
 	this.yDown = event.touches[0].clientY;
 };
@@ -133,7 +135,7 @@ Swift.prototype.nextSlide = function () {
 
 Swift.prototype.previousSlide = function () {
 	if (this.currentSlide === 0) {
-		this.currentSlide = elements.length;
+		this.currentSlide = this.elements.length;
 	}
 
 	this.currentSlide = this.currentSlide - 1;
