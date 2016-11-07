@@ -171,7 +171,6 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -273,7 +272,6 @@ input {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
@@ -292,7 +290,6 @@ input[type="number"]::-webkit-outer-spin-button {
  */
 input[type="search"] {
   -webkit-appearance: textfield; /* 1 */
-  -webkit-box-sizing: content-box;
   box-sizing: content-box; /* 2 */
 }
 /**
@@ -837,12 +834,12 @@ hr {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   -webkit-transition: background .3s,
+      box-shadow .3s,
       margin .3s,
-      -webkit-box-shadow .3s,
       -webkit-transform .3s;
   transition: background .3s,
+      box-shadow .3s,
       margin .3s,
-      -webkit-box-shadow .3s,
       -webkit-transform .3s;
   transition: background .3s,
       box-shadow .3s,
@@ -853,7 +850,6 @@ hr {
       box-shadow .3s,
       margin .3s,
       transform .3s,
-      -webkit-box-shadow .3s,
       -webkit-transform .3s;
 }
 .drawer__trigger:before {
@@ -872,11 +868,9 @@ hr {
         rotate(-45deg);
 }
 .drawer__trigger:after {
-  -webkit-box-shadow: 0 0.375em 0 0 currentColor;
   box-shadow: 0 0.375em 0 0 currentColor;
 }
 .visible-drawer .drawer__trigger:after {
-  -webkit-box-shadow: 0 0 0 0 transparent;
   box-shadow: 0 0 0 0 transparent;
   -webkit-transform:
         translate(-50%, -50%)
@@ -920,7 +914,6 @@ hr {
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  -ms-grid-row-align: center;
   align-items: center;
 }
 .flex--justified {
@@ -1530,7 +1523,6 @@ hr {
     width: calc(100% - em(80));*/
     padding: 1.25em;
     background: #fff;
-    -webkit-box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, .25);
     box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, .25);
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -1779,6 +1771,13 @@ hr {
   outline: 0;
   background: none;
 }
+.swift-controls button span {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
 /* Previous Button */
 .swift-controls button:first-child {}
 /* Next Button */
@@ -1868,7 +1867,6 @@ hr {
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -2038,12 +2036,12 @@ body {
   color: #fff;
   outline: 0;
   -webkit-transition: background .2s,
+    box-shadow .2s,
     color .2s,
-    -webkit-box-shadow .2s,
     -webkit-transform .2s;
   transition: background .2s,
+    box-shadow .2s,
     color .2s,
-    -webkit-box-shadow .2s,
     -webkit-transform .2s;
   transition: background .2s,
     box-shadow .2s,
@@ -2054,7 +2052,6 @@ body {
     box-shadow .2s,
     color .2s,
     transform .2s,
-    -webkit-box-shadow .2s,
     -webkit-transform .2s;
 }
 /* Additional Buttons
@@ -2704,7 +2701,6 @@ a {
   width: 0.75em;
   margin: 0.3125em;
   border-radius: 100%;
-  -webkit-box-shadow: inset 0 0 0 0.125em #fff;
   box-shadow: inset 0 0 0 0.125em #fff;
 }
 .swift-pager span:hover {

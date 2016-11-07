@@ -672,19 +672,15 @@ Swift.prototype.controls = function () {
 	// Prev
 	prev.addEventListener('click', this.previousSlide.bind(this), false);
 	prev.classList.add('swift-control', 'swift-prev');
-	prev.innerHTML = '<svg class="symbol symbol-' + this.prevSymbol + '"><use xlink:href="#' + this.prevSymbol + '"></use></svg>';
+	prev.innerHTML = '<svg class="symbol symbol-' + this.prevSymbol + '"><use xlink:href="#' + this.prevSymbol + '"></use></svg><span>Previous</span>';
 	// Next
 	next.addEventListener('click', this.nextSlide.bind(this), false);
 	next.classList.add('swift-control', 'swift-next');
-	next.innerHTML = '<svg class="symbol symbol-' + this.nextSymbol + '"><use xlink:href="#' + this.nextSymbol + '"></use></svg>';
+	next.innerHTML = '<svg class="symbol symbol-' + this.nextSymbol + '"><use xlink:href="#' + this.nextSymbol + '"></use></svg><span>Next</span>';
 
 	controller.appendChild(prev);
 	controller.appendChild(next);
 };
-
-
-
-
 
 function triggerParent(parameters) {
 
