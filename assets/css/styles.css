@@ -713,7 +713,8 @@ hr {
   }
 }
 .silk-harmonica__symbol {
-        display: block;
+        //display: block;
+        display: none;
       }
 .silk-harmonica__content {
     display: none;
