@@ -57,7 +57,7 @@ function silkNav() {
 
   }
 
-  function goForward() {
+  function goForward(event) {
 
     if(!(nav.classList.contains('silk-nav--active'))) {
       nav.classList.add('silk-nav--active');
