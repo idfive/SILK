@@ -28,7 +28,7 @@ function silkNav() {
     var advanceTrigger = document.createElement('button');
     advanceTrigger.setAttribute('aria-hidden', 'true');
     advanceTrigger.classList.add('silk-nav__trigger', 'silk-nav__trigger--advance');
-    advanceTrigger.innerHTML = '<svg class="symbol symbol-chevron-right"><use xlink:href="#chevron-right"></use></svg>';
+    advanceTrigger.innerHTML = '<svg class="symbol symbol-chevron-right"><use xlink:href="#chevron-right"></use></svg><span>View Child Pages</span>';
     advanceTrigger.addEventListener('click', goForward, false);
 
     nestedNavs[i].parentNode.insertBefore(advanceTrigger, nestedNavs[i]);
